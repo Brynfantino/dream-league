@@ -1,6 +1,7 @@
 -- Row Level Security
 -- Public read for league data; manager write for own transfer proposals;
 -- commissioner write for goals / approvals / admin.
+-- Table privileges for anon/authenticated SELECT: see 20261125231200_public_read_grants.sql.
 
 alter table public.seasons enable row level security;
 alter table public.profiles enable row level security;

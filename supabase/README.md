@@ -32,6 +32,7 @@ URL: `https://ghzcdwxoukxngnstanxv.supabase.co`
 2. Run each file in timestamp order:
    - `20261125190000_core_schema.sql`
    - `20261125190100_rls_policies.sql`
+   - `20261125231200_public_read_grants.sql` (`GRANT SELECT` + schema `USAGE` for `anon` / `authenticated` on public-read tables)
 
 ### Option B — Supabase CLI
 
