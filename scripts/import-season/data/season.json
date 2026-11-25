@@ -16,5 +16,10 @@
   },
   "verification": {
     "all_table_rows_match_summed_membership_stats": true
-  }
+  },
+  "schema_note": "PRD schema: goalkeeper_clubs + players DEF/MID/FWD; team_managers; no teams.manager_id",
+  "outfield_player_count": 184,
+  "goalkeeper_club_count": 21,
+  "outfield_membership_count": 190,
+  "goalkeeper_membership_count": 22
 }

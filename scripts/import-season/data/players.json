@@ -1,1646 +1,1111 @@
 {
   "season": "2026/2027",
-  "count": 205,
+  "note": "Outfield only (PRD §3/§5). Positions DEF|MID|FWD. GKs are goalkeeper_clubs.",
+  "count": 184,
   "players": [
     {
       "key": "ADAM SENIOR::BARNET",
       "name": "ADAM SENIOR",
-      "player_name": "ADAM SENIOR",
       "club": "BARNET",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "ADEBOLA OLUWO::SALFORD",
       "name": "ADEBOLA OLUWO",
-      "player_name": "ADEBOLA OLUWO",
       "club": "SALFORD",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "BRENDAN WIREDU::SALFORD",
       "name": "BRENDAN WIREDU",
-      "player_name": "BRENDAN WIREDU",
       "club": "SALFORD",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "CRISTIAN ROMERO::ATLETICO MADRID",
       "name": "CRISTIAN ROMERO",
-      "player_name": "CRISTIAN ROMERO",
       "club": "ATLETICO MADRID",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "DAN BURN::NEWCASTLE",
       "name": "DAN BURN",
-      "player_name": "DAN BURN",
       "club": "NEWCASTLE",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "DANIEL BALLARD::SUNDERLAND",
       "name": "DANIEL BALLARD",
-      "player_name": "DANIEL BALLARD",
       "club": "SUNDERLAND",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "DANIEL MUNOZ::NOTTINGHAM FOREST",
       "name": "DANIEL MUNOZ",
-      "player_name": "DANIEL MUNOZ",
       "club": "NOTTINGHAM FOREST",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "GABRIEL::ARSENAL",
       "name": "GABRIEL",
-      "player_name": "GABRIEL",
       "club": "ARSENAL",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "GUS SCOTT-MORRISS::OLDHAM",
       "name": "GUS SCOTT-MORRISS",
-      "player_name": "GUS SCOTT-MORRISS",
       "club": "OLDHAM",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "HARRISON BURROWS::SHEFFIELD UNITED",
       "name": "HARRISON BURROWS",
-      "player_name": "HARRISON BURROWS",
       "club": "SHEFFIELD UNITED",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "HARRY MAGUIRE::MANCHESTER UNITED",
       "name": "HARRY MAGUIRE",
-      "player_name": "HARRY MAGUIRE",
       "club": "MANCHESTER UNITED",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "HARRY SOUTTAR::LEICESTER",
       "name": "HARRY SOUTTAR",
-      "player_name": "HARRY SOUTTAR",
       "club": "LEICESTER",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "JAYDEN SWEENEY::GRIMSBY",
       "name": "JAYDEN SWEENEY",
-      "player_name": "JAYDEN SWEENEY",
       "club": "GRIMSBY",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "JOSKO GVARDIOL::MANCHESTER CITY",
       "name": "JOSKO GVARDIOL",
-      "player_name": "JOSKO GVARDIOL",
       "club": "MANCHESTER CITY",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "JURRIEN TIMBER::ARSENAL",
       "name": "JURRIEN TIMBER",
-      "player_name": "JURRIEN TIMBER",
       "club": "ARSENAL",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "KEANE LEWIS-POTTER::BRENTFORD",
       "name": "KEANE LEWIS-POTTER",
-      "player_name": "KEANE LEWIS-POTTER",
       "club": "BRENTFORD",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "KONSTANTINOS MAVROPANOS::WEST HAM",
       "name": "KONSTANTINOS MAVROPANOS",
-      "player_name": "KONSTANTINOS MAVROPANOS",
       "club": "WEST HAM",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "MALACHI FAGAN-WALCOTT::HEART OF MIDLOTHIAN",
       "name": "MALACHI FAGAN-WALCOTT",
-      "player_name": "MALACHI FAGAN-WALCOTT",
       "club": "HEART OF MIDLOTHIAN",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "MARC GUEHI::MANCHESTER CITY",
       "name": "MARC GUEHI",
-      "player_name": "MARC GUEHI",
       "club": "MANCHESTER CITY",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "MARVIN EKPITETA::MILTON KEYNES",
       "name": "MARVIN EKPITETA",
-      "player_name": "MARVIN EKPITETA",
       "club": "MILTON KEYNES",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "MICKY VAN DE VEN::TOTTENHAM",
       "name": "MICKY VAN DE VEN",
-      "player_name": "MICKY VAN DE VEN",
       "club": "TOTTENHAM",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "NICO O'REILLY::MANCHESTER CITY",
       "name": "NICO O'REILLY",
-      "player_name": "NICO O'REILLY",
       "club": "MANCHESTER CITY",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "OMAR SOWUNMI::BROMLEY",
       "name": "OMAR SOWUNMI",
-      "player_name": "OMAR SOWUNMI",
       "club": "BROMLEY",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "PATRICK DORGU::MANCHESTER UNITED",
       "name": "PATRICK DORGU",
-      "player_name": "PATRICK DORGU",
       "club": "MANCHESTER UNITED",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "PEDRO PORRO::TOTTENHAM",
       "name": "PEDRO PORRO",
-      "player_name": "PEDRO PORRO",
       "club": "TOTTENHAM",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "RYAN MANNING::SOUTHAMPTON",
       "name": "RYAN MANNING",
-      "player_name": "RYAN MANNING",
       "club": "SOUTHAMPTON",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "SANTIAGO BUENO::AMERICA",
       "name": "SANTIAGO BUENO",
-      "player_name": "SANTIAGO BUENO",
       "club": "AMERICA",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "TAYLOR HARWOOD-BELLIS::ASTON VILLA",
       "name": "TAYLOR HARWOOD-BELLIS",
-      "player_name": "TAYLOR HARWOOD-BELLIS",
       "club": "ASTON VILLA",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "TERRY DEVLIN::PORTSMOUTH",
       "name": "TERRY DEVLIN",
-      "player_name": "TERRY DEVLIN",
       "club": "PORTSMOUTH",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "VIRGIL VAN DJIK::LIVERPOOL",
       "name": "VIRGIL VAN DJIK",
-      "player_name": "VIRGIL VAN DJIK",
       "club": "LIVERPOOL",
-      "position": "Defender",
-      "is_goalkeeper": false
+      "position": "DEF"
     },
     {
       "key": "AARON DRINAN::SWINDON",
       "name": "AARON DRINAN",
-      "player_name": "AARON DRINAN",
       "club": "SWINDON",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "AARON PRESSLEY::WALSALL",
       "name": "AARON PRESSLEY",
-      "player_name": "AARON PRESSLEY",
       "club": "WALSALL",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ADAM ARMSTRONG::WOLVERHAMPTON",
       "name": "ADAM ARMSTRONG",
-      "player_name": "ADAM ARMSTRONG",
       "club": "WOLVERHAMPTON",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ADAMA SIDIBEH::STOCKPORT",
       "name": "ADAMA SIDIBEH",
-      "player_name": "ADAMA SIDIBEH",
       "club": "STOCKPORT",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ALEKSANDER ISAK::LIVERPOOL",
       "name": "ALEKSANDER ISAK",
-      "player_name": "ALEKSANDER ISAK",
       "club": "LIVERPOOL",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ALEX NEWBY::YORK",
       "name": "ALEX NEWBY",
-      "player_name": "ALEX NEWBY",
       "club": "YORK",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ALFIE MAY::DONCASTER",
       "name": "ALFIE MAY",
-      "player_name": "ALFIE MAY",
       "club": "DONCASTER",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ANDRI GUDJOHNSEN::BLACKBURN",
       "name": "ANDRI GUDJOHNSEN",
-      "player_name": "ANDRI GUDJOHNSEN",
       "club": "BLACKBURN",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ANDY COOK::GRIMSBY",
       "name": "ANDY COOK",
-      "player_name": "ANDY COOK",
       "club": "GRIMSBY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ARIBIM PEPPLE::PLYMOUTH",
       "name": "ARIBIM PEPPLE",
-      "player_name": "ARIBIM PEPPLE",
       "club": "PLYMOUTH",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ASHLEY FLETCHER::HUDDERSFIELD",
       "name": "ASHLEY FLETCHER",
-      "player_name": "ASHLEY FLETCHER",
       "club": "HUDDERSFIELD",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "AUGUST PRISKE::BIRMINGHAM",
       "name": "AUGUST PRISKE",
-      "player_name": "AUGUST PRISKE",
       "club": "BIRMINGHAM",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "BENJAMIN SESKO::MANCHESTER UNITED",
       "name": "BENJAMIN SESKO",
-      "player_name": "BENJAMIN SESKO",
       "club": "MANCHESTER UNITED",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "BRIAN BROBBEY::SUNDERLAND",
       "name": "BRIAN BROBBEY",
-      "player_name": "BRIAN BROBBEY",
       "club": "SUNDERLAND",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "BRYAN MBEUMO::MANCHESTER UNITED",
       "name": "BRYAN MBEUMO",
-      "player_name": "BRYAN MBEUMO",
       "club": "MANCHESTER UNITED",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "CALLUM WILSON::BRENTFORD",
       "name": "CALLUM WILSON",
-      "player_name": "CALLUM WILSON",
       "club": "BRENTFORD",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "CARLTON MORRIS::DERBY",
       "name": "CARLTON MORRIS",
-      "player_name": "CARLTON MORRIS",
       "club": "DERBY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "CHARLES VERNAM::GRIMSBY",
       "name": "CHARLES VERNAM",
-      "player_name": "CHARLES VERNAM",
       "club": "GRIMSBY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "CODY GAKPO::LIVERPOOL",
       "name": "CODY GAKPO",
-      "player_name": "CODY GAKPO",
       "club": "LIVERPOOL",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "CONOR CHAPLIN::LEICESTER",
       "name": "CONOR CHAPLIN",
-      "player_name": "CONOR CHAPLIN",
       "club": "LEICESTER",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "CYLE LARIN::SOUTHAMPTON",
       "name": "CYLE LARIN",
-      "player_name": "CYLE LARIN",
       "club": "SOUTHAMPTON",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "DANE SCARLETT::LEYTON ORIENT",
       "name": "DANE SCARLETT",
-      "player_name": "DANE SCARLETT",
       "club": "LEYTON ORIENT",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "DANIEL KANU::NOTTS COUNTY",
       "name": "DANIEL KANU",
-      "player_name": "DANIEL KANU",
       "club": "NOTTS COUNTY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "DANNY WELBECK::CHELSEA",
       "name": "DANNY WELBECK",
-      "player_name": "DANNY WELBECK",
       "club": "CHELSEA",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "DAVIS KEILLOR DUNN::SHEFFIELD WEDNESDAY",
       "name": "DAVIS KEILLOR DUNN",
-      "player_name": "DAVIS KEILLOR DUNN",
       "club": "SHEFFIELD WEDNESDAY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "DERENSILI SANCHES FERNANDES::HUDDERSFIELD",
       "name": "DERENSILI SANCHES FERNANDES",
-      "player_name": "DERENSILI SANCHES FERNANDES",
       "club": "HUDDERSFIELD",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "DOM BALLARD::BRISTOL CITY",
       "name": "DOM BALLARD",
-      "player_name": "DOM BALLARD",
       "club": "BRISTOL CITY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "DOMINIC CALVERT-LEWIN::LEEDS",
       "name": "DOMINIC CALVERT-LEWIN",
-      "player_name": "DOMINIC CALVERT-LEWIN",
       "club": "LEEDS",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ELI JUNIOR KROUPI::BOURNEMOUTH",
       "name": "ELI JUNIOR KROUPI",
-      "player_name": "ELI JUNIOR KROUPI",
       "club": "BOURNEMOUTH",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "EMIL RIIS::LEICESTER",
       "name": "EMIL RIIS",
-      "player_name": "EMIL RIIS",
       "club": "LEICESTER",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "EMMANUEL DIESERUVWE::ROCHDALE",
       "name": "EMMANUEL DIESERUVWE",
-      "player_name": "EMMANUEL DIESERUVWE",
       "club": "ROCHDALE",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ERLING HAALAND::MANCHESTER CITY",
       "name": "ERLING HAALAND",
-      "player_name": "ERLING HAALAND",
       "club": "MANCHESTER CITY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "EVANILSON::BOURNEMOUTH",
       "name": "EVANILSON",
-      "player_name": "EVANILSON",
       "club": "BOURNEMOUTH",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "GEORGINIO RUTTER::BRIGHTON",
       "name": "GEORGINIO RUTTER",
-      "player_name": "GEORGINIO RUTTER",
       "club": "BRIGHTON",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "GONZALO GARCIA::FULHAM",
       "name": "GONZALO GARCIA",
-      "player_name": "GONZALO GARCIA",
       "club": "FULHAM",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "HAJI WRIGHT::COVENTRY",
       "name": "HAJI WRIGHT",
-      "player_name": "HAJI WRIGHT",
       "club": "COVENTRY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "HARRY LEONARD::PETERBOROUGH",
       "name": "HARRY LEONARD",
-      "player_name": "HARRY LEONARD",
       "club": "PETERBOROUGH",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "HUGO EKITIKE::LIVERPOOL",
       "name": "HUGO EKITIKE",
-      "player_name": "HUGO EKITIKE",
       "club": "LIVERPOOL",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "IGOR JESUS::NOTTINGHAM FOREST",
       "name": "IGOR JESUS",
-      "player_name": "IGOR JESUS",
       "club": "NOTTINGHAM FOREST",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "IGOR THIAGO::BRENTFORD",
       "name": "IGOR THIAGO",
-      "player_name": "IGOR THIAGO",
       "club": "BRENTFORD",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ISMAILA SARR::CRYSTAL PALACE",
       "name": "ISMAILA SARR",
-      "player_name": "ISMAILA SARR",
       "club": "CRYSTAL PALACE",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JACK MARRIOTT::READING",
       "name": "JACK MARRIOTT",
-      "player_name": "JACK MARRIOTT",
       "club": "READING",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JACK MCGLYNN::STOKE",
       "name": "JACK MCGLYNN",
-      "player_name": "JACK MCGLYNN",
       "club": "STOKE",
-      "position": "Forward",
-      "is_goalkeeper": false
-    },
-    {
-      "key": "JAY STANSFIELD::BIRMINGHAM",
-      "name": "JAY STANSFIELD",
-      "player_name": "JAY STANSFIELD",
-      "club": "BIRMINGHAM",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JAYDEN WAREHAM::WYCOMBE",
       "name": "JAYDEN WAREHAM",
-      "player_name": "JAYDEN WAREHAM",
       "club": "WYCOMBE",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JAZE KABIA::LEYTON ORIENT",
       "name": "JAZE KABIA",
-      "player_name": "JAZE KABIA",
       "club": "LEYTON ORIENT",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JEAN-PHILIPPE MATETA::CRYSTAL PALACE",
       "name": "JEAN-PHILIPPE MATETA",
-      "player_name": "JEAN-PHILIPPE MATETA",
       "club": "CRYSTAL PALACE",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JERRY YATES::BLACKPOOL",
       "name": "JERRY YATES",
-      "player_name": "JERRY YATES",
       "club": "BLACKPOOL",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JIMMY-JAY MORGAN::WEST BROM",
       "name": "JIMMY-JAY MORGAN",
-      "player_name": "JIMMY-JAY MORGAN",
       "club": "WEST BROM",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JOAO PEDRO::CHELSEA",
       "name": "JOAO PEDRO",
-      "player_name": "JOAO PEDRO",
       "club": "CHELSEA",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JOE TAYLOR::HUDDERSFIELD",
       "name": "JOE TAYLOR",
-      "player_name": "JOE TAYLOR",
       "club": "HUDDERSFIELD",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JOEL PIROE::WEST HAM",
       "name": "JOEL PIROE",
-      "player_name": "JOEL PIROE",
       "club": "WEST HAM",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JORGEN STRAND LARSEN::CRYSTAL PALACE",
       "name": "JORGEN STRAND LARSEN",
-      "player_name": "JORGEN STRAND LARSEN",
       "club": "CRYSTAL PALACE",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JOSH COBURN::MILLWALL",
       "name": "JOSH COBURN",
-      "player_name": "JOSH COBURN",
       "club": "MILLWALL",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JOSH STONES::YORK",
       "name": "JOSH STONES",
-      "player_name": "JOSH STONES",
       "club": "YORK",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JOVON MAKAMA::NORWICH",
       "name": "JOVON MAKAMA",
-      "player_name": "JOVON MAKAMA",
       "club": "NORWICH",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "JULIAN ALVAREZ::ATLETICO MADRID",
       "name": "JULIAN ALVAREZ",
-      "player_name": "JULIAN ALVAREZ",
       "club": "ATLETICO MADRID",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "KABONGO TSHIMANGA::BARNET",
       "name": "KABONGO TSHIMANGA",
-      "player_name": "KABONGO TSHIMANGA",
       "club": "BARNET",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "KAI HAVERTZ::ARSENAL",
       "name": "KAI HAVERTZ",
-      "player_name": "KAI HAVERTZ",
       "club": "ARSENAL",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "KYLE WOOTTON::STOCKPORT",
       "name": "KYLE WOOTTON",
-      "player_name": "KYLE WOOTTON",
       "club": "STOCKPORT",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "LEE BONIS::CHESTERFIELD",
       "name": "LEE BONIS",
-      "player_name": "LEE BONIS",
       "club": "CHESTERFIELD",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "LORENT TOLAJ::BRISTOL CITY",
       "name": "LORENT TOLAJ",
-      "player_name": "LORENT TOLAJ",
       "club": "BRISTOL CITY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "MACAULEY LANGSTAFF::SALFORD",
       "name": "MACAULEY LANGSTAFF",
-      "player_name": "MACAULEY LANGSTAFF",
       "club": "SALFORD",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "MASON BURSTOW::SHEFFIELD WEDNESDAY",
       "name": "MASON BURSTOW",
-      "player_name": "MASON BURSTOW",
       "club": "SHEFFIELD WEDNESDAY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "MATHEUS CUNHA::MANCHESTER UNITED",
       "name": "MATHEUS CUNHA",
-      "player_name": "MATHEUS CUNHA",
       "club": "MANCHESTER UNITED",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "MICHAEL CHEEK::BROMLEY",
       "name": "MICHAEL CHEEK",
-      "player_name": "MICHAEL CHEEK",
       "club": "BROMLEY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "MO FAAL::PORT VALE",
       "name": "MO FAAL",
-      "player_name": "MO FAAL",
       "club": "PORT VALE",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "MOHAMED TOURE::NORWICH",
       "name": "MOHAMED TOURE",
-      "player_name": "MOHAMED TOURE",
       "club": "NORWICH",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "NAKHI WELLS::LUTON",
       "name": "NAKHI WELLS",
-      "player_name": "NAKHI WELLS",
       "club": "LUTON",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "NICOLAS JACKSON::ASTON VILLA",
       "name": "NICOLAS JACKSON",
-      "player_name": "NICOLAS JACKSON",
       "club": "ASTON VILLA",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "OLI MCBURNIE::HULL",
       "name": "OLI MCBURNIE",
-      "player_name": "OLI MCBURNIE",
       "club": "HULL",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "OLLIE PEARCE::YORK",
       "name": "OLLIE PEARCE",
-      "player_name": "OLLIE PEARCE",
       "club": "YORK",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "OLLIE WATKINS::ASTON VILLA",
       "name": "OLLIE WATKINS",
-      "player_name": "OLLIE WATKINS",
       "club": "ASTON VILLA",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "OWEN OSENI::PLYMOUTH",
       "name": "OWEN OSENI",
-      "player_name": "OWEN OSENI",
       "club": "PLYMOUTH",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "PATRICK BAMFORD::SHEFFIELD UNITED",
       "name": "PATRICK BAMFORD",
-      "player_name": "PATRICK BAMFORD",
       "club": "SHEFFIELD UNITED",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "PAUL MULLIN::ROTHERHAM",
       "name": "PAUL MULLIN",
-      "player_name": "PAUL MULLIN",
       "club": "ROTHERHAM",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "RAUL JIMENEZ::WOLVERHAMPTON",
       "name": "RAUL JIMENEZ",
-      "player_name": "RAUL JIMENEZ",
       "club": "WOLVERHAMPTON",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "RICHARD KONE::QPR",
       "name": "RICHARD KONE",
-      "player_name": "RICHARD KONE",
       "club": "QPR",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ROMAN BURRELL::QPR",
       "name": "ROMAN BURRELL",
-      "player_name": "ROMAN BURRELL",
       "club": "QPR",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "RONAN HALE::GILLINGHAM",
       "name": "RONAN HALE",
-      "player_name": "RONAN HALE",
       "club": "GILLINGHAM",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ROSS STEWART::SWANSEA",
       "name": "ROSS STEWART",
-      "player_name": "ROSS STEWART",
       "club": "SWANSEA",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "SAM DALBY::BOLTON",
       "name": "SAM DALBY",
-      "player_name": "SAM DALBY",
       "club": "BOLTON",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "SAM NOMBE::MILTON KEYNES",
       "name": "SAM NOMBE",
-      "player_name": "SAM NOMBE",
       "club": "MILTON KEYNES",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "SAMMIE SZMODICS::DERBY",
       "name": "SAMMIE SZMODICS",
-      "player_name": "SAMMIE SZMODICS",
       "club": "DERBY",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "SHAQUILLE GWENGE::NEWPORT",
       "name": "SHAQUILLE GWENGE",
-      "player_name": "SHAQUILLE GWENGE",
       "club": "NEWPORT",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "TATY CASTELLANOS::WEST HAM",
       "name": "TATY CASTELLANOS",
-      "player_name": "TATY CASTELLANOS",
       "club": "WEST HAM",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "THIERNO BARRY::EVERTON",
       "name": "THIERNO BARRY",
-      "player_name": "THIERNO BARRY",
       "club": "EVERTON",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "TROY PARROTT::AZ ALKMAAR",
       "name": "TROY PARROTT",
-      "player_name": "TROY PARROTT",
       "club": "AZ ALKMAAR",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "VIKTOR GYOKERES::ARSENAL",
       "name": "VIKTOR GYOKERES",
-      "player_name": "VIKTOR GYOKERES",
       "club": "ARSENAL",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "WILL LANKSHEAR::MIDDLESBROUGH",
       "name": "WILL LANKSHEAR",
-      "player_name": "WILL LANKSHEAR",
       "club": "MIDDLESBROUGH",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "WILSON ISIDOR::SUNDERLAND",
       "name": "WILSON ISIDOR",
-      "player_name": "WILSON ISIDOR",
       "club": "SUNDERLAND",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "YOANNE WISSA::NEWCASTLE",
       "name": "YOANNE WISSA",
-      "player_name": "YOANNE WISSA",
       "club": "NEWCASTLE",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "YOUSEF SALECH::CARDIFF",
       "name": "YOUSEF SALECH",
-      "player_name": "YOUSEF SALECH",
       "club": "CARDIFF",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "YUSUF AKHAMRICH::LEYTON ORIENT",
       "name": "YUSUF AKHAMRICH",
-      "player_name": "YUSUF AKHAMRICH",
       "club": "LEYTON ORIENT",
-      "position": "Forward",
-      "is_goalkeeper": false
+      "position": "FWD"
     },
     {
       "key": "ZAN VIPOTNIK::SWANSEA",
       "name": "ZAN VIPOTNIK",
-      "player_name": "ZAN VIPOTNIK",
       "club": "SWANSEA",
-      "position": "Forward",
-      "is_goalkeeper": false
-    },
-    {
-      "key": "GK::ARSENAL",
-      "name": "ARSENAL (GK)",
-      "player_name": null,
-      "club": "ARSENAL",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::BARNET",
-      "name": "BARNET (GK)",
-      "player_name": null,
-      "club": "BARNET",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::BRADFORD",
-      "name": "BRADFORD (GK)",
-      "player_name": null,
-      "club": "BRADFORD",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::BRENTFORD",
-      "name": "BRENTFORD (GK)",
-      "player_name": null,
-      "club": "BRENTFORD",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::BRIGHTON",
-      "name": "BRIGHTON (GK)",
-      "player_name": null,
-      "club": "BRIGHTON",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::CHELSEA",
-      "name": "CHELSEA (GK)",
-      "player_name": null,
-      "club": "CHELSEA",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::CREWE",
-      "name": "CREWE (GK)",
-      "player_name": null,
-      "club": "CREWE",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::EVERTON",
-      "name": "EVERTON (GK)",
-      "player_name": null,
-      "club": "EVERTON",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::FULHAM",
-      "name": "FULHAM (GK)",
-      "player_name": null,
-      "club": "FULHAM",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::HUDDERSFIELD",
-      "name": "HUDDERSFIELD (GK)",
-      "player_name": null,
-      "club": "HUDDERSFIELD",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::LEEDS",
-      "name": "LEEDS (GK)",
-      "player_name": null,
-      "club": "LEEDS",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::LEICESTER",
-      "name": "LEICESTER (GK)",
-      "player_name": null,
-      "club": "LEICESTER",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::MANCHESTER CITY",
-      "name": "MANCHESTER CITY (GK)",
-      "player_name": null,
-      "club": "MANCHESTER CITY",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::MANCHESTER UNITED",
-      "name": "MANCHESTER UNITED (GK)",
-      "player_name": null,
-      "club": "MANCHESTER UNITED",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::MIDDLESBROUGH",
-      "name": "MIDDLESBROUGH (GK)",
-      "player_name": null,
-      "club": "MIDDLESBROUGH",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::NOTTINGHAM FOREST",
-      "name": "NOTTINGHAM FOREST (GK)",
-      "player_name": null,
-      "club": "NOTTINGHAM FOREST",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::SHEFFIELD WEDNESDAY",
-      "name": "SHEFFIELD WEDNESDAY (GK)",
-      "player_name": null,
-      "club": "SHEFFIELD WEDNESDAY",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::STOKE",
-      "name": "STOKE (GK)",
-      "player_name": null,
-      "club": "STOKE",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::SWANSEA",
-      "name": "SWANSEA (GK)",
-      "player_name": null,
-      "club": "SWANSEA",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::TOTTENHAM",
-      "name": "TOTTENHAM (GK)",
-      "player_name": null,
-      "club": "TOTTENHAM",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
-    },
-    {
-      "key": "GK::WEST HAM",
-      "name": "WEST HAM (GK)",
-      "player_name": null,
-      "club": "WEST HAM",
-      "position": "Goalkeeper",
-      "is_goalkeeper": true
+      "position": "FWD"
     },
     {
       "key": "AARON COLLINS::MILTON KEYNES",
       "name": "AARON COLLINS",
-      "player_name": "AARON COLLINS",
       "club": "MILTON KEYNES",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "ADAM PHILLIPS::BRADFORD",
       "name": "ADAM PHILLIPS",
-      "player_name": "ADAM PHILLIPS",
       "club": "BRADFORD",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "ALEX GILBEY::MILTON KEYNES",
       "name": "ALEX GILBEY",
-      "player_name": "ALEX GILBEY",
       "club": "MILTON KEYNES",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "ANTOINE SEMENYO::MANCHESTER CITY",
       "name": "ANTOINE SEMENYO",
-      "player_name": "ANTOINE SEMENYO",
       "club": "MANCHESTER CITY",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "BOBBY DE CORDOVA-REID::LEICESTER",
       "name": "BOBBY DE CORDOVA-REID",
-      "player_name": "BOBBY DE CORDOVA-REID",
       "club": "LEICESTER",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "BRADLEY BARCOLA::LIVERPOOL",
       "name": "BRADLEY BARCOLA",
-      "player_name": "BRADLEY BARCOLA",
       "club": "LIVERPOOL",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "BRUNO FERNANDES::MANCHESTER UNITED",
       "name": "BRUNO FERNANDES",
-      "player_name": "BRUNO FERNANDES",
       "club": "MANCHESTER UNITED",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "BUKAYO SAKA::ARSENAL",
       "name": "BUKAYO SAKA",
-      "player_name": "BUKAYO SAKA",
       "club": "ARSENAL",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "CALEB WATTS::PLYMOUTH",
       "name": "CALEB WATTS",
-      "player_name": "CALEB WATTS",
       "club": "PLYMOUTH",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "CALUM KAVANAGH::OLDHAM",
       "name": "CALUM KAVANAGH",
-      "player_name": "CALUM KAVANAGH",
       "club": "OLDHAM",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "CHARLIE LAKIN::BARNET",
       "name": "CHARLIE LAKIN",
-      "player_name": "CHARLIE LAKIN",
       "club": "BARNET",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "CHARLIE MCCANN::CHELTENHAM",
       "name": "CHARLIE MCCANN",
-      "player_name": "CHARLIE MCCANN",
       "club": "CHELTENHAM",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "CHRISTOS TZOLIS::ARSENAL",
       "name": "CHRISTOS TZOLIS",
-      "player_name": "CHRISTOS TZOLIS",
       "club": "ARSENAL",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "COLE PALMER::CHELSEA",
       "name": "COLE PALMER",
-      "player_name": "COLE PALMER",
       "club": "CHELSEA",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "CRYSENCIO SUMMERVILLE::AL HILAL",
       "name": "CRYSENCIO SUMMERVILLE",
-      "player_name": "CRYSENCIO SUMMERVILLE",
       "club": "AL HILAL",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "DAVIS KEILLOR-DUNN::WREXHAM",
       "name": "DAVIS KEILLOR-DUNN",
-      "player_name": "DAVIS KEILLOR-DUNN",
       "club": "WREXHAM",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "DIEGO GOMEZ::BRIGHTON",
       "name": "DIEGO GOMEZ",
-      "player_name": "DIEGO GOMEZ",
       "club": "BRIGHTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "DOMINIK SZOBOSZLAI::LIVERPOOL",
       "name": "DOMINIK SZOBOSZLAI",
-      "player_name": "DOMINIK SZOBOSZLAI",
       "club": "LIVERPOOL",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "ENZO FERNANDEZ::MANCHESTER CITY",
       "name": "ENZO FERNANDEZ",
-      "player_name": "ENZO FERNANDEZ",
       "club": "MANCHESTER CITY",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "FEMI AZEEZ::BRIGHTON",
       "name": "FEMI AZEEZ",
-      "player_name": "FEMI AZEEZ",
       "club": "BRIGHTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "FER LOPEZ::WOLVERHAMPTON",
       "name": "FER LOPEZ",
-      "player_name": "FER LOPEZ",
       "club": "WOLVERHAMPTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "FINN AZAZ::SOUTHAMPTON",
       "name": "FINN AZAZ",
-      "player_name": "FINN AZAZ",
       "club": "SOUTHAMPTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "FLORIAN WIRTZ::LIVERPOOL",
       "name": "FLORIAN WIRTZ",
-      "player_name": "FLORIAN WIRTZ",
       "club": "LIVERPOOL",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "HARRY WILSON::FULHAM",
       "name": "HARRY WILSON",
-      "player_name": "HARRY WILSON",
       "club": "FULHAM",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "HARVEY BARNES::NEWCASTLE",
       "name": "HARVEY BARNES",
-      "player_name": "HARVEY BARNES",
       "club": "NEWCASTLE",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "ISAAC HUTCHINSON::DONCASTER",
       "name": "ISAAC HUTCHINSON",
-      "player_name": "ISAAC HUTCHINSON",
       "club": "DONCASTER",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "ISAAC PRICE::WEST BROM",
       "name": "ISAAC PRICE",
-      "player_name": "ISAAC PRICE",
       "club": "WEST BROM",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "JACK CLARKE::IPSWICH",
       "name": "JACK CLARKE",
-      "player_name": "JACK CLARKE",
       "club": "IPSWICH",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "JACK MOYLAN::CARDIFF",
       "name": "JACK MOYLAN",
-      "player_name": "JACK MOYLAN",
       "club": "CARDIFF",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "JACK PAYNE::COLCHESTER",
       "name": "JACK PAYNE",
-      "player_name": "JACK PAYNE",
       "club": "COLCHESTER",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "JACKIE HINSHELWOOD::BRIGHTON",
       "name": "JACKIE HINSHELWOOD",
-      "player_name": "JACKIE HINSHELWOOD",
       "club": "BRIGHTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "JAMAL LOWE::SHEFFIELD WEDNESDAY",
       "name": "JAMAL LOWE",
-      "player_name": "JAMAL LOWE",
       "club": "SHEFFIELD WEDNESDAY",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "JARROD BOWEN::WEST HAM",
       "name": "JARROD BOWEN",
-      "player_name": "JARROD BOWEN",
       "club": "WEST HAM",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
+    },
+    {
+      "key": "JAY STANSFIELD::BIRMINGHAM",
+      "name": "JAY STANSFIELD",
+      "club": "BIRMINGHAM",
+      "position": "MID"
     },
     {
       "key": "JEREMY DOKU::MANCHESTER CITY",
       "name": "JEREMY DOKU",
-      "player_name": "JEREMY DOKU",
       "club": "MANCHESTER CITY",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "JORDAN JAMES::WOLVERHAMPTON",
       "name": "JORDAN JAMES",
-      "player_name": "JORDAN JAMES",
       "club": "WOLVERHAMPTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "JOSH WINDASS::WREXHAM",
       "name": "JOSH WINDASS",
-      "player_name": "JOSH WINDASS",
       "club": "WREXHAM",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "KASEY PALMER::LUTON",
       "name": "KASEY PALMER",
-      "player_name": "KASEY PALMER",
       "club": "LUTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "KIERAN GREEN::GRIMSBY",
       "name": "KIERAN GREEN",
-      "player_name": "KIERAN GREEN",
       "club": "GRIMSBY",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "KIERNAN DEWSBURY-HALL::EVERTON",
       "name": "KIERNAN DEWSBURY-HALL",
-      "player_name": "KIERNAN DEWSBURY-HALL",
       "club": "EVERTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "KYREECE LISBIE::READING",
       "name": "KYREECE LISBIE",
-      "player_name": "KYREECE LISBIE",
       "club": "READING",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "LEO SCIENZA::SOUTHAMPTON",
       "name": "LEO SCIENZA",
-      "player_name": "LEO SCIENZA",
       "club": "SOUTHAMPTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "LEWIS DOBBIN::SOUTHAMPTON",
       "name": "LEWIS DOBBIN",
-      "player_name": "LEWIS DOBBIN",
       "club": "SOUTHAMPTON",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "LEWIS WING::READING",
       "name": "LEWIS WING",
-      "player_name": "LEWIS WING",
       "club": "READING",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "LIAM CULLEN::LEICESTER",
       "name": "LIAM CULLEN",
-      "player_name": "LIAM CULLEN",
       "club": "LEICESTER",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "LOUIE BARRY::SHEFFIELD WEDNESDAY",
       "name": "LOUIE BARRY",
-      "player_name": "LOUIE BARRY",
       "club": "SHEFFIELD WEDNESDAY",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "LUKE MOLYNEUX::SALFORD",
       "name": "LUKE MOLYNEUX",
-      "player_name": "LUKE MOLYNEUX",
       "club": "SALFORD",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "MARCUS RASHFORD::MANCHESTER UNITED",
       "name": "MARCUS RASHFORD",
-      "player_name": "MARCUS RASHFORD",
       "club": "MANCHESTER UNITED",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "MARCUS TAVERNIER::BOURNEMOUTH",
       "name": "MARCUS TAVERNIER",
-      "player_name": "MARCUS TAVERNIER",
       "club": "BOURNEMOUTH",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "MORGAN GIBBS-WHITE::NOTTINGHAM FOREST",
       "name": "MORGAN GIBBS-WHITE",
-      "player_name": "MORGAN GIBBS-WHITE",
       "club": "NOTTINGHAM FOREST",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "MORGAN ROGERS::CHELSEA",
       "name": "MORGAN ROGERS",
-      "player_name": "MORGAN ROGERS",
       "club": "CHELSEA",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "MORGAN WHITTAKER::COLORADO RAPIDS",
       "name": "MORGAN WHITTAKER",
-      "player_name": "MORGAN WHITTAKER",
       "club": "COLORADO RAPIDS",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "OLIVER IROW::PLYMOUTH",
       "name": "OLIVER IROW",
-      "player_name": "OLIVER IROW",
       "club": "PLYMOUTH",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "OLIVER NORWOOD::STOCKPORT",
       "name": "OLIVER NORWOOD",
-      "player_name": "OLIVER NORWOOD",
       "club": "STOCKPORT",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "OMAR MARMOUSH::TOTTENHAM",
       "name": "OMAR MARMOUSH",
-      "player_name": "OMAR MARMOUSH",
       "club": "TOTTENHAM",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "OWEN BAILEY::DONCASTER",
       "name": "OWEN BAILEY",
-      "player_name": "OWEN BAILEY",
       "club": "DONCASTER",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "PHIL FODEN::MANCHESTER CITY",
       "name": "PHIL FODEN",
-      "player_name": "PHIL FODEN",
       "club": "MANCHESTER CITY",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "RAYAN CHERKI::MANCHESTER CITY",
       "name": "RAYAN CHERKI",
-      "player_name": "RAYAN CHERKI",
       "club": "MANCHESTER CITY",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "RYAN GRAYDON::SALFORD",
       "name": "RYAN GRAYDON",
-      "player_name": "RYAN GRAYDON",
       "club": "SALFORD",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     },
     {
       "key": "ZIAN FLEMMING::IPSWICH",
       "name": "ZIAN FLEMMING",
-      "player_name": "ZIAN FLEMMING",
       "club": "IPSWICH",
-      "position": "Midfielder",
-      "is_goalkeeper": false
+      "position": "MID"
     }
   ]
 }

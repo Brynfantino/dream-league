@@ -1,39 +1,35 @@
 # Schema vs spreadsheet / PRD
 
-Game rules: **Dream-League_PRD.md** (Project store). Do not invent rules.
+Game rules: **Dream-League_PRD.md**. Do not invent rules.
 
-Aligned to foundation migrations + `20261125192000_team_managers.sql`.
+Aligned to foundation PRD schema (`goalkeeper_clubs`, `players` DEF/MID/FWD, `team_managers` in core).
 
 ## Locked import scope (Bryn 2026-11-25)
 
 | Decision | Seed behaviour |
 |----------|----------------|
-| Skip I ROBOT | Excluded from teams / memberships |
-| BFL Challenge out of scope | Not seeded (extract kept for reference only) |
-| Bet Settlement out of scope | Not seeded |
-| Cup starts February; no current data | No `cup_ties` rows |
-| One login per person; multi-manager teams | `team_managers` rows per person; `teams.manager_id` left null |
+| Skip I ROBOT | Excluded |
+| BFL / Bet Settlement out of scope | Not seeded |
+| Cup starts February | No `cup_ties` |
+| One login per person; multi-manager teams | `team_managers` only (no `teams.manager_id`) |
 
 ## Mapping
 
-| Spreadsheet / PRD concept | Schema | Import behaviour |
-|---------------------------|--------|------------------|
-| Season 2026/27 | `seasons` | Seeded active |
-| 14 teams (PRD §2) | `teams` | 14 rows; I ROBOT skipped |
-| One or more managers per team (PRD §2) | `team_managers` | Split sheet names on `,` / `&`; `profile_id` null until signup |
-| Squad 1+2+3+5 (PRD §3) | `squad_memberships` | Active squads are 11; history includes sold |
-| GK = club (PRD §4) | `players.position = goalkeeper` | Club identity; no personal GK name in sheet |
-| Outfield DEF/MID/FWD (PRD §5) | `outfield` only in enum | Finer position lost in DB (still in JSON extract) |
-| Auction cost / $100 budget (PRD §9) | none on membership | Costs kept in JSON only; not seeded |
-| Transfers history | membership dates | Proposal table `transfers` unused for history |
-| League GF/GA/points (PRD §7–8) | derived from `goal_events` | Default: no events (cumulatives only in sheet). Optional `--synthetic-goals` is **not** PRD — ask Bryn |
-| Cup (PRD §11) | `cup_ties` | Empty until February fixtures |
-| Honours | `honours` | Not in this workbook |
+| Spreadsheet / PRD | Schema | Import |
+|-------------------|--------|--------|
+| Season | `seasons` | Seeded |
+| 14 teams | `teams` | 14 rows |
+| Managers | `team_managers` | 22 display_name rows; profile_id null |
+| Outfield DEF/MID/FWD | `players.position` | DEF / MID / FWD (not collapsed) |
+| GK club | `goalkeeper_clubs` | Club name asset |
+| GK ownership | `goalkeeper_memberships` | Stints incl. sold |
+| Outfield ownership | `squad_memberships` | Stints incl. sold |
+| Auction cost | none | JSON only |
+| Goals | `goal_events` | Empty unless Bryn confirms `--synthetic-goals` |
+| Cup / BFL / bets | — | Not imported |
 
-## Ask Bryn (do not assume)
+## Ask Bryn
 
-- Full names for first-name-only / nickname / initials managers (see MANAGER_LINK.md)
-- Whether to run `--synthetic-goals` or leave table empty until commissioner goal entry
-- Stats column I meaning
-- Middlesbrothers all-£1 auction costs intentional?
-- Auth: magic link vs password; email list for invites
+- Full names for first-name-only managers (`MANAGER_LINK.md`)
+- `--synthetic-goals` vs empty until commissioner entry
+- Stats column I; Middlesbrothers $1 costs; auth/emails
