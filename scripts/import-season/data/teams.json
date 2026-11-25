@@ -1,0 +1,202 @@
+{
+  "season": "2026/2027",
+  "teams": [
+    {
+      "team": "DURHAM DYNAMO",
+      "manager": "BRYN COOMBE",
+      "auction_spend_reported": 94.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "ROBS ROVERS",
+      "manager": "ROB PICKETT",
+      "auction_spend_reported": 100.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "CF CALA ALCAUFAR",
+      "manager": "JOE HARPER",
+      "auction_spend_reported": 68.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "SHEFSPANYOL",
+      "manager": "SEAN HELSBY",
+      "auction_spend_reported": 100.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "SPORTING HOOF",
+      "manager": "MIKE ASTLEY",
+      "auction_spend_reported": 86.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "RASH IN THE ATTIC",
+      "manager": "MARK WHITTLE",
+      "auction_spend_reported": 100.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "ERIMUS",
+      "manager": "RICHARD KILPATRICK",
+      "auction_spend_reported": 95.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "WEETABIX 2 LONG FC",
+      "manager": "ADAM, NATHAN & DYLAN",
+      "auction_spend_reported": 90.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "WENGER BOYS",
+      "manager": "SEB BATE",
+      "auction_spend_reported": 100.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "LE HARPRE",
+      "manager": "SAM HARPER",
+      "auction_spend_reported": 96.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "MIDDLESBROTHERS",
+      "manager": "TAMIKO & MAX",
+      "auction_spend_reported": 11.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "manager": "CHRIS MCD, JIMBO & ADG",
+      "auction_spend_reported": 88.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "DUGGANS ARMANDILLOS",
+      "manager": "JAMIE & MIKE",
+      "auction_spend_reported": 83.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "ATLETICO DEC",
+      "manager": "CHARLIE, ELIO & DAVE",
+      "auction_spend_reported": 84.0,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "I ROBOT",
+      "manager": "WILL SMITH",
+      "auction_spend_reported": 0.0,
+      "in_league_table": false,
+      "placeholder": true
+    }
+  ],
+  "managers": [
+    {
+      "name": "BRYN COOMBE",
+      "teams": [
+        "DURHAM DYNAMO"
+      ]
+    },
+    {
+      "name": "ROB PICKETT",
+      "teams": [
+        "ROBS ROVERS"
+      ]
+    },
+    {
+      "name": "JOE HARPER",
+      "teams": [
+        "CF CALA ALCAUFAR"
+      ]
+    },
+    {
+      "name": "SEAN HELSBY",
+      "teams": [
+        "SHEFSPANYOL"
+      ]
+    },
+    {
+      "name": "MIKE ASTLEY",
+      "teams": [
+        "SPORTING HOOF"
+      ]
+    },
+    {
+      "name": "MARK WHITTLE",
+      "teams": [
+        "RASH IN THE ATTIC"
+      ]
+    },
+    {
+      "name": "RICHARD KILPATRICK",
+      "teams": [
+        "ERIMUS"
+      ]
+    },
+    {
+      "name": "ADAM, NATHAN & DYLAN",
+      "teams": [
+        "WEETABIX 2 LONG FC"
+      ]
+    },
+    {
+      "name": "SEB BATE",
+      "teams": [
+        "WENGER BOYS"
+      ]
+    },
+    {
+      "name": "SAM HARPER",
+      "teams": [
+        "LE HARPRE"
+      ]
+    },
+    {
+      "name": "TAMIKO & MAX",
+      "teams": [
+        "MIDDLESBROTHERS"
+      ]
+    },
+    {
+      "name": "CHRIS MCD, JIMBO & ADG",
+      "teams": [
+        "NEWELL'S OLD TIKI TAKA"
+      ]
+    },
+    {
+      "name": "JAMIE & MIKE",
+      "teams": [
+        "DUGGANS ARMANDILLOS"
+      ]
+    },
+    {
+      "name": "CHARLIE, ELIO & DAVE",
+      "teams": [
+        "ATLETICO DEC"
+      ]
+    },
+    {
+      "name": "WILL SMITH",
+      "teams": [
+        "I ROBOT"
+      ]
+    }
+  ]
+}
