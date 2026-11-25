@@ -1,0 +1,398 @@
+{
+  "by_league": {
+    "Premier League": {
+      "clubs": [
+        {
+          "club": "Arsenal",
+          "player_count": 8
+        },
+        {
+          "club": "Aston Villa",
+          "player_count": 3
+        },
+        {
+          "club": "Bournemouth",
+          "player_count": 5
+        },
+        {
+          "club": "Brentford",
+          "player_count": 4
+        },
+        {
+          "club": "Brighton",
+          "player_count": 5
+        },
+        {
+          "club": "Coventry",
+          "player_count": 1
+        },
+        {
+          "club": "Chelsea",
+          "player_count": 5
+        },
+        {
+          "club": "Crystal Palace",
+          "player_count": 4
+        },
+        {
+          "club": "Everton",
+          "player_count": 3
+        },
+        {
+          "club": "Fulham",
+          "player_count": 3
+        },
+        {
+          "club": "Leeds",
+          "player_count": 2
+        },
+        {
+          "club": "Liverpool",
+          "player_count": 7
+        },
+        {
+          "club": "Manchester City",
+          "player_count": 10
+        },
+        {
+          "club": "Manchester United",
+          "player_count": 8
+        },
+        {
+          "club": "Newcastle",
+          "player_count": 3
+        },
+        {
+          "club": "Nottingham Forest",
+          "player_count": 4
+        },
+        {
+          "club": "Sunderland",
+          "player_count": 3
+        },
+        {
+          "club": "Tottenham",
+          "player_count": 4
+        },
+        {
+          "club": "Hull",
+          "player_count": 1
+        },
+        {
+          "club": "Ipswich",
+          "player_count": 2
+        }
+      ],
+      "total": 85
+    },
+    "Championship": {
+      "clubs": [
+        {
+          "club": "Birmingham",
+          "player_count": 3
+        },
+        {
+          "club": "Blackburn",
+          "player_count": 1
+        },
+        {
+          "club": "Bristol City",
+          "player_count": 2
+        },
+        {
+          "club": "Charlton",
+          "player_count": 0
+        },
+        {
+          "club": "Burnley",
+          "player_count": 0
+        },
+        {
+          "club": "Derby",
+          "player_count": 2
+        },
+        {
+          "club": "Bolton",
+          "player_count": 1
+        },
+        {
+          "club": "Cardiff",
+          "player_count": 2
+        },
+        {
+          "club": "Lincoln",
+          "player_count": 0
+        },
+        {
+          "club": "Middlesbrough",
+          "player_count": 2
+        },
+        {
+          "club": "Millwall",
+          "player_count": 1
+        },
+        {
+          "club": "Norwich",
+          "player_count": 2
+        },
+        {
+          "club": "West Ham",
+          "player_count": 6
+        },
+        {
+          "club": "Portsmouth",
+          "player_count": 1
+        },
+        {
+          "club": "Preston",
+          "player_count": 0
+        },
+        {
+          "club": "QPR",
+          "player_count": 2
+        },
+        {
+          "club": "Sheffield United",
+          "player_count": 2
+        },
+        {
+          "club": "Wolverhampton",
+          "player_count": 4
+        },
+        {
+          "club": "Southampton",
+          "player_count": 5
+        },
+        {
+          "club": "Stoke",
+          "player_count": 2
+        },
+        {
+          "club": "Swansea",
+          "player_count": 3
+        },
+        {
+          "club": "Watford",
+          "player_count": 0
+        },
+        {
+          "club": "West Brom",
+          "player_count": 2
+        },
+        {
+          "club": "Wrexham",
+          "player_count": 2
+        }
+      ],
+      "total": 45
+    },
+    "League One": {
+      "clubs": [
+        {
+          "club": "Barnsley",
+          "player_count": 0
+        },
+        {
+          "club": "Blackpool",
+          "player_count": 1
+        },
+        {
+          "club": "Bromley",
+          "player_count": 2
+        },
+        {
+          "club": "Bradford",
+          "player_count": 2
+        },
+        {
+          "club": "Burton",
+          "player_count": 0
+        },
+        {
+          "club": "Cambridge",
+          "player_count": 0
+        },
+        {
+          "club": "Doncaster",
+          "player_count": 3
+        },
+        {
+          "club": "Exeter",
+          "player_count": 0
+        },
+        {
+          "club": "Huddersfield",
+          "player_count": 4
+        },
+        {
+          "club": "Leyton Orient",
+          "player_count": 3
+        },
+        {
+          "club": "Leicester",
+          "player_count": 6
+        },
+        {
+          "club": "Luton",
+          "player_count": 2
+        },
+        {
+          "club": "Mansfield",
+          "player_count": 0
+        },
+        {
+          "club": "Oxford",
+          "player_count": 0
+        },
+        {
+          "club": "Peterborough",
+          "player_count": 1
+        },
+        {
+          "club": "Plymouth",
+          "player_count": 4
+        },
+        {
+          "club": "Milton Keynes",
+          "player_count": 4
+        },
+        {
+          "club": "Reading",
+          "player_count": 3
+        },
+        {
+          "club": "Sheffield Wednesday",
+          "player_count": 5
+        },
+        {
+          "club": "Stevenage",
+          "player_count": 0
+        },
+        {
+          "club": "Stockport",
+          "player_count": 3
+        },
+        {
+          "club": "Wigan",
+          "player_count": 0
+        },
+        {
+          "club": "Wimbledon",
+          "player_count": 0
+        },
+        {
+          "club": "Wycombe",
+          "player_count": 1
+        }
+      ],
+      "total": 44
+    },
+    "League Two": {
+      "clubs": [
+        {
+          "club": "Accrington",
+          "player_count": 0
+        },
+        {
+          "club": "Barnet",
+          "player_count": 4
+        },
+        {
+          "club": "Bristol Rovers",
+          "player_count": 0
+        },
+        {
+          "club": "Cheltenham",
+          "player_count": 1
+        },
+        {
+          "club": "Chesterfield",
+          "player_count": 1
+        },
+        {
+          "club": "Colchester",
+          "player_count": 1
+        },
+        {
+          "club": "Crawley",
+          "player_count": 0
+        },
+        {
+          "club": "Crewe",
+          "player_count": 1
+        },
+        {
+          "club": "Fleetwood",
+          "player_count": 0
+        },
+        {
+          "club": "Gillingham",
+          "player_count": 1
+        },
+        {
+          "club": "Grimsby",
+          "player_count": 4
+        },
+        {
+          "club": "Northampton",
+          "player_count": 0
+        },
+        {
+          "club": "Newport",
+          "player_count": 1
+        },
+        {
+          "club": "Notts County",
+          "player_count": 1
+        },
+        {
+          "club": "Oldham",
+          "player_count": 2
+        },
+        {
+          "club": "Port Vale",
+          "player_count": 1
+        },
+        {
+          "club": "Rochdale",
+          "player_count": 1
+        },
+        {
+          "club": "Rotherham",
+          "player_count": 2
+        },
+        {
+          "club": "Salford",
+          "player_count": 5
+        },
+        {
+          "club": "Shrewsbury",
+          "player_count": 0
+        },
+        {
+          "club": "Swindon",
+          "player_count": 1
+        },
+        {
+          "club": "Tranmere",
+          "player_count": 0
+        },
+        {
+          "club": "Walsall",
+          "player_count": 1
+        },
+        {
+          "club": "York",
+          "player_count": 3
+        }
+      ],
+      "total": 31
+    }
+  },
+  "percentages": {
+    "Premier League": 0.4146341463414634,
+    "Championship": 0.21951219512195122,
+    "League One": 0.2146341463414634,
+    "League Two": 0.15121951219512195
+  }
+}

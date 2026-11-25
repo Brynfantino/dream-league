@@ -1,0 +1,139 @@
+{
+  "season": "2026/2027",
+  "rule": "One login per person; a team may have multiple managers (PRD + Bryn 2026-11-25).",
+  "count": 22,
+  "managers": [
+    {
+      "display_name": "BRYN COOMBE",
+      "teams": [
+        "DURHAM DYNAMO"
+      ]
+    },
+    {
+      "display_name": "ROB PICKETT",
+      "teams": [
+        "ROBS ROVERS"
+      ]
+    },
+    {
+      "display_name": "JOE HARPER",
+      "teams": [
+        "CF CALA ALCAUFAR"
+      ]
+    },
+    {
+      "display_name": "SEAN HELSBY",
+      "teams": [
+        "SHEFSPANYOL"
+      ]
+    },
+    {
+      "display_name": "MIKE ASTLEY",
+      "teams": [
+        "SPORTING HOOF"
+      ]
+    },
+    {
+      "display_name": "MARK WHITTLE",
+      "teams": [
+        "RASH IN THE ATTIC"
+      ]
+    },
+    {
+      "display_name": "RICHARD KILPATRICK",
+      "teams": [
+        "ERIMUS"
+      ]
+    },
+    {
+      "display_name": "ADAM",
+      "teams": [
+        "WEETABIX 2 LONG FC"
+      ]
+    },
+    {
+      "display_name": "NATHAN",
+      "teams": [
+        "WEETABIX 2 LONG FC"
+      ]
+    },
+    {
+      "display_name": "DYLAN",
+      "teams": [
+        "WEETABIX 2 LONG FC"
+      ]
+    },
+    {
+      "display_name": "SEB BATE",
+      "teams": [
+        "WENGER BOYS"
+      ]
+    },
+    {
+      "display_name": "SAM HARPER",
+      "teams": [
+        "LE HARPRE"
+      ]
+    },
+    {
+      "display_name": "TAMIKO",
+      "teams": [
+        "MIDDLESBROTHERS"
+      ]
+    },
+    {
+      "display_name": "MAX",
+      "teams": [
+        "MIDDLESBROTHERS"
+      ]
+    },
+    {
+      "display_name": "CHRIS MCD",
+      "teams": [
+        "NEWELL'S OLD TIKI TAKA"
+      ]
+    },
+    {
+      "display_name": "JIMBO",
+      "teams": [
+        "NEWELL'S OLD TIKI TAKA"
+      ]
+    },
+    {
+      "display_name": "ADG",
+      "teams": [
+        "NEWELL'S OLD TIKI TAKA"
+      ]
+    },
+    {
+      "display_name": "JAMIE",
+      "teams": [
+        "DUGGANS ARMANDILLOS"
+      ]
+    },
+    {
+      "display_name": "MIKE",
+      "teams": [
+        "DUGGANS ARMANDILLOS"
+      ]
+    },
+    {
+      "display_name": "CHARLIE",
+      "teams": [
+        "ATLETICO DEC"
+      ]
+    },
+    {
+      "display_name": "ELIO",
+      "teams": [
+        "ATLETICO DEC"
+      ]
+    },
+    {
+      "display_name": "DAVE",
+      "teams": [
+        "ATLETICO DEC"
+      ]
+    }
+  ]
+}

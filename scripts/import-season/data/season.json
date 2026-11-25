@@ -1,0 +1,25 @@
+{
+  "name": "2026/2027",
+  "label": "Dream League 2026/27",
+  "source_file": "docs/data/DreamLeague26-27.xlsx",
+  "team_count_in_table": 14,
+  "team_blocks_in_stats": 15,
+  "placeholder_teams": [
+    "I ROBOT"
+  ],
+  "active_squad_shape": "1 GK + 2 DEF + 3 MID + 5 FWD = 11",
+  "scoring": {
+    "outfield_goal": "+1 GF for owning team",
+    "gk_club_conceded": "+1 GA for owning team",
+    "points": "GF - GA",
+    "tie_breaker": "GF"
+  },
+  "verification": {
+    "all_table_rows_match_summed_membership_stats": true
+  },
+  "schema_note": "PRD schema: goalkeeper_clubs + players DEF/MID/FWD; team_managers; no teams.manager_id",
+  "outfield_player_count": 184,
+  "goalkeeper_club_count": 21,
+  "outfield_membership_count": 190,
+  "goalkeeper_membership_count": 22
+}

@@ -1,0 +1,91 @@
+{
+  "season": "2026/2027",
+  "note": "Club-based goalkeeper assets (PRD §4/§16). Not players.",
+  "count": 21,
+  "clubs": [
+    {
+      "name": "ARSENAL",
+      "key": "GK::ARSENAL"
+    },
+    {
+      "name": "BARNET",
+      "key": "GK::BARNET"
+    },
+    {
+      "name": "BRADFORD",
+      "key": "GK::BRADFORD"
+    },
+    {
+      "name": "BRENTFORD",
+      "key": "GK::BRENTFORD"
+    },
+    {
+      "name": "BRIGHTON",
+      "key": "GK::BRIGHTON"
+    },
+    {
+      "name": "CHELSEA",
+      "key": "GK::CHELSEA"
+    },
+    {
+      "name": "CREWE",
+      "key": "GK::CREWE"
+    },
+    {
+      "name": "EVERTON",
+      "key": "GK::EVERTON"
+    },
+    {
+      "name": "FULHAM",
+      "key": "GK::FULHAM"
+    },
+    {
+      "name": "HUDDERSFIELD",
+      "key": "GK::HUDDERSFIELD"
+    },
+    {
+      "name": "LEEDS",
+      "key": "GK::LEEDS"
+    },
+    {
+      "name": "LEICESTER",
+      "key": "GK::LEICESTER"
+    },
+    {
+      "name": "MANCHESTER CITY",
+      "key": "GK::MANCHESTER CITY"
+    },
+    {
+      "name": "MANCHESTER UNITED",
+      "key": "GK::MANCHESTER UNITED"
+    },
+    {
+      "name": "MIDDLESBROUGH",
+      "key": "GK::MIDDLESBROUGH"
+    },
+    {
+      "name": "NOTTINGHAM FOREST",
+      "key": "GK::NOTTINGHAM FOREST"
+    },
+    {
+      "name": "SHEFFIELD WEDNESDAY",
+      "key": "GK::SHEFFIELD WEDNESDAY"
+    },
+    {
+      "name": "STOKE",
+      "key": "GK::STOKE"
+    },
+    {
+      "name": "SWANSEA",
+      "key": "GK::SWANSEA"
+    },
+    {
+      "name": "TOTTENHAM",
+      "key": "GK::TOTTENHAM"
+    },
+    {
+      "name": "WEST HAM",
+      "key": "GK::WEST HAM"
+    }
+  ]
+}

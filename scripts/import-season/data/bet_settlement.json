@@ -1,0 +1,211 @@
+{
+  "season": "2026/2027",
+  "in_scope_recommendation": "out_of_scope_for_v1_pending_bryn",
+  "columns": [
+    "Buy-In",
+    "BFL Buy-In",
+    "League",
+    "Cup",
+    "Community Shield",
+    "BFL Cup Winners",
+    "Top Scandi",
+    "Top Scorer over £30",
+    "Top Scoring £1",
+    "Fewest Conceded",
+    "Top Scoring Most Expensive",
+    "Top Score Midfield H2H",
+    "Top Score Midfield H2H",
+    "Middlesdbrothers £25 players over +19.5",
+    "H2Hs",
+    "Jul Birthday",
+    "Total"
+  ],
+  "rows": [
+    {
+      "manager": "CHRIS MCD, JIMBO & ADG",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "League": 170,
+        "Cup": 60,
+        "Community Shield": 10,
+        "Top Scorer over £30": 10,
+        "Top Scoring £1": -5,
+        "H2Hs": 5,
+        "Jul Birthday": 60
+      },
+      "total": 280,
+      "status": "Done"
+    },
+    {
+      "manager": "MIKE ASTLEY",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "League": 40,
+        "Cup": 200,
+        "Top Scoring £1": -5,
+        "H2Hs": 10,
+        "Jul Birthday": -5
+      },
+      "total": 210,
+      "status": "Done"
+    },
+    {
+      "manager": "ROB PICKETT",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "League": 10,
+        "Top Scoring £1": 45,
+        "Fewest Conceded": -5,
+        "Jul Birthday": -5
+      },
+      "total": 15,
+      "status": null
+    },
+    {
+      "manager": "MARK WHITTLE",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "Top Scorer over £30": -5,
+        "Top Scoring £1": -5,
+        "Fewest Conceded": -5,
+        "Top Scoring Most Expensive": 15,
+        "Top Score Midfield H2H": 50,
+        "Jul Birthday": -5
+      },
+      "total": 15,
+      "status": null
+    },
+    {
+      "manager": "BRYN COOMBE",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "Top Scoring £1": -5,
+        "Fewest Conceded": 25,
+        "Top Scoring Most Expensive": -5,
+        "Top Score Midfield H2H": -5,
+        "H2Hs": 10,
+        "Jul Birthday": -5
+      },
+      "total": -65,
+      "status": "Done"
+    },
+    {
+      "manager": "SEAN HELSBY",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "BFL Cup Winners": 5,
+        "Top Scoring £1": -5,
+        "H2Hs": -10,
+        "Jul Birthday": -5
+      },
+      "total": -45,
+      "status": "Done"
+    },
+    {
+      "manager": "SAM HARPER",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "Cup": 60,
+        "Community Shield": -10,
+        "Fewest Conceded": -5,
+        "Top Score Midfield H2H": 5,
+        "H2Hs": -10,
+        "Jul Birthday": -5
+      },
+      "total": 5,
+      "status": "Done"
+    },
+    {
+      "manager": "JOE HARPER",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "Jul Birthday": -5
+      },
+      "total": -35,
+      "status": "Done"
+    },
+    {
+      "manager": "SEB BATE",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "BFL Cup Winners": -5,
+        "Top Scandi": 5,
+        "Top Scoring £1": -5,
+        "Middlesdbrothers £25 players over +19.5": -5,
+        "Jul Birthday": -5
+      },
+      "total": -45,
+      "status": "Done"
+    },
+    {
+      "manager": "CHARLIE, ELIO & DAVE",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "Top Scoring £1": -5,
+        "Fewest Conceded": -5,
+        "Top Scoring Most Expensive": -5,
+        "Middlesdbrothers £25 players over +19.5": 5,
+        "H2Hs": 15,
+        "Jul Birthday": -5
+      },
+      "total": -30,
+      "status": null
+    },
+    {
+      "manager": "RICHARD KILPATRICK",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "Top Scandi": -5,
+        "Top Scorer over £30": -5,
+        "Top Scoring £1": -5,
+        "Fewest Conceded": -5,
+        "Top Scoring Most Expensive": -5,
+        "Jul Birthday": -5
+      },
+      "total": -60,
+      "status": "Done"
+    },
+    {
+      "manager": "TAMIKO & MAX",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "Top Scoring £1": -5,
+        "H2Hs": -20,
+        "Jul Birthday": -5
+      },
+      "total": -60,
+      "status": null
+    },
+    {
+      "manager": "JAMIE & MIKE",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10,
+        "Jul Birthday": -5
+      },
+      "total": -35,
+      "status": "Done"
+    },
+    {
+      "manager": "ADAM, NATH & DYLAN",
+      "line_items": {
+        "Buy-In": -20,
+        "BFL Buy-In": -10
+      },
+      "total": -30,
+      "status": null
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "competition": "Dream League Cup 2027",
+  "season": "2026/2027",
+  "status": "not_started_or_unfilled",
+  "scheduled_windows": [
+    {
+      "label": "1st",
+      "dates": "31/01 - 02/01"
+    },
+    {
+      "label": "2nd",
+      "dates": "21/02 - 22/02"
+    },
+    {
+      "label": "Semi",
+      "dates": "14/03 - 15/03"
+    },
+    {
+      "label": "Final",
+      "dates": "11/04 - 12/04"
+    }
+  ],
+  "rounds": [
+    {
+      "round": "1st Round Qualifier",
+      "games": [
+        {
+          "slot": "Game 1",
+          "home": null,
+          "away": null,
+          "score": null
+        },
+        {
+          "slot": "Game 2",
+          "home": null,
+          "away": null,
+          "score": null
+        },
+        {
+          "slot": "Game 3",
+          "home": null,
+          "away": null,
+          "score": null
+        },
+        {
+          "slot": "Game 4",
+          "home": null,
+          "away": null,
+          "score": null
+        },
+        {
+          "slot": "Game 5",
+          "home": null,
+          "away": null,
+          "score": null
+        },
+        {
+          "slot": "Game 6",
+          "home": null,
+          "away": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "round": "1st Round Replays",
+      "games": [
+        {
+          "slot": "Game 7",
+          "home": null,
+          "away": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "round": "Quarter Finals",
+      "games": [
+        {
+          "slot": "Game 8",
+          "home": null,
+          "away": null,
+          "score": null
+        },
+        {
+          "slot": "Game 9",
+          "home": null,
+          "away": null,
+          "score": null
+        },
+        {
+          "slot": "Game 10",
+          "home": null,
+          "away": null,
+          "score": null
+        },
+        {
+          "slot": "Game 11",
+          "home": null,
+          "away": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "round": "Qtr Final Replays",
+      "games": [
+        {
+          "slot": "Game 12",
+          "home": null,
+          "away": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "round": "Semi-Finals",
+      "games": [
+        {
+          "slot": "Game 13",
+          "home": null,
+          "away": null,
+          "score": null
+        },
+        {
+          "slot": "Game 14",
+          "home": null,
+          "away": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "round": "Semi Final Replay",
+      "games": [
+        {
+          "slot": "Game 15",
+          "home": null,
+          "away": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "round": "Final",
+      "games": [
+        {
+          "slot": "Game 16",
+          "home": null,
+          "away": null,
+          "score": null
+        }
+      ]
+    },
+    {
+      "round": "Winner",
+      "games": []
+    }
+  ],
+  "byes_label_present": true,
+  "notes": "Sheet has round labels and game slots but no team names or scores filled in."
+}

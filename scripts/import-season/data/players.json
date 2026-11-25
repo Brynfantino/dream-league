@@ -1,0 +1,1111 @@
+{
+  "season": "2026/2027",
+  "note": "Outfield only (PRD §3/§5). Positions DEF|MID|FWD. GKs are goalkeeper_clubs.",
+  "count": 184,
+  "players": [
+    {
+      "key": "ADAM SENIOR::BARNET",
+      "name": "ADAM SENIOR",
+      "club": "BARNET",
+      "position": "DEF"
+    },
+    {
+      "key": "ADEBOLA OLUWO::SALFORD",
+      "name": "ADEBOLA OLUWO",
+      "club": "SALFORD",
+      "position": "DEF"
+    },
+    {
+      "key": "BRENDAN WIREDU::SALFORD",
+      "name": "BRENDAN WIREDU",
+      "club": "SALFORD",
+      "position": "DEF"
+    },
+    {
+      "key": "CRISTIAN ROMERO::ATLETICO MADRID",
+      "name": "CRISTIAN ROMERO",
+      "club": "ATLETICO MADRID",
+      "position": "DEF"
+    },
+    {
+      "key": "DAN BURN::NEWCASTLE",
+      "name": "DAN BURN",
+      "club": "NEWCASTLE",
+      "position": "DEF"
+    },
+    {
+      "key": "DANIEL BALLARD::SUNDERLAND",
+      "name": "DANIEL BALLARD",
+      "club": "SUNDERLAND",
+      "position": "DEF"
+    },
+    {
+      "key": "DANIEL MUNOZ::NOTTINGHAM FOREST",
+      "name": "DANIEL MUNOZ",
+      "club": "NOTTINGHAM FOREST",
+      "position": "DEF"
+    },
+    {
+      "key": "GABRIEL::ARSENAL",
+      "name": "GABRIEL",
+      "club": "ARSENAL",
+      "position": "DEF"
+    },
+    {
+      "key": "GUS SCOTT-MORRISS::OLDHAM",
+      "name": "GUS SCOTT-MORRISS",
+      "club": "OLDHAM",
+      "position": "DEF"
+    },
+    {
+      "key": "HARRISON BURROWS::SHEFFIELD UNITED",
+      "name": "HARRISON BURROWS",
+      "club": "SHEFFIELD UNITED",
+      "position": "DEF"
+    },
+    {
+      "key": "HARRY MAGUIRE::MANCHESTER UNITED",
+      "name": "HARRY MAGUIRE",
+      "club": "MANCHESTER UNITED",
+      "position": "DEF"
+    },
+    {
+      "key": "HARRY SOUTTAR::LEICESTER",
+      "name": "HARRY SOUTTAR",
+      "club": "LEICESTER",
+      "position": "DEF"
+    },
+    {
+      "key": "JAYDEN SWEENEY::GRIMSBY",
+      "name": "JAYDEN SWEENEY",
+      "club": "GRIMSBY",
+      "position": "DEF"
+    },
+    {
+      "key": "JOSKO GVARDIOL::MANCHESTER CITY",
+      "name": "JOSKO GVARDIOL",
+      "club": "MANCHESTER CITY",
+      "position": "DEF"
+    },
+    {
+      "key": "JURRIEN TIMBER::ARSENAL",
+      "name": "JURRIEN TIMBER",
+      "club": "ARSENAL",
+      "position": "DEF"
+    },
+    {
+      "key": "KEANE LEWIS-POTTER::BRENTFORD",
+      "name": "KEANE LEWIS-POTTER",
+      "club": "BRENTFORD",
+      "position": "DEF"
+    },
+    {
+      "key": "KONSTANTINOS MAVROPANOS::WEST HAM",
+      "name": "KONSTANTINOS MAVROPANOS",
+      "club": "WEST HAM",
+      "position": "DEF"
+    },
+    {
+      "key": "MALACHI FAGAN-WALCOTT::HEART OF MIDLOTHIAN",
+      "name": "MALACHI FAGAN-WALCOTT",
+      "club": "HEART OF MIDLOTHIAN",
+      "position": "DEF"
+    },
+    {
+      "key": "MARC GUEHI::MANCHESTER CITY",
+      "name": "MARC GUEHI",
+      "club": "MANCHESTER CITY",
+      "position": "DEF"
+    },
+    {
+      "key": "MARVIN EKPITETA::MILTON KEYNES",
+      "name": "MARVIN EKPITETA",
+      "club": "MILTON KEYNES",
+      "position": "DEF"
+    },
+    {
+      "key": "MICKY VAN DE VEN::TOTTENHAM",
+      "name": "MICKY VAN DE VEN",
+      "club": "TOTTENHAM",
+      "position": "DEF"
+    },
+    {
+      "key": "NICO O'REILLY::MANCHESTER CITY",
+      "name": "NICO O'REILLY",
+      "club": "MANCHESTER CITY",
+      "position": "DEF"
+    },
+    {
+      "key": "OMAR SOWUNMI::BROMLEY",
+      "name": "OMAR SOWUNMI",
+      "club": "BROMLEY",
+      "position": "DEF"
+    },
+    {
+      "key": "PATRICK DORGU::MANCHESTER UNITED",
+      "name": "PATRICK DORGU",
+      "club": "MANCHESTER UNITED",
+      "position": "DEF"
+    },
+    {
+      "key": "PEDRO PORRO::TOTTENHAM",
+      "name": "PEDRO PORRO",
+      "club": "TOTTENHAM",
+      "position": "DEF"
+    },
+    {
+      "key": "RYAN MANNING::SOUTHAMPTON",
+      "name": "RYAN MANNING",
+      "club": "SOUTHAMPTON",
+      "position": "DEF"
+    },
+    {
+      "key": "SANTIAGO BUENO::AMERICA",
+      "name": "SANTIAGO BUENO",
+      "club": "AMERICA",
+      "position": "DEF"
+    },
+    {
+      "key": "TAYLOR HARWOOD-BELLIS::ASTON VILLA",
+      "name": "TAYLOR HARWOOD-BELLIS",
+      "club": "ASTON VILLA",
+      "position": "DEF"
+    },
+    {
+      "key": "TERRY DEVLIN::PORTSMOUTH",
+      "name": "TERRY DEVLIN",
+      "club": "PORTSMOUTH",
+      "position": "DEF"
+    },
+    {
+      "key": "VIRGIL VAN DJIK::LIVERPOOL",
+      "name": "VIRGIL VAN DJIK",
+      "club": "LIVERPOOL",
+      "position": "DEF"
+    },
+    {
+      "key": "AARON DRINAN::SWINDON",
+      "name": "AARON DRINAN",
+      "club": "SWINDON",
+      "position": "FWD"
+    },
+    {
+      "key": "AARON PRESSLEY::WALSALL",
+      "name": "AARON PRESSLEY",
+      "club": "WALSALL",
+      "position": "FWD"
+    },
+    {
+      "key": "ADAM ARMSTRONG::WOLVERHAMPTON",
+      "name": "ADAM ARMSTRONG",
+      "club": "WOLVERHAMPTON",
+      "position": "FWD"
+    },
+    {
+      "key": "ADAMA SIDIBEH::STOCKPORT",
+      "name": "ADAMA SIDIBEH",
+      "club": "STOCKPORT",
+      "position": "FWD"
+    },
+    {
+      "key": "ALEKSANDER ISAK::LIVERPOOL",
+      "name": "ALEKSANDER ISAK",
+      "club": "LIVERPOOL",
+      "position": "FWD"
+    },
+    {
+      "key": "ALEX NEWBY::YORK",
+      "name": "ALEX NEWBY",
+      "club": "YORK",
+      "position": "FWD"
+    },
+    {
+      "key": "ALFIE MAY::DONCASTER",
+      "name": "ALFIE MAY",
+      "club": "DONCASTER",
+      "position": "FWD"
+    },
+    {
+      "key": "ANDRI GUDJOHNSEN::BLACKBURN",
+      "name": "ANDRI GUDJOHNSEN",
+      "club": "BLACKBURN",
+      "position": "FWD"
+    },
+    {
+      "key": "ANDY COOK::GRIMSBY",
+      "name": "ANDY COOK",
+      "club": "GRIMSBY",
+      "position": "FWD"
+    },
+    {
+      "key": "ARIBIM PEPPLE::PLYMOUTH",
+      "name": "ARIBIM PEPPLE",
+      "club": "PLYMOUTH",
+      "position": "FWD"
+    },
+    {
+      "key": "ASHLEY FLETCHER::HUDDERSFIELD",
+      "name": "ASHLEY FLETCHER",
+      "club": "HUDDERSFIELD",
+      "position": "FWD"
+    },
+    {
+      "key": "AUGUST PRISKE::BIRMINGHAM",
+      "name": "AUGUST PRISKE",
+      "club": "BIRMINGHAM",
+      "position": "FWD"
+    },
+    {
+      "key": "BENJAMIN SESKO::MANCHESTER UNITED",
+      "name": "BENJAMIN SESKO",
+      "club": "MANCHESTER UNITED",
+      "position": "FWD"
+    },
+    {
+      "key": "BRIAN BROBBEY::SUNDERLAND",
+      "name": "BRIAN BROBBEY",
+      "club": "SUNDERLAND",
+      "position": "FWD"
+    },
+    {
+      "key": "BRYAN MBEUMO::MANCHESTER UNITED",
+      "name": "BRYAN MBEUMO",
+      "club": "MANCHESTER UNITED",
+      "position": "FWD"
+    },
+    {
+      "key": "CALLUM WILSON::BRENTFORD",
+      "name": "CALLUM WILSON",
+      "club": "BRENTFORD",
+      "position": "FWD"
+    },
+    {
+      "key": "CARLTON MORRIS::DERBY",
+      "name": "CARLTON MORRIS",
+      "club": "DERBY",
+      "position": "FWD"
+    },
+    {
+      "key": "CHARLES VERNAM::GRIMSBY",
+      "name": "CHARLES VERNAM",
+      "club": "GRIMSBY",
+      "position": "FWD"
+    },
+    {
+      "key": "CODY GAKPO::LIVERPOOL",
+      "name": "CODY GAKPO",
+      "club": "LIVERPOOL",
+      "position": "FWD"
+    },
+    {
+      "key": "CONOR CHAPLIN::LEICESTER",
+      "name": "CONOR CHAPLIN",
+      "club": "LEICESTER",
+      "position": "FWD"
+    },
+    {
+      "key": "CYLE LARIN::SOUTHAMPTON",
+      "name": "CYLE LARIN",
+      "club": "SOUTHAMPTON",
+      "position": "FWD"
+    },
+    {
+      "key": "DANE SCARLETT::LEYTON ORIENT",
+      "name": "DANE SCARLETT",
+      "club": "LEYTON ORIENT",
+      "position": "FWD"
+    },
+    {
+      "key": "DANIEL KANU::NOTTS COUNTY",
+      "name": "DANIEL KANU",
+      "club": "NOTTS COUNTY",
+      "position": "FWD"
+    },
+    {
+      "key": "DANNY WELBECK::CHELSEA",
+      "name": "DANNY WELBECK",
+      "club": "CHELSEA",
+      "position": "FWD"
+    },
+    {
+      "key": "DAVIS KEILLOR DUNN::SHEFFIELD WEDNESDAY",
+      "name": "DAVIS KEILLOR DUNN",
+      "club": "SHEFFIELD WEDNESDAY",
+      "position": "FWD"
+    },
+    {
+      "key": "DERENSILI SANCHES FERNANDES::HUDDERSFIELD",
+      "name": "DERENSILI SANCHES FERNANDES",
+      "club": "HUDDERSFIELD",
+      "position": "FWD"
+    },
+    {
+      "key": "DOM BALLARD::BRISTOL CITY",
+      "name": "DOM BALLARD",
+      "club": "BRISTOL CITY",
+      "position": "FWD"
+    },
+    {
+      "key": "DOMINIC CALVERT-LEWIN::LEEDS",
+      "name": "DOMINIC CALVERT-LEWIN",
+      "club": "LEEDS",
+      "position": "FWD"
+    },
+    {
+      "key": "ELI JUNIOR KROUPI::BOURNEMOUTH",
+      "name": "ELI JUNIOR KROUPI",
+      "club": "BOURNEMOUTH",
+      "position": "FWD"
+    },
+    {
+      "key": "EMIL RIIS::LEICESTER",
+      "name": "EMIL RIIS",
+      "club": "LEICESTER",
+      "position": "FWD"
+    },
+    {
+      "key": "EMMANUEL DIESERUVWE::ROCHDALE",
+      "name": "EMMANUEL DIESERUVWE",
+      "club": "ROCHDALE",
+      "position": "FWD"
+    },
+    {
+      "key": "ERLING HAALAND::MANCHESTER CITY",
+      "name": "ERLING HAALAND",
+      "club": "MANCHESTER CITY",
+      "position": "FWD"
+    },
+    {
+      "key": "EVANILSON::BOURNEMOUTH",
+      "name": "EVANILSON",
+      "club": "BOURNEMOUTH",
+      "position": "FWD"
+    },
+    {
+      "key": "GEORGINIO RUTTER::BRIGHTON",
+      "name": "GEORGINIO RUTTER",
+      "club": "BRIGHTON",
+      "position": "FWD"
+    },
+    {
+      "key": "GONZALO GARCIA::FULHAM",
+      "name": "GONZALO GARCIA",
+      "club": "FULHAM",
+      "position": "FWD"
+    },
+    {
+      "key": "HAJI WRIGHT::COVENTRY",
+      "name": "HAJI WRIGHT",
+      "club": "COVENTRY",
+      "position": "FWD"
+    },
+    {
+      "key": "HARRY LEONARD::PETERBOROUGH",
+      "name": "HARRY LEONARD",
+      "club": "PETERBOROUGH",
+      "position": "FWD"
+    },
+    {
+      "key": "HUGO EKITIKE::LIVERPOOL",
+      "name": "HUGO EKITIKE",
+      "club": "LIVERPOOL",
+      "position": "FWD"
+    },
+    {
+      "key": "IGOR JESUS::NOTTINGHAM FOREST",
+      "name": "IGOR JESUS",
+      "club": "NOTTINGHAM FOREST",
+      "position": "FWD"
+    },
+    {
+      "key": "IGOR THIAGO::BRENTFORD",
+      "name": "IGOR THIAGO",
+      "club": "BRENTFORD",
+      "position": "FWD"
+    },
+    {
+      "key": "ISMAILA SARR::CRYSTAL PALACE",
+      "name": "ISMAILA SARR",
+      "club": "CRYSTAL PALACE",
+      "position": "FWD"
+    },
+    {
+      "key": "JACK MARRIOTT::READING",
+      "name": "JACK MARRIOTT",
+      "club": "READING",
+      "position": "FWD"
+    },
+    {
+      "key": "JACK MCGLYNN::STOKE",
+      "name": "JACK MCGLYNN",
+      "club": "STOKE",
+      "position": "FWD"
+    },
+    {
+      "key": "JAYDEN WAREHAM::WYCOMBE",
+      "name": "JAYDEN WAREHAM",
+      "club": "WYCOMBE",
+      "position": "FWD"
+    },
+    {
+      "key": "JAZE KABIA::LEYTON ORIENT",
+      "name": "JAZE KABIA",
+      "club": "LEYTON ORIENT",
+      "position": "FWD"
+    },
+    {
+      "key": "JEAN-PHILIPPE MATETA::CRYSTAL PALACE",
+      "name": "JEAN-PHILIPPE MATETA",
+      "club": "CRYSTAL PALACE",
+      "position": "FWD"
+    },
+    {
+      "key": "JERRY YATES::BLACKPOOL",
+      "name": "JERRY YATES",
+      "club": "BLACKPOOL",
+      "position": "FWD"
+    },
+    {
+      "key": "JIMMY-JAY MORGAN::WEST BROM",
+      "name": "JIMMY-JAY MORGAN",
+      "club": "WEST BROM",
+      "position": "FWD"
+    },
+    {
+      "key": "JOAO PEDRO::CHELSEA",
+      "name": "JOAO PEDRO",
+      "club": "CHELSEA",
+      "position": "FWD"
+    },
+    {
+      "key": "JOE TAYLOR::HUDDERSFIELD",
+      "name": "JOE TAYLOR",
+      "club": "HUDDERSFIELD",
+      "position": "FWD"
+    },
+    {
+      "key": "JOEL PIROE::WEST HAM",
+      "name": "JOEL PIROE",
+      "club": "WEST HAM",
+      "position": "FWD"
+    },
+    {
+      "key": "JORGEN STRAND LARSEN::CRYSTAL PALACE",
+      "name": "JORGEN STRAND LARSEN",
+      "club": "CRYSTAL PALACE",
+      "position": "FWD"
+    },
+    {
+      "key": "JOSH COBURN::MILLWALL",
+      "name": "JOSH COBURN",
+      "club": "MILLWALL",
+      "position": "FWD"
+    },
+    {
+      "key": "JOSH STONES::YORK",
+      "name": "JOSH STONES",
+      "club": "YORK",
+      "position": "FWD"
+    },
+    {
+      "key": "JOVON MAKAMA::NORWICH",
+      "name": "JOVON MAKAMA",
+      "club": "NORWICH",
+      "position": "FWD"
+    },
+    {
+      "key": "JULIAN ALVAREZ::ATLETICO MADRID",
+      "name": "JULIAN ALVAREZ",
+      "club": "ATLETICO MADRID",
+      "position": "FWD"
+    },
+    {
+      "key": "KABONGO TSHIMANGA::BARNET",
+      "name": "KABONGO TSHIMANGA",
+      "club": "BARNET",
+      "position": "FWD"
+    },
+    {
+      "key": "KAI HAVERTZ::ARSENAL",
+      "name": "KAI HAVERTZ",
+      "club": "ARSENAL",
+      "position": "FWD"
+    },
+    {
+      "key": "KYLE WOOTTON::STOCKPORT",
+      "name": "KYLE WOOTTON",
+      "club": "STOCKPORT",
+      "position": "FWD"
+    },
+    {
+      "key": "LEE BONIS::CHESTERFIELD",
+      "name": "LEE BONIS",
+      "club": "CHESTERFIELD",
+      "position": "FWD"
+    },
+    {
+      "key": "LORENT TOLAJ::BRISTOL CITY",
+      "name": "LORENT TOLAJ",
+      "club": "BRISTOL CITY",
+      "position": "FWD"
+    },
+    {
+      "key": "MACAULEY LANGSTAFF::SALFORD",
+      "name": "MACAULEY LANGSTAFF",
+      "club": "SALFORD",
+      "position": "FWD"
+    },
+    {
+      "key": "MASON BURSTOW::SHEFFIELD WEDNESDAY",
+      "name": "MASON BURSTOW",
+      "club": "SHEFFIELD WEDNESDAY",
+      "position": "FWD"
+    },
+    {
+      "key": "MATHEUS CUNHA::MANCHESTER UNITED",
+      "name": "MATHEUS CUNHA",
+      "club": "MANCHESTER UNITED",
+      "position": "FWD"
+    },
+    {
+      "key": "MICHAEL CHEEK::BROMLEY",
+      "name": "MICHAEL CHEEK",
+      "club": "BROMLEY",
+      "position": "FWD"
+    },
+    {
+      "key": "MO FAAL::PORT VALE",
+      "name": "MO FAAL",
+      "club": "PORT VALE",
+      "position": "FWD"
+    },
+    {
+      "key": "MOHAMED TOURE::NORWICH",
+      "name": "MOHAMED TOURE",
+      "club": "NORWICH",
+      "position": "FWD"
+    },
+    {
+      "key": "NAKHI WELLS::LUTON",
+      "name": "NAKHI WELLS",
+      "club": "LUTON",
+      "position": "FWD"
+    },
+    {
+      "key": "NICOLAS JACKSON::ASTON VILLA",
+      "name": "NICOLAS JACKSON",
+      "club": "ASTON VILLA",
+      "position": "FWD"
+    },
+    {
+      "key": "OLI MCBURNIE::HULL",
+      "name": "OLI MCBURNIE",
+      "club": "HULL",
+      "position": "FWD"
+    },
+    {
+      "key": "OLLIE PEARCE::YORK",
+      "name": "OLLIE PEARCE",
+      "club": "YORK",
+      "position": "FWD"
+    },
+    {
+      "key": "OLLIE WATKINS::ASTON VILLA",
+      "name": "OLLIE WATKINS",
+      "club": "ASTON VILLA",
+      "position": "FWD"
+    },
+    {
+      "key": "OWEN OSENI::PLYMOUTH",
+      "name": "OWEN OSENI",
+      "club": "PLYMOUTH",
+      "position": "FWD"
+    },
+    {
+      "key": "PATRICK BAMFORD::SHEFFIELD UNITED",
+      "name": "PATRICK BAMFORD",
+      "club": "SHEFFIELD UNITED",
+      "position": "FWD"
+    },
+    {
+      "key": "PAUL MULLIN::ROTHERHAM",
+      "name": "PAUL MULLIN",
+      "club": "ROTHERHAM",
+      "position": "FWD"
+    },
+    {
+      "key": "RAUL JIMENEZ::WOLVERHAMPTON",
+      "name": "RAUL JIMENEZ",
+      "club": "WOLVERHAMPTON",
+      "position": "FWD"
+    },
+    {
+      "key": "RICHARD KONE::QPR",
+      "name": "RICHARD KONE",
+      "club": "QPR",
+      "position": "FWD"
+    },
+    {
+      "key": "ROMAN BURRELL::QPR",
+      "name": "ROMAN BURRELL",
+      "club": "QPR",
+      "position": "FWD"
+    },
+    {
+      "key": "RONAN HALE::GILLINGHAM",
+      "name": "RONAN HALE",
+      "club": "GILLINGHAM",
+      "position": "FWD"
+    },
+    {
+      "key": "ROSS STEWART::SWANSEA",
+      "name": "ROSS STEWART",
+      "club": "SWANSEA",
+      "position": "FWD"
+    },
+    {
+      "key": "SAM DALBY::BOLTON",
+      "name": "SAM DALBY",
+      "club": "BOLTON",
+      "position": "FWD"
+    },
+    {
+      "key": "SAM NOMBE::MILTON KEYNES",
+      "name": "SAM NOMBE",
+      "club": "MILTON KEYNES",
+      "position": "FWD"
+    },
+    {
+      "key": "SAMMIE SZMODICS::DERBY",
+      "name": "SAMMIE SZMODICS",
+      "club": "DERBY",
+      "position": "FWD"
+    },
+    {
+      "key": "SHAQUILLE GWENGE::NEWPORT",
+      "name": "SHAQUILLE GWENGE",
+      "club": "NEWPORT",
+      "position": "FWD"
+    },
+    {
+      "key": "TATY CASTELLANOS::WEST HAM",
+      "name": "TATY CASTELLANOS",
+      "club": "WEST HAM",
+      "position": "FWD"
+    },
+    {
+      "key": "THIERNO BARRY::EVERTON",
+      "name": "THIERNO BARRY",
+      "club": "EVERTON",
+      "position": "FWD"
+    },
+    {
+      "key": "TROY PARROTT::AZ ALKMAAR",
+      "name": "TROY PARROTT",
+      "club": "AZ ALKMAAR",
+      "position": "FWD"
+    },
+    {
+      "key": "VIKTOR GYOKERES::ARSENAL",
+      "name": "VIKTOR GYOKERES",
+      "club": "ARSENAL",
+      "position": "FWD"
+    },
+    {
+      "key": "WILL LANKSHEAR::MIDDLESBROUGH",
+      "name": "WILL LANKSHEAR",
+      "club": "MIDDLESBROUGH",
+      "position": "FWD"
+    },
+    {
+      "key": "WILSON ISIDOR::SUNDERLAND",
+      "name": "WILSON ISIDOR",
+      "club": "SUNDERLAND",
+      "position": "FWD"
+    },
+    {
+      "key": "YOANNE WISSA::NEWCASTLE",
+      "name": "YOANNE WISSA",
+      "club": "NEWCASTLE",
+      "position": "FWD"
+    },
+    {
+      "key": "YOUSEF SALECH::CARDIFF",
+      "name": "YOUSEF SALECH",
+      "club": "CARDIFF",
+      "position": "FWD"
+    },
+    {
+      "key": "YUSUF AKHAMRICH::LEYTON ORIENT",
+      "name": "YUSUF AKHAMRICH",
+      "club": "LEYTON ORIENT",
+      "position": "FWD"
+    },
+    {
+      "key": "ZAN VIPOTNIK::SWANSEA",
+      "name": "ZAN VIPOTNIK",
+      "club": "SWANSEA",
+      "position": "FWD"
+    },
+    {
+      "key": "AARON COLLINS::MILTON KEYNES",
+      "name": "AARON COLLINS",
+      "club": "MILTON KEYNES",
+      "position": "MID"
+    },
+    {
+      "key": "ADAM PHILLIPS::BRADFORD",
+      "name": "ADAM PHILLIPS",
+      "club": "BRADFORD",
+      "position": "MID"
+    },
+    {
+      "key": "ALEX GILBEY::MILTON KEYNES",
+      "name": "ALEX GILBEY",
+      "club": "MILTON KEYNES",
+      "position": "MID"
+    },
+    {
+      "key": "ANTOINE SEMENYO::MANCHESTER CITY",
+      "name": "ANTOINE SEMENYO",
+      "club": "MANCHESTER CITY",
+      "position": "MID"
+    },
+    {
+      "key": "BOBBY DE CORDOVA-REID::LEICESTER",
+      "name": "BOBBY DE CORDOVA-REID",
+      "club": "LEICESTER",
+      "position": "MID"
+    },
+    {
+      "key": "BRADLEY BARCOLA::LIVERPOOL",
+      "name": "BRADLEY BARCOLA",
+      "club": "LIVERPOOL",
+      "position": "MID"
+    },
+    {
+      "key": "BRUNO FERNANDES::MANCHESTER UNITED",
+      "name": "BRUNO FERNANDES",
+      "club": "MANCHESTER UNITED",
+      "position": "MID"
+    },
+    {
+      "key": "BUKAYO SAKA::ARSENAL",
+      "name": "BUKAYO SAKA",
+      "club": "ARSENAL",
+      "position": "MID"
+    },
+    {
+      "key": "CALEB WATTS::PLYMOUTH",
+      "name": "CALEB WATTS",
+      "club": "PLYMOUTH",
+      "position": "MID"
+    },
+    {
+      "key": "CALUM KAVANAGH::OLDHAM",
+      "name": "CALUM KAVANAGH",
+      "club": "OLDHAM",
+      "position": "MID"
+    },
+    {
+      "key": "CHARLIE LAKIN::BARNET",
+      "name": "CHARLIE LAKIN",
+      "club": "BARNET",
+      "position": "MID"
+    },
+    {
+      "key": "CHARLIE MCCANN::CHELTENHAM",
+      "name": "CHARLIE MCCANN",
+      "club": "CHELTENHAM",
+      "position": "MID"
+    },
+    {
+      "key": "CHRISTOS TZOLIS::ARSENAL",
+      "name": "CHRISTOS TZOLIS",
+      "club": "ARSENAL",
+      "position": "MID"
+    },
+    {
+      "key": "COLE PALMER::CHELSEA",
+      "name": "COLE PALMER",
+      "club": "CHELSEA",
+      "position": "MID"
+    },
+    {
+      "key": "CRYSENCIO SUMMERVILLE::AL HILAL",
+      "name": "CRYSENCIO SUMMERVILLE",
+      "club": "AL HILAL",
+      "position": "MID"
+    },
+    {
+      "key": "DAVIS KEILLOR-DUNN::WREXHAM",
+      "name": "DAVIS KEILLOR-DUNN",
+      "club": "WREXHAM",
+      "position": "MID"
+    },
+    {
+      "key": "DIEGO GOMEZ::BRIGHTON",
+      "name": "DIEGO GOMEZ",
+      "club": "BRIGHTON",
+      "position": "MID"
+    },
+    {
+      "key": "DOMINIK SZOBOSZLAI::LIVERPOOL",
+      "name": "DOMINIK SZOBOSZLAI",
+      "club": "LIVERPOOL",
+      "position": "MID"
+    },
+    {
+      "key": "ENZO FERNANDEZ::MANCHESTER CITY",
+      "name": "ENZO FERNANDEZ",
+      "club": "MANCHESTER CITY",
+      "position": "MID"
+    },
+    {
+      "key": "FEMI AZEEZ::BRIGHTON",
+      "name": "FEMI AZEEZ",
+      "club": "BRIGHTON",
+      "position": "MID"
+    },
+    {
+      "key": "FER LOPEZ::WOLVERHAMPTON",
+      "name": "FER LOPEZ",
+      "club": "WOLVERHAMPTON",
+      "position": "MID"
+    },
+    {
+      "key": "FINN AZAZ::SOUTHAMPTON",
+      "name": "FINN AZAZ",
+      "club": "SOUTHAMPTON",
+      "position": "MID"
+    },
+    {
+      "key": "FLORIAN WIRTZ::LIVERPOOL",
+      "name": "FLORIAN WIRTZ",
+      "club": "LIVERPOOL",
+      "position": "MID"
+    },
+    {
+      "key": "HARRY WILSON::FULHAM",
+      "name": "HARRY WILSON",
+      "club": "FULHAM",
+      "position": "MID"
+    },
+    {
+      "key": "HARVEY BARNES::NEWCASTLE",
+      "name": "HARVEY BARNES",
+      "club": "NEWCASTLE",
+      "position": "MID"
+    },
+    {
+      "key": "ISAAC HUTCHINSON::DONCASTER",
+      "name": "ISAAC HUTCHINSON",
+      "club": "DONCASTER",
+      "position": "MID"
+    },
+    {
+      "key": "ISAAC PRICE::WEST BROM",
+      "name": "ISAAC PRICE",
+      "club": "WEST BROM",
+      "position": "MID"
+    },
+    {
+      "key": "JACK CLARKE::IPSWICH",
+      "name": "JACK CLARKE",
+      "club": "IPSWICH",
+      "position": "MID"
+    },
+    {
+      "key": "JACK MOYLAN::CARDIFF",
+      "name": "JACK MOYLAN",
+      "club": "CARDIFF",
+      "position": "MID"
+    },
+    {
+      "key": "JACK PAYNE::COLCHESTER",
+      "name": "JACK PAYNE",
+      "club": "COLCHESTER",
+      "position": "MID"
+    },
+    {
+      "key": "JACKIE HINSHELWOOD::BRIGHTON",
+      "name": "JACKIE HINSHELWOOD",
+      "club": "BRIGHTON",
+      "position": "MID"
+    },
+    {
+      "key": "JAMAL LOWE::SHEFFIELD WEDNESDAY",
+      "name": "JAMAL LOWE",
+      "club": "SHEFFIELD WEDNESDAY",
+      "position": "MID"
+    },
+    {
+      "key": "JARROD BOWEN::WEST HAM",
+      "name": "JARROD BOWEN",
+      "club": "WEST HAM",
+      "position": "MID"
+    },
+    {
+      "key": "JAY STANSFIELD::BIRMINGHAM",
+      "name": "JAY STANSFIELD",
+      "club": "BIRMINGHAM",
+      "position": "MID"
+    },
+    {
+      "key": "JEREMY DOKU::MANCHESTER CITY",
+      "name": "JEREMY DOKU",
+      "club": "MANCHESTER CITY",
+      "position": "MID"
+    },
+    {
+      "key": "JORDAN JAMES::WOLVERHAMPTON",
+      "name": "JORDAN JAMES",
+      "club": "WOLVERHAMPTON",
+      "position": "MID"
+    },
+    {
+      "key": "JOSH WINDASS::WREXHAM",
+      "name": "JOSH WINDASS",
+      "club": "WREXHAM",
+      "position": "MID"
+    },
+    {
+      "key": "KASEY PALMER::LUTON",
+      "name": "KASEY PALMER",
+      "club": "LUTON",
+      "position": "MID"
+    },
+    {
+      "key": "KIERAN GREEN::GRIMSBY",
+      "name": "KIERAN GREEN",
+      "club": "GRIMSBY",
+      "position": "MID"
+    },
+    {
+      "key": "KIERNAN DEWSBURY-HALL::EVERTON",
+      "name": "KIERNAN DEWSBURY-HALL",
+      "club": "EVERTON",
+      "position": "MID"
+    },
+    {
+      "key": "KYREECE LISBIE::READING",
+      "name": "KYREECE LISBIE",
+      "club": "READING",
+      "position": "MID"
+    },
+    {
+      "key": "LEO SCIENZA::SOUTHAMPTON",
+      "name": "LEO SCIENZA",
+      "club": "SOUTHAMPTON",
+      "position": "MID"
+    },
+    {
+      "key": "LEWIS DOBBIN::SOUTHAMPTON",
+      "name": "LEWIS DOBBIN",
+      "club": "SOUTHAMPTON",
+      "position": "MID"
+    },
+    {
+      "key": "LEWIS WING::READING",
+      "name": "LEWIS WING",
+      "club": "READING",
+      "position": "MID"
+    },
+    {
+      "key": "LIAM CULLEN::LEICESTER",
+      "name": "LIAM CULLEN",
+      "club": "LEICESTER",
+      "position": "MID"
+    },
+    {
+      "key": "LOUIE BARRY::SHEFFIELD WEDNESDAY",
+      "name": "LOUIE BARRY",
+      "club": "SHEFFIELD WEDNESDAY",
+      "position": "MID"
+    },
+    {
+      "key": "LUKE MOLYNEUX::SALFORD",
+      "name": "LUKE MOLYNEUX",
+      "club": "SALFORD",
+      "position": "MID"
+    },
+    {
+      "key": "MARCUS RASHFORD::MANCHESTER UNITED",
+      "name": "MARCUS RASHFORD",
+      "club": "MANCHESTER UNITED",
+      "position": "MID"
+    },
+    {
+      "key": "MARCUS TAVERNIER::BOURNEMOUTH",
+      "name": "MARCUS TAVERNIER",
+      "club": "BOURNEMOUTH",
+      "position": "MID"
+    },
+    {
+      "key": "MORGAN GIBBS-WHITE::NOTTINGHAM FOREST",
+      "name": "MORGAN GIBBS-WHITE",
+      "club": "NOTTINGHAM FOREST",
+      "position": "MID"
+    },
+    {
+      "key": "MORGAN ROGERS::CHELSEA",
+      "name": "MORGAN ROGERS",
+      "club": "CHELSEA",
+      "position": "MID"
+    },
+    {
+      "key": "MORGAN WHITTAKER::COLORADO RAPIDS",
+      "name": "MORGAN WHITTAKER",
+      "club": "COLORADO RAPIDS",
+      "position": "MID"
+    },
+    {
+      "key": "OLIVER IROW::PLYMOUTH",
+      "name": "OLIVER IROW",
+      "club": "PLYMOUTH",
+      "position": "MID"
+    },
+    {
+      "key": "OLIVER NORWOOD::STOCKPORT",
+      "name": "OLIVER NORWOOD",
+      "club": "STOCKPORT",
+      "position": "MID"
+    },
+    {
+      "key": "OMAR MARMOUSH::TOTTENHAM",
+      "name": "OMAR MARMOUSH",
+      "club": "TOTTENHAM",
+      "position": "MID"
+    },
+    {
+      "key": "OWEN BAILEY::DONCASTER",
+      "name": "OWEN BAILEY",
+      "club": "DONCASTER",
+      "position": "MID"
+    },
+    {
+      "key": "PHIL FODEN::MANCHESTER CITY",
+      "name": "PHIL FODEN",
+      "club": "MANCHESTER CITY",
+      "position": "MID"
+    },
+    {
+      "key": "RAYAN CHERKI::MANCHESTER CITY",
+      "name": "RAYAN CHERKI",
+      "club": "MANCHESTER CITY",
+      "position": "MID"
+    },
+    {
+      "key": "RYAN GRAYDON::SALFORD",
+      "name": "RYAN GRAYDON",
+      "club": "SALFORD",
+      "position": "MID"
+    },
+    {
+      "key": "ZIAN FLEMMING::IPSWICH",
+      "name": "ZIAN FLEMMING",
+      "club": "IPSWICH",
+      "position": "MID"
+    }
+  ]
+}
