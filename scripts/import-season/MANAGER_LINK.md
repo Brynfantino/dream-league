@@ -1,92 +1,52 @@
 # Manager linking (post-auth)
 
-Teams were seeded with `manager_id = null`. After each manager signs up, link:
+**Rule (PRD §2 + Bryn 2026-11-25):** one login per person; a team may have multiple managers.
+
+Seed inserts `team_managers` rows with `display_name` from the spreadsheet and `profile_id = null`. After each person signs up, link their profile:
 
 ```sql
--- DURHAM DYNAMO ← BRYN COOMBE
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'BRYN COOMBE'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'DURHAM DYNAMO';
+update public.team_managers
+set profile_id = (
+  select id from public.profiles
+  where id = (select id from auth.users where email = 'person@example.com')
+)
+where display_name = 'DISPLAY NAME FROM BELOW'
+  and team_id = (
+    select id from public.teams
+    where name = 'TEAM NAME'
+      and season_id = (select id from public.seasons where name = '2026/2027')
+  );
 
--- ROBS ROVERS ← ROB PICKETT
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'ROB PICKETT'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'ROBS ROVERS';
-
--- CF CALA ALCAUFAR ← JOE HARPER
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'JOE HARPER'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'CF CALA ALCAUFAR';
-
--- SHEFSPANYOL ← SEAN HELSBY
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'SEAN HELSBY'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'SHEFSPANYOL';
-
--- SPORTING HOOF ← MIKE ASTLEY
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'MIKE ASTLEY'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'SPORTING HOOF';
-
--- RASH IN THE ATTIC ← MARK WHITTLE
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'MARK WHITTLE'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'RASH IN THE ATTIC';
-
--- ERIMUS ← RICHARD KILPATRICK
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'RICHARD KILPATRICK'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'ERIMUS';
-
--- WEETABIX 2 LONG FC ← ADAM, NATHAN & DYLAN
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'ADAM, NATHAN & DYLAN'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'WEETABIX 2 LONG FC';
-
--- WENGER BOYS ← SEB BATE
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'SEB BATE'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'WENGER BOYS';
-
--- LE HARPRE ← SAM HARPER
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'SAM HARPER'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'LE HARPRE';
-
--- MIDDLESBROTHERS ← TAMIKO & MAX
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'TAMIKO & MAX'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'MIDDLESBROTHERS';
-
--- NEWELL'S OLD TIKI TAKA ← CHRIS MCD, JIMBO & ADG
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'CHRIS MCD, JIMBO & ADG'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'NEWELL''S OLD TIKI TAKA';
-
--- DUGGANS ARMANDILLOS ← JAMIE & MIKE
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'JAMIE & MIKE'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'DUGGANS ARMANDILLOS';
-
--- ATLETICO DEC ← CHARLIE, ELIO & DAVE
-update public.teams set manager_id = (
-  select id from public.profiles where display_name = 'CHARLIE, ELIO & DAVE'  -- or match by email
-) where season_id = (select id from public.seasons where name = '2026/2027')
-  and name = 'ATLETICO DEC';
-
+update public.profiles
+set role = 'manager'
+where id = (select id from auth.users where email = 'person@example.com');
 ```
 
-Also set `profiles.role = 'manager'` (or commissioner for Bryn).
+## Roster (from spreadsheet; split on `,` / `&`)
+
+| Team | display_name (as seeded) | Notes |
+|------|--------------------------|-------|
+| DURHAM DYNAMO | BRYN COOMBE | |
+| ROBS ROVERS | ROB PICKETT | |
+| CF CALA ALCAUFAR | JOE HARPER | |
+| SHEFSPANYOL | SEAN HELSBY | |
+| SPORTING HOOF | MIKE ASTLEY | |
+| RASH IN THE ATTIC | MARK WHITTLE | |
+| ERIMUS | RICHARD KILPATRICK | |
+| WEETABIX 2 LONG FC | ADAM | First name only in sheet — **confirm full name with Bryn** |
+| WEETABIX 2 LONG FC | NATHAN | First name only — **confirm** |
+| WEETABIX 2 LONG FC | DYLAN | First name only — **confirm** |
+| WENGER BOYS | SEB BATE | |
+| LE HARPRE | SAM HARPER | |
+| MIDDLESBROTHERS | TAMIKO | First name only — **confirm** |
+| MIDDLESBROTHERS | MAX | First name only — **confirm** |
+| NEWELL'S OLD TIKI TAKA | CHRIS MCD | |
+| NEWELL'S OLD TIKI TAKA | JIMBO | Nickname? — **confirm legal/display name** |
+| NEWELL'S OLD TIKI TAKA | ADG | Initials — **confirm** |
+| DUGGANS ARMANDILLOS | JAMIE | First name only — **confirm** |
+| DUGGANS ARMANDILLOS | MIKE | First name only — **confirm** (distinct from MIKE ASTLEY) |
+| ATLETICO DEC | CHARLIE | First name only — **confirm** |
+| ATLETICO DEC | ELIO | First name only — **confirm** |
+| ATLETICO DEC | DAVE | First name only — **confirm** |
+
+Do **not** invent surnames. Ask Bryn before changing `display_name` values used for matching.

@@ -1,15 +1,12 @@
 -- Auto-generated seed for Dream League 2026/27
--- Target: schema from supabase/migrations/20261125190000_core_schema.sql
--- Apply via Supabase SQL Editor (bypasses RLS) AFTER core + RLS migrations.
--- Does NOT create auth users / profiles. team.manager_id left null.
--- Manager display names are listed in scripts/import-season/MANAGER_LINK.md for later linking.
--- Does NOT insert goal_events by default (spreadsheet only has cumulatives).
--- Optional synthetic goals: see section at bottom (commented out).
--- Idempotent-ish: deletes existing 2026/2027 season cascade if re-run.
+-- Target: foundation schema + 20261125192000_team_managers.sql
+-- Apply AFTER core + RLS + team_managers migrations (SQL Editor bypasses RLS).
+-- Scope (Bryn 2026-11-25): skip I ROBOT; no BFL / Bet Settlement; no cup fixtures;
+-- managers split to one person per login via team_managers.display_name (profile_id null until signup).
+-- Does NOT insert goal_events by default.
 
 begin;
 
--- Remove prior import of this season (cascade teams/memberships/events/ties)
 delete from public.seasons where name = '2026/2027';
 
 with season_ins as (
@@ -19,6 +16,30 @@ with season_ins as (
 ),
 team_rows as (
   select * from (values
+    ('DURHAM DYNAMO'),
+    ('ROBS ROVERS'),
+    ('CF CALA ALCAUFAR'),
+    ('SHEFSPANYOL'),
+    ('SPORTING HOOF'),
+    ('RASH IN THE ATTIC'),
+    ('ERIMUS'),
+    ('WEETABIX 2 LONG FC'),
+    ('WENGER BOYS'),
+    ('LE HARPRE'),
+    ('MIDDLESBROTHERS'),
+    ('NEWELL''S OLD TIKI TAKA'),
+    ('DUGGANS ARMANDILLOS'),
+    ('ATLETICO DEC')
+  ) as v(team_name)
+),
+teams_ins as (
+  insert into public.teams (season_id, name, manager_id)
+  select s.id, tr.team_name, null
+  from season_ins s cross join team_rows tr
+  returning id, name
+),
+manager_rows as (
+  select * from (values
     ('DURHAM DYNAMO', 'BRYN COOMBE'),
     ('ROBS ROVERS', 'ROB PICKETT'),
     ('CF CALA ALCAUFAR', 'JOE HARPER'),
@@ -26,20 +47,29 @@ team_rows as (
     ('SPORTING HOOF', 'MIKE ASTLEY'),
     ('RASH IN THE ATTIC', 'MARK WHITTLE'),
     ('ERIMUS', 'RICHARD KILPATRICK'),
-    ('WEETABIX 2 LONG FC', 'ADAM, NATHAN & DYLAN'),
+    ('WEETABIX 2 LONG FC', 'ADAM'),
+    ('WEETABIX 2 LONG FC', 'NATHAN'),
+    ('WEETABIX 2 LONG FC', 'DYLAN'),
     ('WENGER BOYS', 'SEB BATE'),
     ('LE HARPRE', 'SAM HARPER'),
-    ('MIDDLESBROTHERS', 'TAMIKO & MAX'),
-    ('NEWELL''S OLD TIKI TAKA', 'CHRIS MCD, JIMBO & ADG'),
-    ('DUGGANS ARMANDILLOS', 'JAMIE & MIKE'),
-    ('ATLETICO DEC', 'CHARLIE, ELIO & DAVE')
-  ) as v(team_name, manager_name)
+    ('MIDDLESBROTHERS', 'TAMIKO'),
+    ('MIDDLESBROTHERS', 'MAX'),
+    ('NEWELL''S OLD TIKI TAKA', 'CHRIS MCD'),
+    ('NEWELL''S OLD TIKI TAKA', 'JIMBO'),
+    ('NEWELL''S OLD TIKI TAKA', 'ADG'),
+    ('DUGGANS ARMANDILLOS', 'JAMIE'),
+    ('DUGGANS ARMANDILLOS', 'MIKE'),
+    ('ATLETICO DEC', 'CHARLIE'),
+    ('ATLETICO DEC', 'ELIO'),
+    ('ATLETICO DEC', 'DAVE')
+  ) as v(team_name, display_name)
 ),
-teams_ins as (
-  insert into public.teams (season_id, name, manager_id)
-  select s.id, tr.team_name, null
-  from season_ins s cross join team_rows tr
-  returning id, name
+managers_ins as (
+  insert into public.team_managers (team_id, profile_id, display_name)
+  select t.id, null, mr.display_name
+  from manager_rows mr
+  join teams_ins t on t.name = mr.team_name
+  returning id
 ),
 player_rows as (
   select * from (values
@@ -255,7 +285,6 @@ players_ins as (
   select name, club, position from player_rows
   returning id, name, club, position
 ),
--- Map spreadsheet player_key -> inserted player id
 player_map as (
   select pr.player_key, pi.id as player_id
   from player_rows pr
@@ -498,20 +527,12 @@ memberships_ins as (
 select
   (select count(*) from season_ins) as seasons,
   (select count(*) from teams_ins) as teams,
+  (select count(*) from managers_ins) as team_managers,
   (select count(*) from players_ins) as players,
   (select count(*) from memberships_ins) as memberships;
 
 commit;
 
--- ---------------------------------------------------------------------------
--- OPTIONAL: synthetic goal_events from cumulative membership totals
--- Uncomment only if you want the league table to match the spreadsheet NOW.
--- Each cumulative N becomes N events on acquired_at date with import notes.
--- ---------------------------------------------------------------------------
-/*
-begin;
--- Example approach left to import_season.ts --synthetic-goals
--- which expands goal_stat_snapshots.json into goal_events rows.
-commit;
-*/
+-- Cup ties: intentionally empty (competition starts February; no fixtures yet).
+-- BFL Challenge / Bet Settlement: out of scope for v1 — not seeded.
 

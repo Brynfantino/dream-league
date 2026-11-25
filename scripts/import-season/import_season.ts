@@ -1,16 +1,22 @@
 /**
  * Import Dream League 2026/27 spreadsheet extracts into Supabase.
  *
- * Prefers the SQL seed for a one-shot load:
- *   scripts/import-season/seed_2026_27.sql  (SQL Editor / psql)
+ * Source of truth for game rules: docs/Dream-League_PRD.md (Project store).
+ * Do not invent rules. Scope locked by Bryn (2026-11-25):
+ * - Skip I ROBOT
+ * - No BFL Challenge / Bet Settlement
+ * - No cup fixtures (starts February)
+ * - One login per manager; teams may have multiple managers (team_managers)
  *
- * This script is the programmatic path (service role):
  *   npx tsx scripts/import-season/import_season.ts --dry-run
  *   npx tsx scripts/import-season/import_season.ts --apply
  *   npx tsx scripts/import-season/import_season.ts --apply --synthetic-goals
  *
+ * --synthetic-goals is OPTIONAL (not required by PRD). Spreadsheet only has
+ * cumulative totals; expand only if Bryn wants the table populated before
+ * commissioner match entry.
+ *
  * Env: NEXT_PUBLIC_SUPABASE_URL (or SUPABASE_URL) + SUPABASE_SERVICE_ROLE_KEY
- * Never commit keys. Does not invent secrets.
  */
 
 import { readFileSync } from "node:fs";
@@ -20,6 +26,7 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "data");
+/** Import convention for auction signings with no sheet date (not a PRD date). */
 const SEASON_START = "2026-08-01";
 const SEASON_NAME = "2026/2027";
 
@@ -31,6 +38,7 @@ const dryRun = !apply;
 type TeamRow = {
   team: string;
   manager: string;
+  managers?: string[];
   placeholder?: boolean;
 };
 
@@ -70,36 +78,41 @@ function requireEnv(): { url: string; key: string } {
 async function main() {
   const seasonMeta = loadJson<{ name: string; label: string }>("season.json");
   const teams = loadJson<{ teams: TeamRow[] }>("teams.json").teams.filter(
-    (t) => !t.placeholder,
+    (t) => !t.placeholder && t.team !== "I ROBOT",
   );
   const players = loadJson<{ players: PlayerRow[] }>("players.json").players;
   const memberships = loadJson<{ memberships: Membership[] }>(
     "squad_memberships.json",
   ).memberships.filter((m) => m.team !== "I ROBOT");
+  const managersDoc = loadJson<{
+    managers: Array<{ display_name: string; teams: string[] }>;
+  }>("managers.json");
   const table = loadJson<{ standings: unknown[] }>("table_snapshot.json");
 
   console.log("Season:", seasonMeta.name, "/", seasonMeta.label);
-  console.log("Teams:", teams.length);
+  console.log("Teams:", teams.length, "(I ROBOT excluded)");
+  console.log("Individual managers:", managersDoc.managers.length);
   console.log("Players:", players.length);
   console.log("Memberships:", memberships.length);
   console.log("Table checksum rows:", table.standings.length);
+  console.log("Cup / BFL / bets: not imported (locked out of v1 seed)");
   console.log(
     "Mode:",
     dryRun
       ? "DRY RUN"
       : syntheticGoals
-        ? "APPLY + synthetic goal_events"
+        ? "APPLY + optional synthetic goal_events"
         : "APPLY (no goal_events)",
   );
 
   if (dryRun) {
     console.log(
-      "\nNext steps for Bryn:\n" +
-        "1. Merge/apply foundation migrations (PR #1).\n" +
-        "2. Set SUPABASE_SERVICE_ROLE_KEY in env.\n" +
-        "3. Either paste seed_2026_27.sql in SQL Editor, or re-run this with --apply.\n" +
-        "4. Optionally --synthetic-goals to materialise cumulative GF/GA as goal_events.\n" +
-        "5. Link managers via MANAGER_LINK.md after signup.\n",
+      "\nNext steps:\n" +
+        "1. Apply foundation migrations + 20261125192000_team_managers.sql.\n" +
+        "2. Set SUPABASE_SERVICE_ROLE_KEY via secrets.\n" +
+        "3. Run seed_2026_27.sql in SQL Editor, or re-run with --apply.\n" +
+        "4. Link each person after signup (MANAGER_LINK.md). Ask Bryn for full names where sheet has first names only.\n" +
+        "5. Do not use --synthetic-goals unless Bryn confirms (PRD expects commissioner goal entry).\n",
     );
     return;
   }
@@ -109,7 +122,6 @@ async function main() {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  // Clear prior season import
   const { data: existing } = await supabase
     .from("seasons")
     .select("id")
@@ -142,7 +154,32 @@ async function main() {
     .insert(teams.map((t) => ({ season_id: seasonId, name: t.team })))
     .select("id, name");
   if (teamErr) throw teamErr;
-  const teamIdByName = new Map(teamRows!.map((t) => [t.name as string, t.id as string]));
+  const teamIdByName = new Map(
+    teamRows!.map((t) => [t.name as string, t.id as string]),
+  );
+
+  const managerPayload: Array<{
+    team_id: string;
+    profile_id: null;
+    display_name: string;
+  }> = [];
+  for (const t of teams) {
+    const names = t.managers?.length
+      ? t.managers
+      : managersDoc.managers
+          .filter((m) => m.teams.includes(t.team))
+          .map((m) => m.display_name);
+    const teamId = teamIdByName.get(t.team);
+    if (!teamId) throw new Error(`Missing team id for ${t.team}`);
+    for (const display_name of names) {
+      managerPayload.push({ team_id: teamId, profile_id: null, display_name });
+    }
+  }
+  for (const chunk of chunked(managerPayload, 100)) {
+    const { error } = await supabase.from("team_managers").insert(chunk);
+    if (error) throw error;
+  }
+  console.log("Inserted team_managers", managerPayload.length);
 
   const { data: playerRows, error: playerErr } = await supabase
     .from("players")
@@ -156,7 +193,6 @@ async function main() {
     .select("id, name, club, position");
   if (playerErr) throw playerErr;
 
-  // Map spreadsheet key → player id via name+club+position
   const playerIdByKey = new Map<string, string>();
   const usedPlayerIds = new Set<string>();
   for (const p of players) {
@@ -190,7 +226,6 @@ async function main() {
     };
   });
 
-  // Insert in chunks
   for (const chunk of chunked(membershipPayload, 100)) {
     const { error } = await supabase.from("squad_memberships").insert(chunk);
     if (error) throw error;
@@ -198,10 +233,18 @@ async function main() {
   console.log("Inserted memberships", membershipPayload.length);
 
   if (syntheticGoals) {
-    await insertSyntheticGoals(supabase, seasonId, teamIdByName, playerIdByKey, memberships);
+    await insertSyntheticGoals(
+      supabase,
+      seasonId,
+      teamIdByName,
+      playerIdByKey,
+      memberships,
+    );
   }
 
-  console.log("Done. Link managers with MANAGER_LINK.md. Verify against data/table_snapshot.json.");
+  console.log(
+    "Done. No cup/BFL/bets seeded. Link managers via MANAGER_LINK.md after signup.",
+  );
 }
 
 async function insertSyntheticGoals(
@@ -234,7 +277,7 @@ async function insertSyntheticGoals(
           team_id: teamId,
           event_type: "outfield_goal",
           occurred_on: on,
-          notes: "import: expanded from spreadsheet cumulative GF",
+          notes: "import: expanded from spreadsheet cumulative GF (optional)",
         });
       }
     }
@@ -246,7 +289,7 @@ async function insertSyntheticGoals(
           team_id: teamId,
           event_type: "gk_conceded",
           occurred_on: on,
-          notes: "import: expanded from spreadsheet cumulative GA",
+          notes: "import: expanded from spreadsheet cumulative GA (optional)",
         });
       }
     }
