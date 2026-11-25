@@ -24,7 +24,11 @@ export const metadata: Metadata = {
   description: "Fantasy football league app replacing the Dream League spreadsheet.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"

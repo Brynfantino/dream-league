@@ -1,10 +1,10 @@
-import { StubPage } from "@/components/stub-page";
+import { PlaceholderPage } from "@/components/placeholder-page";
 
 export default function AdministrationPage() {
   return (
-    <StubPage
+    <PlaceholderPage
       title="Administration"
-      description="Manage managers, teams, and roles."
+      description="Managers, teams, and roles — stub."
     />
   );
 }

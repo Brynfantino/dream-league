@@ -1,5 +1,7 @@
 # Supabase
 
+The Next.js app currently uses **client stubs only** — it does not open a live Supabase connection. Env placeholders live in `.env.example`. Apply these migrations when you are ready to connect the database.
+
 ## Project
 
 URL: `https://ghzcdwxoukxngnstanxv.supabase.co`

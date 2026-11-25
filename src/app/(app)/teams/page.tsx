@@ -1,8 +1,8 @@
-import { StubPage } from "@/components/stub-page";
+import { PlaceholderPage } from "@/components/placeholder-page";
 
 export default function TeamsPage() {
   return (
-    <StubPage
+    <PlaceholderPage
       title="Teams"
       description="Team list and squad pages will appear here."
     />

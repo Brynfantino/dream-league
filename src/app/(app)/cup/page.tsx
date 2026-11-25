@@ -1,8 +1,8 @@
-import { StubPage } from "@/components/stub-page";
+import { PlaceholderPage } from "@/components/placeholder-page";
 
 export default function CupPage() {
   return (
-    <StubPage
+    <PlaceholderPage
       title="Cup"
       description="Cup ties and bracket views will appear here."
     />

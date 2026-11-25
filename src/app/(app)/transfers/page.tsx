@@ -1,10 +1,10 @@
-import { StubPage } from "@/components/stub-page";
+import { PlaceholderPage } from "@/components/placeholder-page";
 
 export default function TransfersPage() {
   return (
-    <StubPage
+    <PlaceholderPage
       title="Transfers"
-      description="Managers propose transfers here; commissioners approve them."
+      description="Transfer proposals and history will appear here."
     />
   );
 }

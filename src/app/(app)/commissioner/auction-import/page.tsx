@@ -1,10 +1,10 @@
-import { StubPage } from "@/components/stub-page";
+import { PlaceholderPage } from "@/components/placeholder-page";
 
 export default function AuctionImportPage() {
   return (
-    <StubPage
+    <PlaceholderPage
       title="Auction Import"
-      description="Import auction results into squad ownership after the auction."
+      description="Import auction results into squad ownership — stub."
     />
   );
 }

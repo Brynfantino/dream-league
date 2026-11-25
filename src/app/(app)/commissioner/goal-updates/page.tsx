@@ -1,10 +1,10 @@
-import { StubPage } from "@/components/stub-page";
+import { PlaceholderPage } from "@/components/placeholder-page";
 
 export default function GoalUpdatesPage() {
   return (
-    <StubPage
+    <PlaceholderPage
       title="Goal Updates"
-      description="Commissioner manual entry for outfield goals and GK goals conceded."
+      description="Commissioner goal entry (outfield goals and GK conceded) — stub."
     />
   );
 }

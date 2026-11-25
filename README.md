@@ -2,9 +2,70 @@
 
 Fantasy football web app replacing the long-running Dream League spreadsheet.
 
-**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · Supabase
+**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · Supabase (prepared, not connected yet)
 
-## Scoring
+## Current status (foundation shell)
+
+This repo currently delivers a **professional UI foundation** only:
+
+- Responsive app shell with **left navigation** and **top navigation**
+- Placeholder pages: Dashboard, League Table, Teams, Players, Transfers, Cup, Account
+- Commissioner secondary stubs in the sidebar
+- Supabase **client stubs** + `.env.example` (no live connection required to run the app)
+- SQL migrations kept under `supabase/migrations/` for when the database is wired up
+
+No league business logic yet.
+
+## Setup
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) (redirects to Dashboard). Env vars are optional for the shell.
+
+### Optional env (future Supabase connection)
+
+```bash
+cp .env.example .env.local
+```
+
+| Variable | Notes |
+| --- | --- |
+| `NEXT_PUBLIC_SUPABASE_URL` | Project URL (example uses `https://ghzcdwxoukxngnstanxv.supabase.co`) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Anon key from Supabase → API settings |
+| `SUPABASE_SERVICE_ROLE_KEY` | Service role — server only; never expose to the browser |
+
+Do not invent or commit real keys. Cursor secrets / Vercel can hold these later.
+
+### Database migrations (not required for the shell)
+
+Schema + RLS SQL lives in `supabase/migrations/`. See [supabase/README.md](supabase/README.md) when you are ready to apply them.
+
+## Scripts
+
+```bash
+npm run dev
+npm run build
+npm run typecheck
+npm run lint
+```
+
+## Folder structure
+
+```
+src/
+  app/(app)/          # App routes + shared AppShell layout
+  app/login/          # Sign-in placeholder
+  components/layout/  # TopNav, SideNav, AppShell
+  config/             # Navigation definitions
+  lib/supabase/       # Client stubs (not connected)
+  types/              # Shared TypeScript types
+supabase/migrations/  # Core schema + RLS (apply later)
+```
+
+## Scoring (product rules — not implemented in UI yet)
 
 | Event | Effect |
 | --- | --- |
@@ -12,64 +73,3 @@ Fantasy football web app replacing the long-running Dream League spreadsheet.
 | Goalkeeper club goals conceded | +1 GA for the owning team |
 | League points | GF − GA |
 | Tie-breaker | GF |
-
-## Setup
-
-### 1. Environment
-
-```bash
-cp .env.example .env.local
-```
-
-Fill in keys from the Supabase dashboard (**Project Settings → API**). Do not commit real keys.
-
-| Variable | Where it lives | Notes |
-| --- | --- | --- |
-| `NEXT_PUBLIC_SUPABASE_URL` | Browser + server | Already set in `.env.example` to `https://ghzcdwxoukxngnstanxv.supabase.co` |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Browser + server | Anon / public key |
-| `SUPABASE_SERVICE_ROLE_KEY` | Server only | Service role — never expose to the client |
-
-For Vercel / Cursor secrets, set the same three names. Locally use `.env.local`.
-
-### 2. Install & run
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) (redirects to Dashboard).
-
-### 3. Apply database migrations
-
-See [supabase/README.md](supabase/README.md). Short version: run the SQL files in `supabase/migrations/` in order via the Supabase SQL Editor, or `npx supabase db push` after linking project `ghzcdwxoukxngnstanxv`.
-
-Then promote the commissioner account:
-
-```sql
-update public.profiles
-set role = 'commissioner'
-where id = (select id from auth.users where email = 'your@email.com');
-```
-
-### 4. Auth
-
-Email/password and magic-link sign-in are wired on `/login`. Profiles are created automatically on signup (`visitor` by default). Commissioners see extra nav once `profiles.role = 'commissioner'`.
-
-In Supabase Auth settings, add your site URL and redirect URLs (e.g. `http://localhost:3000/auth/callback` and the production `/auth/callback`).
-
-## Scripts
-
-```bash
-npm run dev       # development server
-npm run build     # production build
-npm run typecheck # tsc --noEmit
-npm run lint
-```
-
-## App structure (Phase 1)
-
-- Primary nav: Dashboard, League Table, Teams, Players, Transfers, Cup, Account
-- Commissioner nav (role-gated): Goal Updates, Transfers Approval, Seasons, Auction Import, Administration
-- Schema + RLS under `supabase/migrations/`
-- Supabase clients: `src/lib/supabase/`

@@ -1,10 +1,10 @@
-import { StubPage } from "@/components/stub-page";
+import { PlaceholderPage } from "@/components/placeholder-page";
 
 export default function SeasonsPage() {
   return (
-    <StubPage
+    <PlaceholderPage
       title="Seasons"
-      description="Create, activate, and close Dream League seasons."
+      description="Create, activate, and close seasons — stub."
     />
   );
 }

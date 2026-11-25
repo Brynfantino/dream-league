@@ -1,10 +1,10 @@
-import { StubPage } from "@/components/stub-page";
+import { PlaceholderPage } from "@/components/placeholder-page";
 
 export default function TransfersApprovalPage() {
   return (
-    <StubPage
+    <PlaceholderPage
       title="Transfers Approval"
-      description="Review and approve or reject manager transfer proposals."
+      description="Approve or reject manager transfer proposals — stub."
     />
   );
 }

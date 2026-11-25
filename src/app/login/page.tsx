@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { LoginForm } from "./login-form";
+import { PlaceholderPage } from "@/components/placeholder-page";
 
 export default function LoginPage() {
   return (
@@ -19,14 +19,10 @@ export default function LoginPage() {
         </div>
       </header>
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6">
-        <div className="mb-8 space-y-2 text-center">
-          <h1 className="font-display text-3xl text-pitch-950">Sign in</h1>
-          <p className="text-sm text-pitch-700">
-            Email auth via Supabase. Role (manager / commissioner) comes from
-            your profile after sign-in.
-          </p>
-        </div>
-        <LoginForm />
+        <PlaceholderPage
+          title="Sign in"
+          description="Auth UI will connect to Supabase later. Env placeholders live in .env.example."
+        />
       </main>
     </div>
   );
