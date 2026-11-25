@@ -1,5 +1,7 @@
--- Dream League core schema
--- Scoring: outfield goals +1 GF; GK club goals conceded +1 GA; points = GF − GA; tie-break GF
+-- Dream League core schema (align with Dream-League_PRD.md — do not invent rules)
+-- Scoring: outfield goals +1 GF; GK club goals conceded +1 GA; points = GF − GA;
+-- League order: points, then GF; if still equal, remain tied (PRD §8).
+-- Note: position enum is currently goalkeeper|outfield; PRD uses DEF/MID/FWD + GK clubs — refine when directed.
 
 create extension if not exists "pgcrypto";
 

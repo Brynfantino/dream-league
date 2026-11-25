@@ -4,6 +4,8 @@ Fantasy football web app replacing the long-running Dream League spreadsheet.
 
 **Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · Supabase (prepared, not connected yet)
 
+**Rules source of truth:** the Dream League PRD (`Dream-League_PRD.md` in the project docs store). Do not invent game rules; ask if unclear.
+
 ## Current status (foundation shell)
 
 This repo currently delivers a **professional UI foundation** only:
@@ -65,11 +67,11 @@ src/
 supabase/migrations/  # Core schema + RLS (apply later)
 ```
 
-## Scoring (product rules — not implemented in UI yet)
+## Scoring (from PRD — not implemented in UI yet)
 
 | Event | Effect |
 | --- | --- |
 | Outfield player goal | +1 GF for the owning team |
-| Goalkeeper club goals conceded | +1 GA for the owning team |
+| Goalkeeper club goals conceded | +1 GA for the owning team (−1 point) |
 | League points | GF − GA |
-| Tie-breaker | GF |
+| League order | Points, then Goals For; if still equal, teams remain tied |
