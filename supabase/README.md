@@ -1,6 +1,6 @@
 # Supabase
 
-The Next.js app currently uses **client stubs only** — it does not open a live Supabase connection. Env placeholders live in `.env.example`. Apply these migrations when you are ready to connect the database.
+The Next.js app wires Supabase clients for **public reads** (League Table and future pages). Env placeholders live in `.env.example`. Apply these migrations when connecting the database.
 
 **Schema authority:** Dream League PRD. Do not invent rules.
 

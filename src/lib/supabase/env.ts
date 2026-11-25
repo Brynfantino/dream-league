@@ -1,6 +1,6 @@
 /**
- * Env helpers for a future Supabase connection.
- * The app shell does not call these yet — keys remain optional locally.
+ * Env helpers for the Supabase connection.
+ * Public keys are optional locally — pages degrade when unset.
  */
 
 export const supabaseEnv = {
