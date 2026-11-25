@@ -1,0 +1,523 @@
+Dream League Application
+
+Product Requirements & Technical Specification
+
+Version 1.0
+
+1. Purpose
+
+The Dream League Application is a web application designed to replace the existing Excel-based management of the Dream League competition.
+
+The Dream League has operated for over fifteen years and consists of a league competition and knockout cup competition based on goals scored by real-life football players.
+
+The application should preserve the existing structure, rules and history of the competition whilst improving accessibility, administration and historical record keeping.
+
+2. Competition Overview
+
+League Structure
+
+14 teams compete in the Dream League.
+Teams are managed by one or more managers.
+Teams compete across an entire football season.
+League standings are determined by goals scored and goals conceded.
+Cup Structure
+
+A knockout cup competition runs during the spring.
+Matches take place over designated cup weekends.
+Winners progress to the next round.
+Draws result in replays the following weekend.
+3. Team Structure
+
+Each team consists of:
+
+Position
+
+Quantity
+
+Goalkeeper
+
+1
+
+Defender
+
+2
+
+Midfielder
+
+3
+
+Forward
+
+5
+
+Total Squad Size: 11
+
+4. Goalkeeper Rules
+
+Goalkeepers represent football clubs rather than individual players.
+
+For example:
+
+Arsenal
+Burnley
+Wrexham
+Each goal conceded by that club is worth:
+
+-1 point
+
+Ownership of a goalkeeper means ownership of that club's defensive record.
+
+5. Outfield Player Rules
+
+Outfield players consist of:
+
+Defenders
+Midfielders
+Forwards
+Each goal scored is worth:
+
++1 point
+
+6. Eligible Competitions
+
+Goals scored and goals conceded count from:
+
+League Fixtures
+FA Cup
+League Cup
+Community Shield
+UEFA Champions League
+UEFA Europa League
+UEFA Europa Conference League
+All competitions carry equal value.
+
+7. League Scoring
+
+Goals For
+
+Total goals scored by all outfield players in a team.
+
+Goals Against
+
+Total goals conceded by the team's goalkeeper club.
+
+League Points
+
+League Points = Goals For - Goals Against
+
+Example:
+
+Goals For = 95
+
+Goals Against = 42
+
+League Points = 53
+
+8. League Tie Breakers
+
+League positions are determined by:
+
+League Points
+Goals For
+If both are equal teams remain tied.
+
+9. Auction System
+
+Annual Auction
+
+An auction takes place before each season begins.
+
+Timing:
+
+July / August
+
+Budget:
+
+$100 per team
+
+Goalkeeper Auction
+
+Managers purchase one goalkeeper club.
+
+Ordering:
+
+Teams are offered in ascending order of goals conceded from the previous season.
+
+Defender Auction
+
+Managers purchase two defenders.
+
+Players are offered in descending order of goals scored during the previous season.
+
+Midfielder Auction
+
+Managers purchase three midfielders.
+
+Players are offered in descending order of goals scored during the previous season.
+
+Forward Auction
+
+Managers purchase five forwards.
+
+Players are offered in descending order of goals scored during the previous season.
+
+Unique Ownership
+
+A player or goalkeeper club can only be owned by one team.
+
+Duplicate ownership is not permitted.
+
+New Players
+
+Players who were not part of the English football pyramid during the previous season may be added manually before the auction.
+
+Examples:
+
+Foreign players
+Youth prospects
+Returning players
+10. Transfers
+
+Seasonal Allocation
+
+Each team receives:
+
+8 Outfield Transfers
+2 Goalkeeper Transfers
+10 Transfers Total
+
+Transfer Rules
+
+A transfer must replace a player with another player of the same position.
+
+Examples:
+
+Forward → Forward
+Midfielder → Midfielder
+Goalkeeper → Goalkeeper
+Ownership Validation
+
+A manager may only transfer in a player not already owned by another team.
+
+Foreign Players
+
+Managers may transfer in players currently playing outside English football.
+
+This allows speculative transfer activity.
+
+Processing Schedule
+
+Transfers are submitted during the week.
+
+Approved transfers become active:
+
+Thursday Midnight / Friday 00:00
+
+11. Cup Competition
+
+Format
+
+Single elimination knockout competition.
+
+Weekend Score
+
+A team's score for a cup weekend equals:
+
+Goals Scored - Goals Conceded
+
+Tie Breakers
+
+Weekend Score
+Goals Scored
+Replay Rule
+
+If both remain equal:
+
+Replay following weekend.
+
+This continues until a winner is determined.
+
+12. User Roles
+
+Visitor
+
+Can:
+
+View League Table
+View Teams
+View Players
+View Cup Competition
+View Historical Records
+Cannot:
+
+Submit Transfers
+Edit Data
+Manager
+
+Can:
+
+Login
+View Own Team
+View Other Teams
+View Players
+View League Table
+View Cup Competition
+Submit Transfers
+View Transfer Allocation
+Change Password
+Upload Team Crest
+Manage Profile
+Cannot:
+
+Approve Transfers
+Update Results
+Create Seasons
+Commissioner
+
+Can perform all Manager actions plus:
+
+Create Seasons
+Upload Auction Results
+Update Goals Scored
+Update Goals Conceded
+Approve Transfers
+Reject Transfers
+Manage Managers
+Manage Teams
+Create Cup Fixtures
+Advance Cup Rounds
+13. Application Pages
+
+Dashboard
+
+Purpose:
+
+Landing page and navigation hub.
+
+Displays:
+
+Welcome Message
+Team Name
+League Position
+Current Points
+Transfer Allocations
+Latest Activity
+League Table
+
+Displays:
+
+Position
+Team
+Goals For
+Goals Against
+League Points
+Additional Feature:
+
+14-day movement and form tracking.
+
+Read-only.
+
+Team Page
+
+Displays:
+
+Team Name
+Team Crest
+Manager(s)
+League Position
+Squad
+Player Goals
+Goalkeeper Concessions
+Auction Cost
+Transfer History
+Historical Honours
+Optional Toggle:
+
+Current Squad
+Historical Squad
+Player Directory
+
+Displays:
+
+Player Name
+Position
+Current Team
+Goals
+Club
+Acquisition Date
+Filters:
+
+Position
+Club
+Team
+Goals
+Sorting:
+
+Alphabetical
+Goals Scored
+Transfer Centre
+
+Displays:
+
+Remaining Transfers
+Transfer History
+Pending Requests
+Allows:
+
+Submit Transfer Requests
+Validation:
+
+Correct Position
+Transfer Allocation Remaining
+Player Not Owned Elsewhere
+Cup Centre
+
+Displays:
+
+Current Draw
+Results
+Replays
+Historical Winners
+Read-only.
+
+Account Settings
+
+Displays:
+
+Manager Profile
+Team Name
+Team Crest
+Allows:
+
+Change Password
+Upload Crest
+Edit Profile
+Team Renaming restricted to off-season periods.
+
+Commissioner Console
+
+Displays:
+
+Pending Transfers
+Goal Updates
+Goalkeeper Updates
+Cup Administration
+Season Administration
+Allows:
+
+All competition management functions.
+14. Version 1 Data Updates
+
+Version 1 uses manual data entry.
+
+Commissioner updates:
+
+Current Goals Scored
+Current Goals Conceded
+Example:
+
+Jarrod Bowen
+
+9 → 10 Goals
+
+Arsenal
+
+15 → 17 Goals Conceded
+
+The application recalculates standings automatically.
+
+15. Technical Architecture
+
+Frontend:
+
+Next.js
+TypeScript
+Tailwind CSS
+Backend:
+
+Supabase
+Authentication:
+
+Supabase Auth
+Hosting:
+
+Vercel
+Source Control:
+
+GitHub
+Development Assistant:
+
+Cursor
+16. Core Database Entities
+
+Managers
+
+Competition participants.
+
+Teams
+
+Dream League franchises.
+
+Seasons
+
+Individual competition years.
+
+Players
+
+Real-life footballers.
+
+Goalkeeper Clubs
+
+Club-based goalkeeper assets.
+
+Team Ownership
+
+Current ownership records.
+
+Auction Results
+
+Player acquisition history.
+
+Transfers
+
+Transfer requests and approvals.
+
+Cup Fixtures
+
+Knockout competition matches.
+
+Honours
+
+League and Cup achievements.
+
+17. Version 1 Success Criteria
+
+A manager can:
+
+Login
+View Own Team
+View Other Teams
+View League Table
+Submit Transfers
+The commissioner can:
+
+Enter Auction Results
+Update Goals
+Approve Transfers
+Manage Cup Fixtures
+The spreadsheet is no longer required for day-to-day operation of the Dream League.
+
+18. Future Versions
+
+Potential enhancements:
+
+Live Auction Mode
+Automatic Football Data Feeds
+Real-Time Scoring
+Mobile Application
+Push Notifications
+Historical Analytics
+Ownership History Analysis
+All-Time Records
+Player Career Tracking
+Advanced Cup Statistics
