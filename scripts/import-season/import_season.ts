@@ -3,12 +3,12 @@
  *
  * Rules: Project docs/Dream-League_PRD.md — do not invent.
  * Bryn locks: skip I ROBOT; no BFL/bets; empty cup; one login per manager.
+ * Bryn (stats): keep goal_events ledger; derive GF/GA/points. Spreadsheet
+ * FOR/AGAINST cumulatives expand into N goal_events per ownership stint.
  *
  *   npx tsx scripts/import-season/import_season.ts --dry-run
  *   npx tsx scripts/import-season/import_season.ts --apply
- *   npx tsx scripts/import-season/import_season.ts --apply --synthetic-goals
- *
- * --synthetic-goals is OPTIONAL (ask Bryn). Default leaves goal_events empty.
+ *   npx tsx scripts/import-season/import_season.ts --apply --skip-goal-events
  */
 
 import { readFileSync } from "node:fs";
@@ -24,7 +24,7 @@ const SEASON_NAME = "2026/2027";
 
 const args = new Set(process.argv.slice(2));
 const apply = args.has("--apply");
-const syntheticGoals = args.has("--synthetic-goals");
+const skipGoalEvents = args.has("--skip-goal-events");
 const dryRun = !apply;
 
 type TeamRow = {
@@ -106,20 +106,32 @@ async function main() {
   console.log("Squad memberships:", squad.length);
   console.log("GK memberships:", gkMems.length);
   console.log("Table checksum rows:", table.standings.length);
+  const expectedGf = squad.reduce(
+    (n, m) => n + (m.goals_for_while_owned ?? 0),
+    0,
+  );
+  const expectedGa = gkMems.reduce(
+    (n, m) => n + (m.goals_against_while_owned ?? 0),
+    0,
+  );
   console.log("Cup / BFL / bets: not imported");
+  console.log(
+    "goal_events from cumulatives:",
+    skipGoalEvents ? "SKIPPED" : `${expectedGf} outfield + ${expectedGa} GK`,
+  );
   console.log(
     "Mode:",
     dryRun
       ? "DRY RUN"
-      : syntheticGoals
-        ? "APPLY + optional synthetic goal_events"
-        : "APPLY (no goal_events)",
+      : skipGoalEvents
+        ? "APPLY (no goal_events)"
+        : "APPLY + goal_events ledger from FOR/AGAINST",
   );
 
   if (dryRun) {
     console.log(
       "\nNext: apply foundation migrations, set service role, then seed_2026_27.sql or --apply.\n" +
-        "Link managers via MANAGER_LINK.md. Ask Bryn before --synthetic-goals.\n",
+        "Link managers via MANAGER_LINK.md.\n",
     );
     return;
   }
@@ -265,7 +277,7 @@ async function main() {
   }
   console.log("goalkeeper_memberships", gkmPayload.length);
 
-  if (syntheticGoals) {
+  if (!skipGoalEvents) {
     await insertSyntheticGoals(
       supabase,
       seasonId,
@@ -313,7 +325,7 @@ async function insertSyntheticGoals(
         player_id: playerId,
         goalkeeper_club_id: null,
         occurred_on: on,
-        notes: "import: expanded from spreadsheet cumulative GF (optional)",
+        notes: "import: expanded from spreadsheet cumulative FOR (ownership stint)",
       });
     }
   }
@@ -332,7 +344,7 @@ async function insertSyntheticGoals(
         player_id: null,
         goalkeeper_club_id: clubId,
         occurred_on: on,
-        notes: "import: expanded from spreadsheet cumulative GA (optional)",
+        notes: "import: expanded from spreadsheet cumulative AGAINST (GK ownership stint)",
       });
     }
   }

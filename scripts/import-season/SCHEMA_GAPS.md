@@ -25,11 +25,10 @@ Aligned to foundation PRD schema (`goalkeeper_clubs`, `players` DEF/MID/FWD, `te
 | GK ownership | `goalkeeper_memberships` | Stints incl. sold |
 | Outfield ownership | `squad_memberships` | Stints incl. sold |
 | Auction cost | none | JSON only |
-| Goals | `goal_events` | Empty unless Bryn confirms `--synthetic-goals` |
+| Goals | `goal_events` ledger | FOR/AGAINST expanded to N events per stint; totals derived (Bryn confirmed; no season stats tables) |
 | Cup / BFL / bets | — | Not imported |
 
 ## Ask Bryn
 
 - Full names for first-name-only managers (`MANAGER_LINK.md`)
-- `--synthetic-goals` vs empty until commissioner entry
 - Stats column I; Middlesbrothers $1 costs; auth/emails
