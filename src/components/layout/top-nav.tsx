@@ -40,10 +40,10 @@ export function TopNav({ onMenuClick }: TopNavProps) {
 
         <div className="flex shrink-0 items-center gap-3 text-sm">
           <Link
-            href="/account"
+            href="/account-settings"
             className="rounded-md px-3 py-1.5 text-pitch-800 hover:bg-pitch-100"
           >
-            Account
+            Account Settings
           </Link>
           <Link
             href="/login"

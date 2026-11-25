@@ -1,7 +1,7 @@
--- Dream League core schema (align with Dream-League_PRD.md — do not invent rules)
+-- Dream League core schema
+-- Source of truth: Dream-League_PRD.md — do not invent rules.
 -- Scoring: outfield goals +1 GF; GK club goals conceded +1 GA; points = GF − GA;
 -- League order: points, then GF; if still equal, remain tied (PRD §8).
--- Note: position enum is currently goalkeeper|outfield; PRD uses DEF/MID/FWD + GK clubs — refine when directed.
 
 create extension if not exists "pgcrypto";
 
@@ -11,7 +11,8 @@ create extension if not exists "pgcrypto";
 
 create type public.user_role as enum ('visitor', 'manager', 'commissioner');
 
-create type public.player_position as enum ('goalkeeper', 'outfield');
+-- Outfield positions only (PRD §3). Goalkeepers are clubs, not player positions.
+create type public.player_position as enum ('DEF', 'MID', 'FWD');
 
 create type public.goal_event_type as enum ('outfield_goal', 'gk_conceded');
 
@@ -42,15 +43,42 @@ create table public.profiles (
   updated_at timestamptz not null default now()
 );
 
+-- Dream League franchises (PRD §16 Teams). Managers via team_managers (PRD §2).
 create table public.teams (
   id uuid primary key default gen_random_uuid(),
   season_id uuid not null references public.seasons (id) on delete cascade,
   name text not null,
-  manager_id uuid references public.profiles (id) on delete set null,
   created_at timestamptz not null default now(),
   unique (season_id, name)
 );
 
+-- One login per person; a team may have multiple managers (PRD §2).
+create table public.team_managers (
+  id uuid primary key default gen_random_uuid(),
+  team_id uuid not null references public.teams (id) on delete cascade,
+  -- null until the person signs up and is linked
+  profile_id uuid references public.profiles (id) on delete set null,
+  display_name text not null,
+  created_at timestamptz not null default now(),
+  unique (team_id, display_name)
+);
+
+create unique index team_managers_team_profile_uidx
+  on public.team_managers (team_id, profile_id)
+  where profile_id is not null;
+
+create index team_managers_profile_idx
+  on public.team_managers (profile_id)
+  where profile_id is not null;
+
+-- Club-based goalkeeper assets (PRD §4, §16). Distinct from outfield players.
+create table public.goalkeeper_clubs (
+  id uuid primary key default gen_random_uuid(),
+  name text not null unique,
+  created_at timestamptz not null default now()
+);
+
+-- Real-life outfield footballers only (PRD §3, §5). Positions: DEF / MID / FWD.
 create table public.players (
   id uuid primary key default gen_random_uuid(),
   name text not null,
@@ -59,6 +87,7 @@ create table public.players (
   created_at timestamptz not null default now()
 );
 
+-- Outfield ownership (PRD §16 Team Ownership). Unique active owner per season.
 create table public.squad_memberships (
   id uuid primary key default gen_random_uuid(),
   season_id uuid not null references public.seasons (id) on delete cascade,
@@ -70,7 +99,6 @@ create table public.squad_memberships (
     check (released_at is null or released_at >= acquired_at)
 );
 
--- A player can only belong to one squad at a time within a season
 create unique index squad_memberships_active_player_idx
   on public.squad_memberships (season_id, player_id)
   where released_at is null;
@@ -79,34 +107,86 @@ create index squad_memberships_team_idx
   on public.squad_memberships (team_id)
   where released_at is null;
 
+-- Goalkeeper club ownership (PRD §4 unique ownership). One active GK club per team/season.
+create table public.goalkeeper_memberships (
+  id uuid primary key default gen_random_uuid(),
+  season_id uuid not null references public.seasons (id) on delete cascade,
+  team_id uuid not null references public.teams (id) on delete cascade,
+  goalkeeper_club_id uuid not null references public.goalkeeper_clubs (id) on delete cascade,
+  acquired_at timestamptz not null default now(),
+  released_at timestamptz,
+  constraint goalkeeper_memberships_release_order
+    check (released_at is null or released_at >= acquired_at)
+);
+
+create unique index goalkeeper_memberships_active_club_idx
+  on public.goalkeeper_memberships (season_id, goalkeeper_club_id)
+  where released_at is null;
+
+create unique index goalkeeper_memberships_active_team_idx
+  on public.goalkeeper_memberships (season_id, team_id)
+  where released_at is null;
+
+-- Manual commissioner goal updates (PRD §14).
+-- outfield_goal => +1 GF (requires player_id);
+-- gk_conceded => +1 GA (requires goalkeeper_club_id).
 create table public.goal_events (
   id uuid primary key default gen_random_uuid(),
   season_id uuid not null references public.seasons (id) on delete cascade,
-  player_id uuid not null references public.players (id) on delete cascade,
   team_id uuid not null references public.teams (id) on delete cascade,
   event_type public.goal_event_type not null,
-  -- outfield_goal => +1 GF for team; gk_conceded => +1 GA for team
+  player_id uuid references public.players (id) on delete cascade,
+  goalkeeper_club_id uuid references public.goalkeeper_clubs (id) on delete cascade,
   occurred_on date not null,
   notes text,
   recorded_by uuid references public.profiles (id) on delete set null,
-  created_at timestamptz not null default now()
+  created_at timestamptz not null default now(),
+  constraint goal_events_subject_matches_type check (
+    (
+      event_type = 'outfield_goal'
+      and player_id is not null
+      and goalkeeper_club_id is null
+    )
+    or (
+      event_type = 'gk_conceded'
+      and goalkeeper_club_id is not null
+      and player_id is null
+    )
+  )
 );
 
 create index goal_events_season_team_idx
   on public.goal_events (season_id, team_id);
 
+-- Transfer requests (PRD §10). Same-position replace: outfield↔ outfield or GK club ↔ GK club.
 create table public.transfers (
   id uuid primary key default gen_random_uuid(),
   season_id uuid not null references public.seasons (id) on delete cascade,
   proposing_team_id uuid not null references public.teams (id) on delete cascade,
   player_in_id uuid references public.players (id) on delete set null,
   player_out_id uuid references public.players (id) on delete set null,
+  goalkeeper_club_in_id uuid references public.goalkeeper_clubs (id) on delete set null,
+  goalkeeper_club_out_id uuid references public.goalkeeper_clubs (id) on delete set null,
   status public.transfer_status not null default 'proposed',
   proposed_by uuid not null references public.profiles (id) on delete restrict,
   reviewed_by uuid references public.profiles (id) on delete set null,
   notes text,
   created_at timestamptz not null default now(),
-  reviewed_at timestamptz
+  reviewed_at timestamptz,
+  constraint transfers_one_asset_kind check (
+    (
+      player_in_id is not null
+      and player_out_id is not null
+      and goalkeeper_club_in_id is null
+      and goalkeeper_club_out_id is null
+    )
+    or (
+      goalkeeper_club_in_id is not null
+      and goalkeeper_club_out_id is not null
+      and player_in_id is null
+      and player_out_id is null
+    )
+  )
 );
 
 create index transfers_status_idx
@@ -207,8 +287,8 @@ security definer
 set search_path = public
 as $$
   select exists (
-    select 1 from public.teams
-    where id = p_team_id and manager_id = auth.uid()
+    select 1 from public.team_managers
+    where team_id = p_team_id and profile_id = auth.uid()
   );
 $$;
 
@@ -231,3 +311,12 @@ $$;
 create trigger profiles_prevent_role_self_escalation
   before update on public.profiles
   for each row execute function public.prevent_role_self_escalation();
+
+comment on table public.goalkeeper_clubs is
+  'PRD §4 / §16: club-based goalkeeper assets (e.g. Arsenal), distinct from outfield players.';
+
+comment on table public.team_managers is
+  'PRD §2: managers of a Dream League team. One profile (login) per person; multiple rows per team allowed.';
+
+comment on table public.players is
+  'PRD §3 / §5: outfield players only (DEF, MID, FWD).';

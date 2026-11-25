@@ -2,13 +2,29 @@
 
 The Next.js app currently uses **client stubs only** — it does not open a live Supabase connection. Env placeholders live in `.env.example`. Apply these migrations when you are ready to connect the database.
 
+**Schema authority:** Dream League PRD. Do not invent rules.
+
 ## Project
 
 URL: `https://ghzcdwxoukxngnstanxv.supabase.co`
 
-## Apply migrations
+## Core model (foundation)
 
-Migrations live in `supabase/migrations/`. Apply them against the project database.
+| Concept | Table(s) |
+| --- | --- |
+| Seasons | `seasons` |
+| Profiles / roles | `profiles` (`visitor` \| `manager` \| `commissioner`) |
+| Teams | `teams` (no single `manager_id`) |
+| Managers | `team_managers` (multi-manager; one login per person) |
+| Outfield players | `players` with position `DEF` \| `MID` \| `FWD` |
+| Goalkeeper clubs | `goalkeeper_clubs` (distinct from players) |
+| Outfield ownership | `squad_memberships` |
+| GK ownership | `goalkeeper_memberships` |
+| Goal updates | `goal_events` (`outfield_goal` → `player_id`; `gk_conceded` → `goalkeeper_club_id`) |
+| Transfers | `transfers` (outfield pair **or** GK club pair) |
+| Cup / honours | `cup_ties`, `honours` |
+
+## Apply migrations
 
 ### Option A — Supabase SQL Editor
 
@@ -38,18 +54,10 @@ where id = (
 );
 ```
 
-Managers:
-
-```sql
-update public.profiles
-set role = 'manager'
-where id = (
-  select id from auth.users where email = 'manager@example.com'
-);
-```
+Link managers after signup via `team_managers.profile_id`.
 
 ## Scoring (schema notes)
 
-- `goal_events.event_type = 'outfield_goal'` → +1 GF for `team_id`
-- `goal_events.event_type = 'gk_conceded'` → +1 GA for `team_id`
-- League points = GF − GA; tie-break = GF
+- `goal_events.event_type = 'outfield_goal'` → +1 GF for `team_id` (requires `player_id`)
+- `goal_events.event_type = 'gk_conceded'` → +1 GA for `team_id` (requires `goalkeeper_club_id`)
+- League points = GF − GA; order = points then GF; remain tied if still equal (PRD §8)

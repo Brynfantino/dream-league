@@ -3,25 +3,23 @@ export type NavItem = {
   label: string;
 };
 
-/** Primary app destinations shown in the left sidebar. */
+/**
+ * Primary destinations — labels match PRD §13 Application Pages exactly.
+ * Paths use kebab-case for URLs (UX); labels are the product names.
+ */
 export const primaryNav: NavItem[] = [
   { href: "/dashboard", label: "Dashboard" },
   { href: "/league-table", label: "League Table" },
-  { href: "/teams", label: "Teams" },
-  { href: "/players", label: "Players" },
-  { href: "/transfers", label: "Transfers" },
-  { href: "/cup", label: "Cup" },
-  { href: "/account", label: "Account" },
+  { href: "/team-page", label: "Team Page" },
+  { href: "/player-directory", label: "Player Directory" },
+  { href: "/transfer-centre", label: "Transfer Centre" },
+  { href: "/cup-centre", label: "Cup Centre" },
+  { href: "/account-settings", label: "Account Settings" },
 ];
 
 /**
- * Commissioner tools — secondary stubs for future role gating.
- * Shown in the sidebar under a separate heading; no auth wiring yet.
+ * Commissioner Console (PRD §13) — single entry; console page hosts admin stubs.
  */
 export const commissionerNav: NavItem[] = [
-  { href: "/commissioner/goal-updates", label: "Goal Updates" },
-  { href: "/commissioner/transfers-approval", label: "Transfers Approval" },
-  { href: "/commissioner/seasons", label: "Seasons" },
-  { href: "/commissioner/auction-import", label: "Auction Import" },
-  { href: "/commissioner/administration", label: "Administration" },
+  { href: "/commissioner-console", label: "Commissioner Console" },
 ];

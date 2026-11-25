@@ -4,7 +4,7 @@ export default function LeagueTablePage() {
   return (
     <PlaceholderPage
       title="League Table"
-      description="Standings will use GF, GA, and points = GF − GA (order: points, then GF; remain tied if equal — per PRD)."
+      description="Position, Team, Goals For, Goals Against, League Points (PRD §13)."
     />
   );
 }

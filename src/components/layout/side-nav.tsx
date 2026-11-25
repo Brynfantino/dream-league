@@ -54,10 +54,7 @@ export function SideNav({ onNavigate }: SideNavProps) {
       </nav>
 
       <div className="mt-auto border-t border-pitch-700 pt-4">
-        <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-pitch-300">
-          Commissioner
-        </p>
-        <nav aria-label="Commissioner" className="flex flex-col gap-0.5">
+        <nav aria-label="Commissioner Console" className="flex flex-col gap-0.5">
           {commissionerNav.map((item) => (
             <SideLink key={item.href} {...item} onNavigate={onNavigate} />
           ))}

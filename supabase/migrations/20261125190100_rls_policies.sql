@@ -5,8 +5,11 @@
 alter table public.seasons enable row level security;
 alter table public.profiles enable row level security;
 alter table public.teams enable row level security;
+alter table public.team_managers enable row level security;
+alter table public.goalkeeper_clubs enable row level security;
 alter table public.players enable row level security;
 alter table public.squad_memberships enable row level security;
+alter table public.goalkeeper_memberships enable row level security;
 alter table public.goal_events enable row level security;
 alter table public.transfers enable row level security;
 alter table public.cup_ties enable row level security;
@@ -85,6 +88,56 @@ create policy "teams_commissioner_delete"
   using (public.is_commissioner());
 
 -- ---------------------------------------------------------------------------
+-- team_managers
+-- ---------------------------------------------------------------------------
+
+create policy "team_managers_public_read"
+  on public.team_managers for select
+  to anon, authenticated
+  using (true);
+
+create policy "team_managers_commissioner_insert"
+  on public.team_managers for insert
+  to authenticated
+  with check (public.is_commissioner());
+
+create policy "team_managers_commissioner_update"
+  on public.team_managers for update
+  to authenticated
+  using (public.is_commissioner())
+  with check (public.is_commissioner());
+
+create policy "team_managers_commissioner_delete"
+  on public.team_managers for delete
+  to authenticated
+  using (public.is_commissioner());
+
+-- ---------------------------------------------------------------------------
+-- goalkeeper_clubs
+-- ---------------------------------------------------------------------------
+
+create policy "goalkeeper_clubs_public_read"
+  on public.goalkeeper_clubs for select
+  to anon, authenticated
+  using (true);
+
+create policy "goalkeeper_clubs_commissioner_insert"
+  on public.goalkeeper_clubs for insert
+  to authenticated
+  with check (public.is_commissioner());
+
+create policy "goalkeeper_clubs_commissioner_update"
+  on public.goalkeeper_clubs for update
+  to authenticated
+  using (public.is_commissioner())
+  with check (public.is_commissioner());
+
+create policy "goalkeeper_clubs_commissioner_delete"
+  on public.goalkeeper_clubs for delete
+  to authenticated
+  using (public.is_commissioner());
+
+-- ---------------------------------------------------------------------------
 -- players
 -- ---------------------------------------------------------------------------
 
@@ -131,6 +184,31 @@ create policy "squad_memberships_commissioner_update"
 
 create policy "squad_memberships_commissioner_delete"
   on public.squad_memberships for delete
+  to authenticated
+  using (public.is_commissioner());
+
+-- ---------------------------------------------------------------------------
+-- goalkeeper_memberships
+-- ---------------------------------------------------------------------------
+
+create policy "goalkeeper_memberships_public_read"
+  on public.goalkeeper_memberships for select
+  to anon, authenticated
+  using (true);
+
+create policy "goalkeeper_memberships_commissioner_insert"
+  on public.goalkeeper_memberships for insert
+  to authenticated
+  with check (public.is_commissioner());
+
+create policy "goalkeeper_memberships_commissioner_update"
+  on public.goalkeeper_memberships for update
+  to authenticated
+  using (public.is_commissioner())
+  with check (public.is_commissioner());
+
+create policy "goalkeeper_memberships_commissioner_delete"
+  on public.goalkeeper_memberships for delete
   to authenticated
   using (public.is_commissioner());
 
