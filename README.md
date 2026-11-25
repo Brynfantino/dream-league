@@ -9,8 +9,9 @@ Fantasy football web app replacing the long-running Dream League spreadsheet.
 ## Current status
 
 - Responsive app shell with **left navigation** and **top navigation**
-- Placeholder pages named per PRD §13 (except League Table — live read-only standings)
+- Placeholder pages named per PRD §13 (except League Table and Team Page — live read-only)
 - **League Table** derives Position / Team / Goals For / Goals Against / League Points from `goal_events` for the active season
+- **Team Page** shows Team Name, Manager(s), League Position, Current Squad, Player Goals, Goalkeeper Concessions, League Points (active season)
 - Supabase browser + server clients wired for reads (`.env.example`); app still runs without env (shows a configure message)
 - SQL migrations under `supabase/migrations/` aligned to the PRD data model
 
