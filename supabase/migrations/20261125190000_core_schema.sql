@@ -127,7 +127,9 @@ create unique index goalkeeper_memberships_active_team_idx
   on public.goalkeeper_memberships (season_id, team_id)
   where released_at is null;
 
--- Manual commissioner goal updates (PRD §14).
+-- Scoring source of truth (Bryn + PRD §14): event ledger only.
+-- Derive season/league GF, GA, and points from these rows — do not store
+-- cumulative goals on players/goalkeeper_clubs or add season aggregate tables.
 -- outfield_goal => +1 GF (requires player_id);
 -- gk_conceded => +1 GA (requires goalkeeper_club_id).
 create table public.goal_events (

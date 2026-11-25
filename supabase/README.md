@@ -20,7 +20,7 @@ URL: `https://ghzcdwxoukxngnstanxv.supabase.co`
 | Goalkeeper clubs | `goalkeeper_clubs` (distinct from players) |
 | Outfield ownership | `squad_memberships` |
 | GK ownership | `goalkeeper_memberships` |
-| Goal updates | `goal_events` (`outfield_goal` → `player_id`; `gk_conceded` → `goalkeeper_club_id`) |
+| Goal updates | `goal_events` only (`outfield_goal` → `player_id`; `gk_conceded` → `goalkeeper_club_id`); standings derived — no season aggregate tables |
 | Transfers | `transfers` (outfield pair **or** GK club pair) |
 | Cup / honours | `cup_ties`, `honours` |
 
@@ -58,6 +58,7 @@ Link managers after signup via `team_managers.profile_id`.
 
 ## Scoring (schema notes)
 
-- `goal_events.event_type = 'outfield_goal'` → +1 GF for `team_id` (requires `player_id`)
-- `goal_events.event_type = 'gk_conceded'` → +1 GA for `team_id` (requires `goalkeeper_club_id`)
+- **Source of truth:** `goal_events` (derive season/league totals; no goals columns on `players` / `goalkeeper_clubs`; no season aggregate stats tables)
+- `event_type = 'outfield_goal'` → +1 GF for `team_id` (requires `player_id`)
+- `event_type = 'gk_conceded'` → +1 GA for `team_id` (requires `goalkeeper_club_id`)
 - League points = GF − GA; order = points then GF; remain tied if still equal (PRD §8)

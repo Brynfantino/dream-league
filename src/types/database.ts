@@ -75,6 +75,10 @@ export type GoalkeeperMembership = {
   released_at: string | null;
 };
 
+/**
+ * Scoring source of truth. Season/league totals are derived from these events
+ * (not stored on players, goalkeeper_clubs, or aggregate season-stats tables).
+ */
 export type GoalEvent = {
   id: string;
   season_id: string;
