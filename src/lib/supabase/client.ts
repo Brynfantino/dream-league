@@ -1,7 +1,15 @@
+import { createBrowserClient } from "@supabase/ssr";
+
+import { hasPublicSupabaseEnv, supabaseEnv } from "./env";
+
 /**
- * Browser Supabase client stub.
- * Not connected — wire createBrowserClient when auth/data work begins.
+ * Browser Supabase client for public reads (and future auth).
+ * Returns null when public env vars are not configured.
  */
-export function createClient(): null {
-  return null;
+export function createClient() {
+  if (!hasPublicSupabaseEnv()) {
+    return null;
+  }
+
+  return createBrowserClient(supabaseEnv.url, supabaseEnv.anonKey);
 }

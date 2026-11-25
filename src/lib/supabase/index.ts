@@ -1,6 +1,6 @@
 /**
- * Supabase integration is prepared (env example + stubs + SQL migrations)
- * but not connected to a live project from the app yet.
+ * Supabase clients for public reads (and future auth / admin writes).
+ * Requires NEXT_PUBLIC_SUPABASE_URL + NEXT_PUBLIC_SUPABASE_ANON_KEY.
  */
 export { createClient as createBrowserClient } from "./client";
 export { createClient as createServerClient } from "./server";

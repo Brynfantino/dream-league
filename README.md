@@ -2,18 +2,17 @@
 
 Fantasy football web app replacing the long-running Dream League spreadsheet.
 
-**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · Supabase (prepared, not connected yet)
+**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · Supabase
 
 **Rules source of truth:** Dream League PRD (`Dream-League_PRD.md` in the project docs store). Do not invent game rules; ask if unclear.
 
-## Current status (foundation shell)
+## Current status
 
 - Responsive app shell with **left navigation** and **top navigation**
-- Placeholder pages named per PRD §13: Dashboard, League Table, Team Page, Player Directory, Transfer Centre, Cup Centre, Account Settings, Commissioner Console
-- Supabase **client stubs** + `.env.example` (no live connection required to run the app)
-- SQL migrations under `supabase/migrations/` aligned to the PRD data model (apply when connecting)
-
-No league business logic yet.
+- Placeholder pages named per PRD §13 (except League Table — live read-only standings)
+- **League Table** derives Position / Team / Goals For / Goals Against / League Points from `goal_events` for the active season
+- Supabase browser + server clients wired for reads (`.env.example`); app still runs without env (shows a configure message)
+- SQL migrations under `supabase/migrations/` aligned to the PRD data model
 
 ## Setup
 
@@ -57,12 +56,13 @@ src/
   app/login/          # Sign-in placeholder
   components/layout/  # TopNav, SideNav, AppShell
   config/             # Navigation (PRD labels)
-  lib/supabase/       # Client stubs (not connected)
+  lib/supabase/       # Browser + server clients (reads)
+  lib/league/         # Standings derived from goal_events
   types/              # Shared TypeScript types
 supabase/migrations/  # PRD-aligned schema + RLS
 ```
 
-## Scoring (from PRD — not implemented in UI yet)
+## Scoring (from PRD — League Table UI)
 
 | Event | Effect |
 | --- | --- |
