@@ -15,6 +15,10 @@ import {
   type TeamHistoryGoalkeeper,
   type TeamHistoryOutfield,
 } from "@/lib/league/team-detail";
+import {
+  deriveTransferUsage,
+  type TransferUsage,
+} from "@/lib/league/transfer-usage";
 import { createClient } from "@/lib/supabase/server";
 import type {
   GoalEvent,
@@ -29,13 +33,15 @@ import type {
 export type TeamListItem = Pick<Team, "id" | "name">;
 
 export type TeamPageDetail = {
-  season: Pick<Season, "id" | "name">;
+  season: Pick<Season, "id" | "name" | "starts_on">;
   team: Pick<Team, "id" | "name">;
   managers: string[];
   league_position: number;
   league_points: number;
   goals_for: number;
   goals_against: number;
+  /** PRD §10 allocation usage derived from ownership stints. */
+  transfer_usage: TransferUsage;
   current_squad: {
     goalkeeper: SquadGoalkeeper | null;
     outfield: SquadOutfieldMember[];
@@ -53,7 +59,7 @@ export type TeamPageResult =
   | { status: "error"; message: string }
   | {
       status: "ok";
-      season: Pick<Season, "id" | "name">;
+      season: Pick<Season, "id" | "name" | "starts_on">;
       teams: TeamListItem[];
       detail: TeamPageDetail | null;
       missing_team: boolean;
@@ -71,6 +77,9 @@ export type TeamPageResult =
  * Team History lists released ownership only. Goals / concessions are counted
  * from goal_events whose occurred_on falls inside each released stint's
  * [acquired_at, released_at] window for this team.
+ *
+ * Transfer usage: each membership with acquired_at after season.starts_on
+ * counts as one transfer-in (PRD §10 limits are app constants, not schema).
  */
 export async function loadTeamPage(
   teamId: string | null,
@@ -84,7 +93,7 @@ export async function loadTeamPage(
 
   const { data: season, error: seasonError } = await supabase
     .from("seasons")
-    .select("id, name")
+    .select("id, name, starts_on")
     .eq("is_active", true)
     .maybeSingle();
 
@@ -95,7 +104,7 @@ export async function loadTeamPage(
     return { status: "no_active_season" };
   }
 
-  const activeSeason = season as Pick<Season, "id" | "name">;
+  const activeSeason = season as Pick<Season, "id" | "name" | "starts_on">;
 
   const { data: teams, error: teamsError } = await supabase
     .from("teams")
@@ -140,6 +149,8 @@ export async function loadTeamPage(
     historyGkRes,
     activeSquadOwnersRes,
     activeGkOwnersRes,
+    allSquadStintsRes,
+    allGkStintsRes,
   ] = await Promise.all([
     supabase
       .from("team_managers")
@@ -191,6 +202,16 @@ export async function loadTeamPage(
       .select("goalkeeper_club_id, team_id")
       .eq("season_id", activeSeason.id)
       .is("released_at", null),
+    supabase
+      .from("squad_memberships")
+      .select("acquired_at, released_at")
+      .eq("season_id", activeSeason.id)
+      .eq("team_id", selected.id),
+    supabase
+      .from("goalkeeper_memberships")
+      .select("acquired_at, released_at")
+      .eq("season_id", activeSeason.id)
+      .eq("team_id", selected.id),
   ]);
 
   if (managersRes.error) {
@@ -217,11 +238,31 @@ export async function loadTeamPage(
   if (activeGkOwnersRes.error) {
     return { status: "error", message: activeGkOwnersRes.error.message };
   }
+  if (allSquadStintsRes.error) {
+    return { status: "error", message: allSquadStintsRes.error.message };
+  }
+  if (allGkStintsRes.error) {
+    return { status: "error", message: allGkStintsRes.error.message };
+  }
 
   const allEvents = (eventsRes.data ?? []) as Pick<
     GoalEvent,
     "team_id" | "event_type" | "player_id" | "goalkeeper_club_id" | "occurred_on"
   >[];
+
+  const outfieldStints = (allSquadStintsRes.data ?? []) as {
+    acquired_at: string;
+    released_at: string | null;
+  }[];
+  const gkStints = (allGkStintsRes.data ?? []) as {
+    acquired_at: string;
+    released_at: string | null;
+  }[];
+  const transfer_usage = deriveTransferUsage(
+    outfieldStints.map((s) => s.acquired_at),
+    gkStints.map((s) => s.acquired_at),
+    activeSeason.starts_on,
+  );
 
   const standings = deriveStandings(teamList, allEvents);
   const standing = standings.find((row) => row.team_id === selected.id);
@@ -399,6 +440,7 @@ export async function loadTeamPage(
     league_points: standing?.points ?? 0,
     goals_for: standing?.goals_for ?? 0,
     goals_against: standing?.goals_against ?? 0,
+    transfer_usage,
     current_squad: {
       goalkeeper,
       outfield: sortOutfieldSquad(outfield),

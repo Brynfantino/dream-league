@@ -113,6 +113,47 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
             </dd>
           </div>
         </dl>
+
+        <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="border-t border-pitch-300 pt-3">
+            <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
+              Outfield Transfers Used
+            </dt>
+            <dd className="mt-1 font-display text-2xl tracking-wide tabular-nums text-pitch-950">
+              {detail.transfer_usage.outfield_used}
+              <span className="ml-1 text-base font-sans font-normal text-pitch-600">
+                / {detail.transfer_usage.outfield_limit}
+              </span>
+            </dd>
+          </div>
+          <div className="border-t border-pitch-300 pt-3">
+            <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
+              Outfield Transfers Remaining
+            </dt>
+            <dd className="mt-1 font-display text-2xl tracking-wide tabular-nums text-pitch-950">
+              {detail.transfer_usage.outfield_remaining}
+            </dd>
+          </div>
+          <div className="border-t border-pitch-300 pt-3">
+            <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
+              Goalkeeper Transfers Used
+            </dt>
+            <dd className="mt-1 font-display text-2xl tracking-wide tabular-nums text-pitch-950">
+              {detail.transfer_usage.goalkeeper_used}
+              <span className="ml-1 text-base font-sans font-normal text-pitch-600">
+                / {detail.transfer_usage.goalkeeper_limit}
+              </span>
+            </dd>
+          </div>
+          <div className="border-t border-pitch-300 pt-3">
+            <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
+              Goalkeeper Transfers Remaining
+            </dt>
+            <dd className="mt-1 font-display text-2xl tracking-wide tabular-nums text-pitch-950">
+              {detail.transfer_usage.goalkeeper_remaining}
+            </dd>
+          </div>
+        </dl>
       </section>
 
       <section className="space-y-3" aria-labelledby="current-squad">
