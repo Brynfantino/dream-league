@@ -1,5 +1,13 @@
 import { Fragment } from "react";
 
+import { TeamHistoryView } from "@/components/team/team-history-view";
+import {
+  ContributionCell,
+  TEAM_HISTORY_TABLE_WIDTH,
+  TEAM_SQUAD_TABLE_CLASS,
+  TeamSquadColGroup,
+  contributionClass,
+} from "@/components/team/team-squad-table-layout";
 import type { TeamPageDetail } from "@/lib/league/load-team-page";
 import {
   formatContribution,
@@ -44,20 +52,6 @@ function groupOutfield(members: SquadOutfieldMember[]) {
     label: POSITION_GROUP_LABEL[position],
     members: members.filter((m) => m.position === position),
   })).filter((group) => group.members.length > 0);
-}
-
-function contributionClass(value: number): string {
-  if (value > 0) return "font-semibold tabular-nums text-pitch-700";
-  if (value < 0) return "font-semibold tabular-nums text-red-800";
-  return "tabular-nums text-pitch-600";
-}
-
-function ContributionCell({ value }: { value: number }) {
-  return (
-    <td className={`px-3 py-3 text-right ${contributionClass(value)}`}>
-      {formatContribution(value)}
-    </td>
-  );
 }
 
 export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
@@ -129,11 +123,16 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
           Current Squad
         </h2>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+          <table
+            className={TEAM_SQUAD_TABLE_CLASS}
+            style={{ width: TEAM_HISTORY_TABLE_WIDTH }}
+          >
             <caption className="sr-only">
               Current squad with position, name, club, and contribution. Team
               total is league points (goals for minus goals against).
             </caption>
+            {/* Same 5-col grid as History; final column reserved/empty so shared columns align. */}
+            <TeamSquadColGroup withCurrentOwner />
             <thead>
               <tr className="border-b border-pitch-300 text-pitch-800">
                 <th scope="col" className="px-3 py-3 font-semibold">
@@ -151,13 +150,16 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                 >
                   Contribution
                 </th>
+                <th scope="col" className="px-3 py-3">
+                  <span className="sr-only">Current Owner (History only)</span>
+                </th>
               </tr>
             </thead>
             <tbody>
               {!hasSquad ? (
                 <tr>
                   <td
-                    colSpan={4}
+                    colSpan={5}
                     className="px-3 py-3 text-sm text-pitch-700"
                   >
                     No current squad members.
@@ -170,7 +172,7 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                   <tr className="border-b border-pitch-200/80 bg-pitch-50/60">
                     <th
                       scope="colgroup"
-                      colSpan={4}
+                      colSpan={5}
                       className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-pitch-700"
                     >
                       Goalkeeper
@@ -179,7 +181,7 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                   <tr className="border-b border-pitch-200/80 text-pitch-950">
                     <td className="px-3 py-3">Goalkeeper</td>
                     <td className="px-3 py-3 text-pitch-600">—</td>
-                    <td className="px-3 py-3 font-medium">
+                    <td className="truncate px-3 py-3 font-medium">
                       {current_squad.goalkeeper.name}
                     </td>
                     <ContributionCell
@@ -187,6 +189,7 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                         current_squad.goalkeeper.concessions,
                       )}
                     />
+                    <td className="px-3 py-3" aria-hidden="true" />
                   </tr>
                 </Fragment>
               ) : null}
@@ -196,7 +199,7 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                   <tr className="border-b border-pitch-200/80 bg-pitch-50/60">
                     <th
                       scope="colgroup"
-                      colSpan={4}
+                      colSpan={5}
                       className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-pitch-700"
                     >
                       {group.label}
@@ -210,13 +213,16 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                       <td className="px-3 py-3 text-pitch-700">
                         {POSITION_LABEL[player.position]}
                       </td>
-                      <td className="px-3 py-3 font-medium">{player.name}</td>
-                      <td className="px-3 py-3 text-pitch-700">
+                      <td className="truncate px-3 py-3 font-medium">
+                        {player.name}
+                      </td>
+                      <td className="truncate px-3 py-3 text-pitch-700">
                         {player.club ?? "—"}
                       </td>
                       <ContributionCell
                         value={outfieldContribution(player.goals)}
                       />
+                      <td className="px-3 py-3" aria-hidden="true" />
                     </tr>
                   ))}
                 </Fragment>
@@ -237,12 +243,18 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                   >
                     {formatContribution(teamTotal)}
                   </td>
+                  <td className="px-3 py-3" aria-hidden="true" />
                 </tr>
               </tfoot>
             ) : null}
           </table>
         </div>
       </section>
+
+      <TeamHistoryView
+        outfield={detail.team_history.outfield}
+        goalkeepers={detail.team_history.goalkeepers}
+      />
     </div>
   );
 }
