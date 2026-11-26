@@ -61,3 +61,23 @@ export function countGoalkeeperConcessions(
   }
   return total;
 }
+
+/**
+ * Squad contribution for display (PRD §7): outfield goals add, concessions subtract.
+ * League Points / table total remain GF − GA from deriveStandings — do not sum these
+ * row values when ownership has changed mid-season.
+ */
+export function outfieldContribution(goals: number): number {
+  return goals;
+}
+
+export function goalkeeperContribution(concessions: number): number {
+  return -concessions;
+}
+
+/** Format a signed contribution for the squad table (+5, −17, 0). */
+export function formatContribution(value: number): string {
+  if (value > 0) return `+${value}`;
+  if (value < 0) return `−${Math.abs(value)}`;
+  return "0";
+}

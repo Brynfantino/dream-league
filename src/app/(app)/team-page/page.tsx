@@ -16,9 +16,7 @@ export default function TeamPage({ searchParams }: TeamPageProps) {
           Team Page
         </h1>
         <p className="text-base text-pitch-800">
-          Team Name, Manager(s), League Position, League Points, Goals For,
-          Goals Against, and Current Squad (with Player Goals and Goalkeeper
-          Concessions) for the active season (PRD §13).
+          Squad, standings summary, and scoring for the active season.
         </p>
       </header>
 
@@ -72,11 +70,11 @@ async function TeamPageContent({
 
   return (
     <div className="space-y-8">
-      <div className="space-y-2">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <TeamPicker teams={result.teams} selectedId={teamId} />
         <p className="text-sm text-pitch-700">
           Active season: {result.season.name}
         </p>
-        <TeamPicker teams={result.teams} selectedId={teamId} />
       </div>
 
       {result.missing_team ? (
@@ -87,8 +85,7 @@ async function TeamPageContent({
 
       {!result.detail && !result.missing_team ? (
         <p className="text-sm text-pitch-700">
-          Select a team to view Manager(s), standings summary, and Current
-          Squad.
+          Select a team to view the squad and standings summary.
         </p>
       ) : null}
 
