@@ -1,7 +1,12 @@
 import { Fragment } from "react";
 
 import {
-  formatContribution,
+  ContributionCell,
+  TEAM_HISTORY_TABLE_WIDTH,
+  TEAM_SQUAD_TABLE_CLASS,
+  TeamSquadColGroup,
+} from "@/components/team/team-squad-table-layout";
+import {
   goalkeeperContribution,
   outfieldContribution,
   type TeamHistoryGoalkeeper,
@@ -22,20 +27,6 @@ const POSITION_GROUP_LABEL: Record<PlayerPosition, string> = {
 };
 
 const POSITION_ORDER: PlayerPosition[] = ["DEF", "MID", "FWD"];
-
-function contributionClass(value: number): string {
-  if (value > 0) return "font-semibold tabular-nums text-pitch-700";
-  if (value < 0) return "font-semibold tabular-nums text-red-800";
-  return "tabular-nums text-pitch-600";
-}
-
-function ContributionCell({ value }: { value: number }) {
-  return (
-    <td className={`px-3 py-3 text-right ${contributionClass(value)}`}>
-      {formatContribution(value)}
-    </td>
-  );
-}
 
 function groupOutfield(members: TeamHistoryOutfield[]) {
   return POSITION_ORDER.map((position) => ({
@@ -76,7 +67,11 @@ export function TeamHistoryView({
         </p>
       ) : (
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
+          <table
+            className={TEAM_SQUAD_TABLE_CLASS}
+            style={{ width: TEAM_HISTORY_TABLE_WIDTH }}
+          >
+            <TeamSquadColGroup withCurrentOwner />
             <caption className="sr-only">
               Previously owned squad with position, name, club, contribution
               while owned, and current owner
@@ -122,11 +117,13 @@ export function TeamHistoryView({
                     >
                       <td className="px-3 py-3">Goalkeeper</td>
                       <td className="px-3 py-3 text-pitch-600">—</td>
-                      <td className="px-3 py-3 font-medium">{club.name}</td>
+                      <td className="truncate px-3 py-3 font-medium">
+                        {club.name}
+                      </td>
                       <ContributionCell
                         value={goalkeeperContribution(club.concessions)}
                       />
-                      <td className="px-3 py-3 text-pitch-700">
+                      <td className="truncate px-3 py-3 text-pitch-700">
                         {club.current_owner ?? "—"}
                       </td>
                     </tr>
@@ -153,14 +150,16 @@ export function TeamHistoryView({
                       <td className="px-3 py-3 text-pitch-700">
                         {POSITION_LABEL[player.position]}
                       </td>
-                      <td className="px-3 py-3 font-medium">{player.name}</td>
-                      <td className="px-3 py-3 text-pitch-700">
+                      <td className="truncate px-3 py-3 font-medium">
+                        {player.name}
+                      </td>
+                      <td className="truncate px-3 py-3 text-pitch-700">
                         {player.club ?? "—"}
                       </td>
                       <ContributionCell
                         value={outfieldContribution(player.goals)}
                       />
-                      <td className="px-3 py-3 text-pitch-700">
+                      <td className="truncate px-3 py-3 text-pitch-700">
                         {player.current_owner ?? "—"}
                       </td>
                     </tr>

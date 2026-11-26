@@ -1,6 +1,13 @@
 import { Fragment } from "react";
 
 import { TeamHistoryView } from "@/components/team/team-history-view";
+import {
+  ContributionCell,
+  TEAM_SQUAD_TABLE_CLASS,
+  TEAM_SQUAD_TABLE_WIDTH,
+  TeamSquadColGroup,
+  contributionClass,
+} from "@/components/team/team-squad-table-layout";
 import type { TeamPageDetail } from "@/lib/league/load-team-page";
 import {
   formatContribution,
@@ -45,20 +52,6 @@ function groupOutfield(members: SquadOutfieldMember[]) {
     label: POSITION_GROUP_LABEL[position],
     members: members.filter((m) => m.position === position),
   })).filter((group) => group.members.length > 0);
-}
-
-function contributionClass(value: number): string {
-  if (value > 0) return "font-semibold tabular-nums text-pitch-700";
-  if (value < 0) return "font-semibold tabular-nums text-red-800";
-  return "tabular-nums text-pitch-600";
-}
-
-function ContributionCell({ value }: { value: number }) {
-  return (
-    <td className={`px-3 py-3 text-right ${contributionClass(value)}`}>
-      {formatContribution(value)}
-    </td>
-  );
 }
 
 export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
@@ -130,7 +123,11 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
           Current Squad
         </h2>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+          <table
+            className={TEAM_SQUAD_TABLE_CLASS}
+            style={{ width: TEAM_SQUAD_TABLE_WIDTH }}
+          >
+            <TeamSquadColGroup />
             <caption className="sr-only">
               Current squad with position, name, club, and contribution. Team
               total is league points (goals for minus goals against).
@@ -211,8 +208,10 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                       <td className="px-3 py-3 text-pitch-700">
                         {POSITION_LABEL[player.position]}
                       </td>
-                      <td className="px-3 py-3 font-medium">{player.name}</td>
-                      <td className="px-3 py-3 text-pitch-700">
+                      <td className="truncate px-3 py-3 font-medium">
+                        {player.name}
+                      </td>
+                      <td className="truncate px-3 py-3 text-pitch-700">
                         {player.club ?? "—"}
                       </td>
                       <ContributionCell
