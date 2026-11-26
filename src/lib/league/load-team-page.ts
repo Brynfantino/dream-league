@@ -51,10 +51,10 @@ export type TeamPageResult =
  * Load Team Page data for the active season (read-only).
  * When teamId is set, include that team's detail; otherwise list only.
  *
- * Current Squad shows active ownership only. Per-member Goals / Conceded
- * come from this team's goal_events for those current assets. Summary
- * Goals For / Against / Points still use all season events for the team
- * (same derivation as League Table), including events from released ownership.
+ * Current Squad shows active ownership only. Per-member Contribution is
+ * +outfield goals / −gk concessions from this team's goal_events for those
+ * current assets. Summary GF / GA / Points (and the squad table League Points
+ * total) use all season events via deriveStandings — same SoT as League Table.
  */
 export async function loadTeamPage(
   teamId: string | null,
