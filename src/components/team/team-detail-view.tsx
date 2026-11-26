@@ -9,6 +9,8 @@ const POSITION_LABEL: Record<PlayerPosition, string> = {
 
 export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
   const { current_squad } = detail;
+  const hasSquad =
+    current_squad.goalkeeper !== null || current_squad.outfield.length > 0;
 
   return (
     <div className="space-y-10">
@@ -19,7 +21,7 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
         >
           {detail.team.name}
         </h2>
-        <dl className="grid gap-3 sm:grid-cols-2">
+        <dl className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
               Manager(s)
@@ -46,6 +48,22 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
               {detail.league_points}
             </dd>
           </div>
+          <div>
+            <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
+              Goals For
+            </dt>
+            <dd className="mt-1 text-sm tabular-nums text-pitch-950">
+              {detail.goals_for}
+            </dd>
+          </div>
+          <div>
+            <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
+              Goals Against
+            </dt>
+            <dd className="mt-1 text-sm tabular-nums text-pitch-950">
+              {detail.goals_against}
+            </dd>
+          </div>
         </dl>
       </section>
 
@@ -56,10 +74,16 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
         >
           Current Squad
         </h2>
+        <p className="text-sm text-pitch-700">
+          Active ownership only. Goals are outfield goals for this team;
+          Conceded is the current goalkeeper club’s concessions for this team
+          (from goal events).
+        </p>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[28rem] border-collapse text-left text-sm">
+          <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
             <caption className="sr-only">
-              Current squad including goalkeeper and outfield players
+              Current squad with position, name, club, goals, and goalkeeper
+              concessions
             </caption>
             <thead>
               <tr className="border-b border-pitch-300 text-pitch-800">
@@ -72,9 +96,32 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                 <th scope="col" className="px-3 py-3 font-semibold">
                   Club
                 </th>
+                <th
+                  scope="col"
+                  className="px-3 py-3 text-right font-semibold"
+                >
+                  Goals
+                </th>
+                <th
+                  scope="col"
+                  className="px-3 py-3 text-right font-semibold"
+                >
+                  Conceded
+                </th>
               </tr>
             </thead>
             <tbody>
+              {!hasSquad ? (
+                <tr>
+                  <td
+                    colSpan={5}
+                    className="px-3 py-3 text-sm text-pitch-700"
+                  >
+                    No current squad members.
+                  </td>
+                </tr>
+              ) : null}
+
               {current_squad.goalkeeper ? (
                 <tr className="border-b border-pitch-200/80 text-pitch-950">
                   <td className="px-3 py-3">Goalkeeper</td>
@@ -82,8 +129,15 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                     {current_squad.goalkeeper.name}
                   </td>
                   <td className="px-3 py-3 text-pitch-700">—</td>
+                  <td className="px-3 py-3 text-right tabular-nums text-pitch-600">
+                    —
+                  </td>
+                  <td className="px-3 py-3 text-right tabular-nums">
+                    {current_squad.goalkeeper.concessions}
+                  </td>
                 </tr>
               ) : null}
+
               {current_squad.outfield.map((player) => (
                 <tr
                   key={player.player_id}
@@ -96,138 +150,14 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                   <td className="px-3 py-3 text-pitch-700">
                     {player.club ?? "—"}
                   </td>
+                  <td className="px-3 py-3 text-right tabular-nums">
+                    {player.goals}
+                  </td>
+                  <td className="px-3 py-3 text-right tabular-nums text-pitch-600">
+                    —
+                  </td>
                 </tr>
               ))}
-              {!current_squad.goalkeeper &&
-              current_squad.outfield.length === 0 ? (
-                <tr>
-                  <td
-                    colSpan={3}
-                    className="px-3 py-3 text-sm text-pitch-700"
-                  >
-                    No current squad members.
-                  </td>
-                </tr>
-              ) : null}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section className="space-y-3" aria-labelledby="player-goals">
-        <h2
-          id="player-goals"
-          className="font-display text-xl tracking-wide text-pitch-950"
-        >
-          Player Goals
-        </h2>
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[24rem] border-collapse text-left text-sm">
-            <caption className="sr-only">
-              Goals scored by outfield players for this team
-            </caption>
-            <thead>
-              <tr className="border-b border-pitch-300 text-pitch-800">
-                <th scope="col" className="px-3 py-3 font-semibold">
-                  Player
-                </th>
-                <th scope="col" className="px-3 py-3 font-semibold">
-                  Position
-                </th>
-                <th
-                  scope="col"
-                  className="px-3 py-3 text-right font-semibold"
-                >
-                  Goals
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {detail.player_goals.length === 0 ? (
-                <tr>
-                  <td
-                    colSpan={3}
-                    className="px-3 py-3 text-sm text-pitch-700"
-                  >
-                    No player goals recorded yet.
-                  </td>
-                </tr>
-              ) : (
-                detail.player_goals.map((row) => (
-                  <tr
-                    key={row.player_id}
-                    className="border-b border-pitch-200/80 text-pitch-950 last:border-0"
-                  >
-                    <td className="px-3 py-3 font-medium">{row.name}</td>
-                    <td className="px-3 py-3">
-                      {POSITION_LABEL[row.position]}
-                    </td>
-                    <td className="px-3 py-3 text-right tabular-nums">
-                      {row.goals}
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section className="space-y-3" aria-labelledby="gk-concessions">
-        <h2
-          id="gk-concessions"
-          className="font-display text-xl tracking-wide text-pitch-950"
-        >
-          Goalkeeper Concessions
-        </h2>
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[24rem] border-collapse text-left text-sm">
-            <caption className="sr-only">
-              Goals conceded by goalkeeper clubs for this team
-            </caption>
-            <thead>
-              <tr className="border-b border-pitch-300 text-pitch-800">
-                <th scope="col" className="px-3 py-3 font-semibold">
-                  Goalkeeper Club
-                </th>
-                <th
-                  scope="col"
-                  className="px-3 py-3 text-right font-semibold"
-                >
-                  Concessions
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {detail.goalkeeper_concessions.length === 0 ? (
-                <tr>
-                  <td
-                    colSpan={2}
-                    className="px-3 py-3 text-sm text-pitch-700"
-                  >
-                    No goalkeeper concessions recorded yet.
-                  </td>
-                </tr>
-              ) : (
-                detail.goalkeeper_concessions.map((row) => (
-                  <tr
-                    key={row.goalkeeper_club_id}
-                    className="border-b border-pitch-200/80 text-pitch-950 last:border-0"
-                  >
-                    <td className="px-3 py-3 font-medium">
-                      {row.name}
-                      {row.is_current ? (
-                        <span className="ml-2 text-xs font-normal text-pitch-600">
-                          (current)
-                        </span>
-                      ) : null}
-                    </td>
-                    <td className="px-3 py-3 text-right tabular-nums">
-                      {row.concessions}
-                    </td>
-                  </tr>
-                ))
-              )}
             </tbody>
           </table>
         </div>

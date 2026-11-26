@@ -16,9 +16,9 @@ export default function TeamPage({ searchParams }: TeamPageProps) {
           Team Page
         </h1>
         <p className="text-base text-pitch-800">
-          Team Name, Manager(s), League Position, Current Squad, Player Goals,
-          Goalkeeper Concessions, and League Points for the active season (PRD
-          §13).
+          Team Name, Manager(s), League Position, League Points, Goals For,
+          Goals Against, and Current Squad (with Player Goals and Goalkeeper
+          Concessions) for the active season (PRD §13).
         </p>
       </header>
 
@@ -87,8 +87,8 @@ async function TeamPageContent({
 
       {!result.detail && !result.missing_team ? (
         <p className="text-sm text-pitch-700">
-          Select a team to view Manager(s), League Position, Current Squad,
-          Player Goals, Goalkeeper Concessions, and League Points.
+          Select a team to view Manager(s), standings summary, and Current
+          Squad.
         </p>
       ) : null}
 
