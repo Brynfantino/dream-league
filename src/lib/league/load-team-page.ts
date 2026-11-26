@@ -2,11 +2,9 @@ import { connection } from "next/server";
 
 import { deriveStandings } from "@/lib/league/standings";
 import {
-  deriveGoalkeeperConcessions,
-  derivePlayerGoals,
+  countGoalkeeperConcessions,
+  countOutfieldGoalsByPlayer,
   sortOutfieldSquad,
-  type GoalkeeperConcessionRow,
-  type PlayerGoalRow,
   type SquadGoalkeeper,
   type SquadOutfieldMember,
 } from "@/lib/league/team-detail";
@@ -29,12 +27,12 @@ export type TeamPageDetail = {
   managers: string[];
   league_position: number;
   league_points: number;
+  goals_for: number;
+  goals_against: number;
   current_squad: {
     goalkeeper: SquadGoalkeeper | null;
     outfield: SquadOutfieldMember[];
   };
-  player_goals: PlayerGoalRow[];
-  goalkeeper_concessions: GoalkeeperConcessionRow[];
 };
 
 export type TeamPageResult =
@@ -52,6 +50,11 @@ export type TeamPageResult =
 /**
  * Load Team Page data for the active season (read-only).
  * When teamId is set, include that team's detail; otherwise list only.
+ *
+ * Current Squad shows active ownership only. Per-member Goals / Conceded
+ * come from this team's goal_events for those current assets. Summary
+ * Goals For / Against / Points still use all season events for the team
+ * (same derivation as League Table), including events from released ownership.
  */
 export async function loadTeamPage(
   teamId: string | null,
@@ -111,12 +114,7 @@ export async function loadTeamPage(
     };
   }
 
-  const [
-    managersRes,
-    eventsRes,
-    squadRes,
-    gkRes,
-  ] = await Promise.all([
+  const [managersRes, eventsRes, squadRes, gkRes] = await Promise.all([
     supabase
       .from("team_managers")
       .select("display_name")
@@ -166,6 +164,9 @@ export async function loadTeamPage(
     (managersRes.data ?? []) as Pick<TeamManager, "display_name">[]
   ).map((m) => m.display_name);
 
+  const teamEvents = allEvents.filter((e) => e.team_id === selected.id);
+  const goalsByPlayer = countOutfieldGoalsByPlayer(teamEvents);
+
   type SquadJoinRow = {
     player_id: string;
     players:
@@ -183,6 +184,7 @@ export async function loadTeamPage(
       name: player.name,
       club: player.club,
       position: player.position as PlayerPosition,
+      goals: goalsByPlayer.get(player.id) ?? 0,
     });
   }
 
@@ -201,78 +203,11 @@ export async function loadTeamPage(
       ? gkRow.goalkeeper_clubs[0]
       : gkRow.goalkeeper_clubs;
     if (club) {
-      goalkeeper = { goalkeeper_club_id: club.id, name: club.name };
-    }
-  }
-
-  const teamEvents = allEvents.filter((e) => e.team_id === selected.id);
-
-  // Resolve player names for anyone who scored for this team (may include released)
-  const scorerIds = [
-    ...new Set(
-      teamEvents
-        .filter((e) => e.event_type === "outfield_goal" && e.player_id)
-        .map((e) => e.player_id as string),
-    ),
-  ];
-
-  const playersById = new Map<
-    string,
-    Pick<Player, "id" | "name" | "position">
-  >();
-  for (const member of outfield) {
-    playersById.set(member.player_id, {
-      id: member.player_id,
-      name: member.name,
-      position: member.position,
-    });
-  }
-
-  const missingScorerIds = scorerIds.filter((id) => !playersById.has(id));
-  if (missingScorerIds.length > 0) {
-    const { data: extraPlayers, error: playersError } = await supabase
-      .from("players")
-      .select("id, name, position")
-      .in("id", missingScorerIds);
-
-    if (playersError) {
-      return { status: "error", message: playersError.message };
-    }
-    for (const p of (extraPlayers ?? []) as Pick<
-      Player,
-      "id" | "name" | "position"
-    >[]) {
-      playersById.set(p.id, p);
-    }
-  }
-
-  const clubsById = new Map<string, Pick<GoalkeeperClub, "id" | "name">>();
-  if (goalkeeper) {
-    clubsById.set(goalkeeper.goalkeeper_club_id, {
-      id: goalkeeper.goalkeeper_club_id,
-      name: goalkeeper.name,
-    });
-  }
-
-  const concessionClubIds = [
-    ...new Set(
-      teamEvents
-        .filter((e) => e.event_type === "gk_conceded" && e.goalkeeper_club_id)
-        .map((e) => e.goalkeeper_club_id as string),
-    ),
-  ].filter((id) => !clubsById.has(id));
-
-  if (concessionClubIds.length > 0) {
-    const { data: extraClubs, error: clubsError } = await supabase
-      .from("goalkeeper_clubs")
-      .select("id, name")
-      .in("id", concessionClubIds);
-
-    if (clubsError) {
-      return { status: "error", message: clubsError.message };
-    }
-    for (const c of (extraClubs ?? []) as Pick<GoalkeeperClub, "id" | "name">[]) {
-      clubsById.set(c.id, c);
+      goalkeeper = {
+        goalkeeper_club_id: club.id,
+        name: club.name,
+        concessions: countGoalkeeperConcessions(teamEvents, club.id),
+      };
     }
   }
 
@@ -282,16 +217,12 @@ export async function loadTeamPage(
     managers,
     league_position: standing?.position ?? teamList.length,
     league_points: standing?.points ?? 0,
+    goals_for: standing?.goals_for ?? 0,
+    goals_against: standing?.goals_against ?? 0,
     current_squad: {
       goalkeeper,
       outfield: sortOutfieldSquad(outfield),
     },
-    player_goals: derivePlayerGoals(teamEvents, playersById),
-    goalkeeper_concessions: deriveGoalkeeperConcessions(
-      teamEvents,
-      clubsById,
-      goalkeeper?.goalkeeper_club_id ?? null,
-    ),
   };
 
   return {
