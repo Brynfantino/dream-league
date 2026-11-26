@@ -71,11 +71,11 @@ export function TeamHistoryView({
             className={TEAM_SQUAD_TABLE_CLASS}
             style={{ width: TEAM_HISTORY_TABLE_WIDTH }}
           >
-            <TeamSquadColGroup withCurrentOwner />
             <caption className="sr-only">
               Previously owned squad with position, name, club, contribution
               while owned, and current owner
             </caption>
+            <TeamSquadColGroup withCurrentOwner />
             <thead>
               <tr className="border-b border-pitch-300 text-pitch-800">
                 <th scope="col" className="px-3 py-3 font-semibold">

@@ -15,10 +15,8 @@ export const TEAM_SQUAD_COL = {
   currentOwner: "12rem",
 } as const;
 
-const SHARED_WIDTH_REM = 9 + 14 + 14 + 7;
-
-export const TEAM_SQUAD_TABLE_WIDTH = `${SHARED_WIDTH_REM}rem`;
-export const TEAM_HISTORY_TABLE_WIDTH = `${SHARED_WIDTH_REM + 12}rem`;
+/** Both tables use this full grid width (shared cols + Current Owner slot). */
+export const TEAM_HISTORY_TABLE_WIDTH = `${9 + 14 + 14 + 7 + 12}rem`;
 
 export const TEAM_SQUAD_TABLE_CLASS =
   "table-fixed border-collapse text-left text-sm";
