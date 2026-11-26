@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 
+import { TeamHistoryView } from "@/components/team/team-history-view";
 import type { TeamPageDetail } from "@/lib/league/load-team-page";
 import {
   formatContribution,
@@ -243,6 +244,11 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
           </table>
         </div>
       </section>
+
+      <TeamHistoryView
+        outfield={detail.team_history.outfield}
+        goalkeepers={detail.team_history.goalkeepers}
+      />
     </div>
   );
 }

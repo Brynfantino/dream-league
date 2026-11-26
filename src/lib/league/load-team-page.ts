@@ -3,10 +3,17 @@ import { connection } from "next/server";
 import { deriveStandings } from "@/lib/league/standings";
 import {
   countGoalkeeperConcessions,
+  countGoalkeeperConcessionsInStints,
   countOutfieldGoalsByPlayer,
+  countOutfieldGoalsInStints,
   sortOutfieldSquad,
+  sortTeamHistoryGoalkeepers,
+  sortTeamHistoryOutfield,
+  type OwnershipStint,
   type SquadGoalkeeper,
   type SquadOutfieldMember,
+  type TeamHistoryGoalkeeper,
+  type TeamHistoryOutfield,
 } from "@/lib/league/team-detail";
 import { createClient } from "@/lib/supabase/server";
 import type {
@@ -33,6 +40,11 @@ export type TeamPageDetail = {
     goalkeeper: SquadGoalkeeper | null;
     outfield: SquadOutfieldMember[];
   };
+  /** Released ownership only (active season). Contributions scoped to stint windows. */
+  team_history: {
+    outfield: TeamHistoryOutfield[];
+    goalkeepers: TeamHistoryGoalkeeper[];
+  };
 };
 
 export type TeamPageResult =
@@ -55,6 +67,10 @@ export type TeamPageResult =
  * +outfield goals / −gk concessions from this team's goal_events for those
  * current assets. Summary GF / GA / Points (and the squad table League Points
  * total) use all season events via deriveStandings — same SoT as League Table.
+ *
+ * Team History lists released ownership only. Goals / concessions are counted
+ * from goal_events whose occurred_on falls inside each released stint's
+ * [acquired_at, released_at] window for this team.
  */
 export async function loadTeamPage(
   teamId: string | null,
@@ -92,6 +108,7 @@ export async function loadTeamPage(
   }
 
   const teamList = (teams ?? []) as TeamListItem[];
+  const teamNameById = new Map(teamList.map((t) => [t.id, t.name]));
 
   if (!teamId) {
     return {
@@ -114,7 +131,16 @@ export async function loadTeamPage(
     };
   }
 
-  const [managersRes, eventsRes, squadRes, gkRes] = await Promise.all([
+  const [
+    managersRes,
+    eventsRes,
+    squadRes,
+    gkRes,
+    historySquadRes,
+    historyGkRes,
+    activeSquadOwnersRes,
+    activeGkOwnersRes,
+  ] = await Promise.all([
     supabase
       .from("team_managers")
       .select("display_name")
@@ -122,7 +148,9 @@ export async function loadTeamPage(
       .order("display_name"),
     supabase
       .from("goal_events")
-      .select("team_id, event_type, player_id, goalkeeper_club_id")
+      .select(
+        "team_id, event_type, player_id, goalkeeper_club_id, occurred_on",
+      )
       .eq("season_id", activeSeason.id),
     supabase
       .from("squad_memberships")
@@ -137,6 +165,32 @@ export async function loadTeamPage(
       .eq("team_id", selected.id)
       .is("released_at", null)
       .maybeSingle(),
+    supabase
+      .from("squad_memberships")
+      .select(
+        "player_id, acquired_at, released_at, players(id, name, club, position)",
+      )
+      .eq("season_id", activeSeason.id)
+      .eq("team_id", selected.id)
+      .not("released_at", "is", null),
+    supabase
+      .from("goalkeeper_memberships")
+      .select(
+        "goalkeeper_club_id, acquired_at, released_at, goalkeeper_clubs(id, name)",
+      )
+      .eq("season_id", activeSeason.id)
+      .eq("team_id", selected.id)
+      .not("released_at", "is", null),
+    supabase
+      .from("squad_memberships")
+      .select("player_id, team_id")
+      .eq("season_id", activeSeason.id)
+      .is("released_at", null),
+    supabase
+      .from("goalkeeper_memberships")
+      .select("goalkeeper_club_id, team_id")
+      .eq("season_id", activeSeason.id)
+      .is("released_at", null),
   ]);
 
   if (managersRes.error) {
@@ -151,10 +205,22 @@ export async function loadTeamPage(
   if (gkRes.error) {
     return { status: "error", message: gkRes.error.message };
   }
+  if (historySquadRes.error) {
+    return { status: "error", message: historySquadRes.error.message };
+  }
+  if (historyGkRes.error) {
+    return { status: "error", message: historyGkRes.error.message };
+  }
+  if (activeSquadOwnersRes.error) {
+    return { status: "error", message: activeSquadOwnersRes.error.message };
+  }
+  if (activeGkOwnersRes.error) {
+    return { status: "error", message: activeGkOwnersRes.error.message };
+  }
 
   const allEvents = (eventsRes.data ?? []) as Pick<
     GoalEvent,
-    "team_id" | "event_type" | "player_id" | "goalkeeper_club_id"
+    "team_id" | "event_type" | "player_id" | "goalkeeper_club_id" | "occurred_on"
   >[];
 
   const standings = deriveStandings(teamList, allEvents);
@@ -175,18 +241,10 @@ export async function loadTeamPage(
       | null;
   };
 
-  const outfield: SquadOutfieldMember[] = [];
-  for (const row of (squadRes.data ?? []) as SquadJoinRow[]) {
-    const player = Array.isArray(row.players) ? row.players[0] : row.players;
-    if (!player) continue;
-    outfield.push({
-      player_id: player.id,
-      name: player.name,
-      club: player.club,
-      position: player.position as PlayerPosition,
-      goals: goalsByPlayer.get(player.id) ?? 0,
-    });
-  }
+  type HistorySquadJoinRow = SquadJoinRow & {
+    acquired_at: string;
+    released_at: string;
+  };
 
   type GkJoinRow = {
     goalkeeper_club_id: string;
@@ -196,19 +254,141 @@ export async function loadTeamPage(
       | null;
   };
 
+  type HistoryGkJoinRow = GkJoinRow & {
+    acquired_at: string;
+    released_at: string;
+  };
+
+  const outfield: SquadOutfieldMember[] = [];
+  const currentPlayerIds = new Set<string>();
+  for (const row of (squadRes.data ?? []) as SquadJoinRow[]) {
+    const player = Array.isArray(row.players) ? row.players[0] : row.players;
+    if (!player) continue;
+    currentPlayerIds.add(player.id);
+    outfield.push({
+      player_id: player.id,
+      name: player.name,
+      club: player.club,
+      position: player.position as PlayerPosition,
+      goals: goalsByPlayer.get(player.id) ?? 0,
+    });
+  }
+
   const gkRow = gkRes.data as GkJoinRow | null;
   let goalkeeper: SquadGoalkeeper | null = null;
+  let currentGkClubId: string | null = null;
   if (gkRow) {
     const club = Array.isArray(gkRow.goalkeeper_clubs)
       ? gkRow.goalkeeper_clubs[0]
       : gkRow.goalkeeper_clubs;
     if (club) {
+      currentGkClubId = club.id;
       goalkeeper = {
         goalkeeper_club_id: club.id,
         name: club.name,
         concessions: countGoalkeeperConcessions(teamEvents, club.id),
       };
     }
+  }
+
+  const currentOwnerByPlayer = new Map<string, string>();
+  for (const row of (activeSquadOwnersRes.data ?? []) as {
+    player_id: string;
+    team_id: string;
+  }[]) {
+    const name = teamNameById.get(row.team_id);
+    if (name) currentOwnerByPlayer.set(row.player_id, name);
+  }
+
+  const currentOwnerByGk = new Map<string, string>();
+  for (const row of (activeGkOwnersRes.data ?? []) as {
+    goalkeeper_club_id: string;
+    team_id: string;
+  }[]) {
+    const name = teamNameById.get(row.team_id);
+    if (name) currentOwnerByGk.set(row.goalkeeper_club_id, name);
+  }
+
+  const historyStintsByPlayer = new Map<
+    string,
+    {
+      player: Pick<Player, "id" | "name" | "club" | "position">;
+      stints: OwnershipStint[];
+    }
+  >();
+
+  for (const row of (historySquadRes.data ?? []) as HistorySquadJoinRow[]) {
+    const player = Array.isArray(row.players) ? row.players[0] : row.players;
+    if (!player) continue;
+    if (currentPlayerIds.has(player.id)) continue;
+    const existing = historyStintsByPlayer.get(player.id);
+    const stint: OwnershipStint = {
+      acquired_at: row.acquired_at,
+      released_at: row.released_at,
+    };
+    if (existing) {
+      existing.stints.push(stint);
+    } else {
+      historyStintsByPlayer.set(player.id, { player, stints: [stint] });
+    }
+  }
+
+  const historyOutfield: TeamHistoryOutfield[] = [];
+  for (const { player, stints } of historyStintsByPlayer.values()) {
+    historyOutfield.push({
+      player_id: player.id,
+      name: player.name,
+      club: player.club,
+      position: player.position as PlayerPosition,
+      goals: countOutfieldGoalsInStints(
+        allEvents,
+        selected.id,
+        player.id,
+        stints,
+      ),
+      current_owner: currentOwnerByPlayer.get(player.id) ?? null,
+    });
+  }
+
+  const historyStintsByGk = new Map<
+    string,
+    {
+      club: Pick<GoalkeeperClub, "id" | "name">;
+      stints: OwnershipStint[];
+    }
+  >();
+
+  for (const row of (historyGkRes.data ?? []) as HistoryGkJoinRow[]) {
+    const club = Array.isArray(row.goalkeeper_clubs)
+      ? row.goalkeeper_clubs[0]
+      : row.goalkeeper_clubs;
+    if (!club) continue;
+    if (currentGkClubId === club.id) continue;
+    const existing = historyStintsByGk.get(club.id);
+    const stint: OwnershipStint = {
+      acquired_at: row.acquired_at,
+      released_at: row.released_at,
+    };
+    if (existing) {
+      existing.stints.push(stint);
+    } else {
+      historyStintsByGk.set(club.id, { club, stints: [stint] });
+    }
+  }
+
+  const historyGoalkeepers: TeamHistoryGoalkeeper[] = [];
+  for (const { club, stints } of historyStintsByGk.values()) {
+    historyGoalkeepers.push({
+      goalkeeper_club_id: club.id,
+      name: club.name,
+      concessions: countGoalkeeperConcessionsInStints(
+        allEvents,
+        selected.id,
+        club.id,
+        stints,
+      ),
+      current_owner: currentOwnerByGk.get(club.id) ?? null,
+    });
   }
 
   const detail: TeamPageDetail = {
@@ -222,6 +402,10 @@ export async function loadTeamPage(
     current_squad: {
       goalkeeper,
       outfield: sortOutfieldSquad(outfield),
+    },
+    team_history: {
+      outfield: sortTeamHistoryOutfield(historyOutfield),
+      goalkeepers: sortTeamHistoryGoalkeepers(historyGoalkeepers),
     },
   };
 
