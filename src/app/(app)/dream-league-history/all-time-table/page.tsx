@@ -11,9 +11,9 @@ export default function AllTimeTablePage() {
           All-Time Table
         </h2>
         <p className="text-sm text-pitch-800">
-          Career Goals For, Goals Against, and League Points for every
-          franchise. Name changes are combined; display names use the latest
-          season.
+          Career Goals For, Goals Against, League Points, and League/Cup
+          honours for every franchise. Name changes are combined; display names
+          use the latest season.
         </p>
       </header>
 

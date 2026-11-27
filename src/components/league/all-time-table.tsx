@@ -1,10 +1,14 @@
-import type { AllTimeTableRow } from "@/lib/league/load-all-time-table";
+import {
+  formatHonoursSummary,
+  type AllTimeTableRow,
+} from "@/lib/league/load-all-time-table";
 
 const columns = [
   { key: "position", label: "Position", align: "left" as const },
   { key: "team", label: "Team", align: "left" as const },
   { key: "status", label: "Status", align: "left" as const },
   { key: "seasons", label: "Seasons", align: "right" as const },
+  { key: "honours", label: "Honours", align: "left" as const },
   { key: "gf", label: "Goals For", align: "right" as const },
   { key: "ga", label: "Goals Against", align: "right" as const },
   { key: "pts", label: "League Points", align: "right" as const },
@@ -21,10 +25,11 @@ export function AllTimeTable({ rows }: { rows: AllTimeTableRow[] }) {
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full min-w-[48rem] border-collapse text-left text-sm">
+      <table className="w-full min-w-[52rem] border-collapse text-left text-sm">
         <caption className="sr-only">
           All-time standings by franchise: position, team, active status,
-          seasons played, goals for, goals against, and league points
+          seasons played, league and cup honours, goals for, goals against, and
+          league points
         </caption>
         <thead>
           <tr className="border-b border-pitch-300 text-pitch-800">
@@ -72,6 +77,9 @@ export function AllTimeTable({ rows }: { rows: AllTimeTableRow[] }) {
                 title={row.seasons_played.join(", ")}
               >
                 {row.seasons_played.length}
+              </td>
+              <td className="px-3 py-3">
+                {formatHonoursSummary(row.league_titles, row.cup_titles)}
               </td>
               <td className="px-3 py-3 text-right tabular-nums">
                 {row.goals_for}
