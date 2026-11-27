@@ -1,0 +1,62 @@
+{
+  "season": "2022/2023",
+  "clubs": [
+    {
+      "name": "BLACKBURN"
+    },
+    {
+      "name": "BOLTON"
+    },
+    {
+      "name": "BURNLEY"
+    },
+    {
+      "name": "CHELSEA"
+    },
+    {
+      "name": "DERBY"
+    },
+    {
+      "name": "HUDDERSFIELD"
+    },
+    {
+      "name": "IPSWICH"
+    },
+    {
+      "name": "LEYTON ORIENT"
+    },
+    {
+      "name": "LIVERPOOL"
+    },
+    {
+      "name": "MANCHESTER CITY"
+    },
+    {
+      "name": "NEWCASTLE"
+    },
+    {
+      "name": "NORTHAMPTON"
+    },
+    {
+      "name": "NORWICH"
+    },
+    {
+      "name": "SALFORD"
+    },
+    {
+      "name": "SHEFFIELD UNITED"
+    },
+    {
+      "name": "SHEFFIELD WEDNESDAY"
+    },
+    {
+      "name": "WALLSALL"
+    },
+    {
+      "name": "WATFORD"
+    },
+    {
+      "name": "WOLVERHAMPTON"
+    }
+  ]
+}

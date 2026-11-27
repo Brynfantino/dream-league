@@ -1,0 +1,20 @@
+{
+  "name": "2020/2021",
+  "label": "Dream League 2020/21",
+  "starts_on": "2020-08-01",
+  "ends_on": "2021-05-31",
+  "is_active": false,
+  "source_file": "DreamLeague20-21_5009.xlsx",
+  "team_count_in_table": 10,
+  "placeholder_note": "I ROBOT / ROBOTICS ANONYMOUS skipped; not official franchises.",
+  "verification": {
+    "all_table_rows_match_summed_membership_stats": true,
+    "ok": 10,
+    "bad": []
+  },
+  "outfield_membership_count": 136,
+  "goalkeeper_membership_count": 16,
+  "goal_events_estimate": 1652,
+  "transfer_clear_pairs": 36,
+  "transfer_multi_buckets": 3
+}

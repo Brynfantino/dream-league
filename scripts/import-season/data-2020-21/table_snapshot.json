@@ -1,0 +1,85 @@
+{
+  "season": "2020/2021",
+  "standings": [
+    {
+      "position": 1,
+      "owner": "SEAN HELSBY",
+      "team": "SHEFSPANYOL",
+      "points": 120,
+      "goals_for": 172,
+      "goals_against": 52
+    },
+    {
+      "position": 2,
+      "owner": "ROB PICKETT",
+      "team": "ROBS ROVERS",
+      "points": 98,
+      "goals_for": 130,
+      "goals_against": 32
+    },
+    {
+      "position": 3,
+      "owner": "RICHARD KILPATRICK",
+      "team": "ERIMUS",
+      "points": 72,
+      "goals_for": 107,
+      "goals_against": 35
+    },
+    {
+      "position": 4,
+      "owner": "MARK WHITTLE",
+      "team": "RASH IN THE ATTIC",
+      "points": 63,
+      "goals_for": 109,
+      "goals_against": 46
+    },
+    {
+      "position": 5,
+      "owner": "BRYN COOMBE",
+      "team": "DURHAM DYNAMO",
+      "points": 60,
+      "goals_for": 106,
+      "goals_against": 46
+    },
+    {
+      "position": 6,
+      "owner": "RHYS KINSEY",
+      "team": "FC WALES",
+      "points": 48,
+      "goals_for": 109,
+      "goals_against": 61
+    },
+    {
+      "position": 7,
+      "owner": "JOE HARPER",
+      "team": "AMALGA SANTOS",
+      "points": 48,
+      "goals_for": 107,
+      "goals_against": 59
+    },
+    {
+      "position": 8,
+      "owner": "TOM SABELL",
+      "team": "YORKSHIRE PIRLO",
+      "points": 47,
+      "goals_for": 116,
+      "goals_against": 69
+    },
+    {
+      "position": 9,
+      "owner": "LUKE WAIN",
+      "team": "SHOW ME THE MANE",
+      "points": 37,
+      "goals_for": 102,
+      "goals_against": 65
+    },
+    {
+      "position": 10,
+      "owner": "BEN ROSE",
+      "team": "LOS BORRACHOS",
+      "points": 1,
+      "goals_for": 65,
+      "goals_against": 64
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "season": "2021/2022",
+  "clubs": [
+    {
+      "name": "ARSENAL"
+    },
+    {
+      "name": "BOURNEMOUTH"
+    },
+    {
+      "name": "CHELSEA"
+    },
+    {
+      "name": "CHELTENHAM"
+    },
+    {
+      "name": "COVENTRY"
+    },
+    {
+      "name": "EVERTON"
+    },
+    {
+      "name": "FOREST GREEN"
+    },
+    {
+      "name": "FULHAM"
+    },
+    {
+      "name": "IPSWICH"
+    },
+    {
+      "name": "LEICESTER"
+    },
+    {
+      "name": "MANCHESTER CITY"
+    },
+    {
+      "name": "MANCHESTER UTD"
+    },
+    {
+      "name": "NORTHAMPTON"
+    },
+    {
+      "name": "ROTHERHAM"
+    },
+    {
+      "name": "SALFORD"
+    },
+    {
+      "name": "SUNDERLAND"
+    },
+    {
+      "name": "WOLVERHAMPTON"
+    }
+  ]
+}

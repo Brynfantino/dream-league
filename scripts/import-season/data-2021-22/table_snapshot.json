@@ -1,0 +1,93 @@
+{
+  "season": "2021/2022",
+  "standings": [
+    {
+      "position": 1,
+      "owner": "MIKE ASTLEY",
+      "team": "SPORTING HOOF",
+      "points": 99,
+      "goals_for": 150,
+      "goals_against": 51
+    },
+    {
+      "position": 2,
+      "owner": "MARK WHITTLE",
+      "team": "RASH IN THE ATTIC",
+      "points": 93,
+      "goals_for": 142,
+      "goals_against": 49
+    },
+    {
+      "position": 3,
+      "owner": "ROB PICKETT",
+      "team": "ROBS ROVERS",
+      "points": 86,
+      "goals_for": 137,
+      "goals_against": 51
+    },
+    {
+      "position": 4,
+      "owner": "BRYN COOMBE",
+      "team": "DURHAM DYNAMO",
+      "points": 75,
+      "goals_for": 133,
+      "goals_against": 58
+    },
+    {
+      "position": 5,
+      "owner": "JOE HARPER",
+      "team": "ALPEN FLAGE",
+      "points": 61,
+      "goals_for": 111,
+      "goals_against": 50
+    },
+    {
+      "position": 6,
+      "owner": "SAM HARPER",
+      "team": "HALF-A-HARPER FC",
+      "points": 49,
+      "goals_for": 97,
+      "goals_against": 48
+    },
+    {
+      "position": 7,
+      "owner": "TAMIKO JELENJE",
+      "team": "DREAMVILLE",
+      "points": 32,
+      "goals_for": 101,
+      "goals_against": 69
+    },
+    {
+      "position": 8,
+      "owner": "SEAN HELSBY",
+      "team": "SHEFSPANYOL",
+      "points": 26,
+      "goals_for": 78,
+      "goals_against": 52
+    },
+    {
+      "position": 9,
+      "owner": "RICHARD KILPATRICK",
+      "team": "ERIMUS",
+      "points": 16,
+      "goals_for": 63,
+      "goals_against": 47
+    },
+    {
+      "position": 10,
+      "owner": "SEB BATE",
+      "team": "MICHU IN DE GEA BAR",
+      "points": 2,
+      "goals_for": 52,
+      "goals_against": 50
+    },
+    {
+      "position": 11,
+      "owner": "CHRIS DUFFY",
+      "team": "NUTMEG UTD",
+      "points": -4,
+      "goals_for": 84,
+      "goals_against": 88
+    }
+  ]
+}

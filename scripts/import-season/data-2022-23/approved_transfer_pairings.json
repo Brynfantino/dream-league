@@ -1,0 +1,76 @@
+{
+  "season": "2022/2023",
+  "note": "Adjacency-derived multi-swap pairs (pending Bryn batch approval).",
+  "pairings": [
+    {
+      "team_name": "DREAMVILLE",
+      "position": "FWD",
+      "transferred_on": "2022-08-25",
+      "player_out_name": "JAMES WILSON",
+      "player_in_name": "OLLIE WATKINS"
+    },
+    {
+      "team_name": "DREAMVILLE",
+      "position": "FWD",
+      "transferred_on": "2022-08-25",
+      "player_out_name": "ANTHONY MARTIAL",
+      "player_in_name": "JOSH SARGENT"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2022-09-01",
+      "player_out_name": "SAM VOKES",
+      "player_in_name": "OMAR BOGLE"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2022-09-01",
+      "player_out_name": "KELECHI IHEANCHO",
+      "player_in_name": "ANTONY DOS SANTOS"
+    },
+    {
+      "team_name": "ROBS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2022-12-29",
+      "player_out_name": "DIOGO JOTA",
+      "player_in_name": "VICTOR ADEBOYEJO"
+    },
+    {
+      "team_name": "ROBS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2022-12-29",
+      "player_out_name": "LEE GREGORY",
+      "player_in_name": "DAVID MCGOLDRICK"
+    },
+    {
+      "team_name": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "transferred_on": "2023-01-12",
+      "player_out_name": "CRISTIANO RONALDO",
+      "player_in_name": "JOAO FELIX"
+    },
+    {
+      "team_name": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "transferred_on": "2023-01-12",
+      "player_out_name": "PIERRE EMERICK AUBAMEYANG",
+      "player_in_name": "ANASS ZAROURY"
+    },
+    {
+      "team_name": "DUGGAN'S DREAMERS",
+      "position": "FWD",
+      "transferred_on": "2023-03-09",
+      "player_out_name": "RICHARLISON",
+      "player_in_name": "JEVANI BROWN"
+    },
+    {
+      "team_name": "DUGGAN'S DREAMERS",
+      "position": "FWD",
+      "transferred_on": "2023-03-09",
+      "player_out_name": "JAMIE VARDY",
+      "player_in_name": "DAN AGYEI"
+    }
+  ]
+}

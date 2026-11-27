@@ -1,0 +1,117 @@
+{
+  "season": "2024/2025",
+  "standings": [
+    {
+      "position": 1,
+      "owner": "SAM HARPER",
+      "team": "ONE AND A HALF A HARPER FC",
+      "points": 78,
+      "goals_for": 106,
+      "goals_against": 28
+    },
+    {
+      "position": 2,
+      "owner": "MIKE ASTLEY",
+      "team": "SPORTING HOPE",
+      "points": 77,
+      "goals_for": 114,
+      "goals_against": 37
+    },
+    {
+      "position": 3,
+      "owner": "JAMIE DUGGAN",
+      "team": "DUGGAN'S DREAMERS",
+      "points": 59,
+      "goals_for": 105,
+      "goals_against": 46
+    },
+    {
+      "position": 4,
+      "owner": "JOE HARPER",
+      "team": "CASEMIGOS",
+      "points": 58,
+      "goals_for": 92,
+      "goals_against": 34
+    },
+    {
+      "position": 5,
+      "owner": "BRYN COOMBE",
+      "team": "DURHAM DYNAMO",
+      "points": 56,
+      "goals_for": 96,
+      "goals_against": 40
+    },
+    {
+      "position": 6,
+      "owner": "TAMIKO & MAX",
+      "team": "MIDDLESBROTHERS",
+      "points": 50,
+      "goals_for": 103,
+      "goals_against": 53
+    },
+    {
+      "position": 7,
+      "owner": "CHRIS MCD, JIMBO & ADG",
+      "team": "TIKI TAKA FC",
+      "points": 47,
+      "goals_for": 92,
+      "goals_against": 45
+    },
+    {
+      "position": 8,
+      "owner": "SEB BATE",
+      "team": "MICHU IN DE GEA BAR",
+      "points": 38,
+      "goals_for": 94,
+      "goals_against": 56
+    },
+    {
+      "position": 9,
+      "owner": "RICHARD KILPATRICK",
+      "team": "ERIMUS",
+      "points": 37,
+      "goals_for": 100,
+      "goals_against": 63
+    },
+    {
+      "position": 10,
+      "owner": "ROB PICKETT",
+      "team": "ROBS ROVERS",
+      "points": 35,
+      "goals_for": 92,
+      "goals_against": 57
+    },
+    {
+      "position": 11,
+      "owner": "MARK WHITTLE",
+      "team": "RASH IN THE ATTIC",
+      "points": 31,
+      "goals_for": 70,
+      "goals_against": 39
+    },
+    {
+      "position": 12,
+      "owner": "SEAN HELSBY",
+      "team": "SHEFSPANYOL",
+      "points": 24,
+      "goals_for": 76,
+      "goals_against": 52
+    },
+    {
+      "position": 13,
+      "owner": "CHARLIE REED",
+      "team": "CHARLIE'S ANGELS",
+      "points": 13,
+      "goals_for": 74,
+      "goals_against": 61
+    },
+    {
+      "position": 14,
+      "owner": "CHRIS DUFFY",
+      "team": "NUTMEG UTD",
+      "points": -33,
+      "goals_for": 44,
+      "goals_against": 77
+    }
+  ]
+}

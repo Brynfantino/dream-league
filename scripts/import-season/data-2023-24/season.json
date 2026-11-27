@@ -1,0 +1,20 @@
+{
+  "name": "2023/2024",
+  "label": "Dream League 2023/24",
+  "starts_on": "2023-08-01",
+  "ends_on": "2024-05-31",
+  "is_active": false,
+  "source_file": "DreamLeague23-24_05d0.xlsx",
+  "team_count_in_table": 14,
+  "placeholder_note": "I ROBOT / ROBOTICS ANONYMOUS skipped; not official franchises.",
+  "verification": {
+    "all_table_rows_match_summed_membership_stats": true,
+    "ok": 14,
+    "bad": []
+  },
+  "outfield_membership_count": 221,
+  "goalkeeper_membership_count": 26,
+  "goal_events_estimate": 2341,
+  "transfer_clear_pairs": 75,
+  "transfer_multi_buckets": 9
+}

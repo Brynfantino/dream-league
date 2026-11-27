@@ -1,0 +1,132 @@
+{
+  "season": "2023/2024",
+  "note": "Adjacency-derived multi-swap pairs (pending Bryn batch approval).",
+  "pairings": [
+    {
+      "team_name": "DURHAM DYNAMO",
+      "position": "FWD",
+      "transferred_on": "2023-08-17",
+      "player_out_name": "LUKE ARMSTRONG",
+      "player_in_name": "GASSAN AHADME"
+    },
+    {
+      "team_name": "DURHAM DYNAMO",
+      "position": "FWD",
+      "transferred_on": "2023-08-17",
+      "player_out_name": "KYLE WOOTTON",
+      "player_in_name": "KUSINI YENGI"
+    },
+    {
+      "team_name": "DUGGAN'S DREAMERS",
+      "position": "MID",
+      "transferred_on": "2023-08-17",
+      "player_out_name": "CHUBA AKPOM",
+      "player_in_name": "CHRISTIAN FASSNACHT"
+    },
+    {
+      "team_name": "DUGGAN'S DREAMERS",
+      "position": "MID",
+      "transferred_on": "2023-08-17",
+      "player_out_name": "GUSTAVO HAMER",
+      "player_in_name": "MOUSSA DIABY"
+    },
+    {
+      "team_name": "ROBS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2023-10-05",
+      "player_out_name": "COLE STOCKTON",
+      "player_in_name": "ISAAC OLAOFE"
+    },
+    {
+      "team_name": "ROBS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2023-10-05",
+      "player_out_name": "ANTHONY MARTIAL",
+      "player_in_name": "DAN KEMP"
+    },
+    {
+      "team_name": "DURHAM DYNAMO",
+      "position": "FWD",
+      "transferred_on": "2023-10-19",
+      "player_out_name": "GASSAN AHADME",
+      "player_in_name": "JORDAN RHODES"
+    },
+    {
+      "team_name": "DURHAM DYNAMO",
+      "position": "FWD",
+      "transferred_on": "2023-10-19",
+      "player_out_name": "DANNY JOHNSON",
+      "player_in_name": "MATT SMITH"
+    },
+    {
+      "team_name": "ONE AND A HALF A HARPER FC",
+      "position": "FWD",
+      "transferred_on": "2023-11-16",
+      "player_out_name": "MILES LEABURN",
+      "player_in_name": "JOHN SWIFT"
+    },
+    {
+      "team_name": "ONE AND A HALF A HARPER FC",
+      "position": "FWD",
+      "transferred_on": "2023-11-16",
+      "player_out_name": "PADDY MADDEN",
+      "player_in_name": "DANIEL ORSI"
+    },
+    {
+      "team_name": "SPORTING HOOF",
+      "position": "FWD",
+      "transferred_on": "2023-11-16",
+      "player_out_name": "ELLIS SIMMS",
+      "player_in_name": "COURTNEY BAKER-RICHARDSON"
+    },
+    {
+      "team_name": "SPORTING HOOF",
+      "position": "FWD",
+      "transferred_on": "2023-11-16",
+      "player_out_name": "CHE ADAMS",
+      "player_in_name": "KYLE WOOTON"
+    },
+    {
+      "team_name": "ONE AND A HALF A HARPER FC",
+      "position": "MID",
+      "transferred_on": "2023-11-16",
+      "player_out_name": "JESURUN RAK-SAKYI",
+      "player_in_name": "CRYSENCIO SUMMERVILLE"
+    },
+    {
+      "team_name": "ONE AND A HALF A HARPER FC",
+      "position": "MID",
+      "transferred_on": "2023-11-16",
+      "player_out_name": "JAMES MADDISON",
+      "player_in_name": "HWANG HEE CHAN"
+    },
+    {
+      "team_name": "ONE AND A HALF A HARPER FC",
+      "position": "FWD",
+      "transferred_on": "2024-01-25",
+      "player_out_name": "YOANE WISSA",
+      "player_in_name": "JAMES COLLINS"
+    },
+    {
+      "team_name": "ONE AND A HALF A HARPER FC",
+      "position": "FWD",
+      "transferred_on": "2024-01-25",
+      "player_out_name": "JOHN SWIFT",
+      "player_in_name": "CHRIS WOOD"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2024-04-04",
+      "player_out_name": "TOM NICHOLS",
+      "player_in_name": "GASSAN AHADME"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2024-04-04",
+      "player_out_name": "OLLIE PALMER",
+      "player_in_name": "JAMES COLLINS"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "2024/2025",
+  "label": "Dream League 2024/25",
+  "starts_on": "2024-08-01",
+  "ends_on": "2025-05-31",
+  "is_active": false,
+  "source_file": "DreamLeague24-25_95e7.xlsx",
+  "team_count_in_table": 14,
+  "placeholder_note": "I ROBOT / ROBOTICS ANONYMOUS skipped; not official franchises.",
+  "verification": {
+    "all_table_rows_match_summed_membership_stats": true,
+    "ok": 14,
+    "bad": []
+  },
+  "outfield_membership_count": 230,
+  "goalkeeper_membership_count": 23,
+  "goal_events_estimate": 1946,
+  "transfer_clear_pairs": 79,
+  "transfer_multi_buckets": 9
+}

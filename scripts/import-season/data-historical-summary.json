@@ -1,0 +1,120 @@
+{
+  "seasons": [
+    {
+      "name": "2020/2021",
+      "teams": 10,
+      "reconcile": "10/10",
+      "bad": [],
+      "cup_ties": 9,
+      "winner": "DURHAM DYNAMO",
+      "honours": [
+        {
+          "title": "League Champions",
+          "team": "SHEFSPANYOL",
+          "season_label": "20/21"
+        },
+        {
+          "title": "Cup Winners",
+          "team": "DURHAM DYNAMO",
+          "season_label": "20/21"
+        }
+      ],
+      "multi_buckets": 3,
+      "adjacency_pairs": 6,
+      "goal_events": 1652
+    },
+    {
+      "name": "2021/2022",
+      "teams": 11,
+      "reconcile": "11/11",
+      "bad": [],
+      "cup_ties": 10,
+      "winner": "ROBS ROVERS",
+      "honours": [
+        {
+          "title": "League Champions",
+          "team": "SPORTING HOOF",
+          "season_label": "21/22"
+        },
+        {
+          "title": "Cup Winners",
+          "team": "ROBS ROVERS",
+          "season_label": "21/22"
+        }
+      ],
+      "multi_buckets": 9,
+      "adjacency_pairs": 19,
+      "goal_events": 1761
+    },
+    {
+      "name": "2022/2023",
+      "teams": 13,
+      "reconcile": "13/13",
+      "bad": [],
+      "cup_ties": 13,
+      "winner": "DREAMVILLE",
+      "honours": [
+        {
+          "title": "League Champions",
+          "team": "DURHAM DYNAMO",
+          "season_label": "22/23"
+        },
+        {
+          "title": "Cup Winners",
+          "team": "DREAMVILLE",
+          "season_label": "22/23"
+        }
+      ],
+      "multi_buckets": 5,
+      "adjacency_pairs": 10,
+      "goal_events": 2002
+    },
+    {
+      "name": "2023/2024",
+      "teams": 14,
+      "reconcile": "14/14",
+      "bad": [],
+      "cup_ties": 14,
+      "winner": "SHEFSPANYOL",
+      "honours": [
+        {
+          "title": "League Champions",
+          "team": "SHEFSPANYOL",
+          "season_label": "23/24"
+        },
+        {
+          "title": "Cup Winners",
+          "team": "SHEFSPANYOL",
+          "season_label": "23/24"
+        }
+      ],
+      "multi_buckets": 9,
+      "adjacency_pairs": 18,
+      "goal_events": 2341
+    },
+    {
+      "name": "2024/2025",
+      "teams": 14,
+      "reconcile": "14/14",
+      "bad": [],
+      "cup_ties": 14,
+      "winner": "TIKI TAKA FC",
+      "honours": [
+        {
+          "title": "League Champions",
+          "team": "ONE AND A HALF A HARPER FC",
+          "season_label": "24/25"
+        },
+        {
+          "title": "Cup Winners",
+          "team": "TIKI TAKA FC",
+          "season_label": "24/25"
+        }
+      ],
+      "multi_buckets": 9,
+      "adjacency_pairs": 20,
+      "goal_events": 1946
+    }
+  ],
+  "total_adjacency_pairs": 73
+}
