@@ -5,7 +5,7 @@ import { useState } from "react";
 import {
   formatHonoursSummary,
   type AllTimeTableRow,
-} from "@/lib/league/load-all-time-table";
+} from "@/lib/league/all-time-shared";
 
 type SortKey =
   | "points"
