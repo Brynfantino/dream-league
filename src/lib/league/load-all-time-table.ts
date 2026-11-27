@@ -1,0 +1,203 @@
+import { connection } from "next/server";
+
+import { resolveFranchiseId } from "@/lib/league/franchise-map";
+import { createClient } from "@/lib/supabase/server";
+import type { GoalEvent, GoalEventType, Season, Team } from "@/types/database";
+
+export type AllTimeTableRow = {
+  franchise_id: string;
+  /** Latest-season team name for this franchise (Bryn). */
+  display_name: string;
+  goals_for: number;
+  goals_against: number;
+  points: number;
+  position: number;
+  /** Seasons this franchise appeared in (labels / names), newest first. */
+  seasons_played: string[];
+  /** True when franchise has a team in the latest season by starts_on. */
+  is_active_franchise: boolean;
+};
+
+export type AllTimeTableResult =
+  | {
+      status: "ok";
+      rows: AllTimeTableRow[];
+      latest_season_name: string | null;
+      season_count: number;
+    }
+  | { status: "unconfigured" }
+  | { status: "error"; message: string };
+
+type TeamRow = Pick<Team, "id" | "name" | "season_id">;
+type SeasonRow = Pick<Season, "id" | "name" | "starts_on" | "is_active">;
+type EventRow = Pick<GoalEvent, "team_id" | "event_type" | "season_id">;
+
+/**
+ * All-time standings: sum GF/GA (hence points) across every season, collapsed
+ * by Bryn-confirmed franchise name continuity. Read-only.
+ */
+export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
+  await connection();
+
+  const supabase = await createClient();
+  if (!supabase) {
+    return { status: "unconfigured" };
+  }
+
+  const { data: seasonsRaw, error: seasonsError } = await supabase
+    .from("seasons")
+    .select("id, name, starts_on, is_active")
+    .order("starts_on", { ascending: false });
+
+  if (seasonsError) {
+    return { status: "error", message: seasonsError.message };
+  }
+
+  const seasons = (seasonsRaw ?? []) as SeasonRow[];
+  if (seasons.length === 0) {
+    return {
+      status: "ok",
+      rows: [],
+      latest_season_name: null,
+      season_count: 0,
+    };
+  }
+
+  const latestSeason = seasons[0]!;
+  const seasonsById = new Map(seasons.map((s) => [s.id, s]));
+
+  const { data: teamsRaw, error: teamsError } = await supabase
+    .from("teams")
+    .select("id, name, season_id");
+
+  if (teamsError) {
+    return { status: "error", message: teamsError.message };
+  }
+
+  const teams = (teamsRaw ?? []) as TeamRow[];
+
+  const { data: eventsRaw, error: eventsError } = await supabase
+    .from("goal_events")
+    .select("team_id, event_type, season_id");
+
+  if (eventsError) {
+    return { status: "error", message: eventsError.message };
+  }
+
+  const events = (eventsRaw ?? []) as EventRow[];
+
+  type Agg = {
+    goals_for: number;
+    goals_against: number;
+    /** season_id → team name used that season */
+    seasonNames: Map<string, string>;
+    /** best (latest) starts_on + name for display */
+    latestStartsOn: string;
+    displayName: string;
+  };
+
+  const byFranchise = new Map<string, Agg>();
+  const teamToFranchise = new Map<string, string>();
+
+  for (const team of teams) {
+    const franchiseId = resolveFranchiseId(team.name);
+    teamToFranchise.set(team.id, franchiseId);
+
+    const season = seasonsById.get(team.season_id);
+    const startsOn = season?.starts_on ?? "";
+    const existing = byFranchise.get(franchiseId);
+
+    if (!existing) {
+      byFranchise.set(franchiseId, {
+        goals_for: 0,
+        goals_against: 0,
+        seasonNames: new Map([[team.season_id, team.name]]),
+        latestStartsOn: startsOn,
+        displayName: team.name,
+      });
+      continue;
+    }
+
+    existing.seasonNames.set(team.season_id, team.name);
+    if (startsOn > existing.latestStartsOn) {
+      existing.latestStartsOn = startsOn;
+      existing.displayName = team.name;
+    } else if (
+      startsOn === existing.latestStartsOn &&
+      team.name.localeCompare(existing.displayName) < 0
+    ) {
+      // Stable if same season somehow had two names (should not happen)
+      existing.displayName = team.name;
+    }
+  }
+
+  for (const event of events) {
+    const franchiseId = teamToFranchise.get(event.team_id);
+    if (!franchiseId) continue;
+    const agg = byFranchise.get(franchiseId);
+    if (!agg) continue;
+
+    if (event.event_type === ("outfield_goal" satisfies GoalEventType)) {
+      agg.goals_for += 1;
+    } else if (event.event_type === ("gk_conceded" satisfies GoalEventType)) {
+      agg.goals_against += 1;
+    }
+  }
+
+  const activeFranchiseIds = new Set<string>();
+  for (const team of teams) {
+    if (team.season_id === latestSeason.id) {
+      activeFranchiseIds.add(resolveFranchiseId(team.name));
+    }
+  }
+
+  const ranked = [...byFranchise.entries()]
+    .map(([franchise_id, agg]) => {
+      const seasonEntries = [...agg.seasonNames.entries()]
+        .map(([seasonId, _name]) => {
+          const s = seasonsById.get(seasonId);
+          return {
+            label: s?.name ?? seasonId,
+            starts_on: s?.starts_on ?? "",
+          };
+        })
+        .sort((a, b) => b.starts_on.localeCompare(a.starts_on));
+
+      return {
+        franchise_id,
+        display_name: agg.displayName,
+        goals_for: agg.goals_for,
+        goals_against: agg.goals_against,
+        points: agg.goals_for - agg.goals_against,
+        seasons_played: seasonEntries.map((s) => s.label),
+        is_active_franchise: activeFranchiseIds.has(franchise_id),
+      };
+    })
+    .sort((a, b) => {
+      if (b.points !== a.points) return b.points - a.points;
+      if (b.goals_for !== a.goals_for) return b.goals_for - a.goals_for;
+      return a.display_name.localeCompare(b.display_name);
+    });
+
+  const rows: AllTimeTableRow[] = [];
+  for (let i = 0; i < ranked.length; i++) {
+    const row = ranked[i]!;
+    const prev = rows[i - 1];
+    const tied =
+      prev !== undefined &&
+      prev.points === row.points &&
+      prev.goals_for === row.goals_for;
+
+    rows.push({
+      ...row,
+      position: tied ? prev.position : i + 1,
+    });
+  }
+
+  return {
+    status: "ok",
+    rows,
+    latest_season_name: latestSeason.name,
+    season_count: seasons.length,
+  };
+}
