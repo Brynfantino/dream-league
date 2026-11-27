@@ -16,7 +16,8 @@
   },
   "data_fixes": {
     "erimus_coventry_acquired": "2025-10-23",
-    "josh_windass": "ignored_errant_transfer_date_treat_as_auction"
+    "josh_windass": "ignored_errant_transfer_date_treat_as_auction",
+    "middlesbrothers_table_position": "sheet labelled 11; corrected to 12 (PRD §8: order by points, then GF)"
   },
   "outfield_player_count": 224,
   "goalkeeper_club_count": 27,
