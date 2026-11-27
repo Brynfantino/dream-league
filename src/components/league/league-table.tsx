@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import { TeamNameLink } from "@/components/league/team-name-link";
 import type { LeagueTableRow } from "@/lib/league/standings";
 
 const columns = [
@@ -49,12 +48,7 @@ export function LeagueTable({ rows }: { rows: LeagueTableRow[] }) {
             >
               <td className="px-3 py-3 tabular-nums">{row.position}</td>
               <td className="px-3 py-3 font-medium">
-                <Link
-                  href={`/team-page?team=${row.team_id}`}
-                  className="underline-offset-4 hover:underline"
-                >
-                  {row.team_name}
-                </Link>
+                <TeamNameLink name={row.team_name} teamId={row.team_id} />
               </td>
               <td className="px-3 py-3 text-right tabular-nums">
                 {row.goals_for}

@@ -2,6 +2,7 @@
 
 import { useRouter, usePathname } from "next/navigation";
 
+import { TeamNameLink } from "@/components/league/team-name-link";
 import type {
   SeasonArchiveOption,
   SeasonArchiveRow,
@@ -75,13 +76,27 @@ export function SeasonArchiveView({
           <div>
             <dt className="inline text-pitch-600">Champion: </dt>
             <dd className="inline font-medium">
-              {summary.champion ?? "—"}
+              {summary.champion ? (
+                <TeamNameLink
+                  name={summary.champion}
+                  teamId={summary.champion_team_id}
+                />
+              ) : (
+                "—"
+              )}
             </dd>
           </div>
           <div>
             <dt className="inline text-pitch-600">Runner-Up: </dt>
             <dd className="inline font-medium">
-              {summary.runner_up ?? "—"}
+              {summary.runner_up ? (
+                <TeamNameLink
+                  name={summary.runner_up}
+                  teamId={summary.runner_up_team_id}
+                />
+              ) : (
+                "—"
+              )}
             </dd>
           </div>
         </dl>
@@ -140,7 +155,12 @@ function SeasonArchiveTable({ rows }: { rows: SeasonArchiveRow[] }) {
               className="border-b border-pitch-200/80 text-pitch-950 last:border-0"
             >
               <td className="px-3 py-3 tabular-nums">{row.position}</td>
-              <td className="px-3 py-3 font-medium">{row.team_name}</td>
+              <td className="px-3 py-3 font-medium">
+                <TeamNameLink
+                  name={row.team_name}
+                  teamId={row.link_team_id}
+                />
+              </td>
               <td className="px-3 py-3 text-pitch-800">
                 {row.manager_label ?? "—"}
               </td>

@@ -2,6 +2,7 @@ import { connection } from "next/server";
 
 import type { AllTimeTableRow } from "@/lib/league/all-time-shared";
 import { resolveFranchiseId } from "@/lib/league/franchise-map";
+import { mapActiveTeamIdsByFranchise } from "@/lib/league/team-links";
 import { fetchAllRows } from "@/lib/supabase/fetch-all-rows";
 import { createClient } from "@/lib/supabase/server";
 import type {
@@ -181,11 +182,14 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
     }
   }
 
+  const activeSeason =
+    seasons.find((s) => s.is_active) ?? latestSeason;
+  const activeTeams = teams.filter((t) => t.season_id === activeSeason.id);
+  const activeTeamByFranchise = mapActiveTeamIdsByFranchise(activeTeams);
+
   const activeFranchiseIds = new Set<string>();
-  for (const team of teams) {
-    if (team.season_id === latestSeason.id) {
-      activeFranchiseIds.add(resolveFranchiseId(team.name));
-    }
+  for (const team of activeTeams) {
+    activeFranchiseIds.add(resolveFranchiseId(team.name));
   }
 
   const ranked = [...byFranchise.entries()]
@@ -205,6 +209,7 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
       return {
         franchise_id,
         display_name: agg.displayName,
+        link_team_id: activeTeamByFranchise.get(franchise_id) ?? null,
         goals_for: agg.goals_for,
         goals_against: agg.goals_against,
         points,
