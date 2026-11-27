@@ -12,6 +12,17 @@ const POSITION_LABEL: Record<PlayerPosition, string> = {
 
 function formatDate(iso: string | null): string {
   if (!iso) return "—";
+  // Date-only (season ends_on) — format in UTC to avoid day shifts.
+  if (/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
+    const [y, m, d] = iso.split("-").map(Number);
+    if (!y || !m || !d) return iso;
+    return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+      timeZone: "UTC",
+    });
+  }
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) return "—";
   return date.toLocaleDateString("en-GB", {
@@ -77,13 +88,29 @@ export function PlayerProfileView({ detail }: { detail: PlayerPageDetail }) {
             </p>
           </div>
 
-          <dl className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+          <dl className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             <div className="border-t border-pitch-300 pt-3">
               <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
                 Career goals
               </dt>
               <dd className="mt-1 font-display text-2xl tracking-wide tabular-nums text-pitch-950">
                 {detail.career_goals}
+              </dd>
+            </div>
+            <div className="border-t border-pitch-300 pt-3">
+              <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
+                League titles
+              </dt>
+              <dd className="mt-1 font-display text-2xl tracking-wide tabular-nums text-pitch-950">
+                {detail.league_titles}
+              </dd>
+            </div>
+            <div className="border-t border-pitch-300 pt-3">
+              <dt className="text-xs font-semibold uppercase tracking-wide text-pitch-600">
+                Cup titles
+              </dt>
+              <dd className="mt-1 font-display text-2xl tracking-wide tabular-nums text-pitch-950">
+                {detail.cup_titles}
               </dd>
             </div>
             <div className="border-t border-pitch-300 pt-3">
@@ -249,7 +276,9 @@ export function PlayerProfileView({ detail }: { detail: PlayerPageDetail }) {
                     <td className="px-3 py-3 tabular-nums text-pitch-700">
                       {formatDate(row.acquired_at)}
                       {" → "}
-                      {row.released_at ? formatDate(row.released_at) : "present"}
+                      {row.owned_until
+                        ? formatDate(row.owned_until)
+                        : "present"}
                     </td>
                     <td className="px-3 py-3 text-right tabular-nums">
                       {row.goals_while_owned}
