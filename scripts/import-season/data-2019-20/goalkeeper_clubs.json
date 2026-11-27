@@ -1,0 +1,56 @@
+{
+  "season": "2019/2020",
+  "clubs": [
+    {
+      "name": "BRENTFORD"
+    },
+    {
+      "name": "CHELSEA"
+    },
+    {
+      "name": "FOREST GREEN"
+    },
+    {
+      "name": "FULHAM"
+    },
+    {
+      "name": "IPSWICH"
+    },
+    {
+      "name": "LEEDS"
+    },
+    {
+      "name": "LEICESTER"
+    },
+    {
+      "name": "LIVERPOOL"
+    },
+    {
+      "name": "MANCHESTER CITY"
+    },
+    {
+      "name": "MANSFIELD"
+    },
+    {
+      "name": "NOTTINGHAM FOREST"
+    },
+    {
+      "name": "ROTHERHAM"
+    },
+    {
+      "name": "SHEFFIELD UTD"
+    },
+    {
+      "name": "SUNDERLAND"
+    },
+    {
+      "name": "TOTTENHAM"
+    },
+    {
+      "name": "WOLVERHAMPTON"
+    },
+    {
+      "name": "WYCOMBE"
+    }
+  ]
+}

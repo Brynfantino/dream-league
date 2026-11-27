@@ -1,0 +1,77 @@
+{
+  "season": "2019/2020",
+  "standings": [
+    {
+      "position": 1,
+      "owner": "ROB PICKETT",
+      "team": "ROBS ROVERS",
+      "points": 99,
+      "goals_for": 141,
+      "goals_against": 42
+    },
+    {
+      "position": 2,
+      "owner": "MARK WHITTLE",
+      "team": "RASH IN THE ATTIC",
+      "points": 82,
+      "goals_for": 121,
+      "goals_against": 39
+    },
+    {
+      "position": 3,
+      "owner": "SEAN HELSBY",
+      "team": "SHEFSPANYOL",
+      "points": 73,
+      "goals_for": 117,
+      "goals_against": 44
+    },
+    {
+      "position": 4,
+      "owner": "BRYN COOMBE",
+      "team": "DURHAM DYNAMO",
+      "points": 59,
+      "goals_for": 116,
+      "goals_against": 57
+    },
+    {
+      "position": 5,
+      "owner": "RHYS KINSEY",
+      "team": "FC WALES",
+      "points": 59,
+      "goals_for": 92,
+      "goals_against": 33
+    },
+    {
+      "position": 6,
+      "owner": "JOE HARPER",
+      "team": "AMALGA SANTOS",
+      "points": 58,
+      "goals_for": 99,
+      "goals_against": 41
+    },
+    {
+      "position": 7,
+      "owner": "LUKE WAIN",
+      "team": "SHOW ME THE MANE",
+      "points": 40,
+      "goals_for": 93,
+      "goals_against": 53
+    },
+    {
+      "position": 8,
+      "owner": "DEAN O'BRIEN",
+      "team": "MCTOMINATOR",
+      "points": 35,
+      "goals_for": 88,
+      "goals_against": 53
+    },
+    {
+      "position": 9,
+      "owner": "RICHARD KILPATRICK",
+      "team": "ERIMUS",
+      "points": 10,
+      "goals_for": 64,
+      "goals_against": 54
+    }
+  ]
+}

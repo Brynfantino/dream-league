@@ -1,0 +1,87 @@
+{
+  "competition": "Dream League Cup",
+  "season": "2019/2020",
+  "status": "incomplete_bracket_covid",
+  "winner": "RASH IN THE ATTIC",
+  "winner_source": "Bryn 2026-11-27 (COVID-disrupted; sheet Winner blank)",
+  "ties": [
+    {
+      "competition": "dream_league_cup",
+      "round_name": "1st Round Qualifier",
+      "slot": "Game 1",
+      "home_team": "DURHAM DYNAMO",
+      "away_team": "ERIMUS",
+      "home_name": "DURHAM DYNAMO",
+      "away_name": "ERIMUS",
+      "home_score": -2,
+      "away_score": 1,
+      "played_on": null,
+      "source_row": 4
+    },
+    {
+      "competition": "dream_league_cup",
+      "round_name": "2nd Round",
+      "slot": "Game 2",
+      "home_team": "ROBS ROVERS",
+      "away_team": "SHOW ME THE MANE",
+      "home_name": "ROBS ROVERS",
+      "away_name": "SHOW ME THE MANE",
+      "home_score": 1,
+      "away_score": -2,
+      "played_on": null,
+      "source_row": 7
+    },
+    {
+      "competition": "dream_league_cup",
+      "round_name": "2nd Round",
+      "slot": "Game 3",
+      "home_team": "SHEFSPANYOL",
+      "away_team": "ERIMUS",
+      "home_name": "SHEFSPANYOL",
+      "away_name": "ERIMUS",
+      "home_score": 0,
+      "away_score": 2,
+      "played_on": null,
+      "source_row": 8
+    },
+    {
+      "competition": "dream_league_cup",
+      "round_name": "2nd Round",
+      "slot": "Game 4",
+      "home_team": "AMALGA SANTOS",
+      "away_team": "FC WALES",
+      "home_name": "AMALGA SANTOS",
+      "away_name": "FC WALES",
+      "home_score": 1,
+      "away_score": 2,
+      "played_on": null,
+      "source_row": 9
+    },
+    {
+      "competition": "dream_league_cup",
+      "round_name": "2nd Round",
+      "slot": "Game 5",
+      "home_team": "MCTOMINATOR",
+      "away_team": "RASH IN THE ATTIC",
+      "home_name": "MCTOMINATOR",
+      "away_name": "RASH IN THE ATTIC",
+      "home_score": 2,
+      "away_score": 2,
+      "played_on": null,
+      "source_row": 10
+    },
+    {
+      "competition": "dream_league_cup",
+      "round_name": "2nd Round Replay",
+      "slot": "Game 6",
+      "home_team": "MCTOMINATOR",
+      "away_team": "RASH IN THE ATTIC",
+      "home_name": "MCTOMINATOR",
+      "away_name": "RASH IN THE ATTIC",
+      "home_score": null,
+      "away_score": null,
+      "played_on": null,
+      "source_row": 13
+    }
+  ]
+}

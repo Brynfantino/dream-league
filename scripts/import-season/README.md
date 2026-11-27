@@ -3,7 +3,8 @@
 **Rules:** Project `docs/Dream-League_PRD.md`. Do not invent game rules.
 
 **Historical 2025/26:** see [`README-2025-26.md`](./README-2025-26.md) (inactive season, Cup + BFL + honours).  
-**Historical 2020/21–2024/25:** see [`README-historical-seasons.md`](./README-historical-seasons.md).
+**Historical 2019/20:** see [`README-2019-20.md`](./README-2019-20.md) (COVID; null transfer dates).  
+**Historical 2019/20–2024/25:** see [`README-historical-seasons.md`](./README-historical-seasons.md).
 
 Mapping: `/cursor/stores/bc-ef8a0793-1e6f-4d35-b50c-443ca7b526d2/docs/spreadsheet-mapping.md`
 

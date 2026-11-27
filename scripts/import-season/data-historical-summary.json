@@ -1,6 +1,31 @@
 {
   "seasons": [
     {
+      "name": "2019/2020",
+      "teams": 9,
+      "reconcile": "9/9",
+      "bad": [],
+      "cup_ties": 6,
+      "winner": "RASH IN THE ATTIC",
+      "honours": [
+        {
+          "title": "League Champions",
+          "team": "ROBS ROVERS",
+          "season_label": "19/20"
+        },
+        {
+          "title": "Cup Winners",
+          "team": "RASH IN THE ATTIC",
+          "season_label": "19/20"
+        }
+      ],
+      "multi_buckets": 0,
+      "adjacency_pairs": 0,
+      "goal_events": 1347,
+      "transfer_dates_available": false,
+      "notes": "COVID-disrupted; Cup Winners Bryn-confirmed; transfer dates unknown"
+    },
+    {
       "name": "2020/2021",
       "teams": 10,
       "reconcile": "10/10",
