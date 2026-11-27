@@ -131,6 +131,134 @@ export const APPROVED_OUTFIELD_PAIRINGS: ApprovedOutfieldPairing[] = [
     player_out_name: "JOSH COBURN",
     player_in_name: "DERENSILI SANCHES FERNANDES",
   },
+  // --- 2025/26 historical (Bryn approved 2026-11-27) ---
+  // Sporting Hoof — FWD — 21 Aug 2025
+  {
+    team_name: "SPORTING HOOF",
+    position: "FWD",
+    transferred_on: "2025-08-21",
+    player_out_name: "HARRY SMITH",
+    player_in_name: "JAMES COLLINS",
+  },
+  {
+    team_name: "SPORTING HOOF",
+    position: "FWD",
+    transferred_on: "2025-08-21",
+    player_out_name: "SAM NOMBE",
+    player_in_name: "JAMIE REID",
+  },
+  // Naths Rovers — FWD — 4 Sep 2025
+  {
+    team_name: "NATHS ROVERS",
+    position: "FWD",
+    transferred_on: "2025-09-04",
+    player_out_name: "MIHAILO IVANOVIC",
+    player_in_name: "RANDOL KOLO MUANI",
+  },
+  {
+    team_name: "NATHS ROVERS",
+    position: "FWD",
+    transferred_on: "2025-09-04",
+    player_out_name: "RODRIGO MUNIZ",
+    player_in_name: "MATT DENNIS",
+  },
+  // Erimus — FWD — 23 Oct 2025
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2025-10-23",
+    player_out_name: "CALLUM LANG",
+    player_in_name: "ANTONI SARCEVIC",
+  },
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2025-10-23",
+    player_out_name: "CHUBA AKPOM",
+    player_in_name: "MILUTIN OSMAJIC",
+  },
+  // Erimus — FWD — 1 Jan 2026
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2026-01-01",
+    player_out_name: "ALEKSANDER ISAK",
+    player_in_name: "JOVON MAKAMA",
+  },
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2026-01-01",
+    player_out_name: "MILLENIC ALLI",
+    player_in_name: "RYAN GRAYDON",
+  },
+  // Naths Rovers — FWD — 29 Jan 2026
+  {
+    team_name: "NATHS ROVERS",
+    position: "FWD",
+    transferred_on: "2026-01-29",
+    player_out_name: "BENJAMIN SESKO",
+    player_in_name: "JACK CLARKE",
+  },
+  {
+    team_name: "NATHS ROVERS",
+    position: "FWD",
+    transferred_on: "2026-01-29",
+    player_out_name: "RANDOL KOLO MUANI",
+    player_in_name: "KIEFFER MOORE",
+  },
+  {
+    team_name: "NATHS ROVERS",
+    position: "FWD",
+    transferred_on: "2026-01-29",
+    player_out_name: "MATT DENNIS",
+    player_in_name: "JAYDEN WAREHAM",
+  },
+  // Dreamers Dregs — FWD — 19 Feb 2026
+  {
+    team_name: "DREAMERS DREGS",
+    position: "FWD",
+    transferred_on: "2026-02-19",
+    player_out_name: "MIKE FONDOP",
+    player_in_name: "MARCUS BROWNE",
+  },
+  {
+    team_name: "DREAMERS DREGS",
+    position: "FWD",
+    transferred_on: "2026-02-19",
+    player_out_name: "WILL GRIGG",
+    player_in_name: "KIEFFER MOORE",
+  },
+  // Atletico Dec — FWD — 5 Mar 2026
+  {
+    team_name: "ATLETICO DEC",
+    position: "FWD",
+    transferred_on: "2026-03-05",
+    player_out_name: "ALFIE MAY",
+    player_in_name: "EVANN GUESSAND",
+  },
+  {
+    team_name: "ATLETICO DEC",
+    position: "FWD",
+    transferred_on: "2026-03-05",
+    player_out_name: "AUNE HEGGEBO",
+    player_in_name: "ROB STREET",
+  },
+  // Le Harpre — FWD — 26 Mar 2026
+  {
+    team_name: "LE HARPRE",
+    position: "FWD",
+    transferred_on: "2026-03-26",
+    player_out_name: "KYOGO FURUHASHI",
+    player_in_name: "BENJAMIN SESKO",
+  },
+  {
+    team_name: "LE HARPRE",
+    position: "FWD",
+    transferred_on: "2026-03-26",
+    player_out_name: "NATHANIEL MENDEZ-LAING",
+    player_in_name: "MIKE FONDOP",
+  },
 ];
 
 function normName(name: string): string {

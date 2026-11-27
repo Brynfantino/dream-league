@@ -1,0 +1,117 @@
+{
+  "season": "2025/2026",
+  "standings": [
+    {
+      "position": 1,
+      "owner": "CHRIS MCD, JIMBO & ADG",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "points": 57,
+      "goals_for": 123,
+      "goals_against": 66
+    },
+    {
+      "position": 2,
+      "owner": "MIKE ASTLEY",
+      "team": "SPORTING HOOF",
+      "points": 42,
+      "goals_for": 95,
+      "goals_against": 53
+    },
+    {
+      "position": 3,
+      "owner": "ROB PICKETT",
+      "team": "NATHS ROVERS",
+      "points": 41,
+      "goals_for": 104,
+      "goals_against": 63
+    },
+    {
+      "position": 4,
+      "owner": "MARK WHITTLE",
+      "team": "RASH IN THE ATTIC",
+      "points": 38,
+      "goals_for": 106,
+      "goals_against": 68
+    },
+    {
+      "position": 5,
+      "owner": "BRYN COOMBE",
+      "team": "DURHAM DYNAMO",
+      "points": 37,
+      "goals_for": 79,
+      "goals_against": 42
+    },
+    {
+      "position": 6,
+      "owner": "SEAN HELSBY",
+      "team": "SHEFSPANYOL",
+      "points": 36,
+      "goals_for": 90,
+      "goals_against": 54
+    },
+    {
+      "position": 7,
+      "owner": "SAM HARPER",
+      "team": "LE HARPRE",
+      "points": 33,
+      "goals_for": 98,
+      "goals_against": 65
+    },
+    {
+      "position": 8,
+      "owner": "JOE HARPER",
+      "team": "CF CALA ALCAUFAR",
+      "points": 32,
+      "goals_for": 85,
+      "goals_against": 53
+    },
+    {
+      "position": 9,
+      "owner": "SEB BATE",
+      "team": "WENGER BOYS",
+      "points": 22,
+      "goals_for": 97,
+      "goals_against": 75
+    },
+    {
+      "position": 10,
+      "owner": "CHARLIE, ELIO & DAVE",
+      "team": "ATLETICO DEC",
+      "points": 22,
+      "goals_for": 73,
+      "goals_against": 51
+    },
+    {
+      "position": 11,
+      "owner": "RICHARD KILPATRICK",
+      "team": "ERIMUS",
+      "points": 17,
+      "goals_for": 69,
+      "goals_against": 52
+    },
+    {
+      "position": 12,
+      "owner": "TAMIKO & MAX",
+      "team": "MIDDLESBROTHERS",
+      "points": 13,
+      "goals_for": 78,
+      "goals_against": 65
+    },
+    {
+      "position": 13,
+      "owner": "JAMIE DUGGAN",
+      "team": "DREAMERS DREGS",
+      "points": 11,
+      "goals_for": 65,
+      "goals_against": 54
+    },
+    {
+      "position": 14,
+      "owner": "CHRIS DUFFY",
+      "team": "NUTMEG UTD",
+      "points": -1,
+      "goals_for": 68,
+      "goals_against": 69
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "season": "2025/2026",
+  "teams": [
+    {
+      "team": "DURHAM DYNAMO",
+      "manager": "BRYN COOMBE",
+      "managers": [
+        "BRYN COOMBE"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "NATHS ROVERS",
+      "manager": "ROB PICKETT",
+      "managers": [
+        "ROB PICKETT"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "CF CALA ALCAUFAR",
+      "manager": "JOE HARPER",
+      "managers": [
+        "JOE HARPER"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "SHEFSPANYOL",
+      "manager": "SEAN HELSBY",
+      "managers": [
+        "SEAN HELSBY"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "SPORTING HOOF",
+      "manager": "MIKE ASTLEY",
+      "managers": [
+        "MIKE ASTLEY"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "RASH IN THE ATTIC",
+      "manager": "MARK WHITTLE",
+      "managers": [
+        "MARK WHITTLE"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "ERIMUS",
+      "manager": "RICHARD KILPATRICK",
+      "managers": [
+        "RICHARD KILPATRICK"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "NUTMEG UTD",
+      "manager": "CHRIS DUFFY",
+      "managers": [
+        "CHRIS DUFFY"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "WENGER BOYS",
+      "manager": "SEB BATE",
+      "managers": [
+        "SEB BATE"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "LE HARPRE",
+      "manager": "SAM HARPER",
+      "managers": [
+        "SAM HARPER"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "MIDDLESBROTHERS",
+      "manager": "TAMIKO & MAX",
+      "managers": [
+        "TAMIKO",
+        "MAX"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "manager": "CHRIS MCD, JIMBO & ADG",
+      "managers": [
+        "CHRIS MCD",
+        "JIMBO",
+        "ADG"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "DREAMERS DREGS",
+      "manager": "JAMIE DUGGAN",
+      "managers": [
+        "JAMIE DUGGAN"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    },
+    {
+      "team": "ATLETICO DEC",
+      "manager": "CHARLIE, ELIO & DAVE",
+      "managers": [
+        "CHARLIE",
+        "ELIO",
+        "DAVE"
+      ],
+      "auction_spend_reported": null,
+      "in_league_table": true,
+      "placeholder": false
+    }
+  ]
+}

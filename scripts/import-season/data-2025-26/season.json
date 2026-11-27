@@ -1,0 +1,26 @@
+{
+  "name": "2025/2026",
+  "label": "Dream League 2025/26",
+  "starts_on": "2025-08-01",
+  "ends_on": "2026-05-31",
+  "is_active": false,
+  "source_file": "DreamLeague25-26.xlsx",
+  "team_count_in_table": 14,
+  "placeholder_teams": [
+    "I ROBOT"
+  ],
+  "placeholder_note": "I ROBOT (Will Smith) is not a real Dream League franchise. Do not import the team, memberships, or any of its FOR/AGAINST totals as official goal_events.",
+  "active_squad_shape": "1 GK + 2 DEF + 3 MID + 5 FWD = 11",
+  "verification": {
+    "all_table_rows_match_summed_membership_stats": true
+  },
+  "data_fixes": {
+    "erimus_coventry_acquired": "2025-10-23",
+    "josh_windass": "ignored_errant_transfer_date_treat_as_auction",
+    "middlesbrothers_table_position": "sheet labelled 11; corrected to 12 (PRD §8: order by points, then GF)"
+  },
+  "outfield_player_count": 224,
+  "goalkeeper_club_count": 27,
+  "outfield_membership_count": 231,
+  "goalkeeper_membership_count": 27
+}
