@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 
+import { PlayerNameLink } from "@/components/league/player-name-link";
 import { TeamHistoryView } from "@/components/team/team-history-view";
 import {
   ContributionCell,
@@ -255,7 +256,10 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
                         {POSITION_LABEL[player.position]}
                       </td>
                       <td className="truncate px-3 py-3 font-medium">
-                        {player.name}
+                        <PlayerNameLink
+                          name={player.name}
+                          playerId={player.player_id}
+                        />
                       </td>
                       <td className="truncate px-3 py-3 text-pitch-700">
                         {player.club ?? "—"}
