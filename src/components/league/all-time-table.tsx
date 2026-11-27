@@ -256,7 +256,7 @@ export function AllTimeTable({ rows }: { rows: AllTimeTableRow[] }) {
                   {row.points}
                 </td>
                 <td className="px-3 py-3 text-right tabular-nums">
-                  {row.avg_points_per_season.toFixed(1)}
+                  {row.avg_points_per_season}
                 </td>
               </tr>
             ))}
