@@ -9,6 +9,7 @@ import {
 
 type SortKey =
   | "points"
+  | "avg_points"
   | "goals_for"
   | "goals_against"
   | "seasons"
@@ -35,6 +36,12 @@ const columns: {
     sortKey: "goals_against",
   },
   { key: "pts", label: "League Points", align: "right", sortKey: "points" },
+  {
+    key: "avg",
+    label: "Avg Points / Season",
+    align: "right",
+    sortKey: "avg_points",
+  },
 ];
 
 function honourTotal(row: AllTimeTableRow): number {
@@ -54,6 +61,10 @@ function compareRows(
     case "points":
       primary = a.points - b.points;
       if (primary === 0) primary = a.goals_for - b.goals_for;
+      break;
+    case "avg_points":
+      primary = a.avg_points_per_season - b.avg_points_per_season;
+      if (primary === 0) primary = a.points - b.points;
       break;
     case "goals_for":
       primary = a.goals_for - b.goals_for;
@@ -141,11 +152,12 @@ export function AllTimeTable({ rows }: { rows: AllTimeTableRow[] }) {
         </p>
       ) : null}
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[52rem] border-collapse text-left text-sm">
+        <table className="w-full min-w-[56rem] border-collapse text-left text-sm">
           <caption className="sr-only">
             All-time standings by franchise: position, team, active status,
             seasons played, league and cup honours, goals for, goals against,
-            and league points. Column headers are sortable.
+            league points, and average points per season. Column headers are
+            sortable.
           </caption>
           <thead>
             <tr className="border-b border-pitch-300 text-pitch-800">
@@ -242,6 +254,9 @@ export function AllTimeTable({ rows }: { rows: AllTimeTableRow[] }) {
                 </td>
                 <td className="px-3 py-3 text-right font-semibold tabular-nums">
                   {row.points}
+                </td>
+                <td className="px-3 py-3 text-right tabular-nums">
+                  {row.avg_points_per_season.toFixed(1)}
                 </td>
               </tr>
             ))}

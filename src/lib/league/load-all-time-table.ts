@@ -18,6 +18,8 @@ export type AllTimeTableRow = {
   goals_for: number;
   goals_against: number;
   points: number;
+  /** League points ÷ seasons played (0 if no seasons). */
+  avg_points_per_season: number;
   position: number;
   /** League Champions titles across all seasons (franchise-collapsed). */
   league_titles: number;
@@ -214,12 +216,16 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
         })
         .sort((a, b) => b.starts_on.localeCompare(a.starts_on));
 
+      const points = agg.goals_for - agg.goals_against;
+      const seasonsPlayed = seasonEntries.length;
       return {
         franchise_id,
         display_name: agg.displayName,
         goals_for: agg.goals_for,
         goals_against: agg.goals_against,
-        points: agg.goals_for - agg.goals_against,
+        points,
+        avg_points_per_season:
+          seasonsPlayed > 0 ? points / seasonsPlayed : 0,
         league_titles: agg.league_titles,
         cup_titles: agg.cup_titles,
         seasons_played: seasonEntries.map((s) => s.label),
