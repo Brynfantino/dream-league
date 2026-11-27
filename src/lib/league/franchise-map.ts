@@ -125,6 +125,11 @@ export const FRANCHISES: FranchiseDefinition[] = [
     canonicalName: "YORKSHIRE PIRLO",
     aliases: ["YORKSHIRE PIRLO"],
   },
+  {
+    id: "mctominator",
+    canonicalName: "MCTOMINATOR",
+    aliases: ["MCTOMINATOR"],
+  },
 ];
 
 const aliasToFranchiseId = (() => {

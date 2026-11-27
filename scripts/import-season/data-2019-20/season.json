@@ -1,0 +1,24 @@
+{
+  "name": "2019/2020",
+  "label": "Dream League 2019/20",
+  "starts_on": "2019-08-01",
+  "ends_on": "2020-05-31",
+  "is_active": false,
+  "source_file": "DreamLeague19-20_dc6d.xls",
+  "team_count_in_table": 9,
+  "notes": [
+    "COVID-disrupted season; Cup sheet incomplete after 2nd round.",
+    "Cup Winners = RASH IN THE ATTIC (Bryn 2026-11-27); not filled in workbook.",
+    "No Transfers sheet \u2014 membership acquired/sold dates left null (unknown).",
+    "Negative cup scores are weekend net points (same convention as later seasons)."
+  ],
+  "verification": {
+    "all_table_rows_match_summed_membership_stats": true,
+    "ok": 9,
+    "bad": []
+  },
+  "outfield_membership_count": 140,
+  "goalkeeper_membership_count": 18,
+  "goal_events_estimate": 1347,
+  "transfer_dates_available": false
+}

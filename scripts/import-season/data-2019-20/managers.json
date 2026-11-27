@@ -1,0 +1,41 @@
+{
+  "season": "2019/2020",
+  "managers": [
+    {
+      "team": "ROBS ROVERS",
+      "display_name": "ROB PICKETT"
+    },
+    {
+      "team": "RASH IN THE ATTIC",
+      "display_name": "MARK WHITTLE"
+    },
+    {
+      "team": "SHEFSPANYOL",
+      "display_name": "SEAN HELSBY"
+    },
+    {
+      "team": "DURHAM DYNAMO",
+      "display_name": "BRYN COOMBE"
+    },
+    {
+      "team": "FC WALES",
+      "display_name": "RHYS KINSEY"
+    },
+    {
+      "team": "AMALGA SANTOS",
+      "display_name": "JOE HARPER"
+    },
+    {
+      "team": "SHOW ME THE MANE",
+      "display_name": "LUKE WAIN"
+    },
+    {
+      "team": "MCTOMINATOR",
+      "display_name": "DEAN O'BRIEN"
+    },
+    {
+      "team": "ERIMUS",
+      "display_name": "RICHARD KILPATRICK"
+    }
+  ]
+}
