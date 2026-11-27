@@ -78,10 +78,18 @@ function compareRows(
 export function AllTimeTable({ rows }: { rows: AllTimeTableRow[] }) {
   const [sortKey, setSortKey] = useState<SortKey>("points");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  /** Default false = show every franchise, including former. */
+  const [hideInactive, setHideInactive] = useState(false);
 
-  const sortedRows = [...rows].sort((a, b) =>
+  const visibleRows = hideInactive
+    ? rows.filter((row) => row.is_active_franchise)
+    : rows;
+
+  const sortedRows = [...visibleRows].sort((a, b) =>
     compareRows(a, b, sortKey, sortDir),
   );
+
+  const formerCount = rows.filter((row) => !row.is_active_franchise).length;
 
   function onSort(nextKey: SortKey) {
     if (sortKey === nextKey) {
@@ -104,12 +112,34 @@ export function AllTimeTable({ rows }: { rows: AllTimeTableRow[] }) {
 
   return (
     <div className="space-y-2">
-      <p className="text-xs text-pitch-600">
-        Sorted by{" "}
-        {columns.find((c) => c.sortKey === sortKey)?.label ?? sortKey} (
-        {sortDir === "desc" ? "high → low" : "low → high"}). Position stays the
-        points ranking. Click a column header to sort.
-      </p>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-xs text-pitch-600">
+          Sorted by{" "}
+          {columns.find((c) => c.sortKey === sortKey)?.label ?? sortKey} (
+          {sortDir === "desc" ? "high → low" : "low → high"}). Position stays
+          the points ranking. Click a column header to sort.
+        </p>
+        <button
+          type="button"
+          onClick={() => setHideInactive((v) => !v)}
+          aria-pressed={hideInactive}
+          className={`shrink-0 rounded-md border px-3 py-1.5 text-sm font-medium transition-colors ${
+            hideInactive
+              ? "border-pitch-800 bg-pitch-800 text-white"
+              : "border-pitch-400 bg-white text-pitch-900 hover:bg-pitch-100"
+          }`}
+        >
+          {hideInactive
+            ? "Show inactive franchises"
+            : "Hide inactive franchises"}
+        </button>
+      </div>
+      {hideInactive && formerCount > 0 ? (
+        <p className="text-xs text-pitch-600">
+          Hiding {formerCount} former franchise
+          {formerCount === 1 ? "" : "s"}. Showing {sortedRows.length} active.
+        </p>
+      ) : null}
       <div className="overflow-x-auto">
         <table className="w-full min-w-[52rem] border-collapse text-left text-sm">
           <caption className="sr-only">
