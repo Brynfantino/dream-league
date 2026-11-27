@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "pathPrefix": "/team-badges",
+  "extension": ".jpg",
+  "note": "Owner-created crests keyed by franchise-map id. Missing id = no badge yet.",
+  "badges": {
+    "atletico-dec": {
+      "file": "atletico-dec.jpg",
+      "badgeLabel": "ATLÉTICO DEC",
+      "franchiseCanonicalName": "ATLETICO DEC"
+    },
+    "cf-cala-alcaufar": {
+      "file": "cf-cala-alcaufar.jpg",
+      "badgeLabel": "CF CALA ALCAUFAR",
+      "franchiseCanonicalName": "CF CALA ALCAUFAR"
+    },
+    "dreamers-dregs": {
+      "file": "dreamers-dregs.jpg",
+      "badgeLabel": "DREAMERS DREGS",
+      "franchiseCanonicalName": "DUGGANS ARMANDILLOS"
+    },
+    "durham-dynamo": {
+      "file": "durham-dynamo.jpg",
+      "badgeLabel": "DURHAM DYNAMO",
+      "franchiseCanonicalName": "DURHAM DYNAMO"
+    },
+    "erimus": {
+      "file": "erimus.jpg",
+      "badgeLabel": "ERIMUS FC",
+      "franchiseCanonicalName": "ERIMUS"
+    },
+    "le-harpre": {
+      "file": "le-harpre.jpg",
+      "badgeLabel": "HARP",
+      "franchiseCanonicalName": "LE HARPRE"
+    },
+    "middlesbrothers": {
+      "file": "middlesbrothers.jpg",
+      "badgeLabel": "MIDDELSBROTHERS",
+      "franchiseCanonicalName": "MIDDLESBROTHERS"
+    },
+    "nutmeg-utd": {
+      "file": "nutmeg-utd.jpg",
+      "badgeLabel": "NUTMEG UNITED",
+      "franchiseCanonicalName": "NUTMEG UTD"
+    },
+    "rash-in-the-attic": {
+      "file": "rash-in-the-attic.jpg",
+      "badgeLabel": "RASH IN THE ATTIC",
+      "franchiseCanonicalName": "RASH IN THE ATTIC"
+    },
+    "robs-rovers": {
+      "file": "robs-rovers.jpg",
+      "badgeLabel": "ROBS ROVERS",
+      "franchiseCanonicalName": "ROBS ROVERS"
+    },
+    "shefspanyol": {
+      "file": "shefspanyol.jpg",
+      "badgeLabel": "RCD SHEFSPANYOL",
+      "franchiseCanonicalName": "SHEFSPANYOL"
+    },
+    "sporting-hoof": {
+      "file": "sporting-hoof.jpg",
+      "badgeLabel": "SPORTING HOOF",
+      "franchiseCanonicalName": "SPORTING HOOF"
+    },
+    "tiki-taka": {
+      "file": "tiki-taka.jpg",
+      "badgeLabel": "NOTT",
+      "franchiseCanonicalName": "TIKI TAKA FC"
+    },
+    "wenger-boys": {
+      "file": "wenger-boys.jpg",
+      "badgeLabel": "WENGER BOYS",
+      "franchiseCanonicalName": "WENGER BOYS"
+    }
+  }
+}
