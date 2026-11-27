@@ -1,6 +1,7 @@
 import { connection } from "next/server";
 
 import { resolveFranchiseId } from "@/lib/league/franchise-map";
+import { fetchAllRows } from "@/lib/supabase/fetch-all-rows";
 import { createClient } from "@/lib/supabase/server";
 import type { GoalEvent, GoalEventType, Season, Team } from "@/types/database";
 
@@ -35,6 +36,9 @@ type EventRow = Pick<GoalEvent, "team_id" | "event_type" | "season_id">;
 /**
  * All-time standings: sum GF/GA (hence points) across every season, collapsed
  * by Bryn-confirmed franchise name continuity. Read-only.
+ *
+ * Important: goal_events span many thousands of rows — must page past the
+ * PostgREST 1000-row default or totals undercount (seen as tiny GA vs real GF).
  */
 export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
   await connection();
@@ -66,25 +70,30 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
   const latestSeason = seasons[0]!;
   const seasonsById = new Map(seasons.map((s) => [s.id, s]));
 
-  const { data: teamsRaw, error: teamsError } = await supabase
-    .from("teams")
-    .select("id, name, season_id");
+  const { data: teamsRaw, error: teamsError } = await fetchAllRows<TeamRow>(
+    (from, to) =>
+      supabase.from("teams").select("id, name, season_id").range(from, to),
+  );
 
   if (teamsError) {
     return { status: "error", message: teamsError.message };
   }
 
-  const teams = (teamsRaw ?? []) as TeamRow[];
+  const teams = teamsRaw ?? [];
 
-  const { data: eventsRaw, error: eventsError } = await supabase
-    .from("goal_events")
-    .select("team_id, event_type, season_id");
+  const { data: eventsRaw, error: eventsError } = await fetchAllRows<EventRow>(
+    (from, to) =>
+      supabase
+        .from("goal_events")
+        .select("team_id, event_type, season_id")
+        .range(from, to),
+  );
 
   if (eventsError) {
     return { status: "error", message: eventsError.message };
   }
 
-  const events = (eventsRaw ?? []) as EventRow[];
+  const events = eventsRaw ?? [];
 
   type Agg = {
     goals_for: number;
@@ -126,7 +135,6 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
       startsOn === existing.latestStartsOn &&
       team.name.localeCompare(existing.displayName) < 0
     ) {
-      // Stable if same season somehow had two names (should not happen)
       existing.displayName = team.name;
     }
   }
@@ -154,7 +162,7 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
   const ranked = [...byFranchise.entries()]
     .map(([franchise_id, agg]) => {
       const seasonEntries = [...agg.seasonNames.entries()]
-        .map(([seasonId, _name]) => {
+        .map(([seasonId]) => {
           const s = seasonsById.get(seasonId);
           return {
             label: s?.name ?? seasonId,
