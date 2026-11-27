@@ -32,6 +32,8 @@ URL: `https://ghzcdwxoukxngnstanxv.supabase.co`
 2. Run each file in timestamp order:
    - `20261125190000_core_schema.sql`
    - `20261125190100_rls_policies.sql`
+   - `20261125231200_public_read_grants.sql` (`GRANT SELECT` + schema `USAGE` for `anon` / `authenticated`; required for Trophy Room `honours` reads)
+   - `20261127120000_cup_ties_competition_and_labels.sql`
 
 ### Option B — Supabase CLI
 
