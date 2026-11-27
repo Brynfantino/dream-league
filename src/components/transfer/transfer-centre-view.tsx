@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { PlayerNameLink } from "@/components/league/player-name-link";
 import type {
   DerivedGoalkeeperTransfer,
   DerivedOutfieldTransfer,
@@ -196,7 +197,10 @@ export function TransferCentreView({
                       {POSITION_LABEL[row.position]}
                     </td>
                     <td className="px-3 py-3">
-                      <span className="font-medium">{row.player_out_name}</span>
+                      <PlayerNameLink
+                        name={row.player_out_name}
+                        playerId={row.player_out_id}
+                      />
                       {row.player_out_club ? (
                         <span className="mt-0.5 block text-xs text-pitch-600">
                           {row.player_out_club}
@@ -204,7 +208,10 @@ export function TransferCentreView({
                       ) : null}
                     </td>
                     <td className="px-3 py-3">
-                      <span className="font-medium">{row.player_in_name}</span>
+                      <PlayerNameLink
+                        name={row.player_in_name}
+                        playerId={row.player_in_id}
+                      />
                       {row.player_in_club ? (
                         <span className="mt-0.5 block text-xs text-pitch-600">
                           {row.player_in_club}

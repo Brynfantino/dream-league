@@ -1,3 +1,4 @@
+import { PlayerNameLink } from "@/components/league/player-name-link";
 import {
   POSITION_LABEL,
   type PlayerDirectoryRow,
@@ -58,7 +59,9 @@ export function PlayerDirectoryTable({ rows }: { rows: PlayerDirectoryRow[] }) {
               key={row.player_id}
               className="border-b border-pitch-200/80 text-pitch-950 last:border-0"
             >
-              <td className="px-3 py-3 font-medium">{row.name}</td>
+              <td className="px-3 py-3 font-medium">
+                <PlayerNameLink name={row.name} playerId={row.player_id} />
+              </td>
               <td className="px-3 py-3">{POSITION_LABEL[row.position]}</td>
               <td className="px-3 py-3">{row.team_name ?? "—"}</td>
               <td className="px-3 py-3 text-right tabular-nums">{row.goals}</td>
