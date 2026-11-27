@@ -9,6 +9,7 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchAllRows } from "@/lib/supabase/fetch-all-rows";
 import type {
   GoalEvent,
+  Honour,
   Player,
   PlayerPosition,
   Season,
@@ -31,6 +32,7 @@ export type PlayerOwnershipRow = {
   season_id: string;
   season_name: string;
   season_starts_on: string;
+  season_ends_on: string | null;
   team_id: string;
   team_name: string;
   /** Active-season team id for Team Page links when franchise still exists. */
@@ -38,7 +40,14 @@ export type PlayerOwnershipRow = {
   club: string | null;
   position: PlayerPosition;
   acquired_at: string;
+  /** Raw membership release; null if still open in source data. */
   released_at: string | null;
+  /**
+   * Display end of ownership window.
+   * Historical open stints use season ends_on (typically 31 May);
+   * active-season open stints stay null → "present".
+   */
+  owned_until: string | null;
   goals_while_owned: number;
   is_current: boolean;
 };
@@ -59,6 +68,10 @@ export type PlayerPageDetail = {
   current_team_name: string | null;
   current_team_link_id: string | null;
   career_goals: number;
+  /** Seasons owned by the League Champions team at any point. */
+  league_titles: number;
+  /** Seasons owned by the Cup Winners team at any point. */
+  cup_titles: number;
   club_career: PlayerClubCareerRow[];
   ownership_history: PlayerOwnershipRow[];
   /**
@@ -83,10 +96,12 @@ type MembershipJoin = {
   released_at: string | null;
   teams: Pick<Team, "id" | "name"> | Pick<Team, "id" | "name">[] | null;
   seasons:
-    | Pick<Season, "id" | "name" | "starts_on" | "is_active">
-    | Pick<Season, "id" | "name" | "starts_on" | "is_active">[]
+    | Pick<Season, "id" | "name" | "starts_on" | "ends_on" | "is_active">
+    | Pick<Season, "id" | "name" | "starts_on" | "ends_on" | "is_active">[]
     | null;
 };
+
+type HonourRow = Pick<Honour, "id" | "season_id" | "team_id" | "title">;
 
 function unwrapOne<T>(value: T | T[] | null | undefined): T | null {
   if (value == null) return null;
@@ -166,34 +181,39 @@ export async function loadPlayerPage(
 
   const activeSeasonId = (activeSeasonRaw as { id: string } | null)?.id ?? null;
 
-  const [membershipsRes, eventsRes, activeTeamsRes] = await Promise.all([
-    fetchAllRows<MembershipJoin>((from, to) =>
-      supabase
-        .from("squad_memberships")
-        .select(
-          "id, season_id, team_id, player_id, acquired_at, released_at, teams(id, name), seasons(id, name, starts_on, is_active)",
-        )
-        .in("player_id", playerIds)
-        .order("acquired_at", { ascending: true })
-        .range(from, to),
-    ),
-    fetchAllRows<
-      Pick<GoalEvent, "player_id" | "team_id" | "season_id" | "event_type">
-    >((from, to) =>
-      supabase
-        .from("goal_events")
-        .select("player_id, team_id, season_id, event_type")
-        .in("player_id", playerIds)
-        .eq("event_type", "outfield_goal")
-        .range(from, to),
-    ),
-    activeSeasonId
-      ? supabase
-          .from("teams")
-          .select("id, name")
-          .eq("season_id", activeSeasonId)
-      : Promise.resolve({ data: [] as { id: string; name: string }[], error: null }),
-  ]);
+  const [membershipsRes, eventsRes, activeTeamsRes, honoursRes] =
+    await Promise.all([
+      fetchAllRows<MembershipJoin>((from, to) =>
+        supabase
+          .from("squad_memberships")
+          .select(
+            "id, season_id, team_id, player_id, acquired_at, released_at, teams(id, name), seasons(id, name, starts_on, ends_on, is_active)",
+          )
+          .in("player_id", playerIds)
+          .order("acquired_at", { ascending: true })
+          .range(from, to),
+      ),
+      fetchAllRows<
+        Pick<GoalEvent, "player_id" | "team_id" | "season_id" | "event_type">
+      >((from, to) =>
+        supabase
+          .from("goal_events")
+          .select("player_id, team_id, season_id, event_type")
+          .in("player_id", playerIds)
+          .eq("event_type", "outfield_goal")
+          .range(from, to),
+      ),
+      activeSeasonId
+        ? supabase
+            .from("teams")
+            .select("id, name")
+            .eq("season_id", activeSeasonId)
+        : Promise.resolve({
+            data: [] as { id: string; name: string }[],
+            error: null,
+          }),
+      supabase.from("honours").select("id, season_id, team_id, title"),
+    ]);
 
   if (activeTeamsRes.error) {
     return { status: "error", message: activeTeamsRes.error.message };
@@ -209,6 +229,9 @@ export async function loadPlayerPage(
   }
   if (eventsRes.error) {
     return { status: "error", message: eventsRes.error.message };
+  }
+  if (honoursRes.error) {
+    return { status: "error", message: honoursRes.error.message };
   }
 
   const events = eventsRes.data ?? [];
@@ -241,12 +264,20 @@ export async function loadPlayerPage(
         `${row.player_id}::${row.team_id}::${row.season_id}`,
       ) ?? 0;
 
+    const isCurrent = Boolean(season.is_active && row.released_at == null);
+    let owned_until: string | null = row.released_at;
+    if (!row.released_at) {
+      // Open stint: active season stays "present"; historical closes at season end.
+      owned_until = isCurrent ? null : season.ends_on;
+    }
+
     ownership_history.push({
       id: row.id,
       player_id: row.player_id,
       season_id: season.id,
       season_name: season.name,
       season_starts_on: season.starts_on ?? "",
+      season_ends_on: season.ends_on,
       team_id: team.id,
       team_name: team.name,
       link_team_id: linkTeamIdForName(team.name, activeByFranchise),
@@ -254,8 +285,9 @@ export async function loadPlayerPage(
       position: player.position,
       acquired_at: row.acquired_at,
       released_at: row.released_at,
+      owned_until,
       goals_while_owned: goals,
-      is_current: Boolean(season.is_active && row.released_at == null),
+      is_current: isCurrent,
     });
   }
 
@@ -332,6 +364,22 @@ export async function loadPlayerPage(
       latest?.club ?? canonicalizeClubName(entry.club);
   }
 
+  // Honours: any ownership on the winning team in that season counts.
+  const ownedTeamSeasons = new Set(
+    ownership_history.map((o) => `${o.season_id}::${o.team_id}`),
+  );
+  let league_titles = 0;
+  let cup_titles = 0;
+  for (const honour of (honoursRes.data ?? []) as HonourRow[]) {
+    if (!honour.season_id || !honour.team_id) continue;
+    if (!ownedTeamSeasons.has(`${honour.season_id}::${honour.team_id}`)) {
+      continue;
+    }
+    const title = honour.title.trim().toLowerCase();
+    if (title === "league champions") league_titles += 1;
+    else if (title === "cup winners") cup_titles += 1;
+  }
+
   return {
     status: "ok",
     detail: {
@@ -343,10 +391,12 @@ export async function loadPlayerPage(
       current_team_name: currentOwnership?.team_name ?? null,
       current_team_link_id: currentOwnership?.link_team_id ?? null,
       career_goals,
+      league_titles,
+      cup_titles,
       club_career,
       ownership_history,
       identity_note:
-        "Career combines every Dream League record sharing this player name. Real-life club moves are separate rows in the club career table.",
+        "Career combines every Dream League record sharing this player name. Real-life club moves are separate rows in the club career table. League/Cup titles count seasons where this player was owned by the winning team at any point.",
     },
   };
 }
