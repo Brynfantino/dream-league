@@ -61,28 +61,145 @@ type NamedLeg = {
   date: string;
 };
 
+/** Bryn-approved OUT→IN for same-day multi-swaps (spreadsheet row adjacency). */
+export type ApprovedOutfieldPairing = {
+  team_name: string;
+  position: PlayerPosition;
+  transferred_on: string;
+  player_out_name: string;
+  player_in_name: string;
+};
+
+export const APPROVED_OUTFIELD_PAIRINGS: ApprovedOutfieldPairing[] = [
+  // CF Cala Alcaufar — MID — 27 Aug 2026
+  {
+    team_name: "CF CALA ALCAUFAR",
+    position: "MID",
+    transferred_on: "2026-08-27",
+    player_out_name: "FINN AZAZ",
+    player_in_name: "OMAR MARMOUSH",
+  },
+  {
+    team_name: "CF CALA ALCAUFAR",
+    position: "MID",
+    transferred_on: "2026-08-27",
+    player_out_name: "OLIVER NORWOOD",
+    player_in_name: "LEO SCIENZA",
+  },
+  // Newell's Old Tiki Taka — FWD — 3 Sep 2026
+  {
+    team_name: "NEWELL'S OLD TIKI TAKA",
+    position: "FWD",
+    transferred_on: "2026-09-03",
+    player_out_name: "CONOR CHAPLIN",
+    player_in_name: "EMIL RIIS",
+  },
+  {
+    team_name: "NEWELL'S OLD TIKI TAKA",
+    position: "FWD",
+    transferred_on: "2026-09-03",
+    player_out_name: "MO FAAL",
+    player_in_name: "YUSUF AKHAMRICH",
+  },
+  // Atletico Dec — FWD — 3 Sep 2026
+  {
+    team_name: "ATLETICO DEC",
+    position: "FWD",
+    transferred_on: "2026-09-03",
+    player_out_name: "JEAN-PHILIPPE MATETA",
+    player_in_name: "YOANNE WISSA",
+  },
+  {
+    team_name: "ATLETICO DEC",
+    position: "FWD",
+    transferred_on: "2026-09-03",
+    player_out_name: "MASON BURSTOW",
+    player_in_name: "DANE SCARLETT",
+  },
+  // Atletico Dec — FWD — 29 Oct 2026
+  {
+    team_name: "ATLETICO DEC",
+    position: "FWD",
+    transferred_on: "2026-10-29",
+    player_out_name: "YOANNE WISSA",
+    player_in_name: "EVANILSON",
+  },
+  {
+    team_name: "ATLETICO DEC",
+    position: "FWD",
+    transferred_on: "2026-10-29",
+    player_out_name: "JOSH COBURN",
+    player_in_name: "DERENSILI SANCHES FERNANDES",
+  },
+];
+
+function normName(name: string): string {
+  return name.trim().toUpperCase();
+}
+
 function sortByName<T extends { name: string }>(items: T[]): T[] {
   return [...items].sort((a, b) => a.name.localeCompare(b.name));
 }
 
+function approvedInsForBucket(
+  teamName: string,
+  position: PlayerPosition,
+  date: string,
+): Map<string, string> {
+  const map = new Map<string, string>();
+  const team = normName(teamName);
+  for (const row of APPROVED_OUTFIELD_PAIRINGS) {
+    if (
+      normName(row.team_name) === team &&
+      row.position === position &&
+      row.transferred_on === date
+    ) {
+      map.set(normName(row.player_out_name), normName(row.player_in_name));
+    }
+  }
+  return map;
+}
+
 /**
  * Pair outs and inns for one team/position/date bucket.
- * Equal counts → zip after name sort; mark ambiguous when count > 1.
+ * Approved OUT→IN names are applied first; remaining legs zip by name sort
+ * and stay marked ambiguous when the bucket had multiple swaps.
  */
 export function pairTransferLegs(
   outs: NamedLeg[],
   inns: NamedLeg[],
+  approvedOutToIn: Map<string, string> = new Map(),
 ): Array<{ out: NamedLeg; in: NamedLeg; ambiguous: boolean }> {
-  const sortedOuts = sortByName(outs);
-  const sortedInns = sortByName(inns);
-  const n = Math.min(sortedOuts.length, sortedInns.length);
-  const ambiguous = sortedOuts.length > 1 || sortedInns.length > 1;
+  const remainingOuts = [...outs];
+  const remainingInns = [...inns];
   const pairs: Array<{ out: NamedLeg; in: NamedLeg; ambiguous: boolean }> = [];
+
+  for (const [outName, inName] of approvedOutToIn) {
+    const outIdx = remainingOuts.findIndex(
+      (leg) => normName(leg.name) === outName,
+    );
+    const inIdx = remainingInns.findIndex(
+      (leg) => normName(leg.name) === inName,
+    );
+    if (outIdx < 0 || inIdx < 0) continue;
+    const [out] = remainingOuts.splice(outIdx, 1);
+    const [inn] = remainingInns.splice(inIdx, 1);
+    if (!out || !inn) continue;
+    pairs.push({ out, in: inn, ambiguous: false });
+  }
+
+  const sortedOuts = sortByName(remainingOuts);
+  const sortedInns = sortByName(remainingInns);
+  const n = Math.min(sortedOuts.length, sortedInns.length);
+  const ambiguous =
+    sortedOuts.length > 1 ||
+    sortedInns.length > 1 ||
+    sortedOuts.length !== sortedInns.length;
   for (let i = 0; i < n; i++) {
     pairs.push({
       out: sortedOuts[i]!,
       in: sortedInns[i]!,
-      ambiguous: ambiguous || sortedOuts.length !== sortedInns.length,
+      ambiguous,
     });
   }
   return pairs;
@@ -147,8 +264,13 @@ export function deriveOutfieldTransfers(
     const inns = innsByKey.get(key) ?? [];
     if (outs.length === 0 || inns.length === 0) continue;
 
-    const pairs = pairTransferLegs(outs, inns);
     const team_name = teamNameById.get(meta.team_id) ?? "Unknown team";
+    const approved = approvedInsForBucket(
+      team_name,
+      meta.position,
+      meta.date,
+    );
+    const pairs = pairTransferLegs(outs, inns, approved);
     for (const pair of pairs) {
       results.push({
         id: `outfield:${key}:${pair.out.id}:${pair.in.id}`,
