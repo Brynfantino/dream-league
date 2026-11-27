@@ -3,7 +3,13 @@ import { connection } from "next/server";
 import { resolveFranchiseId } from "@/lib/league/franchise-map";
 import { fetchAllRows } from "@/lib/supabase/fetch-all-rows";
 import { createClient } from "@/lib/supabase/server";
-import type { GoalEvent, GoalEventType, Season, Team } from "@/types/database";
+import type {
+  GoalEvent,
+  GoalEventType,
+  Honour,
+  Season,
+  Team,
+} from "@/types/database";
 
 export type AllTimeTableRow = {
   franchise_id: string;
@@ -12,7 +18,13 @@ export type AllTimeTableRow = {
   goals_for: number;
   goals_against: number;
   points: number;
+  /** League points ÷ seasons played, rounded up (0 if no seasons). */
+  avg_points_per_season: number;
   position: number;
+  /** League Champions titles across all seasons (franchise-collapsed). */
+  league_titles: number;
+  /** Cup Winners titles across all seasons (franchise-collapsed). */
+  cup_titles: number;
   /** Seasons this franchise appeared in (labels / names), newest first. */
   seasons_played: string[];
   /** True when franchise has a team in the latest season by starts_on. */
@@ -32,6 +44,10 @@ export type AllTimeTableResult =
 type TeamRow = Pick<Team, "id" | "name" | "season_id">;
 type SeasonRow = Pick<Season, "id" | "name" | "starts_on" | "is_active">;
 type EventRow = Pick<GoalEvent, "team_id" | "event_type" | "season_id">;
+type HonourRow = Pick<Honour, "title" | "team_id">;
+
+const LEAGUE_TITLE = "League Champions";
+const CUP_TITLE = "Cup Winners";
 
 /**
  * All-time standings: sum GF/GA (hence points) across every season, collapsed
@@ -95,9 +111,22 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
 
   const events = eventsRaw ?? [];
 
+  const { data: honoursRaw, error: honoursError } = await supabase
+    .from("honours")
+    .select("title, team_id")
+    .in("title", [LEAGUE_TITLE, CUP_TITLE]);
+
+  if (honoursError) {
+    return { status: "error", message: honoursError.message };
+  }
+
+  const honours = (honoursRaw ?? []) as HonourRow[];
+
   type Agg = {
     goals_for: number;
     goals_against: number;
+    league_titles: number;
+    cup_titles: number;
     /** season_id → team name used that season */
     seasonNames: Map<string, string>;
     /** best (latest) starts_on + name for display */
@@ -120,6 +149,8 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
       byFranchise.set(franchiseId, {
         goals_for: 0,
         goals_against: 0,
+        league_titles: 0,
+        cup_titles: 0,
         seasonNames: new Map([[team.season_id, team.name]]),
         latestStartsOn: startsOn,
         displayName: team.name,
@@ -152,6 +183,20 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
     }
   }
 
+  for (const honour of honours) {
+    if (!honour.team_id) continue;
+    const franchiseId = teamToFranchise.get(honour.team_id);
+    if (!franchiseId) continue;
+    const agg = byFranchise.get(franchiseId);
+    if (!agg) continue;
+
+    if (honour.title === LEAGUE_TITLE) {
+      agg.league_titles += 1;
+    } else if (honour.title === CUP_TITLE) {
+      agg.cup_titles += 1;
+    }
+  }
+
   const activeFranchiseIds = new Set<string>();
   for (const team of teams) {
     if (team.season_id === latestSeason.id) {
@@ -171,12 +216,18 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
         })
         .sort((a, b) => b.starts_on.localeCompare(a.starts_on));
 
+      const points = agg.goals_for - agg.goals_against;
+      const seasonsPlayed = seasonEntries.length;
       return {
         franchise_id,
         display_name: agg.displayName,
         goals_for: agg.goals_for,
         goals_against: agg.goals_against,
-        points: agg.goals_for - agg.goals_against,
+        points,
+        avg_points_per_season:
+          seasonsPlayed > 0 ? Math.ceil(points / seasonsPlayed) : 0,
+        league_titles: agg.league_titles,
+        cup_titles: agg.cup_titles,
         seasons_played: seasonEntries.map((s) => s.label),
         is_active_franchise: activeFranchiseIds.has(franchise_id),
       };
@@ -208,4 +259,22 @@ export async function loadAllTimeTable(): Promise<AllTimeTableResult> {
     latest_season_name: latestSeason.name,
     season_count: seasons.length,
   };
+}
+
+/** Compact honour summary for the all-time table column. */
+export function formatHonoursSummary(
+  leagueTitles: number,
+  cupTitles: number,
+): string {
+  if (leagueTitles === 0 && cupTitles === 0) return "—";
+  const parts: string[] = [];
+  if (leagueTitles > 0) {
+    parts.push(
+      `${leagueTitles} League${leagueTitles === 1 ? "" : "s"}`,
+    );
+  }
+  if (cupTitles > 0) {
+    parts.push(`${cupTitles} Cup${cupTitles === 1 ? "" : "s"}`);
+  }
+  return parts.join(", ");
 }
