@@ -1,3 +1,4 @@
+import { canonicalizeClubName } from "@/lib/league/club-aliases";
 import type { PlayerPosition } from "@/types/database";
 
 export type PlayerDirectoryRow = {
@@ -44,8 +45,11 @@ export function applyPlayerDirectoryView(
     next = next.filter((row) => row.position === filters.position);
   }
   if (filters.club) {
-    const club = filters.club.toLowerCase();
-    next = next.filter((row) => (row.club ?? "").toLowerCase() === club);
+    const club = canonicalizeClubName(filters.club)?.toLowerCase() ?? "";
+    next = next.filter(
+      (row) =>
+        (canonicalizeClubName(row.club) ?? "").toLowerCase() === club,
+    );
   }
   if (filters.team_id) {
     next = next.filter((row) => row.team_id === filters.team_id);

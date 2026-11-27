@@ -1,5 +1,6 @@
 import { connection } from "next/server";
 
+import { canonicalizeClubName } from "@/lib/league/club-aliases";
 import { deriveStandings } from "@/lib/league/standings";
 import {
   countGoalkeeperConcessions,
@@ -309,7 +310,7 @@ export async function loadTeamPage(
     outfield.push({
       player_id: player.id,
       name: player.name,
-      club: player.club,
+      club: canonicalizeClubName(player.club),
       position: player.position as PlayerPosition,
       goals: goalsByPlayer.get(player.id) ?? 0,
     });
@@ -326,7 +327,7 @@ export async function loadTeamPage(
       currentGkClubId = club.id;
       goalkeeper = {
         goalkeeper_club_id: club.id,
-        name: club.name,
+        name: canonicalizeClubName(club.name) ?? club.name,
         concessions: countGoalkeeperConcessions(teamEvents, club.id),
       };
     }
@@ -379,7 +380,7 @@ export async function loadTeamPage(
     historyOutfield.push({
       player_id: player.id,
       name: player.name,
-      club: player.club,
+      club: canonicalizeClubName(player.club),
       position: player.position as PlayerPosition,
       goals: countOutfieldGoalsInStints(
         allEvents,
@@ -421,7 +422,7 @@ export async function loadTeamPage(
   for (const { club, stints } of historyStintsByGk.values()) {
     historyGoalkeepers.push({
       goalkeeper_club_id: club.id,
-      name: club.name,
+      name: canonicalizeClubName(club.name) ?? club.name,
       concessions: countGoalkeeperConcessionsInStints(
         allEvents,
         selected.id,

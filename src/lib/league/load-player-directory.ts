@@ -1,5 +1,6 @@
 import { connection } from "next/server";
 
+import { canonicalizeClubName } from "@/lib/league/club-aliases";
 import type { PlayerDirectoryRow } from "@/lib/league/player-directory";
 import { createClient } from "@/lib/supabase/server";
 import type {
@@ -116,13 +117,14 @@ export async function loadPlayerDirectory(): Promise<PlayerDirectoryResult> {
     const team = unwrapOne(row.teams);
     if (!player) continue;
 
-    if (player.club) clubSet.add(player.club);
+    const club = canonicalizeClubName(player.club);
+    if (club) clubSet.add(club);
 
     rows.push({
       player_id: player.id,
       name: player.name,
       position: player.position as PlayerPosition,
-      club: player.club,
+      club,
       team_id: team?.id ?? null,
       team_name: team?.name ?? null,
       acquired_at: row.acquired_at,

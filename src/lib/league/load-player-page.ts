@@ -1,5 +1,6 @@
 import { connection } from "next/server";
 
+import { canonicalizeClubName } from "@/lib/league/club-aliases";
 import {
   linkTeamIdForName,
   mapActiveTeamIdsByFranchise,
@@ -15,6 +16,7 @@ import type {
 } from "@/types/database";
 
 export type PlayerClubCareerRow = {
+  /** Representative players.id (first seen) for this canonical club. */
   player_id: string;
   club: string | null;
   positions: PlayerPosition[];
@@ -248,7 +250,7 @@ export async function loadPlayerPage(
       team_id: team.id,
       team_name: team.name,
       link_team_id: linkTeamIdForName(team.name, activeByFranchise),
-      club: player.club,
+      club: canonicalizeClubName(player.club),
       position: player.position,
       acquired_at: row.acquired_at,
       released_at: row.released_at,
@@ -264,19 +266,53 @@ export async function loadPlayerPage(
     return b.acquired_at.localeCompare(a.acquired_at);
   });
 
-  // Club career: one row per players.id (club-stamped asset).
-  const club_career: PlayerClubCareerRow[] = peerPlayers.map((player) => {
+  // Club career: one row per canonical club (merges spelling variants).
+  const careerByClub = new Map<
+    string,
+    {
+      player_id: string;
+      club: string | null;
+      positions: Set<PlayerPosition>;
+      dream_league_goals: number;
+      seasons: Set<string>;
+      ownership_stints: number;
+    }
+  >();
+
+  for (const player of peerPlayers) {
+    const club = canonicalizeClubName(player.club);
+    const key = club ?? `unknown:${player.id}`;
     const stints = ownership_history.filter((o) => o.player_id === player.id);
-    const seasons = [...new Set(stints.map((s) => s.season_name))].sort();
-    return {
-      player_id: player.id,
-      club: player.club,
-      positions: [player.position],
-      dream_league_goals: goalsByPlayer.get(player.id) ?? 0,
-      seasons,
-      ownership_stints: stints.length,
-    };
-  });
+    const existing = careerByClub.get(key);
+    if (!existing) {
+      careerByClub.set(key, {
+        player_id: player.id,
+        club,
+        positions: new Set([player.position]),
+        dream_league_goals: goalsByPlayer.get(player.id) ?? 0,
+        seasons: new Set(stints.map((s) => s.season_name)),
+        ownership_stints: stints.length,
+      });
+    } else {
+      existing.positions.add(player.position);
+      existing.dream_league_goals += goalsByPlayer.get(player.id) ?? 0;
+      existing.ownership_stints += stints.length;
+      for (const seasonName of stints.map((s) => s.season_name)) {
+        existing.seasons.add(seasonName);
+      }
+    }
+  }
+
+  const club_career: PlayerClubCareerRow[] = [...careerByClub.values()].map(
+    (row) => ({
+      player_id: row.player_id,
+      club: row.club,
+      positions: sortPositions(row.positions),
+      dream_league_goals: row.dream_league_goals,
+      seasons: [...row.seasons].sort(),
+      ownership_stints: row.ownership_stints,
+    }),
+  );
 
   club_career.sort((a, b) => {
     const aFirst = a.seasons[0] ?? "9999";
@@ -292,7 +328,8 @@ export async function loadPlayerPage(
   let current_club: string | null = currentOwnership?.club ?? null;
   if (!current_club) {
     const latest = ownership_history[0];
-    current_club = latest?.club ?? entry.club;
+    current_club =
+      latest?.club ?? canonicalizeClubName(entry.club);
   }
 
   return {
