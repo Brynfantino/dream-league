@@ -9,6 +9,7 @@
   "placeholder_teams": [
     "I ROBOT"
   ],
+  "placeholder_note": "I ROBOT (Will Smith) is not a real Dream League franchise. Do not import the team, memberships, or any of its FOR/AGAINST totals as official goal_events.",
   "active_squad_shape": "1 GK + 2 DEF + 3 MID + 5 FWD = 11",
   "verification": {
     "all_table_rows_match_summed_membership_stats": true
