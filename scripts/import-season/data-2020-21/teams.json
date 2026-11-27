@@ -1,0 +1,95 @@
+{
+  "season": "2020/2021",
+  "teams": [
+    {
+      "team": "DURHAM DYNAMO",
+      "manager": "BRYN COOMBE",
+      "managers": [
+        "BRYN COOMBE"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "ROBS ROVERS",
+      "manager": "ROB PICKETT",
+      "managers": [
+        "ROB PICKETT"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "AMALGA SANTOS",
+      "manager": "JOE HARPER",
+      "managers": [
+        "JOE HARPER"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "SHEFSPANYOL",
+      "manager": "SEAN HELSBY",
+      "managers": [
+        "SEAN HELSBY"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "FC WALES",
+      "manager": "RHYS KINSEY",
+      "managers": [
+        "RHYS KINSEY"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "RASH IN THE ATTIC",
+      "manager": "MARK WHITTLE",
+      "managers": [
+        "MARK WHITTLE"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "ERIMUS",
+      "manager": "RICHARD KILPATRICK",
+      "managers": [
+        "RICHARD KILPATRICK"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "YORKSHIRE PIRLO",
+      "manager": "TOM SABELL",
+      "managers": [
+        "TOM SABELL"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "SHOW ME THE MANE",
+      "manager": "LUKE WAIN",
+      "managers": [
+        "LUKE WAIN"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "LOS BORRACHOS",
+      "manager": "BEN ROSE",
+      "managers": [
+        "BEN ROSE"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    }
+  ]
+}

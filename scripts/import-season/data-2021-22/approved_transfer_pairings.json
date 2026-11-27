@@ -1,0 +1,140 @@
+{
+  "season": "2021/2022",
+  "note": "Bryn-approved same-day multi-swap OUT→IN (2026-11-27). Spreadsheet adjacency (same process as 2025/26).",
+  "pairings": [
+    {
+      "team_name": "DREAMVILLE",
+      "position": "FWD",
+      "transferred_on": "2021-08-26",
+      "player_out_name": "PATSON DAKA",
+      "player_in_name": "MATTY STEVENS"
+    },
+    {
+      "team_name": "DREAMVILLE",
+      "position": "FWD",
+      "transferred_on": "2021-08-26",
+      "player_out_name": "ANTHONY MARTIAL",
+      "player_in_name": "CALLUM ROBINSON"
+    },
+    {
+      "team_name": "ALPEN FLAGE",
+      "position": "FWD",
+      "transferred_on": "2021-09-30",
+      "player_out_name": "JOSH MAGENNIS",
+      "player_in_name": "VIKTOR GYOKERES"
+    },
+    {
+      "team_name": "ALPEN FLAGE",
+      "position": "FWD",
+      "transferred_on": "2021-09-30",
+      "player_out_name": "CONNOR MCALENY",
+      "player_in_name": "BEN BRERETON DIAZ"
+    },
+    {
+      "team_name": "ROBS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2021-09-30",
+      "player_out_name": "ADAM ARMSTRONG",
+      "player_in_name": "MICHAEL SMITH"
+    },
+    {
+      "team_name": "ROBS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2021-09-30",
+      "player_out_name": "TIMO WERNER",
+      "player_in_name": "MACAULEY BONNE"
+    },
+    {
+      "team_name": "HALF-A-HARPER FC",
+      "position": "FWD",
+      "transferred_on": "2021-12-30",
+      "player_out_name": "FERRAN TORRES",
+      "player_in_name": "JOE IRONSIDE"
+    },
+    {
+      "team_name": "HALF-A-HARPER FC",
+      "position": "FWD",
+      "transferred_on": "2021-12-30",
+      "player_out_name": "CALLUM WILSON",
+      "player_in_name": "AARON DRINAN"
+    },
+    {
+      "team_name": "DREAMVILLE",
+      "position": "FWD",
+      "transferred_on": "2022-02-10",
+      "player_out_name": "MASON GREENWOOD",
+      "player_in_name": "PATSON DAKA"
+    },
+    {
+      "team_name": "DREAMVILLE",
+      "position": "FWD",
+      "transferred_on": "2022-02-10",
+      "player_out_name": "LEON BAILEY",
+      "player_in_name": "HARRY MCKIRDY"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2022-02-10",
+      "player_out_name": "JOE PIGOTT",
+      "player_in_name": "OLADAPO AFOLAYAN"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2022-02-10",
+      "player_out_name": "DANNY JOHNSON",
+      "player_in_name": "ANDRAZ SPORAR"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2022-02-10",
+      "player_out_name": "PATRICK BAMFORD",
+      "player_in_name": "TOM LAWRENCE"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "MID",
+      "transferred_on": "2022-02-10",
+      "player_out_name": "ARNAUT DANJUMA",
+      "player_in_name": "JACK HARRISON"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "MID",
+      "transferred_on": "2022-02-10",
+      "player_out_name": "JORGE GRANT",
+      "player_in_name": "MOHAMED ELYOUNOUSSI"
+    },
+    {
+      "team_name": "RASH IN THE ATTIC",
+      "position": "DEF",
+      "transferred_on": "2022-03-31",
+      "player_out_name": "STUART DALLAS",
+      "player_in_name": "FRASER HORSFALL"
+    },
+    {
+      "team_name": "RASH IN THE ATTIC",
+      "position": "DEF",
+      "transferred_on": "2022-03-31",
+      "player_out_name": "MICHAL HELIK",
+      "player_in_name": "HARRY DARLING"
+    },
+    {
+      "team_name": "NUTMEG UTD",
+      "position": "FWD",
+      "transferred_on": "2022-03-31",
+      "player_out_name": "TEEMU PUKKI",
+      "player_in_name": "LEE GREGORY"
+    },
+    {
+      "team_name": "NUTMEG UTD",
+      "position": "FWD",
+      "transferred_on": "2022-03-31",
+      "player_out_name": "MARCUS RASHFORD",
+      "player_in_name": "RUEL SOTIRIOU"
+    }
+  ],
+  "decision": "approve all"
+}

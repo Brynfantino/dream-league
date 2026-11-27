@@ -1,0 +1,77 @@
+{
+  "season": "2023/2024",
+  "clubs": [
+    {
+      "name": "ARSENAL"
+    },
+    {
+      "name": "BOLTON"
+    },
+    {
+      "name": "BRADFORD"
+    },
+    {
+      "name": "BRENTFORD"
+    },
+    {
+      "name": "CHELSEA"
+    },
+    {
+      "name": "CRAWLEY"
+    },
+    {
+      "name": "CRYSTAL PALACE"
+    },
+    {
+      "name": "DERBY"
+    },
+    {
+      "name": "LEEDS"
+    },
+    {
+      "name": "LEICESTER"
+    },
+    {
+      "name": "LINCOLN"
+    },
+    {
+      "name": "LIVERPOOL"
+    },
+    {
+      "name": "MANCHESTER CITY"
+    },
+    {
+      "name": "MANSFIELD"
+    },
+    {
+      "name": "NEWCASTLE"
+    },
+    {
+      "name": "OXFORD UTD"
+    },
+    {
+      "name": "PORTSMOUTH"
+    },
+    {
+      "name": "SALFORD"
+    },
+    {
+      "name": "SOUTHAMPTON"
+    },
+    {
+      "name": "STOCKPORT"
+    },
+    {
+      "name": "TOTTENHAM"
+    },
+    {
+      "name": "WATFORD"
+    },
+    {
+      "name": "WEST BROM"
+    },
+    {
+      "name": "WIMBLEDON"
+    }
+  ]
+}

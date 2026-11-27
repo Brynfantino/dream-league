@@ -259,6 +259,592 @@ export const APPROVED_OUTFIELD_PAIRINGS: ApprovedOutfieldPairing[] = [
     player_out_name: "NATHANIEL MENDEZ-LAING",
     player_in_name: "MIKE FONDOP",
   },
+  // --- Historical seasons 2020/21–2024/25 (Bryn approved all 2026-11-27; adjacency) ---
+  // 2020/2021
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "FWD",
+    transferred_on: "2020-09-24",
+    player_out_name: "TYLER WALKER",
+    player_in_name: "LYNDON DYKES",
+  },
+  // 2020/2021
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "FWD",
+    transferred_on: "2020-09-24",
+    player_out_name: "THEO ROBINSON",
+    player_in_name: "DANNY JOHNSON",
+  },
+  // 2020/2021
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2020-11-05",
+    player_out_name: "ASHLEY FLETCHER",
+    player_in_name: "JOHN MARQUIS",
+  },
+  // 2020/2021
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2020-11-05",
+    player_out_name: "TROY DEENEY",
+    player_in_name: "KEANE LEWIS-POTTER",
+  },
+  // 2020/2021
+  {
+    team_name: "SHEFSPANYOL",
+    position: "MID",
+    transferred_on: "2021-03-04",
+    player_out_name: "JAMES HENRY",
+    player_in_name: "SAMMIE SZMODICS",
+  },
+  // 2020/2021
+  {
+    team_name: "SHEFSPANYOL",
+    position: "MID",
+    transferred_on: "2021-03-04",
+    player_out_name: "ANTONI SARCEVIC",
+    player_in_name: "EMILIANO BUENDIA",
+  },
+  // 2021/2022
+  {
+    team_name: "DREAMVILLE",
+    position: "FWD",
+    transferred_on: "2021-08-26",
+    player_out_name: "PATSON DAKA",
+    player_in_name: "MATTY STEVENS",
+  },
+  // 2021/2022
+  {
+    team_name: "DREAMVILLE",
+    position: "FWD",
+    transferred_on: "2021-08-26",
+    player_out_name: "ANTHONY MARTIAL",
+    player_in_name: "CALLUM ROBINSON",
+  },
+  // 2021/2022
+  {
+    team_name: "ALPEN FLAGE",
+    position: "FWD",
+    transferred_on: "2021-09-30",
+    player_out_name: "JOSH MAGENNIS",
+    player_in_name: "VIKTOR GYOKERES",
+  },
+  // 2021/2022
+  {
+    team_name: "ALPEN FLAGE",
+    position: "FWD",
+    transferred_on: "2021-09-30",
+    player_out_name: "CONNOR MCALENY",
+    player_in_name: "BEN BRERETON DIAZ",
+  },
+  // 2021/2022
+  {
+    team_name: "ROBS ROVERS",
+    position: "FWD",
+    transferred_on: "2021-09-30",
+    player_out_name: "ADAM ARMSTRONG",
+    player_in_name: "MICHAEL SMITH",
+  },
+  // 2021/2022
+  {
+    team_name: "ROBS ROVERS",
+    position: "FWD",
+    transferred_on: "2021-09-30",
+    player_out_name: "TIMO WERNER",
+    player_in_name: "MACAULEY BONNE",
+  },
+  // 2021/2022
+  {
+    team_name: "HALF-A-HARPER FC",
+    position: "FWD",
+    transferred_on: "2021-12-30",
+    player_out_name: "FERRAN TORRES",
+    player_in_name: "JOE IRONSIDE",
+  },
+  // 2021/2022
+  {
+    team_name: "HALF-A-HARPER FC",
+    position: "FWD",
+    transferred_on: "2021-12-30",
+    player_out_name: "CALLUM WILSON",
+    player_in_name: "AARON DRINAN",
+  },
+  // 2021/2022
+  {
+    team_name: "DREAMVILLE",
+    position: "FWD",
+    transferred_on: "2022-02-10",
+    player_out_name: "MASON GREENWOOD",
+    player_in_name: "PATSON DAKA",
+  },
+  // 2021/2022
+  {
+    team_name: "DREAMVILLE",
+    position: "FWD",
+    transferred_on: "2022-02-10",
+    player_out_name: "LEON BAILEY",
+    player_in_name: "HARRY MCKIRDY",
+  },
+  // 2021/2022
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2022-02-10",
+    player_out_name: "JOE PIGOTT",
+    player_in_name: "OLADAPO AFOLAYAN",
+  },
+  // 2021/2022
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2022-02-10",
+    player_out_name: "DANNY JOHNSON",
+    player_in_name: "ANDRAZ SPORAR",
+  },
+  // 2021/2022
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2022-02-10",
+    player_out_name: "PATRICK BAMFORD",
+    player_in_name: "TOM LAWRENCE",
+  },
+  // 2021/2022
+  {
+    team_name: "ERIMUS",
+    position: "MID",
+    transferred_on: "2022-02-10",
+    player_out_name: "ARNAUT DANJUMA",
+    player_in_name: "JACK HARRISON",
+  },
+  // 2021/2022
+  {
+    team_name: "ERIMUS",
+    position: "MID",
+    transferred_on: "2022-02-10",
+    player_out_name: "JORGE GRANT",
+    player_in_name: "MOHAMED ELYOUNOUSSI",
+  },
+  // 2021/2022
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "DEF",
+    transferred_on: "2022-03-31",
+    player_out_name: "STUART DALLAS",
+    player_in_name: "FRASER HORSFALL",
+  },
+  // 2021/2022
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "DEF",
+    transferred_on: "2022-03-31",
+    player_out_name: "MICHAL HELIK",
+    player_in_name: "HARRY DARLING",
+  },
+  // 2021/2022
+  {
+    team_name: "NUTMEG UTD",
+    position: "FWD",
+    transferred_on: "2022-03-31",
+    player_out_name: "TEEMU PUKKI",
+    player_in_name: "LEE GREGORY",
+  },
+  // 2021/2022
+  {
+    team_name: "NUTMEG UTD",
+    position: "FWD",
+    transferred_on: "2022-03-31",
+    player_out_name: "MARCUS RASHFORD",
+    player_in_name: "RUEL SOTIRIOU",
+  },
+  // 2022/2023
+  {
+    team_name: "DREAMVILLE",
+    position: "FWD",
+    transferred_on: "2022-08-25",
+    player_out_name: "JAMES WILSON",
+    player_in_name: "OLLIE WATKINS",
+  },
+  // 2022/2023
+  {
+    team_name: "DREAMVILLE",
+    position: "FWD",
+    transferred_on: "2022-08-25",
+    player_out_name: "ANTHONY MARTIAL",
+    player_in_name: "JOSH SARGENT",
+  },
+  // 2022/2023
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2022-09-01",
+    player_out_name: "SAM VOKES",
+    player_in_name: "OMAR BOGLE",
+  },
+  // 2022/2023
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2022-09-01",
+    player_out_name: "KELECHI IHEANCHO",
+    player_in_name: "ANTONY DOS SANTOS",
+  },
+  // 2022/2023
+  {
+    team_name: "ROBS ROVERS",
+    position: "FWD",
+    transferred_on: "2022-12-29",
+    player_out_name: "DIOGO JOTA",
+    player_in_name: "VICTOR ADEBOYEJO",
+  },
+  // 2022/2023
+  {
+    team_name: "ROBS ROVERS",
+    position: "FWD",
+    transferred_on: "2022-12-29",
+    player_out_name: "LEE GREGORY",
+    player_in_name: "DAVID MCGOLDRICK",
+  },
+  // 2022/2023
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "FWD",
+    transferred_on: "2023-01-12",
+    player_out_name: "CRISTIANO RONALDO",
+    player_in_name: "JOAO FELIX",
+  },
+  // 2022/2023
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "FWD",
+    transferred_on: "2023-01-12",
+    player_out_name: "PIERRE EMERICK AUBAMEYANG",
+    player_in_name: "ANASS ZAROURY",
+  },
+  // 2022/2023
+  {
+    team_name: "DUGGAN'S DREAMERS",
+    position: "FWD",
+    transferred_on: "2023-03-09",
+    player_out_name: "RICHARLISON",
+    player_in_name: "JEVANI BROWN",
+  },
+  // 2022/2023
+  {
+    team_name: "DUGGAN'S DREAMERS",
+    position: "FWD",
+    transferred_on: "2023-03-09",
+    player_out_name: "JAMIE VARDY",
+    player_in_name: "DAN AGYEI",
+  },
+  // 2023/2024
+  {
+    team_name: "DURHAM DYNAMO",
+    position: "FWD",
+    transferred_on: "2023-08-17",
+    player_out_name: "LUKE ARMSTRONG",
+    player_in_name: "GASSAN AHADME",
+  },
+  // 2023/2024
+  {
+    team_name: "DURHAM DYNAMO",
+    position: "FWD",
+    transferred_on: "2023-08-17",
+    player_out_name: "KYLE WOOTTON",
+    player_in_name: "KUSINI YENGI",
+  },
+  // 2023/2024
+  {
+    team_name: "DUGGAN'S DREAMERS",
+    position: "MID",
+    transferred_on: "2023-08-17",
+    player_out_name: "CHUBA AKPOM",
+    player_in_name: "CHRISTIAN FASSNACHT",
+  },
+  // 2023/2024
+  {
+    team_name: "DUGGAN'S DREAMERS",
+    position: "MID",
+    transferred_on: "2023-08-17",
+    player_out_name: "GUSTAVO HAMER",
+    player_in_name: "MOUSSA DIABY",
+  },
+  // 2023/2024
+  {
+    team_name: "ROBS ROVERS",
+    position: "FWD",
+    transferred_on: "2023-10-05",
+    player_out_name: "COLE STOCKTON",
+    player_in_name: "ISAAC OLAOFE",
+  },
+  // 2023/2024
+  {
+    team_name: "ROBS ROVERS",
+    position: "FWD",
+    transferred_on: "2023-10-05",
+    player_out_name: "ANTHONY MARTIAL",
+    player_in_name: "DAN KEMP",
+  },
+  // 2023/2024
+  {
+    team_name: "DURHAM DYNAMO",
+    position: "FWD",
+    transferred_on: "2023-10-19",
+    player_out_name: "GASSAN AHADME",
+    player_in_name: "JORDAN RHODES",
+  },
+  // 2023/2024
+  {
+    team_name: "DURHAM DYNAMO",
+    position: "FWD",
+    transferred_on: "2023-10-19",
+    player_out_name: "DANNY JOHNSON",
+    player_in_name: "MATT SMITH",
+  },
+  // 2023/2024
+  {
+    team_name: "ONE AND A HALF A HARPER FC",
+    position: "FWD",
+    transferred_on: "2023-11-16",
+    player_out_name: "MILES LEABURN",
+    player_in_name: "JOHN SWIFT",
+  },
+  // 2023/2024
+  {
+    team_name: "ONE AND A HALF A HARPER FC",
+    position: "FWD",
+    transferred_on: "2023-11-16",
+    player_out_name: "PADDY MADDEN",
+    player_in_name: "DANIEL ORSI",
+  },
+  // 2023/2024
+  {
+    team_name: "SPORTING HOOF",
+    position: "FWD",
+    transferred_on: "2023-11-16",
+    player_out_name: "ELLIS SIMMS",
+    player_in_name: "COURTNEY BAKER-RICHARDSON",
+  },
+  // 2023/2024
+  {
+    team_name: "SPORTING HOOF",
+    position: "FWD",
+    transferred_on: "2023-11-16",
+    player_out_name: "CHE ADAMS",
+    player_in_name: "KYLE WOOTON",
+  },
+  // 2023/2024
+  {
+    team_name: "ONE AND A HALF A HARPER FC",
+    position: "MID",
+    transferred_on: "2023-11-16",
+    player_out_name: "JESURUN RAK-SAKYI",
+    player_in_name: "CRYSENCIO SUMMERVILLE",
+  },
+  // 2023/2024
+  {
+    team_name: "ONE AND A HALF A HARPER FC",
+    position: "MID",
+    transferred_on: "2023-11-16",
+    player_out_name: "JAMES MADDISON",
+    player_in_name: "HWANG HEE CHAN",
+  },
+  // 2023/2024
+  {
+    team_name: "ONE AND A HALF A HARPER FC",
+    position: "FWD",
+    transferred_on: "2024-01-25",
+    player_out_name: "YOANE WISSA",
+    player_in_name: "JAMES COLLINS",
+  },
+  // 2023/2024
+  {
+    team_name: "ONE AND A HALF A HARPER FC",
+    position: "FWD",
+    transferred_on: "2024-01-25",
+    player_out_name: "JOHN SWIFT",
+    player_in_name: "CHRIS WOOD",
+  },
+  // 2023/2024
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2024-04-04",
+    player_out_name: "TOM NICHOLS",
+    player_in_name: "GASSAN AHADME",
+  },
+  // 2023/2024
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2024-04-04",
+    player_out_name: "OLLIE PALMER",
+    player_in_name: "JAMES COLLINS",
+  },
+  // 2024/2025
+  {
+    team_name: "CHARLIE'S ANGELS",
+    position: "FWD",
+    transferred_on: "2024-10-03",
+    player_out_name: "COLBY BISHOP",
+    player_in_name: "DWIGHT MCNEIL",
+  },
+  // 2024/2025
+  {
+    team_name: "CHARLIE'S ANGELS",
+    position: "FWD",
+    transferred_on: "2024-10-03",
+    player_out_name: "CHRIS MARTIN",
+    player_in_name: "TOM CANNON",
+  },
+  // 2024/2025
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "FWD",
+    transferred_on: "2024-10-10",
+    player_out_name: "JOE IRONSIDE",
+    player_in_name: "DANNY WELBECK",
+  },
+  // 2024/2025
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "FWD",
+    transferred_on: "2024-10-10",
+    player_out_name: "MICHAEL MELLON",
+    player_in_name: "KYLE JOSEPH",
+  },
+  // 2024/2025
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "FWD",
+    transferred_on: "2024-10-10",
+    player_out_name: "KEIFFER MOORE",
+    player_in_name: "NATHAN LOWE",
+  },
+  // 2024/2025
+  {
+    team_name: "MIDDLESBROTHERS",
+    position: "FWD",
+    transferred_on: "2024-10-31",
+    player_out_name: "MARCUS RASHFORD",
+    player_in_name: "DAN UDOH",
+  },
+  // 2024/2025
+  {
+    team_name: "MIDDLESBROTHERS",
+    position: "FWD",
+    transferred_on: "2024-10-31",
+    player_out_name: "JOE HUGILL",
+    player_in_name: "WILSON ISIDOR",
+  },
+  // 2024/2025
+  {
+    team_name: "DURHAM DYNAMO",
+    position: "MID",
+    transferred_on: "2024-11-07",
+    player_out_name: "JACK NOLAN",
+    player_in_name: "WILLUM WILLUMSON",
+  },
+  // 2024/2025
+  {
+    team_name: "DURHAM DYNAMO",
+    position: "MID",
+    transferred_on: "2024-11-07",
+    player_out_name: "SAM HOSKINS",
+    player_in_name: "CODY GAKPO",
+  },
+  // 2024/2025
+  {
+    team_name: "TIKI TAKA FC",
+    position: "MID",
+    transferred_on: "2024-11-28",
+    player_out_name: "DAN CROWLEY",
+    player_in_name: "BEN WILES",
+  },
+  // 2024/2025
+  {
+    team_name: "TIKI TAKA FC",
+    position: "MID",
+    transferred_on: "2024-11-28",
+    player_out_name: "ROMAINE MUNDLE",
+    player_in_name: "FRED ONYEDINMA",
+  },
+  // 2024/2025
+  {
+    team_name: "ROBS ROVERS",
+    position: "FWD",
+    transferred_on: "2025-01-09",
+    player_out_name: "JAYDEN STOCKLEY",
+    player_in_name: "MILES LEABURN",
+  },
+  // 2024/2025
+  {
+    team_name: "ROBS ROVERS",
+    position: "FWD",
+    transferred_on: "2025-01-09",
+    player_out_name: "RONAN COUGHLAN",
+    player_in_name: "ANIS MEHMETI",
+  },
+  // 2024/2025
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2025-02-06",
+    player_out_name: "JOSH KOROMA",
+    player_in_name: "CALLUM ROBINSON",
+  },
+  // 2024/2025
+  {
+    team_name: "ERIMUS",
+    position: "FWD",
+    transferred_on: "2025-02-06",
+    player_out_name: "EMMANUEL LATTE LATH",
+    player_in_name: "KELECHI IHEANACHO",
+  },
+  // 2024/2025
+  {
+    team_name: "CHARLIE'S ANGELS",
+    position: "FWD",
+    transferred_on: "2025-02-13",
+    player_out_name: "MACAULEY LANGSTAFF",
+    player_in_name: "MILLENIC ALLI",
+  },
+  // 2024/2025
+  {
+    team_name: "CHARLIE'S ANGELS",
+    position: "FWD",
+    transferred_on: "2025-02-13",
+    player_out_name: "PAUL MULLIN",
+    player_in_name: "DONYELL MALEN",
+  },
+  // 2024/2025
+  {
+    team_name: "CHARLIE'S ANGELS",
+    position: "FWD",
+    transferred_on: "2025-02-13",
+    player_out_name: "DWIGHT MCNEIL",
+    player_in_name: "HARVEY KNIBBS",
+  },
+  // 2024/2025
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "FWD",
+    transferred_on: "2025-02-20",
+    player_out_name: "KYLE JOSEPH",
+    player_in_name: "JUSTIN OBIKWU",
+  },
+  // 2024/2025
+  {
+    team_name: "RASH IN THE ATTIC",
+    position: "FWD",
+    transferred_on: "2025-02-20",
+    player_out_name: "NATHAN LOWE",
+    player_in_name: "JAMILLE MATT",
+  },
+
 ];
 
 function normName(name: string): string {

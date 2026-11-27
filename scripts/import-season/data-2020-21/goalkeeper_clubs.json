@@ -1,0 +1,53 @@
+{
+  "season": "2020/2021",
+  "clubs": [
+    {
+      "name": "BRENTFORD"
+    },
+    {
+      "name": "CHELTENHAM"
+    },
+    {
+      "name": "COVENTRY"
+    },
+    {
+      "name": "IPSWICH"
+    },
+    {
+      "name": "LINCOLN"
+    },
+    {
+      "name": "LIVERPOOL"
+    },
+    {
+      "name": "MANCHESTER CITY"
+    },
+    {
+      "name": "MANCHESTER UTD"
+    },
+    {
+      "name": "MILLWALL"
+    },
+    {
+      "name": "NORWICH"
+    },
+    {
+      "name": "NOTTINGHAM FOREST"
+    },
+    {
+      "name": "SALFORD"
+    },
+    {
+      "name": "SHEFFIELD UTD"
+    },
+    {
+      "name": "SUNDERLAND"
+    },
+    {
+      "name": "SWANSEA"
+    },
+    {
+      "name": "WATFORD"
+    }
+  ]
+}

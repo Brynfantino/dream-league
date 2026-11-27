@@ -1,0 +1,66 @@
+{
+  "season": "2020/2021",
+  "managers": [
+    {
+      "display_name": "BRYN COOMBE",
+      "teams": [
+        "DURHAM DYNAMO"
+      ]
+    },
+    {
+      "display_name": "ROB PICKETT",
+      "teams": [
+        "ROBS ROVERS"
+      ]
+    },
+    {
+      "display_name": "JOE HARPER",
+      "teams": [
+        "AMALGA SANTOS"
+      ]
+    },
+    {
+      "display_name": "SEAN HELSBY",
+      "teams": [
+        "SHEFSPANYOL"
+      ]
+    },
+    {
+      "display_name": "RHYS KINSEY",
+      "teams": [
+        "FC WALES"
+      ]
+    },
+    {
+      "display_name": "MARK WHITTLE",
+      "teams": [
+        "RASH IN THE ATTIC"
+      ]
+    },
+    {
+      "display_name": "RICHARD KILPATRICK",
+      "teams": [
+        "ERIMUS"
+      ]
+    },
+    {
+      "display_name": "TOM SABELL",
+      "teams": [
+        "YORKSHIRE PIRLO"
+      ]
+    },
+    {
+      "display_name": "LUKE WAIN",
+      "teams": [
+        "SHOW ME THE MANE"
+      ]
+    },
+    {
+      "display_name": "BEN ROSE",
+      "teams": [
+        "LOS BORRACHOS"
+      ]
+    }
+  ],
+  "count": 10
+}

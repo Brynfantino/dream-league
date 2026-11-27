@@ -1,0 +1,102 @@
+{
+  "season": "2023/2024",
+  "managers": [
+    {
+      "display_name": "BRYN COOMBE",
+      "teams": [
+        "DURHAM DYNAMO"
+      ]
+    },
+    {
+      "display_name": "ROB PICKETT",
+      "teams": [
+        "ROBS ROVERS"
+      ]
+    },
+    {
+      "display_name": "JOE HARPER",
+      "teams": [
+        "CASEMIGOS"
+      ]
+    },
+    {
+      "display_name": "SEAN HELSBY",
+      "teams": [
+        "SHEFSPANYOL"
+      ]
+    },
+    {
+      "display_name": "MIKE ASTLEY",
+      "teams": [
+        "SPORTING HOOF"
+      ]
+    },
+    {
+      "display_name": "MARK WHITTLE",
+      "teams": [
+        "RASH IN THE ATTIC"
+      ]
+    },
+    {
+      "display_name": "RICHARD KILPATRICK",
+      "teams": [
+        "ERIMUS"
+      ]
+    },
+    {
+      "display_name": "CHRIS DUFFY",
+      "teams": [
+        "NUTMEG UTD"
+      ]
+    },
+    {
+      "display_name": "SEB BATE",
+      "teams": [
+        "MICHU IN DE GEA BAR"
+      ]
+    },
+    {
+      "display_name": "SAM HARPER",
+      "teams": [
+        "ONE AND A HALF A HARPER FC"
+      ]
+    },
+    {
+      "display_name": "TAMIKO JELENJE",
+      "teams": [
+        "DREAMVILLE"
+      ]
+    },
+    {
+      "display_name": "CHRIS MCD",
+      "teams": [
+        "TIKI TAKA FC"
+      ]
+    },
+    {
+      "display_name": "JIMBO",
+      "teams": [
+        "TIKI TAKA FC"
+      ]
+    },
+    {
+      "display_name": "ADG",
+      "teams": [
+        "TIKI TAKA FC"
+      ]
+    },
+    {
+      "display_name": "JAMIE DUGGAN",
+      "teams": [
+        "DUGGAN'S DREAMERS"
+      ]
+    },
+    {
+      "display_name": "CHARLIE REED",
+      "teams": [
+        "CHARLIE'S ANGELS"
+      ]
+    }
+  ],
+  "count": 16
+}

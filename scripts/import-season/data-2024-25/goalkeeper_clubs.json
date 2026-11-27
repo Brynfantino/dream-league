@@ -1,0 +1,74 @@
+{
+  "season": "2024/2025",
+  "clubs": [
+    {
+      "name": "ARSENAL"
+    },
+    {
+      "name": "BIRMINGHAM"
+    },
+    {
+      "name": "BOLTON"
+    },
+    {
+      "name": "BRISTOL CITY"
+    },
+    {
+      "name": "BURNLEY"
+    },
+    {
+      "name": "CREWE"
+    },
+    {
+      "name": "CRYSTAL PALACE"
+    },
+    {
+      "name": "LEEDS"
+    },
+    {
+      "name": "LINCOLN"
+    },
+    {
+      "name": "LIVERPOOL"
+    },
+    {
+      "name": "LUTON"
+    },
+    {
+      "name": "MANCHESTER CITY"
+    },
+    {
+      "name": "NEWCASTLE"
+    },
+    {
+      "name": "NORWICH CITY"
+    },
+    {
+      "name": "NOTTINGHAM FOREST"
+    },
+    {
+      "name": "PORT VALE"
+    },
+    {
+      "name": "SHEFFIELD UNITED"
+    },
+    {
+      "name": "STOCKPORT"
+    },
+    {
+      "name": "SUNDERLAND"
+    },
+    {
+      "name": "WEST BROM"
+    },
+    {
+      "name": "WIGAN"
+    },
+    {
+      "name": "WIMBLEDON"
+    },
+    {
+      "name": "WREXHAM"
+    }
+  ]
+}

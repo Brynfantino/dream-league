@@ -1,0 +1,104 @@
+{
+  "season": "2021/2022",
+  "teams": [
+    {
+      "team": "DURHAM DYNAMO",
+      "manager": "BRYN COOMBE",
+      "managers": [
+        "BRYN COOMBE"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "ROBS ROVERS",
+      "manager": "ROB PICKETT",
+      "managers": [
+        "ROB PICKETT"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "ALPEN FLAGE",
+      "manager": "JOE HARPER",
+      "managers": [
+        "JOE HARPER"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "SHEFSPANYOL",
+      "manager": "SEAN HELSBY",
+      "managers": [
+        "SEAN HELSBY"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "SPORTING HOOF",
+      "manager": "MIKE ASTLEY",
+      "managers": [
+        "MIKE ASTLEY"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "RASH IN THE ATTIC",
+      "manager": "MARK WHITTLE",
+      "managers": [
+        "MARK WHITTLE"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "ERIMUS",
+      "manager": "RICHARD KILPATRICK",
+      "managers": [
+        "RICHARD KILPATRICK"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "NUTMEG UTD",
+      "manager": "CHRIS DUFFY",
+      "managers": [
+        "CHRIS DUFFY"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "MICHU IN DE GEA BAR",
+      "manager": "SEB BATE",
+      "managers": [
+        "SEB BATE"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "HALF-A-HARPER FC",
+      "manager": "SAM HARPER",
+      "managers": [
+        "SAM HARPER"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    },
+    {
+      "team": "DREAMVILLE",
+      "manager": "TAMIKO JELENJE",
+      "managers": [
+        "TAMIKO JELENJE"
+      ],
+      "placeholder": false,
+      "in_league_table": true
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "season": "2024/2025",
+  "note": "Bryn-approved same-day multi-swap OUT→IN (2026-11-27). Spreadsheet adjacency (same process as 2025/26).",
+  "pairings": [
+    {
+      "team_name": "CHARLIE'S ANGELS",
+      "position": "FWD",
+      "transferred_on": "2024-10-03",
+      "player_out_name": "COLBY BISHOP",
+      "player_in_name": "DWIGHT MCNEIL"
+    },
+    {
+      "team_name": "CHARLIE'S ANGELS",
+      "position": "FWD",
+      "transferred_on": "2024-10-03",
+      "player_out_name": "CHRIS MARTIN",
+      "player_in_name": "TOM CANNON"
+    },
+    {
+      "team_name": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "transferred_on": "2024-10-10",
+      "player_out_name": "JOE IRONSIDE",
+      "player_in_name": "DANNY WELBECK"
+    },
+    {
+      "team_name": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "transferred_on": "2024-10-10",
+      "player_out_name": "MICHAEL MELLON",
+      "player_in_name": "KYLE JOSEPH"
+    },
+    {
+      "team_name": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "transferred_on": "2024-10-10",
+      "player_out_name": "KEIFFER MOORE",
+      "player_in_name": "NATHAN LOWE"
+    },
+    {
+      "team_name": "MIDDLESBROTHERS",
+      "position": "FWD",
+      "transferred_on": "2024-10-31",
+      "player_out_name": "MARCUS RASHFORD",
+      "player_in_name": "DAN UDOH"
+    },
+    {
+      "team_name": "MIDDLESBROTHERS",
+      "position": "FWD",
+      "transferred_on": "2024-10-31",
+      "player_out_name": "JOE HUGILL",
+      "player_in_name": "WILSON ISIDOR"
+    },
+    {
+      "team_name": "DURHAM DYNAMO",
+      "position": "MID",
+      "transferred_on": "2024-11-07",
+      "player_out_name": "JACK NOLAN",
+      "player_in_name": "WILLUM WILLUMSON"
+    },
+    {
+      "team_name": "DURHAM DYNAMO",
+      "position": "MID",
+      "transferred_on": "2024-11-07",
+      "player_out_name": "SAM HOSKINS",
+      "player_in_name": "CODY GAKPO"
+    },
+    {
+      "team_name": "TIKI TAKA FC",
+      "position": "MID",
+      "transferred_on": "2024-11-28",
+      "player_out_name": "DAN CROWLEY",
+      "player_in_name": "BEN WILES"
+    },
+    {
+      "team_name": "TIKI TAKA FC",
+      "position": "MID",
+      "transferred_on": "2024-11-28",
+      "player_out_name": "ROMAINE MUNDLE",
+      "player_in_name": "FRED ONYEDINMA"
+    },
+    {
+      "team_name": "ROBS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2025-01-09",
+      "player_out_name": "JAYDEN STOCKLEY",
+      "player_in_name": "MILES LEABURN"
+    },
+    {
+      "team_name": "ROBS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2025-01-09",
+      "player_out_name": "RONAN COUGHLAN",
+      "player_in_name": "ANIS MEHMETI"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2025-02-06",
+      "player_out_name": "JOSH KOROMA",
+      "player_in_name": "CALLUM ROBINSON"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2025-02-06",
+      "player_out_name": "EMMANUEL LATTE LATH",
+      "player_in_name": "KELECHI IHEANACHO"
+    },
+    {
+      "team_name": "CHARLIE'S ANGELS",
+      "position": "FWD",
+      "transferred_on": "2025-02-13",
+      "player_out_name": "MACAULEY LANGSTAFF",
+      "player_in_name": "MILLENIC ALLI"
+    },
+    {
+      "team_name": "CHARLIE'S ANGELS",
+      "position": "FWD",
+      "transferred_on": "2025-02-13",
+      "player_out_name": "PAUL MULLIN",
+      "player_in_name": "DONYELL MALEN"
+    },
+    {
+      "team_name": "CHARLIE'S ANGELS",
+      "position": "FWD",
+      "transferred_on": "2025-02-13",
+      "player_out_name": "DWIGHT MCNEIL",
+      "player_in_name": "HARVEY KNIBBS"
+    },
+    {
+      "team_name": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "transferred_on": "2025-02-20",
+      "player_out_name": "KYLE JOSEPH",
+      "player_in_name": "JUSTIN OBIKWU"
+    },
+    {
+      "team_name": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "transferred_on": "2025-02-20",
+      "player_out_name": "NATHAN LOWE",
+      "player_in_name": "JAMILLE MATT"
+    }
+  ],
+  "decision": "approve all"
+}
