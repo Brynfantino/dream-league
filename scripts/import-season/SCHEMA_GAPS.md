@@ -4,14 +4,25 @@ Game rules: **Dream-League_PRD.md**. Do not invent rules.
 
 Aligned to foundation PRD schema (`goalkeeper_clubs`, `players` DEF/MID/FWD, `team_managers` in core).
 
-## Locked import scope (Bryn 2026-11-25)
+## Locked import scope — 2026/27 (Bryn 2026-11-25)
 
 | Decision | Seed behaviour |
 |----------|----------------|
 | Skip I ROBOT | Excluded |
-| BFL / Bet Settlement out of scope | Not seeded |
-| Cup starts February | No `cup_ties` |
+| BFL / Bet Settlement out of scope | Not seeded for 2026/27 |
+| Cup starts February | No `cup_ties` for 2026/27 |
 | One login per person; multi-manager teams | `team_managers` only (no `teams.manager_id`) |
+
+## Locked import scope — 2025/26 historical (Bryn 2026-11-27)
+
+| Decision | Seed behaviour |
+|----------|----------------|
+| Dates | `2025-08-01` → `2026-05-31`; **inactive** |
+| Skip I ROBOT | Excluded |
+| Cup + BFL | Seeded into `cup_ties` (`competition` + external `*_name`) |
+| Honours | League / Cup / BFL Challenge winners |
+| Bet Settlement | Still out of scope |
+| Migration | `20261127120000_cup_ties_competition_and_labels.sql` |
 
 ## Mapping
 

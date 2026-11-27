@@ -1,0 +1,86 @@
+{
+  "season": "2025/2026",
+  "clubs": [
+    {
+      "name": "ARSENAL"
+    },
+    {
+      "name": "BOLTON"
+    },
+    {
+      "name": "BROMLEY"
+    },
+    {
+      "name": "CAMBRIDGE"
+    },
+    {
+      "name": "CARDIFF"
+    },
+    {
+      "name": "COLCHESTER"
+    },
+    {
+      "name": "COVENTRY"
+    },
+    {
+      "name": "CREWE"
+    },
+    {
+      "name": "CRYSTAL PALACE"
+    },
+    {
+      "name": "EVERTON"
+    },
+    {
+      "name": "GILLINGHAM"
+    },
+    {
+      "name": "IPSWICH"
+    },
+    {
+      "name": "LINCOLN"
+    },
+    {
+      "name": "LIVERPOOL"
+    },
+    {
+      "name": "LUTON"
+    },
+    {
+      "name": "MANCHESTER CITY"
+    },
+    {
+      "name": "MANCHESTER UNITED"
+    },
+    {
+      "name": "MIDDLESBROUGH"
+    },
+    {
+      "name": "MILTON KEYNES DONS"
+    },
+    {
+      "name": "SHEFFIELD UNITED"
+    },
+    {
+      "name": "STEVENAGE"
+    },
+    {
+      "name": "STOCKPORT"
+    },
+    {
+      "name": "STOKE"
+    },
+    {
+      "name": "TOTTENHAM"
+    },
+    {
+      "name": "WALSALL"
+    },
+    {
+      "name": "WIGAN"
+    },
+    {
+      "name": "WYCOMBE"
+    }
+  ]
+}

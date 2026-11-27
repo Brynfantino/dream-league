@@ -2,6 +2,8 @@
 
 **Rules:** Project `docs/Dream-League_PRD.md`. Do not invent game rules.
 
+**Historical 2025/26:** see [`README-2025-26.md`](./README-2025-26.md) (inactive season, Cup + BFL + honours).
+
 Mapping: `/cursor/stores/bc-ef8a0793-1e6f-4d35-b50c-443ca7b526d2/docs/spreadsheet-mapping.md`
 
 ## Locked scope (Bryn)

@@ -108,12 +108,22 @@ export type Transfer = {
   reviewed_at: string | null;
 };
 
+/** Cup competition keys stored on cup_ties.competition. */
+export type CupCompetition = "dream_league_cup" | "bfl_challenge";
+
 export type CupTie = {
   id: string;
   season_id: string;
+  /** dream_league_cup | bfl_challenge */
+  competition: CupCompetition;
   round_name: string;
   home_team_id: string | null;
   away_team_id: string | null;
+  /** Display label when home_team_id is null (external opponent). */
+  home_name: string | null;
+  /** Display label when away_team_id is null (external opponent). */
+  away_name: string | null;
+  /** Weekend net points (GF−GA) for Dream League cup weekends. */
   home_score: number | null;
   away_score: number | null;
   played_on: string | null;

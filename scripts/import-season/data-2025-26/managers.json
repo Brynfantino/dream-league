@@ -1,0 +1,120 @@
+{
+  "season": "2025/2026",
+  "managers": [
+    {
+      "display_name": "BRYN COOMBE",
+      "teams": [
+        "DURHAM DYNAMO"
+      ]
+    },
+    {
+      "display_name": "ROB PICKETT",
+      "teams": [
+        "NATHS ROVERS"
+      ]
+    },
+    {
+      "display_name": "JOE HARPER",
+      "teams": [
+        "CF CALA ALCAUFAR"
+      ]
+    },
+    {
+      "display_name": "SEAN HELSBY",
+      "teams": [
+        "SHEFSPANYOL"
+      ]
+    },
+    {
+      "display_name": "MIKE ASTLEY",
+      "teams": [
+        "SPORTING HOOF"
+      ]
+    },
+    {
+      "display_name": "MARK WHITTLE",
+      "teams": [
+        "RASH IN THE ATTIC"
+      ]
+    },
+    {
+      "display_name": "RICHARD KILPATRICK",
+      "teams": [
+        "ERIMUS"
+      ]
+    },
+    {
+      "display_name": "CHRIS DUFFY",
+      "teams": [
+        "NUTMEG UTD"
+      ]
+    },
+    {
+      "display_name": "SEB BATE",
+      "teams": [
+        "WENGER BOYS"
+      ]
+    },
+    {
+      "display_name": "SAM HARPER",
+      "teams": [
+        "LE HARPRE"
+      ]
+    },
+    {
+      "display_name": "TAMIKO",
+      "teams": [
+        "MIDDLESBROTHERS"
+      ]
+    },
+    {
+      "display_name": "MAX",
+      "teams": [
+        "MIDDLESBROTHERS"
+      ]
+    },
+    {
+      "display_name": "CHRIS MCD",
+      "teams": [
+        "NEWELL'S OLD TIKI TAKA"
+      ]
+    },
+    {
+      "display_name": "JIMBO",
+      "teams": [
+        "NEWELL'S OLD TIKI TAKA"
+      ]
+    },
+    {
+      "display_name": "ADG",
+      "teams": [
+        "NEWELL'S OLD TIKI TAKA"
+      ]
+    },
+    {
+      "display_name": "JAMIE DUGGAN",
+      "teams": [
+        "DREAMERS DREGS"
+      ]
+    },
+    {
+      "display_name": "CHARLIE",
+      "teams": [
+        "ATLETICO DEC"
+      ]
+    },
+    {
+      "display_name": "ELIO",
+      "teams": [
+        "ATLETICO DEC"
+      ]
+    },
+    {
+      "display_name": "DAVE",
+      "teams": [
+        "ATLETICO DEC"
+      ]
+    }
+  ],
+  "count": 19
+}

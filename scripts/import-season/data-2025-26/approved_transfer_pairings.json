@@ -1,0 +1,125 @@
+{
+  "season": "2025/2026",
+  "note": "Bryn-approved same-day multi-swap OUT→IN (2026-11-27). Spreadsheet adjacency.",
+  "pairings": [
+    {
+      "team_name": "SPORTING HOOF",
+      "position": "FWD",
+      "transferred_on": "2025-08-21",
+      "player_out_name": "HARRY SMITH",
+      "player_in_name": "JAMES COLLINS"
+    },
+    {
+      "team_name": "SPORTING HOOF",
+      "position": "FWD",
+      "transferred_on": "2025-08-21",
+      "player_out_name": "SAM NOMBE",
+      "player_in_name": "JAMIE REID"
+    },
+    {
+      "team_name": "NATHS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2025-09-04",
+      "player_out_name": "MIHAILO IVANOVIC",
+      "player_in_name": "RANDOL KOLO MUANI"
+    },
+    {
+      "team_name": "NATHS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2025-09-04",
+      "player_out_name": "RODRIGO MUNIZ",
+      "player_in_name": "MATT DENNIS"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2025-10-23",
+      "player_out_name": "CALLUM LANG",
+      "player_in_name": "ANTONI SARCEVIC"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2025-10-23",
+      "player_out_name": "CHUBA AKPOM",
+      "player_in_name": "MILUTIN OSMAJIC"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2026-01-01",
+      "player_out_name": "ALEKSANDER ISAK",
+      "player_in_name": "JOVON MAKAMA"
+    },
+    {
+      "team_name": "ERIMUS",
+      "position": "FWD",
+      "transferred_on": "2026-01-01",
+      "player_out_name": "MILLENIC ALLI",
+      "player_in_name": "RYAN GRAYDON"
+    },
+    {
+      "team_name": "NATHS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2026-01-29",
+      "player_out_name": "BENJAMIN SESKO",
+      "player_in_name": "JACK CLARKE"
+    },
+    {
+      "team_name": "NATHS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2026-01-29",
+      "player_out_name": "RANDOL KOLO MUANI",
+      "player_in_name": "KIEFFER MOORE"
+    },
+    {
+      "team_name": "NATHS ROVERS",
+      "position": "FWD",
+      "transferred_on": "2026-01-29",
+      "player_out_name": "MATT DENNIS",
+      "player_in_name": "JAYDEN WAREHAM"
+    },
+    {
+      "team_name": "DREAMERS DREGS",
+      "position": "FWD",
+      "transferred_on": "2026-02-19",
+      "player_out_name": "MIKE FONDOP",
+      "player_in_name": "MARCUS BROWNE"
+    },
+    {
+      "team_name": "DREAMERS DREGS",
+      "position": "FWD",
+      "transferred_on": "2026-02-19",
+      "player_out_name": "WILL GRIGG",
+      "player_in_name": "KIEFFER MOORE"
+    },
+    {
+      "team_name": "ATLETICO DEC",
+      "position": "FWD",
+      "transferred_on": "2026-03-05",
+      "player_out_name": "ALFIE MAY",
+      "player_in_name": "EVANN GUESSAND"
+    },
+    {
+      "team_name": "ATLETICO DEC",
+      "position": "FWD",
+      "transferred_on": "2026-03-05",
+      "player_out_name": "AUNE HEGGEBO",
+      "player_in_name": "ROB STREET"
+    },
+    {
+      "team_name": "LE HARPRE",
+      "position": "FWD",
+      "transferred_on": "2026-03-26",
+      "player_out_name": "KYOGO FURUHASHI",
+      "player_in_name": "BENJAMIN SESKO"
+    },
+    {
+      "team_name": "LE HARPRE",
+      "position": "FWD",
+      "transferred_on": "2026-03-26",
+      "player_out_name": "NATHANIEL MENDEZ-LAING",
+      "player_in_name": "MIKE FONDOP"
+    }
+  ]
+}

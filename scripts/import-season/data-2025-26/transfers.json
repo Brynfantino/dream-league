@@ -1,0 +1,1034 @@
+{
+  "season": "2025/2026",
+  "note": "Derived from ownership for QA; not seeded into transfers proposal table.",
+  "count": 104,
+  "transfers": [
+    {
+      "kind": "outfield",
+      "team": "ERIMUS",
+      "position": "FWD",
+      "date": "2025-08-07",
+      "out": "BORJA SAINZ",
+      "in": "CHUBA AKPOM",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NATHS ROVERS",
+      "position": "FWD",
+      "date": "2025-08-07",
+      "out": "JOEL PIROE",
+      "in": "BENJAMIN SESKO",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "MIDDLESBROTHERS",
+      "position": "MID",
+      "date": "2025-08-07",
+      "out": "THELO AASGAARD",
+      "in": "GUSTAVO HAMER",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SHEFSPANYOL",
+      "position": "MID",
+      "date": "2025-08-07",
+      "out": "LUIS DIAZ",
+      "in": "XAVI SIMONS",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "WENGER BOYS",
+      "position": "MID",
+      "date": "2025-08-07",
+      "out": "HAKEEB ADELAKUN",
+      "in": "JOHN SWIFT",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DURHAM DYNAMO",
+      "position": "FWD",
+      "date": "2025-08-14",
+      "out": "SAM DALBY",
+      "in": "WILL DAVIES",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "ATLETICO DEC",
+      "position": "FWD",
+      "date": "2025-08-21",
+      "out": "EDDIE NKETIAH",
+      "in": "LUCA KJERRUMGAARD",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "CF CALA ALCAUFAR",
+      "position": "FWD",
+      "date": "2025-08-21",
+      "out": "RYAN HARDIE",
+      "in": "DIVIN MUBAMA",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "position": "FWD",
+      "date": "2025-08-21",
+      "out": "RUEL SOTIRIOU",
+      "in": "JAZE KABIA",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "date": "2025-08-21",
+      "out": "STOCKPORT",
+      "in": "CREWE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "WENGER BOYS",
+      "date": "2025-08-21",
+      "out": "WYCOMBE",
+      "in": "CARDIFF",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "LE HARPRE",
+      "position": "MID",
+      "date": "2025-08-21",
+      "out": "JAMES MADDISON",
+      "in": "ISAAC PRICE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "CF CALA ALCAUFAR",
+      "position": "FWD",
+      "date": "2025-08-28",
+      "out": "KAI HAVERTZ",
+      "in": "SCOTT TWINE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DURHAM DYNAMO",
+      "position": "FWD",
+      "date": "2025-08-28",
+      "out": "CHARLIE KELMAN",
+      "in": "OMARI PATRICK",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "LE HARPRE",
+      "position": "FWD",
+      "date": "2025-08-28",
+      "out": "JOSH MAJA",
+      "in": "CARLTON MORRIS",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "ERIMUS",
+      "position": "MID",
+      "date": "2025-08-28",
+      "out": "DAN JAMES",
+      "in": "JACK RUDONI",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "ATLETICO DEC",
+      "position": "MID",
+      "date": "2025-09-04",
+      "out": "CALLUM ROBINSON",
+      "in": "ILLIMAN NDIAYE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "CF CALA ALCAUFAR",
+      "position": "MID",
+      "date": "2025-09-04",
+      "out": "MORGAN ROGERS",
+      "in": "NICK WOLTEMADE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DURHAM DYNAMO",
+      "position": "FWD",
+      "date": "2025-09-11",
+      "out": "RUSHIAN HEPBURN-MURPHY",
+      "in": "PAUL MULLIN",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "position": "FWD",
+      "date": "2025-09-11",
+      "out": "CALLUM STEAD",
+      "in": "WILL SWAN",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "date": "2025-09-11",
+      "out": "LIAM DELAP",
+      "in": "NICKE KABAMBA",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SHEFSPANYOL",
+      "position": "FWD",
+      "date": "2025-09-11",
+      "out": "PATRICK AGYEMANG",
+      "in": "KIEFFER MOORE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "WENGER BOYS",
+      "position": "FWD",
+      "date": "2025-09-11",
+      "out": "MAMADOU DOUMBIA",
+      "in": "KYLE WOOTTON",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "RASH IN THE ATTIC",
+      "date": "2025-09-11",
+      "out": "WIGAN",
+      "in": "GILLINGHAM",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "position": "MID",
+      "date": "2025-09-11",
+      "out": "MALIK MOTHERSILLE",
+      "in": "MORGAN ROGERS",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SHEFSPANYOL",
+      "position": "FWD",
+      "date": "2025-09-18",
+      "out": "COLE STOCKTON",
+      "in": "AARON DRINAN",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "LE HARPRE",
+      "date": "2025-09-18",
+      "out": "SHEFFIELD UNITED",
+      "in": "TOTTENHAM",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "WENGER BOYS",
+      "position": "MID",
+      "date": "2025-09-18",
+      "out": "CHRISTOPHER NKUNKU",
+      "in": "VICTOR TORP",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DREAMERS DREGS",
+      "position": "FWD",
+      "date": "2025-10-02",
+      "out": "TOM CANNON",
+      "in": "JACK MARRIOTT",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DURHAM DYNAMO",
+      "position": "FWD",
+      "date": "2025-10-02",
+      "out": "WILL DAVIES",
+      "in": "ZAN VIPOTNIK",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SPORTING HOOF",
+      "position": "FWD",
+      "date": "2025-10-02",
+      "out": "MATHIAS KVISTGAARDEN",
+      "in": "OLI MCBURNIE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DURHAM DYNAMO",
+      "position": "MID",
+      "date": "2025-10-02",
+      "out": "LIAM CULLEN",
+      "in": "OWEN BAILEY",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "ATLETICO DEC",
+      "position": "FWD",
+      "date": "2025-10-09",
+      "out": "LUCA KJERRUMGAARD",
+      "in": "BRANDON THOMAS-ASANTE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "position": "FWD",
+      "date": "2025-10-09",
+      "out": "NAKHI WELLS",
+      "in": "MASON BURSTOW",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "CF CALA ALCAUFAR",
+      "position": "FWD",
+      "date": "2025-10-16",
+      "out": "EMRE TEZGEL",
+      "in": "DEVANTE COLE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "LE HARPRE",
+      "position": "FWD",
+      "date": "2025-10-16",
+      "out": "DOMINIC SOLANKE",
+      "in": "DOM BALLARD",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "MIDDLESBROTHERS",
+      "position": "FWD",
+      "date": "2025-10-16",
+      "out": "NICOLAS JACKSON",
+      "in": "GEORGE HIRST",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "LE HARPRE",
+      "position": "FWD",
+      "date": "2025-10-23",
+      "out": "LOUIE BARRY",
+      "in": "IGOR THIAGO",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "ERIMUS",
+      "date": "2025-10-23",
+      "out": "IPSWICH",
+      "in": "COVENTRY",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "date": "2025-10-23",
+      "out": "CREWE",
+      "in": "MIDDLESBROUGH",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "ERIMUS",
+      "position": "MID",
+      "date": "2025-10-23",
+      "out": "JACK RUDONI",
+      "in": "JAIDON ANTHONY",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "position": "MID",
+      "date": "2025-10-31",
+      "out": "SAMMIE SZMODICS",
+      "in": "FEMI AZEEZ",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SPORTING HOOF",
+      "position": "FWD",
+      "date": "2025-11-06",
+      "out": "JAMES COLLINS",
+      "in": "MICHAEL MELLON",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "MIDDLESBROTHERS",
+      "date": "2025-11-13",
+      "out": "LIVERPOOL",
+      "in": "STEVENAGE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "RASH IN THE ATTIC",
+      "date": "2025-11-13",
+      "out": "GILLINGHAM",
+      "in": "STOKE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "RASH IN THE ATTIC",
+      "position": "MID",
+      "date": "2025-11-13",
+      "out": "DAN KEMP",
+      "in": "JOE GELHARDT",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SPORTING HOOF",
+      "position": "MID",
+      "date": "2025-11-13",
+      "out": "HARVEY KNIBBS",
+      "in": "EPHRON MASON-CLARK",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "WENGER BOYS",
+      "position": "MID",
+      "date": "2025-11-13",
+      "out": "JOHN SWIFT",
+      "in": "AMARIO COZIER-DUBERRY",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "ATLETICO DEC",
+      "position": "MID",
+      "date": "2025-11-27",
+      "out": "KAORU MITOMA",
+      "in": "MIKEL MERINO",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "date": "2025-12-04",
+      "out": "NICKE KABAMBA",
+      "in": "DONYELL MALEN",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SHEFSPANYOL",
+      "position": "FWD",
+      "date": "2025-12-04",
+      "out": "CHRIS WOOD",
+      "in": "ELLIS SIMMS",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DREAMERS DREGS",
+      "position": "MID",
+      "date": "2025-12-04",
+      "out": "KWAME POKU",
+      "in": "ESTEVAO WILLIAN",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DURHAM DYNAMO",
+      "position": "FWD",
+      "date": "2025-12-11",
+      "out": "NIALL ENNIS",
+      "in": "LEANDRO TROSSARD",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "LE HARPRE",
+      "position": "FWD",
+      "date": "2025-12-11",
+      "out": "CARLTON MORRIS",
+      "in": "NATHANIEL MENDEZ-LAING",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SHEFSPANYOL",
+      "position": "FWD",
+      "date": "2025-12-11",
+      "out": "KIEFFER MOORE",
+      "in": "DANIEL KANU",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "position": "MID",
+      "date": "2025-12-11",
+      "out": "ARMANDO DOBRA",
+      "in": "MORGAN WHITTAKER",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "ATLETICO DEC",
+      "position": "FWD",
+      "date": "2025-12-18",
+      "out": "KEVIN SCHADE",
+      "in": "AUNE HEGGEBO",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DURHAM DYNAMO",
+      "position": "MID",
+      "date": "2025-12-18",
+      "out": "BRENNAN JOHNSON",
+      "in": "EMRE TEZGEL",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "WENGER BOYS",
+      "position": "FWD",
+      "date": "2025-12-25",
+      "out": "JORGEN STRAND LARSEN",
+      "in": "ASHLEY FLETCHER",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "WENGER BOYS",
+      "date": "2025-12-25",
+      "out": "CARDIFF",
+      "in": "WALSALL",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DURHAM DYNAMO",
+      "position": "FWD",
+      "date": "2026-01-01",
+      "out": "PAUL MULLIN",
+      "in": "DOMINIC CALVERT-LEWIN",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SPORTING HOOF",
+      "position": "FWD",
+      "date": "2026-01-01",
+      "out": "MICHAEL MELLON",
+      "in": "HARRY LEONARD",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "date": "2026-01-08",
+      "out": "NATHAN LOWE",
+      "in": "PATRICK BAMFORD",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "LE HARPRE",
+      "position": "MID",
+      "date": "2026-01-08",
+      "out": "ISAAC PRICE",
+      "in": "JORDAN JAMES",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "LE HARPRE",
+      "date": "2026-01-15",
+      "out": "TOTTENHAM",
+      "in": "CAMBRIDGE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "CF CALA ALCAUFAR",
+      "position": "FWD",
+      "date": "2026-01-22",
+      "out": "DIVIN MUBAMA",
+      "in": "KAI HAVERTZ",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "date": "2026-01-22",
+      "out": "DONYELL MALEN",
+      "in": "TIMUR TUTIEROV",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "position": "FWD",
+      "date": "2026-01-29",
+      "out": "WILL SWAN",
+      "in": "CALLUM PATERSON",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "CF CALA ALCAUFAR",
+      "position": "FWD",
+      "date": "2026-02-05",
+      "out": "JOSH SARGENT",
+      "in": "JORGEN STRAND LARSEN",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SPORTING HOOF",
+      "position": "FWD",
+      "date": "2026-02-05",
+      "out": "JAMIE REID",
+      "in": "MATT DENNIS",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NATHS ROVERS",
+      "position": "FWD",
+      "date": "2026-02-12",
+      "out": "KIEFFER MOORE",
+      "in": "JAKE BEESLEY",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "date": "2026-02-12",
+      "out": "ADAM ARMSTRONG",
+      "in": "MOHAMED TOURE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SHEFSPANYOL",
+      "position": "MID",
+      "date": "2026-02-12",
+      "out": "XAVI SIMONS",
+      "in": "KYRELL LISBIE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "date": "2026-02-19",
+      "out": "JEAN-PHILIPPE MATETA",
+      "in": "ARIBIM PEPPLE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "NATHS ROVERS",
+      "date": "2026-02-19",
+      "out": "LUTON",
+      "in": "BOLTON",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "DREAMERS DREGS",
+      "position": "MID",
+      "date": "2026-02-19",
+      "out": "JUSTIN KLUIVERT",
+      "in": "MATEUS MANE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SHEFSPANYOL",
+      "position": "FWD",
+      "date": "2026-02-26",
+      "out": "AARON COLLINS",
+      "in": "ANDY COOK",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SPORTING HOOF",
+      "position": "MID",
+      "date": "2026-02-26",
+      "out": "DAVIS KEILLOR-DUNN",
+      "in": "JACK MOYLAN",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "RASH IN THE ATTIC",
+      "position": "FWD",
+      "date": "2026-03-05",
+      "out": "MOHAMED TOURE",
+      "in": "NATHAN LOWE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SHEFSPANYOL",
+      "position": "FWD",
+      "date": "2026-03-05",
+      "out": "ELLIS SIMMS",
+      "in": "DAVID MCGOLDRICK",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "ATLETICO DEC",
+      "position": "MID",
+      "date": "2026-03-05",
+      "out": "MIKEL MERINO",
+      "in": "DOMINIK SZOBOSZLAI",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NEWELL'S OLD TIKI TAKA",
+      "position": "FWD",
+      "date": "2026-03-12",
+      "out": "YOUSEF SALECH",
+      "in": "ADAMA SIDIBEH",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "DURHAM DYNAMO",
+      "date": "2026-03-12",
+      "out": "ARSENAL",
+      "in": "LINCOLN",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "WENGER BOYS",
+      "position": "MID",
+      "date": "2026-03-12",
+      "out": "AMARIO COZIER-DUBERRY",
+      "in": "MARVIN DUCKSCH",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "CF CALA ALCAUFAR",
+      "position": "FWD",
+      "date": "2026-03-26",
+      "out": "DEVANTE COLE",
+      "in": "CRYSENCIO SUMMERVILLE",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "NATHS ROVERS",
+      "position": "FWD",
+      "date": "2026-03-26",
+      "out": "JACK CLARKE",
+      "in": "JOE TAYLOR",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "gk",
+      "team": "NATHS ROVERS",
+      "date": "2026-03-26",
+      "out": "BOLTON",
+      "in": "BROMLEY",
+      "pairing_ambiguous": false,
+      "approved_override": false
+    },
+    {
+      "kind": "outfield",
+      "team": "SPORTING HOOF",
+      "position": "FWD",
+      "date": "2025-08-21",
+      "out": "HARRY SMITH",
+      "in": "JAMES COLLINS",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "SPORTING HOOF",
+      "position": "FWD",
+      "date": "2025-08-21",
+      "out": "SAM NOMBE",
+      "in": "JAMIE REID",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "NATHS ROVERS",
+      "position": "FWD",
+      "date": "2025-09-04",
+      "out": "MIHAILO IVANOVIC",
+      "in": "RANDOL KOLO MUANI",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "NATHS ROVERS",
+      "position": "FWD",
+      "date": "2025-09-04",
+      "out": "RODRIGO MUNIZ",
+      "in": "MATT DENNIS",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "ERIMUS",
+      "position": "FWD",
+      "date": "2025-10-23",
+      "out": "CALLUM LANG",
+      "in": "ANTONI SARCEVIC",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "ERIMUS",
+      "position": "FWD",
+      "date": "2025-10-23",
+      "out": "CHUBA AKPOM",
+      "in": "MILUTIN OSMAJIC",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "ERIMUS",
+      "position": "FWD",
+      "date": "2026-01-01",
+      "out": "ALEKSANDER ISAK",
+      "in": "JOVON MAKAMA",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "ERIMUS",
+      "position": "FWD",
+      "date": "2026-01-01",
+      "out": "MILLENIC ALLI",
+      "in": "RYAN GRAYDON",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "NATHS ROVERS",
+      "position": "FWD",
+      "date": "2026-01-29",
+      "out": "BENJAMIN SESKO",
+      "in": "JACK CLARKE",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "NATHS ROVERS",
+      "position": "FWD",
+      "date": "2026-01-29",
+      "out": "RANDOL KOLO MUANI",
+      "in": "KIEFFER MOORE",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "NATHS ROVERS",
+      "position": "FWD",
+      "date": "2026-01-29",
+      "out": "MATT DENNIS",
+      "in": "JAYDEN WAREHAM",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "DREAMERS DREGS",
+      "position": "FWD",
+      "date": "2026-02-19",
+      "out": "MIKE FONDOP",
+      "in": "MARCUS BROWNE",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "DREAMERS DREGS",
+      "position": "FWD",
+      "date": "2026-02-19",
+      "out": "WILL GRIGG",
+      "in": "KIEFFER MOORE",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "ATLETICO DEC",
+      "position": "FWD",
+      "date": "2026-03-05",
+      "out": "ALFIE MAY",
+      "in": "EVANN GUESSAND",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "ATLETICO DEC",
+      "position": "FWD",
+      "date": "2026-03-05",
+      "out": "AUNE HEGGEBO",
+      "in": "ROB STREET",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "LE HARPRE",
+      "position": "FWD",
+      "date": "2026-03-26",
+      "out": "KYOGO FURUHASHI",
+      "in": "BENJAMIN SESKO",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    },
+    {
+      "kind": "outfield",
+      "team": "LE HARPRE",
+      "position": "FWD",
+      "date": "2026-03-26",
+      "out": "NATHANIEL MENDEZ-LAING",
+      "in": "MIKE FONDOP",
+      "pairing_ambiguous": true,
+      "approved_override": true
+    }
+  ]
+}
