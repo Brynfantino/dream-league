@@ -1,6 +1,6 @@
 {
   "season": "2022/2023",
-  "note": "Adjacency-derived multi-swap pairs (pending Bryn batch approval).",
+  "note": "Bryn-approved same-day multi-swap OUT→IN (2026-11-27). Spreadsheet adjacency (same process as 2025/26).",
   "pairings": [
     {
       "team_name": "DREAMVILLE",
@@ -72,5 +72,6 @@
       "player_out_name": "JAMIE VARDY",
       "player_in_name": "DAN AGYEI"
     }
-  ]
+  ],
+  "decision": "approve all"
 }

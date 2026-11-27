@@ -259,7 +259,7 @@ export const APPROVED_OUTFIELD_PAIRINGS: ApprovedOutfieldPairing[] = [
     player_out_name: "NATHANIEL MENDEZ-LAING",
     player_in_name: "MIKE FONDOP",
   },
-  // --- Historical seasons 2020/21–2024/25 (adjacency; same rule as Bryn-approved 2025/26) ---
+  // --- Historical seasons 2020/21–2024/25 (Bryn approved all 2026-11-27; adjacency) ---
   // 2020/2021
   {
     team_name: "RASH IN THE ATTIC",

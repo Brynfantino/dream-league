@@ -35,7 +35,7 @@ Each seed deletes only its own season name before reload — safe to re-run one 
 
 ## Multi-swap transfers
 
-Same-day multi-player swaps use **spreadsheet adjacency** (same rule Bryn approved for 2025/26). Encoded in `APPROVED_OUTFIELD_PAIRINGS` and each `data-XXXX-XX/approved_transfer_pairings.json`.
+Same-day multi-player swaps use **spreadsheet adjacency** (same rule Bryn approved for 2025/26). **Bryn approved all** (2026-11-27). Encoded in `APPROVED_OUTFIELD_PAIRINGS` and each `data-XXXX-XX/approved_transfer_pairings.json`.
 
 ## Extracts
 

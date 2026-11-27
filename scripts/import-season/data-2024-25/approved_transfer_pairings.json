@@ -1,6 +1,6 @@
 {
   "season": "2024/2025",
-  "note": "Adjacency-derived multi-swap pairs (pending Bryn batch approval).",
+  "note": "Bryn-approved same-day multi-swap OUT→IN (2026-11-27). Spreadsheet adjacency (same process as 2025/26).",
   "pairings": [
     {
       "team_name": "CHARLIE'S ANGELS",
@@ -142,5 +142,6 @@
       "player_out_name": "NATHAN LOWE",
       "player_in_name": "JAMILLE MATT"
     }
-  ]
+  ],
+  "decision": "approve all"
 }
