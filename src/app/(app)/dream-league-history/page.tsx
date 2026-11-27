@@ -17,7 +17,9 @@ export default function DreamLeagueHistoryPage() {
           <p className="mt-2 text-sm text-pitch-700">
             {item.label === "Trophy Room"
               ? "League and Cup cabinet — current holders and previous winners."
-              : "Career Goals For, Goals Against, and League Points by franchise."}
+              : item.label === "All-Time Table"
+                ? "Career Goals For, Goals Against, and League Points by franchise."
+                : "Browse previous seasons and view each final league table."}
           </p>
         </Link>
       ))}

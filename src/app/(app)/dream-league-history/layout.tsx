@@ -12,8 +12,8 @@ export default function DreamLeagueHistoryLayout({
           Dream League History
         </h1>
         <p className="text-base text-pitch-800">
-          Archive of trophies and career franchise records across every season.
-          Read-only.
+          Archive of trophies, career franchise records, and final season
+          tables. Read-only.
         </p>
       </header>
       <HistorySubnav />

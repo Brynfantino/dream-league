@@ -25,6 +25,10 @@ export const primaryNav: NavItem[] = [
 export const historyNav: NavItem[] = [
   { href: "/dream-league-history/trophy-room", label: "Trophy Room" },
   { href: "/dream-league-history/all-time-table", label: "All-Time Table" },
+  {
+    href: "/dream-league-history/season-archive",
+    label: "Season Archive",
+  },
 ];
 
 /**
