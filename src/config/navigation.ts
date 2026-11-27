@@ -5,7 +5,8 @@ export type NavItem = {
 
 /**
  * Primary destinations — labels match PRD §13 Application Pages where listed.
- * All-Time Table is an archive surface (franchise continuity across seasons).
+ * Archive surfaces: All-Time Table (franchise continuity) and Trophy Room
+ * (League + Cup cabinet, named by Bryn).
  * Paths use kebab-case for URLs (UX); labels are the product names.
  */
 export const primaryNav: NavItem[] = [
@@ -16,6 +17,7 @@ export const primaryNav: NavItem[] = [
   { href: "/player-directory", label: "Player Directory" },
   { href: "/transfer-centre", label: "Transfer Centre" },
   { href: "/cup-centre", label: "Cup Centre" },
+  { href: "/trophy-room", label: "Trophy Room" },
   { href: "/account-settings", label: "Account Settings" },
 ];
 
