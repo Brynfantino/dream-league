@@ -69,8 +69,14 @@ export const FRANCHISES: FranchiseDefinition[] = [
   },
   {
     id: "dreamers-dregs",
-    canonicalName: "DREAMERS DREGS",
-    aliases: ["DUGGAN'S DREAMERS", "DREAMERS DREGS"],
+    canonicalName: "DUGGANS ARMANDILLOS",
+    aliases: [
+      "DUGGAN'S DREAMERS",
+      "DREAMERS DREGS",
+      "DREAMER'S DREGS",
+      "DUGGANS ARMANDILLOS",
+      "DUGGAN'S ARMANDILLOS",
+    ],
   },
   {
     id: "wenger-boys",
