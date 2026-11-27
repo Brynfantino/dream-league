@@ -1,5 +1,9 @@
 import { connection } from "next/server";
 
+import {
+  linkTeamIdForName,
+  mapActiveTeamIdsByFranchise,
+} from "@/lib/league/team-links";
 import { createClient } from "@/lib/supabase/server";
 import type { Honour, Season, Team } from "@/types/database";
 
@@ -13,6 +17,8 @@ export type TrophyHonourRow = {
   season_starts_on: string | null;
   team_id: string | null;
   team_name: string;
+  /** Active-season team id for Team Page; null if franchise not in active season. */
+  link_team_id: string | null;
 };
 
 export type TrophyCabinet = {
@@ -70,7 +76,10 @@ export async function loadTrophyRoom(): Promise<TrophyRoomResult> {
     ),
   ];
 
-  const seasonsById = new Map<string, Pick<Season, "id" | "name" | "starts_on">>();
+  const seasonsById = new Map<
+    string,
+    Pick<Season, "id" | "name" | "starts_on">
+  >();
   if (seasonIds.length) {
     const { data: seasons, error: seasonsError } = await supabase
       .from("seasons")
@@ -79,7 +88,10 @@ export async function loadTrophyRoom(): Promise<TrophyRoomResult> {
     if (seasonsError) {
       return { status: "error", message: seasonsError.message };
     }
-    for (const s of (seasons ?? []) as Pick<Season, "id" | "name" | "starts_on">[]) {
+    for (const s of (seasons ?? []) as Pick<
+      Season,
+      "id" | "name" | "starts_on"
+    >[]) {
       seasonsById.set(s.id, s);
     }
   }
@@ -98,8 +110,35 @@ export async function loadTrophyRoom(): Promise<TrophyRoomResult> {
     }
   }
 
+  const { data: activeSeason, error: activeSeasonError } = await supabase
+    .from("seasons")
+    .select("id")
+    .eq("is_active", true)
+    .maybeSingle();
+
+  if (activeSeasonError) {
+    return { status: "error", message: activeSeasonError.message };
+  }
+
+  let activeByFranchise = new Map<string, string>();
+  if (activeSeason) {
+    const active = activeSeason as Pick<Season, "id">;
+    const { data: activeTeams, error: activeTeamsError } = await supabase
+      .from("teams")
+      .select("id, name")
+      .eq("season_id", active.id);
+    if (activeTeamsError) {
+      return { status: "error", message: activeTeamsError.message };
+    }
+    activeByFranchise = mapActiveTeamIdsByFranchise(
+      (activeTeams ?? []) as Pick<Team, "id" | "name">[],
+    );
+  }
+
   const rows: TrophyHonourRow[] = honourRows.map((h) => {
     const season = h.season_id ? seasonsById.get(h.season_id) : undefined;
+    const team_name =
+      (h.team_id && teamsById.get(h.team_id)) || "Unknown team";
     return {
       id: h.id,
       title: h.title as HonourTitle,
@@ -107,7 +146,8 @@ export async function loadTrophyRoom(): Promise<TrophyRoomResult> {
       season_name: season?.name ?? null,
       season_starts_on: season?.starts_on ?? null,
       team_id: h.team_id,
-      team_name: (h.team_id && teamsById.get(h.team_id)) || "Unknown team",
+      team_name,
+      link_team_id: linkTeamIdForName(team_name, activeByFranchise),
     };
   });
 

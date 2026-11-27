@@ -1,6 +1,10 @@
 import { connection } from "next/server";
 
 import { deriveStandings } from "@/lib/league/standings";
+import {
+  linkTeamIdForName,
+  mapActiveTeamIdsByFranchise,
+} from "@/lib/league/team-links";
 import { fetchAllRows } from "@/lib/supabase/fetch-all-rows";
 import { createClient } from "@/lib/supabase/server";
 import type {
@@ -21,6 +25,8 @@ export type SeasonArchiveRow = {
   position: number;
   team_id: string;
   team_name: string;
+  /** Active-season team id for Team Page deep link. */
+  link_team_id: string | null;
   /** Joined manager display names, or null when none recorded. */
   manager_label: string | null;
   goals_for: number;
@@ -31,7 +37,9 @@ export type SeasonArchiveRow = {
 export type SeasonArchiveSummary = {
   season_name: string;
   champion: string | null;
+  champion_team_id: string | null;
   runner_up: string | null;
+  runner_up_team_id: string | null;
 };
 
 export type SeasonArchiveResult =
@@ -150,12 +158,45 @@ export async function loadSeasonArchive(
     eventsRaw ?? [],
   );
 
+  const { data: activeSeason, error: activeSeasonError } = await supabase
+    .from("seasons")
+    .select("id")
+    .eq("is_active", true)
+    .maybeSingle();
+
+  if (activeSeasonError) {
+    return { status: "error", message: activeSeasonError.message };
+  }
+
+  let activeByFranchise = new Map<string, string>();
+  if (activeSeason) {
+    const active = activeSeason as Pick<Season, "id">;
+    // Selected season may already be active — reuse its teams when possible.
+    if (active.id === selected.id) {
+      activeByFranchise = mapActiveTeamIdsByFranchise(
+        teams.map((t) => ({ id: t.id, name: t.name })),
+      );
+    } else {
+      const { data: activeTeams, error: activeTeamsError } = await supabase
+        .from("teams")
+        .select("id, name")
+        .eq("season_id", active.id);
+      if (activeTeamsError) {
+        return { status: "error", message: activeTeamsError.message };
+      }
+      activeByFranchise = mapActiveTeamIdsByFranchise(
+        (activeTeams ?? []) as Pick<Team, "id" | "name">[],
+      );
+    }
+  }
+
   const rows: SeasonArchiveRow[] = standings.map((row) => {
     const managers = managersByTeam.get(row.team_id) ?? [];
     return {
       position: row.position,
       team_id: row.team_id,
       team_name: row.team_name,
+      link_team_id: linkTeamIdForName(row.team_name, activeByFranchise),
       manager_label: managers.length > 0 ? managers.join(" · ") : null,
       goals_for: row.goals_for,
       goals_against: row.goals_against,
@@ -175,7 +216,9 @@ export async function loadSeasonArchive(
     summary: {
       season_name: selected.name,
       champion: first?.team_name ?? null,
+      champion_team_id: first?.link_team_id ?? null,
       runner_up: runner?.team_name ?? null,
+      runner_up_team_id: runner?.link_team_id ?? null,
     },
     rows,
   };

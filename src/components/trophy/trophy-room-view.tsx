@@ -1,3 +1,4 @@
+import { TeamNameLink } from "@/components/league/team-name-link";
 import type { TrophyCabinet, TrophyHonourRow } from "@/lib/league/load-trophy-room";
 
 function displaySeason(row: TrophyHonourRow): string {
@@ -99,7 +100,11 @@ function CabinetColumn({ cabinet }: { cabinet: TrophyCabinet }) {
                 Current holders
               </p>
               <p className="mt-1 font-display text-2xl tracking-wide text-[#fff4d8] sm:text-3xl">
-                {cabinet.current.team_name}
+                <TeamNameLink
+                  name={cabinet.current.team_name}
+                  teamId={cabinet.current.link_team_id}
+                  className="font-display tracking-wide text-[#fff4d8] underline-offset-4 hover:underline"
+                />
               </p>
               <p className="mt-1 text-sm text-[#e0c896]">
                 {displaySeason(cabinet.current)}
@@ -126,7 +131,11 @@ function CabinetColumn({ cabinet }: { cabinet: TrophyCabinet }) {
                   className="flex items-baseline justify-between gap-3 px-3 py-2.5 text-sm"
                 >
                   <span className="font-medium text-[#f0e0c0]">
-                    {row.team_name}
+                    <TeamNameLink
+                      name={row.team_name}
+                      teamId={row.link_team_id}
+                      className="font-medium text-[#f0e0c0] underline-offset-4 hover:underline"
+                    />
                   </span>
                   <span className="shrink-0 font-mono text-xs text-[#c9a66b]">
                     {displaySeason(row)}

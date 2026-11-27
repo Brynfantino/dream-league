@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { TeamNameLink } from "@/components/league/team-name-link";
 import {
   formatHonoursSummary,
   type AllTimeTableRow,
@@ -223,7 +224,12 @@ export function AllTimeTable({ rows }: { rows: AllTimeTableRow[] }) {
               >
                 <td className="px-3 py-3 tabular-nums">{row.position}</td>
                 <td className="px-3 py-3 font-medium">
-                  <span className="block">{row.display_name}</span>
+                  <span className="block">
+                    <TeamNameLink
+                      name={row.display_name}
+                      teamId={row.link_team_id}
+                    />
+                  </span>
                   {!row.is_active_franchise ? (
                     <span className="mt-0.5 block text-xs font-normal text-pitch-600">
                       Former franchise

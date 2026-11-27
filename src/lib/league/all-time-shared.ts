@@ -8,6 +8,8 @@ export type AllTimeTableRow = {
   franchise_id: string;
   /** Latest-season team name for this franchise (Bryn). */
   display_name: string;
+  /** Active-season team id for Team Page deep link; null if franchise inactive. */
+  link_team_id: string | null;
   goals_for: number;
   goals_against: number;
   points: number;
