@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Fragment } from "react";
 
 import { PlayerNameLink } from "@/components/league/player-name-link";
@@ -10,6 +11,7 @@ import {
   contributionClass,
 } from "@/components/team/team-squad-table-layout";
 import type { TeamPageDetail } from "@/lib/league/load-team-page";
+import { teamBadgeUrlForTeamName } from "@/lib/league/team-badges";
 import {
   formatContribution,
   goalkeeperContribution,
@@ -55,6 +57,13 @@ function groupOutfield(members: SquadOutfieldMember[]) {
   })).filter((group) => group.members.length > 0);
 }
 
+function teamInitials(name: string): string {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "?";
+  if (parts.length === 1) return parts[0]!.slice(0, 2).toUpperCase();
+  return `${parts[0]![0] ?? ""}${parts[parts.length - 1]![0] ?? ""}`.toUpperCase();
+}
+
 export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
   const { current_squad } = detail;
   const hasSquad =
@@ -62,23 +71,52 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
   const outfieldGroups = groupOutfield(current_squad.outfield);
   // Same SoT as League Table: Points = GF − GA via deriveStandings.
   const teamTotal = detail.league_points;
+  const crestUrl = teamBadgeUrlForTeamName(detail.team.name);
 
   return (
     <div className="space-y-10">
-      <section className="space-y-5" aria-labelledby="team-overview">
-        <div className="space-y-1">
-          <h2
-            id="team-overview"
-            className="font-display text-3xl tracking-wide text-pitch-950 sm:text-4xl"
-          >
-            {detail.team.name}
-          </h2>
-          <p className="text-sm text-pitch-700">
-            {detail.managers.length > 0
-              ? detail.managers.join(" · ")
-              : "No managers listed"}
-          </p>
+      <section
+        className="flex flex-col gap-6 sm:flex-row sm:items-start"
+        aria-labelledby="team-overview"
+      >
+        <div className="relative h-40 w-40 shrink-0 overflow-hidden border border-pitch-300 bg-pitch-100 sm:h-48 sm:w-48">
+          {crestUrl ? (
+            <Image
+              src={crestUrl}
+              alt=""
+              fill
+              className="object-contain p-2"
+              sizes="192px"
+            />
+          ) : (
+            <div
+              className="flex h-full w-full flex-col items-center justify-center gap-1 bg-gradient-to-br from-pitch-200 via-pitch-100 to-pitch-300"
+              aria-hidden
+            >
+              <span className="font-display text-4xl tracking-wide text-pitch-800">
+                {teamInitials(detail.team.name)}
+              </span>
+              <span className="text-[0.65rem] uppercase tracking-[0.18em] text-pitch-600">
+                Crest soon
+              </span>
+            </div>
+          )}
         </div>
+
+        <div className="min-w-0 flex-1 space-y-5">
+          <div className="space-y-1">
+            <h2
+              id="team-overview"
+              className="font-display text-3xl tracking-wide text-pitch-950 sm:text-4xl"
+            >
+              {detail.team.name}
+            </h2>
+            <p className="text-sm text-pitch-700">
+              {detail.managers.length > 0
+                ? detail.managers.join(" · ")
+                : "No managers listed"}
+            </p>
+          </div>
 
         <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div className="border-t border-pitch-300 pt-3">
@@ -155,6 +193,7 @@ export function TeamDetailView({ detail }: { detail: TeamPageDetail }) {
             </dd>
           </div>
         </dl>
+        </div>
       </section>
 
       <section className="space-y-3" aria-labelledby="current-squad">
