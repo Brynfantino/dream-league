@@ -13,7 +13,7 @@ import {
   linkTeamIdForName,
   mapActiveTeamIdsByFranchise,
 } from "@/lib/league/team-links";
-import { isTransferIn } from "@/lib/league/transfer-usage";
+import { isTransferIn, toDateOnly } from "@/lib/league/transfer-usage";
 import { fetchAllRows } from "@/lib/supabase/fetch-all-rows";
 import { createClient } from "@/lib/supabase/server";
 import type {
@@ -52,6 +52,107 @@ const POSITION_LABEL: Record<PlayerPosition, string> = {
   MID: "Midfielder",
   FWD: "Forward",
 };
+
+/** Inclusive calendar-day count between YYYY-MM-DD bounds (UTC). */
+function daysInclusive(start: string, end: string): number {
+  const a = Date.parse(`${start}T00:00:00Z`);
+  const b = Date.parse(`${end}T00:00:00Z`);
+  if (!Number.isFinite(a) || !Number.isFinite(b) || b < a) return 0;
+  return Math.floor((b - a) / 86_400_000) + 1;
+}
+
+function maxDate(a: string, b: string): string {
+  return a >= b ? a : b;
+}
+
+function minDate(a: string, b: string): string {
+  return a <= b ? a : b;
+}
+
+function formatTenureDays(days: number): string {
+  if (days <= 0) return "0 days";
+  if (days === 1) return "1 day";
+  const years = Math.floor(days / 365);
+  const rem = days % 365;
+  if (years <= 0) return `${days} days`;
+  if (rem === 0) return years === 1 ? "1 year" : `${years} years`;
+  const yearPart = years === 1 ? "1 year" : `${years} years`;
+  return `${yearPart} ${rem} day${rem === 1 ? "" : "s"}`;
+}
+
+type ServingSegment = {
+  seasonIndex: number;
+  start: string;
+  end: string;
+  /** Season campaign end — owned through this date means off-season does not break continuity. */
+  seasonEndsOn: string;
+};
+
+/**
+ * Longest continuous ownership during active seasons for one franchise.
+ * Off-season (between ends_on and the next starts_on) does not break the streak
+ * when the player was still owned at the previous season’s close.
+ */
+function longestServingForPlayerFranchise(segments: ServingSegment[]): number {
+  if (segments.length === 0) return 0;
+  const ordered = [...segments].sort((a, b) => {
+    if (a.seasonIndex !== b.seasonIndex) return a.seasonIndex - b.seasonIndex;
+    return a.start.localeCompare(b.start);
+  });
+
+  // Merge overlapping / touching intervals within the same season first.
+  const merged: ServingSegment[] = [];
+  for (const seg of ordered) {
+    const prev = merged[merged.length - 1];
+    if (
+      prev &&
+      prev.seasonIndex === seg.seasonIndex &&
+      seg.start <= nextDay(prev.end)
+    ) {
+      prev.end = maxDate(prev.end, seg.end);
+    } else {
+      merged.push({ ...seg });
+    }
+  }
+
+  let best = 0;
+  let runDays = 0;
+  let runLastSeason = -2;
+  let runLastEnd: string | null = null;
+  let runLastSeasonEndsOn: string | null = null;
+
+  for (const seg of merged) {
+    const continuesSameSeason =
+      runLastSeason === seg.seasonIndex &&
+      runLastEnd != null &&
+      seg.start <= nextDay(runLastEnd);
+    // Finished the previous campaign still owned → summer break is not a gap.
+    const continuesNextSeason =
+      runLastSeason === seg.seasonIndex - 1 &&
+      runLastEnd != null &&
+      runLastSeasonEndsOn != null &&
+      runLastEnd >= runLastSeasonEndsOn;
+
+    if (continuesSameSeason || continuesNextSeason) {
+      runDays += daysInclusive(seg.start, seg.end);
+    } else {
+      runDays = daysInclusive(seg.start, seg.end);
+    }
+    runLastSeason = seg.seasonIndex;
+    runLastEnd = seg.end;
+    runLastSeasonEndsOn = seg.seasonEndsOn;
+    best = Math.max(best, runDays);
+  }
+
+  return best;
+}
+
+function nextDay(iso: string): string {
+  const t = Date.parse(`${iso}T00:00:00Z`);
+  if (!Number.isFinite(t)) return iso;
+  const d = new Date(t + 86_400_000);
+  return d.toISOString().slice(0, 10);
+}
 
 function playerSubject(
   name: string,
@@ -402,6 +503,80 @@ export async function loadInsights(): Promise<InsightsResult> {
           context_link_team_id: linkFor(combo.team_name),
         }),
       formatValue: (v) => (v === 1 ? "1 goal together" : `${v} goals together`),
+    }),
+  );
+
+  // —— Player: longest serving (active-season days, same franchise; off-season ignored) ——
+  const seasonIndexById = new Map(seasons.map((s, i) => [s.id, i]));
+  type ServingKey = { player: string; franchise_id: string; team_name: string };
+  const segmentsByKey = new Map<string, ServingSegment[]>();
+  const keyMeta = new Map<string, ServingKey>();
+
+  for (const m of memberships) {
+    const season = seasonsById.get(m.season_id);
+    const player = playersById.get(m.player_id);
+    const team = teamsById.get(m.team_id);
+    if (!season || !player || !team) continue;
+    if (!season.starts_on || !season.ends_on) continue;
+
+    const seasonStarts = toDateOnly(season.starts_on);
+    const seasonEnds = toDateOnly(season.ends_on);
+    // Active season still running: count ownership through today (UTC), not past ends_on.
+    const today = new Date().toISOString().slice(0, 10);
+    const windowEnd =
+      season.is_active && today < seasonEnds ? today : seasonEnds;
+
+    const acquired = toDateOnly(m.acquired_at);
+    const released = m.released_at ? toDateOnly(m.released_at) : null;
+    // Open historical stints are owned through season end; active open stints through windowEnd.
+    const ownedUntil = released ?? windowEnd;
+
+    const start = maxDate(acquired, seasonStarts);
+    const end = minDate(ownedUntil, windowEnd);
+    if (end < start) continue;
+
+    const franchiseId = resolveFranchiseId(team.name);
+    const key = `${player.name}::${franchiseId}`;
+    if (!keyMeta.has(key)) {
+      keyMeta.set(key, {
+        player: player.name,
+        franchise_id: franchiseId,
+        team_name: displayByFranchise.get(franchiseId) ?? team.name,
+      });
+    }
+    const seasonIndex = seasonIndexById.get(season.id);
+    if (seasonIndex == null) continue;
+    const list = segmentsByKey.get(key) ?? [];
+    list.push({
+      seasonIndex,
+      start,
+      end,
+      seasonEndsOn: seasonEnds,
+    });
+    segmentsByKey.set(key, list);
+  }
+
+  const servingRanked: Ranked<ServingKey>[] = [];
+  for (const [key, segs] of segmentsByKey) {
+    const meta = keyMeta.get(key);
+    if (!meta) continue;
+    const days = longestServingForPlayerFranchise(segs);
+    if (days > 0) servingRanked.push({ item: meta, value: days });
+  }
+
+  push(
+    cardFromRanked({
+      id: "player.longest-serving",
+      title: "Longest Serving Asset",
+      blurb:
+        "Longest continuous ownership by one franchise during active seasons. Summers between campaigns do not break the streak.",
+      ranked: topRanked(servingRanked, true, { requirePositive: true }),
+      toSubject: (row) =>
+        playerSubject(row.player, playerIdByName.get(row.player) ?? null, {
+          context: row.team_name,
+          context_link_team_id: linkFor(row.team_name),
+        }),
+      formatValue: formatTenureDays,
     }),
   );
 
@@ -833,7 +1008,7 @@ export async function loadInsights(): Promise<InsightsResult> {
     data: {
       groups,
       note:
-        "Longest-serving tenure and real-life league popularity are omitted — ownership dates are incomplete for some seasons, and club league tiers are not stored. BFL-only insights are excluded for the same historical coverage reason as Records.",
+        "Real-life league popularity is omitted (club league tiers are not stored). BFL-only insights are excluded for the same historical coverage reason as Records. Longest Serving counts active-season days with one franchise; closed off-seasons do not break continuity.",
     },
   };
 }
