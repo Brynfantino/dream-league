@@ -431,7 +431,8 @@ export function FranchiseHistoryView({
             Transfer Summary
           </h3>
           <p className="text-sm text-pitch-700">
-            Derived from ownership stints (same modelling as Transfer Centre).
+            Derived from ownership stints, with each move&apos;s Dream League
+            contribution and net impact on this campaign.
           </p>
         </header>
 
@@ -450,13 +451,20 @@ export function FranchiseHistoryView({
 
         {hasTransfers ? (
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
+            <table className="w-full min-w-[48rem] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-pitch-300 text-pitch-800">
                   <th className="px-3 py-3 font-semibold">Date</th>
                   <th className="px-3 py-3 font-semibold">Out</th>
                   <th className="px-3 py-3 font-semibold">In</th>
                   <th className="px-3 py-3 font-semibold">Position</th>
+                  <th className="px-3 py-3 text-right font-semibold">
+                    Out contrib.
+                  </th>
+                  <th className="px-3 py-3 text-right font-semibold">
+                    In contrib.
+                  </th>
+                  <th className="px-3 py-3 text-right font-semibold">Net</th>
                 </tr>
               </thead>
               <tbody>
@@ -498,6 +506,21 @@ export function FranchiseHistoryView({
                         </span>
                       ) : null}
                     </td>
+                    <td
+                      className={`px-3 py-3 text-right ${contributionClass(t.out_contribution)}`}
+                    >
+                      {formatContribution(t.out_contribution)}
+                    </td>
+                    <td
+                      className={`px-3 py-3 text-right ${contributionClass(t.in_contribution)}`}
+                    >
+                      {formatContribution(t.in_contribution)}
+                    </td>
+                    <td
+                      className={`px-3 py-3 text-right font-semibold ${contributionClass(t.net_contribution)}`}
+                    >
+                      {formatContribution(t.net_contribution)}
+                    </td>
                   </tr>
                 ))}
                 {snapshot.transfers.goalkeeper.map((t) => (
@@ -511,42 +534,33 @@ export function FranchiseHistoryView({
                     <td className="px-3 py-3 font-medium">{t.club_out_name}</td>
                     <td className="px-3 py-3 font-medium">{t.club_in_name}</td>
                     <td className="px-3 py-3 text-pitch-700">Goalkeeper</td>
+                    <td
+                      className={`px-3 py-3 text-right ${contributionClass(t.out_contribution)}`}
+                    >
+                      {formatContribution(t.out_contribution)}
+                    </td>
+                    <td
+                      className={`px-3 py-3 text-right ${contributionClass(t.in_contribution)}`}
+                    >
+                      {formatContribution(t.in_contribution)}
+                    </td>
+                    <td
+                      className={`px-3 py-3 text-right font-semibold ${contributionClass(t.net_contribution)}`}
+                    >
+                      {formatContribution(t.net_contribution)}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            <p className="mt-2 text-xs text-pitch-600">
+              Contribution is Dream League scoring while each asset was owned
+              in this campaign (outfield goals; goalkeeper −concessions). Net
+              is In − Out for that move.
+            </p>
           </div>
         ) : null}
       </section>
-
-      {/* Goalkeeper assets callout — already in squad; keep a short mirror for the brief */}
-      <section className="space-y-2" aria-labelledby="gk-assets-heading">
-        <h3
-          id="gk-assets-heading"
-          className="font-display text-xl tracking-wide text-pitch-950"
-        >
-          Goalkeeper Assets
-        </h3>
-        {end_squad.goalkeeper ? (
-          <p className="text-sm text-pitch-800">
-            <span className="font-medium text-pitch-950">
-              {end_squad.goalkeeper.name}
-            </span>
-            <span className="text-pitch-600">
-              {" "}
-              · contribution{" "}
-              {formatContribution(
-                goalkeeperContribution(end_squad.goalkeeper.concessions),
-              )}
-            </span>
-          </p>
-        ) : (
-          <p className="text-sm text-pitch-700">
-            No goalkeeper club owned at the end of this season.
-          </p>
-        )}
-      </section>
-
     </div>
   );
 }
