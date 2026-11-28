@@ -431,8 +431,8 @@ export function FranchiseHistoryView({
             Transfer Summary
           </h3>
           <p className="text-sm text-pitch-700">
-            Derived from ownership stints, with each move&apos;s Dream League
-            contribution and net impact on this campaign.
+            Derived from ownership stints, with Dream League contribution for
+            each outgoing and incoming asset while owned in this campaign.
           </p>
         </header>
 
@@ -464,7 +464,6 @@ export function FranchiseHistoryView({
                   <th className="px-3 py-3 text-right font-semibold">
                     In contrib.
                   </th>
-                  <th className="px-3 py-3 text-right font-semibold">Net</th>
                 </tr>
               </thead>
               <tbody>
@@ -516,11 +515,6 @@ export function FranchiseHistoryView({
                     >
                       {formatContribution(t.in_contribution)}
                     </td>
-                    <td
-                      className={`px-3 py-3 text-right font-semibold ${contributionClass(t.net_contribution)}`}
-                    >
-                      {formatContribution(t.net_contribution)}
-                    </td>
                   </tr>
                 ))}
                 {snapshot.transfers.goalkeeper.map((t) => (
@@ -544,19 +538,15 @@ export function FranchiseHistoryView({
                     >
                       {formatContribution(t.in_contribution)}
                     </td>
-                    <td
-                      className={`px-3 py-3 text-right font-semibold ${contributionClass(t.net_contribution)}`}
-                    >
-                      {formatContribution(t.net_contribution)}
-                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
             <p className="mt-2 text-xs text-pitch-600">
               Contribution is Dream League scoring while each asset was owned
-              in this campaign (outfield goals; goalkeeper −concessions). Net
-              is In − Out for that move.
+              in this campaign (outfield goals; goalkeeper −concessions). Out
+              and In are separate historic totals for that ownership spell —
+              not alternative outcomes of the same move.
             </p>
           </div>
         ) : null}

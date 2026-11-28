@@ -63,14 +63,10 @@ export type FranchiseOutfieldTransfer = DerivedOutfieldTransfer & {
   out_contribution: number;
   /** Goals while owned after arriving (IN leg). */
   in_contribution: number;
-  /** in − out; positive means the move improved scoring contribution. */
-  net_contribution: number;
 };
 
 /** Goalkeeper transfer with contribution (−concessions) while owned on this team. */
 export type FranchiseGoalkeeperTransfer = DerivedGoalkeeperTransfer & {
   out_contribution: number;
   in_contribution: number;
-  /** in − out; positive means fewer concessions after the swap. */
-  net_contribution: number;
 };
