@@ -473,13 +473,10 @@ export async function loadFranchiseHistory(
         transfer.player_in_id,
         inStints,
       );
-      const out_contribution = outfieldContribution(outGoals);
-      const in_contribution = outfieldContribution(inGoals);
       return {
         ...transfer,
-        out_contribution,
-        in_contribution,
-        net_contribution: in_contribution - out_contribution,
+        out_contribution: outfieldContribution(outGoals),
+        in_contribution: outfieldContribution(inGoals),
       };
     });
 
@@ -525,13 +522,10 @@ export async function loadFranchiseHistory(
         transfer.club_in_id,
         inStints,
       );
-      const out_contribution = goalkeeperContribution(outConceded);
-      const in_contribution = goalkeeperContribution(inConceded);
       return {
         ...transfer,
-        out_contribution,
-        in_contribution,
-        net_contribution: in_contribution - out_contribution,
+        out_contribution: goalkeeperContribution(outConceded),
+        in_contribution: goalkeeperContribution(inConceded),
       };
     });
 
