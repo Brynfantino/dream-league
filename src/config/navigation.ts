@@ -29,6 +29,10 @@ export const historyNav: NavItem[] = [
     href: "/dream-league-history/season-archive",
     label: "Season Archive",
   },
+  {
+    href: "/dream-league-history/records",
+    label: "Dream League Records",
+  },
 ];
 
 /**

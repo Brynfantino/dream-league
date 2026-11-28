@@ -2,6 +2,17 @@ import Link from "next/link";
 
 import { historyNav } from "@/config/navigation";
 
+const HISTORY_BLURBS: Record<string, string> = {
+  "Trophy Room":
+    "League and Cup cabinet — current holders and previous winners.",
+  "All-Time Table":
+    "Career Goals For, Goals Against, and League Points by franchise.",
+  "Season Archive":
+    "Browse previous seasons and view each final league table.",
+  "Dream League Records":
+    "Hall of fame record book — career, season, transfer, and franchise milestones.",
+};
+
 export default function DreamLeagueHistoryPage() {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
@@ -15,11 +26,7 @@ export default function DreamLeagueHistoryPage() {
             {item.label}
           </h2>
           <p className="mt-2 text-sm text-pitch-700">
-            {item.label === "Trophy Room"
-              ? "League and Cup cabinet — current holders and previous winners."
-              : item.label === "All-Time Table"
-                ? "Career Goals For, Goals Against, and League Points by franchise."
-                : "Browse previous seasons and view each final league table."}
+            {HISTORY_BLURBS[item.label] ?? "Explore Dream League history."}
           </p>
         </Link>
       ))}
