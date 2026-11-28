@@ -50,9 +50,27 @@ export type FranchiseHistorySnapshot = {
     outfield: SquadOutfieldMember[];
   };
   transfers: {
-    outfield: DerivedOutfieldTransfer[];
-    goalkeeper: DerivedGoalkeeperTransfer[];
+    outfield: FranchiseOutfieldTransfer[];
+    goalkeeper: FranchiseGoalkeeperTransfer[];
     /** True when mid-season dates cannot be trusted (e.g. 2019/20). */
     dates_uncertain: boolean;
   };
+};
+
+/** Outfield transfer with Dream League contribution while owned on this team. */
+export type FranchiseOutfieldTransfer = DerivedOutfieldTransfer & {
+  /** Goals while owned before leaving (OUT leg). */
+  out_contribution: number;
+  /** Goals while owned after arriving (IN leg). */
+  in_contribution: number;
+  /** in − out; positive means the move improved scoring contribution. */
+  net_contribution: number;
+};
+
+/** Goalkeeper transfer with contribution (−concessions) while owned on this team. */
+export type FranchiseGoalkeeperTransfer = DerivedGoalkeeperTransfer & {
+  out_contribution: number;
+  in_contribution: number;
+  /** in − out; positive means fewer concessions after the swap. */
+  net_contribution: number;
 };

@@ -12,21 +12,29 @@ import {
   resolveFranchiseId,
 } from "@/lib/league/franchise-map";
 import type {
+  FranchiseGoalkeeperTransfer,
   FranchiseHistoryOption,
   FranchiseHistorySnapshot,
+  FranchiseOutfieldTransfer,
   FranchiseSeasonOption,
 } from "@/lib/league/franchise-history-shared";
 import { deriveStandings } from "@/lib/league/standings";
 import {
   countGoalkeeperConcessions,
+  countGoalkeeperConcessionsInStints,
   countOutfieldGoalsByPlayer,
+  countOutfieldGoalsInStints,
+  goalkeeperContribution,
+  outfieldContribution,
   sortOutfieldSquad,
+  type OwnershipStint,
   type SquadGoalkeeper,
   type SquadOutfieldMember,
 } from "@/lib/league/team-detail";
 import {
   deriveTransferUsage,
   isTransferIn,
+  toDateOnly,
 } from "@/lib/league/transfer-usage";
 import { fetchAllRows } from "@/lib/supabase/fetch-all-rows";
 import { createClient } from "@/lib/supabase/server";
@@ -412,16 +420,120 @@ export async function loadFranchiseHistory(
   }
 
   const teamNameById = new Map([[team.id, team.name]]);
-  const outfieldTransfers = deriveOutfieldTransfers(
+  const outfieldTransfersRaw = deriveOutfieldTransfers(
     outfieldSeeds,
     teamNameById,
     selectedSeason.starts_on,
   );
-  const goalkeeperTransfers = deriveGoalkeeperTransfers(
+  const goalkeeperTransfersRaw = deriveGoalkeeperTransfers(
     gkSeeds,
     teamNameById,
     selectedSeason.starts_on,
   );
+
+  const outfieldTransfers: FranchiseOutfieldTransfer[] =
+    outfieldTransfersRaw.map((transfer) => {
+      const date = toDateOnly(transfer.transferred_on);
+      const outSeed = outfieldSeeds.find(
+        (s) =>
+          s.player_id === transfer.player_out_id &&
+          s.released_at != null &&
+          toDateOnly(s.released_at) === date,
+      );
+      const inSeed = outfieldSeeds.find(
+        (s) =>
+          s.player_id === transfer.player_in_id &&
+          toDateOnly(s.acquired_at) === date,
+      );
+      const outStints: OwnershipStint[] = outSeed
+        ? [
+            {
+              acquired_at: outSeed.acquired_at,
+              released_at: outSeed.released_at,
+            },
+          ]
+        : [];
+      const inStints: OwnershipStint[] = inSeed
+        ? [
+            {
+              acquired_at: inSeed.acquired_at,
+              released_at: inSeed.released_at,
+            },
+          ]
+        : [];
+      const outGoals = countOutfieldGoalsInStints(
+        teamEvents,
+        team.id,
+        transfer.player_out_id,
+        outStints,
+      );
+      const inGoals = countOutfieldGoalsInStints(
+        teamEvents,
+        team.id,
+        transfer.player_in_id,
+        inStints,
+      );
+      const out_contribution = outfieldContribution(outGoals);
+      const in_contribution = outfieldContribution(inGoals);
+      return {
+        ...transfer,
+        out_contribution,
+        in_contribution,
+        net_contribution: in_contribution - out_contribution,
+      };
+    });
+
+  const goalkeeperTransfers: FranchiseGoalkeeperTransfer[] =
+    goalkeeperTransfersRaw.map((transfer) => {
+      const date = toDateOnly(transfer.transferred_on);
+      const outSeed = gkSeeds.find(
+        (s) =>
+          s.goalkeeper_club_id === transfer.club_out_id &&
+          s.released_at != null &&
+          toDateOnly(s.released_at) === date,
+      );
+      const inSeed = gkSeeds.find(
+        (s) =>
+          s.goalkeeper_club_id === transfer.club_in_id &&
+          toDateOnly(s.acquired_at) === date,
+      );
+      const outStints: OwnershipStint[] = outSeed
+        ? [
+            {
+              acquired_at: outSeed.acquired_at,
+              released_at: outSeed.released_at,
+            },
+          ]
+        : [];
+      const inStints: OwnershipStint[] = inSeed
+        ? [
+            {
+              acquired_at: inSeed.acquired_at,
+              released_at: inSeed.released_at,
+            },
+          ]
+        : [];
+      const outConceded = countGoalkeeperConcessionsInStints(
+        teamEvents,
+        team.id,
+        transfer.club_out_id,
+        outStints,
+      );
+      const inConceded = countGoalkeeperConcessionsInStints(
+        teamEvents,
+        team.id,
+        transfer.club_in_id,
+        inStints,
+      );
+      const out_contribution = goalkeeperContribution(outConceded);
+      const in_contribution = goalkeeperContribution(inConceded);
+      return {
+        ...transfer,
+        out_contribution,
+        in_contribution,
+        net_contribution: in_contribution - out_contribution,
+      };
+    });
 
   const hasTransferIns =
     squadStints.some((s) =>
