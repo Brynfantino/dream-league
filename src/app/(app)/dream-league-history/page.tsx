@@ -9,8 +9,8 @@ const HISTORY_BLURBS: Record<string, string> = {
     "Career Goals For, Goals Against, and League Points by franchise.",
   "Season Archive":
     "Browse previous seasons and view each final league table.",
-  "Dream League Records":
-    "Hall of fame record book — career, season, transfer, and franchise milestones.",
+  "Records & Insights":
+    "Who was best, and what's interesting — records alongside league-wide insights.",
   "Franchise History":
     "Look back at any franchise in a chosen season — squad, transfers, finish, and trophies.",
 };
