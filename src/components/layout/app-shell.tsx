@@ -5,7 +5,13 @@ import { useState } from "react";
 import { SideNav } from "@/components/layout/side-nav";
 import { TopNav } from "@/components/layout/top-nav";
 
-export function AppShell({ children }: { children: React.ReactNode }) {
+export function AppShell({
+  children,
+  search,
+}: {
+  children: React.ReactNode;
+  search?: React.ReactNode;
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -33,7 +39,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       ) : null}
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <TopNav onMenuClick={() => setMobileOpen(true)} />
+        <TopNav onMenuClick={() => setMobileOpen(true)} search={search} />
         <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
           {children}
         </main>

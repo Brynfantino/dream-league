@@ -4,15 +4,16 @@ import Link from "next/link";
 
 type TopNavProps = {
   onMenuClick: () => void;
+  search?: React.ReactNode;
 };
 
-export function TopNav({ onMenuClick }: TopNavProps) {
+export function TopNav({ onMenuClick, search }: TopNavProps) {
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b border-pitch-200 bg-pitch-50/90 px-4 backdrop-blur sm:px-6">
       <button
         type="button"
         onClick={onMenuClick}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-pitch-300 text-pitch-900 lg:hidden"
+        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-pitch-300 text-pitch-900 lg:hidden"
         aria-label="Open navigation"
       >
         <span className="sr-only">Open menu</span>
@@ -28,20 +29,26 @@ export function TopNav({ onMenuClick }: TopNavProps) {
         </svg>
       </button>
 
-      <div className="flex min-w-0 flex-1 items-center justify-between gap-3">
-        <div className="min-w-0">
+      <div className="flex min-w-0 flex-1 items-center gap-3">
+        <div className="hidden min-w-0 shrink-0 sm:block sm:max-w-[9.5rem] md:max-w-[12rem]">
           <p className="truncate text-sm font-semibold text-pitch-950">
             Dream League
           </p>
-          <p className="hidden truncate text-xs text-pitch-600 sm:block">
+          <p className="hidden truncate text-xs text-pitch-600 md:block">
             Fantasy football foundation
           </p>
         </div>
 
-        <div className="flex shrink-0 items-center gap-3 text-sm">
+        {search ? (
+          <div className="min-w-0 flex-1">{search}</div>
+        ) : (
+          <div className="min-w-0 flex-1" />
+        )}
+
+        <div className="flex shrink-0 items-center gap-2 text-sm sm:gap-3">
           <Link
             href="/account-settings"
-            className="rounded-md px-3 py-1.5 text-pitch-800 hover:bg-pitch-100"
+            className="hidden rounded-md px-3 py-1.5 text-pitch-800 hover:bg-pitch-100 sm:inline"
           >
             Account Settings
           </Link>
