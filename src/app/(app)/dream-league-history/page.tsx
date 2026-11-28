@@ -11,6 +11,8 @@ const HISTORY_BLURBS: Record<string, string> = {
     "Browse previous seasons and view each final league table.",
   "Dream League Records":
     "Hall of fame record book — career, season, transfer, and franchise milestones.",
+  "Franchise History":
+    "Look back at any franchise in a chosen season — squad, transfers, finish, and trophies.",
 };
 
 export default function DreamLeagueHistoryPage() {
