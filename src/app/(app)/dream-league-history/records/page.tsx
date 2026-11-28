@@ -3,18 +3,13 @@ import { Suspense } from "react";
 import { RecordsView } from "@/components/history/records-view";
 import { loadRecords } from "@/lib/league/load-records";
 
-export default function DreamLeagueRecordsPage() {
+export default function RecordsTabPage() {
   return (
     <div className="space-y-4">
-      <header className="space-y-1">
-        <h2 className="font-display text-2xl tracking-wide text-pitch-950 sm:text-3xl">
-          Dream League Records
-        </h2>
-        <p className="text-sm text-pitch-800">
-          The Dream League Record Book — standout achievements, extreme
-          performances, and historical milestones across imported seasons.
-        </p>
-      </header>
+      <p className="text-sm text-pitch-800">
+        The Dream League Record Book — standout achievements, extreme
+        performances, and historical milestones.
+      </p>
 
       <Suspense
         fallback={<p className="text-sm text-pitch-700">Loading records…</p>}
@@ -34,7 +29,7 @@ async function RecordsContent() {
         Supabase is not configured. Set{" "}
         <code className="font-mono text-xs">NEXT_PUBLIC_SUPABASE_URL</code> and{" "}
         <code className="font-mono text-xs">NEXT_PUBLIC_SUPABASE_ANON_KEY</code>{" "}
-        to load Dream League Records.
+        to load records.
       </p>
     );
   }

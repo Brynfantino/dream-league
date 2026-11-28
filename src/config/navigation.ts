@@ -31,7 +31,7 @@ export const historyNav: NavItem[] = [
   },
   {
     href: "/dream-league-history/records",
-    label: "Dream League Records",
+    label: "Records & Insights",
   },
   {
     href: "/dream-league-history/franchise-history",
