@@ -22,7 +22,13 @@ export type SearchIndexResult =
 
 type PlayerRow = Pick<Player, "id" | "name" | "club" | "position">;
 type TeamRow = Pick<Team, "id" | "name" | "season_id">;
-type SeasonRow = Pick<Season, "id" | "is_active">;
+type SeasonRow = Pick<Season, "id" | "is_active" | "starts_on">;
+type MembershipRow = {
+  player_id: string;
+  season_id: string;
+  acquired_at: string;
+  released_at: string | null;
+};
 type ManagerRow = {
   display_name: string;
   team_id: string;
@@ -64,30 +70,37 @@ export async function loadSearchIndex(): Promise<SearchIndexResult> {
     return { status: "unconfigured" };
   }
 
-  const [playersRes, teamsRes, seasonsRes, managersRes] = await Promise.all([
-    fetchAllRows<PlayerRow>((from, to) =>
-      supabase
-        .from("players")
-        .select("id, name, club, position")
-        .order("name")
-        .range(from, to),
-    ),
-    fetchAllRows<TeamRow>((from, to) =>
-      supabase
-        .from("teams")
-        .select("id, name, season_id")
-        .order("name")
-        .range(from, to),
-    ),
-    supabase.from("seasons").select("id, is_active"),
-    fetchAllRows<ManagerRow>((from, to) =>
-      supabase
-        .from("team_managers")
-        .select("display_name, team_id, teams(id, name)")
-        .order("display_name")
-        .range(from, to),
-    ),
-  ]);
+  const [playersRes, teamsRes, seasonsRes, membershipsRes, managersRes] =
+    await Promise.all([
+      fetchAllRows<PlayerRow>((from, to) =>
+        supabase
+          .from("players")
+          .select("id, name, club, position")
+          .order("name")
+          .range(from, to),
+      ),
+      fetchAllRows<TeamRow>((from, to) =>
+        supabase
+          .from("teams")
+          .select("id, name, season_id")
+          .order("name")
+          .range(from, to),
+      ),
+      supabase.from("seasons").select("id, is_active, starts_on"),
+      fetchAllRows<MembershipRow>((from, to) =>
+        supabase
+          .from("squad_memberships")
+          .select("player_id, season_id, acquired_at, released_at")
+          .range(from, to),
+      ),
+      fetchAllRows<ManagerRow>((from, to) =>
+        supabase
+          .from("team_managers")
+          .select("display_name, team_id, teams(id, name)")
+          .order("display_name")
+          .range(from, to),
+      ),
+    ]);
 
   if (playersRes.error) {
     return { status: "error", message: playersRes.error.message };
@@ -98,11 +111,15 @@ export async function loadSearchIndex(): Promise<SearchIndexResult> {
   if (seasonsRes.error) {
     return { status: "error", message: seasonsRes.error.message };
   }
+  if (membershipsRes.error) {
+    return { status: "error", message: membershipsRes.error.message };
+  }
   if (managersRes.error) {
     return { status: "error", message: managersRes.error.message };
   }
 
   const seasons = (seasonsRes.data ?? []) as SeasonRow[];
+  const seasonsById = new Map(seasons.map((s) => [s.id, s]));
   const activeSeason = seasons.find((s) => s.is_active) ?? null;
   const teams = teamsRes.data ?? [];
   const activeTeams = activeSeason
@@ -110,24 +127,59 @@ export async function loadSearchIndex(): Promise<SearchIndexResult> {
     : [];
   const activeByFranchise = mapActiveTeamIdsByFranchise(activeTeams);
   const activeNameById = new Map(activeTeams.map((t) => [t.id, t.name]));
+  const playersById = new Map(
+    (playersRes.data ?? []).map((p) => [p.id, p] as const),
+  );
 
   const entries: SearchHit[] = [];
 
-  // —— Players (exact name merge, same as Player Profile) ——
-  const playersByName = new Map<string, PlayerRow>();
-  for (const player of playersRes.data ?? []) {
-    const existing = playersByName.get(player.name);
-    if (!existing) {
-      playersByName.set(player.name, player);
-      continue;
-    }
-    // Prefer a row that still carries a club name for subtitle.
-    if (!existing.club && player.club) {
-      playersByName.set(player.name, player);
+  // —— Players (exact name merge; club = current / most recent, like Player Profile) ——
+  type PlayerIdentity = {
+    player: PlayerRow;
+    /** Higher = more recent identity for subtitle. */
+    rank: string;
+  };
+  const identityByName = new Map<string, PlayerIdentity>();
+
+  for (const m of membershipsRes.data ?? []) {
+    const player = playersById.get(m.player_id);
+    const season = seasonsById.get(m.season_id);
+    if (!player || !season) continue;
+
+    const isCurrent = Boolean(season.is_active && m.released_at == null);
+    // Current ownership wins; else newest season start, then newest acquire.
+    const rank = [
+      isCurrent ? "2" : "1",
+      season.starts_on ?? "",
+      m.acquired_at,
+    ].join("|");
+
+    const existing = identityByName.get(player.name);
+    if (!existing || rank > existing.rank) {
+      identityByName.set(player.name, { player, rank });
     }
   }
 
-  for (const player of playersByName.values()) {
+  // Players with no membership history: prefer any peer row that has a club.
+  for (const player of playersRes.data ?? []) {
+    const existing = identityByName.get(player.name);
+    if (existing) {
+      if (
+        existing.rank.startsWith("0") &&
+        !existing.player.club &&
+        player.club
+      ) {
+        identityByName.set(player.name, { player, rank: "0|1" });
+      }
+      continue;
+    }
+    identityByName.set(player.name, {
+      player,
+      rank: player.club ? "0|1" : "0|0",
+    });
+  }
+
+  for (const { player } of identityByName.values()) {
     const club = player.club ? canonicalizeClubName(player.club) : null;
     const position = player.position
       ? (POSITION_LABEL[player.position] ?? player.position)
